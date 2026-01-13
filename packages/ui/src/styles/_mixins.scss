@@ -1,0 +1,23 @@
+@mixin b($block, $prefix: 'av') {
+  .#{$prefix}-#{$block} {
+    @content;
+  }
+}
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  &.is-#{$state} {
+    @content;
+  }
+}

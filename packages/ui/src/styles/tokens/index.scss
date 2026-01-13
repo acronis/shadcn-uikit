@@ -1,0 +1,13 @@
+/**
+ * Token System Entry Point
+ *
+ * Import order matters:
+ * 1. Primitives - Foundation colors from Figma
+ * 2. Semantic - Purpose-based mappings
+ *
+ * This provides a clean 3-layer architecture:
+ * Figma → CSS Variables → Tailwind → Components
+ */
+
+@use './primitives';
+@use './semantic';

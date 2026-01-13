@@ -1,0 +1,11 @@
+@use './tokens';
+
+// @use './variables'; // Commented out - conflicts with new semantic tokens
+@use './base';
+@use './mixins';
+
+// @use './globals'; // Commented out - conflicts with new semantic tokens
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
