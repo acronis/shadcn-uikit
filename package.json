@@ -1,7 +1,6 @@
 {
   "name": "shadcn-uikit-monorepo",
   "version": "0.1.0",
-  "private": true,
   "description": "The Acronis UI Shadcn UI components library with color schemes and demos",
   "type": "module",
   "workspaces": [
