@@ -12,12 +12,8 @@
       "types": "./dist/index.d.ts"
     },
     "./react": {
-      "import": "./dist/react/index.js",
-      "types": "./dist/react/index.d.ts"
-    },
-    "./vue": {
-      "import": "./dist/vue/index.js",
-      "types": "./dist/vue/index.d.ts"
+      "import": "./dist/react.js",
+      "types": "./dist/react.d.ts"
     },
     "./styles": "./dist/shadcn-uikit.css",
     "./components/*": "./dist/components/*"
@@ -45,8 +41,7 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vue": "^3.4.0"
+    "react-dom": "^18.2.0"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -84,9 +79,7 @@
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.309.0",
-    "lucide-vue-next": "^0.309.0",
     "next-themes": "^0.4.6",
-    "radix-vue": "^1.4.1",
     "react-day-picker": "^9.13.0",
     "react-hook-form": "^7.69.0",
     "recharts": "^3.6.0",
@@ -111,7 +104,6 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "5.1.1",
-    "@vitejs/plugin-vue": "^6.0.3",
     "@vitest/browser-playwright": "4.0.17",
     "autoprefixer": "^10.4.17",
     "eslint": "9.39.2",
@@ -130,8 +122,6 @@
   },
   "keywords": [
     "react",
-    "vue",
-    "vue3",
     "ui",
     "components",
     "shadcn",
