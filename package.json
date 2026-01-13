@@ -45,5 +45,13 @@
     "prettier": "3.7.4",
     "typescript": "^5.3.3"
   },
+  "lint-staged": {
+    "packages/**/*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix"
+    ],
+    "packages/**/*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
   "packageManager": "pnpm@10.27.0"
 }
