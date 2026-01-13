@@ -50,7 +50,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Build UI Component Library
+      - name: Build Acronis shacn UI Component Library
         run: pnpm --filter ./packages/ui run build
 
 #      - name: Build icons
