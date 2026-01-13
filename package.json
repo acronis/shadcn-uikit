@@ -1,0 +1,30 @@
+{
+  "name": "shadcn-uikit-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Custom shadcn UI components library with color schemes and demos",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev": "npm run dev --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "type-check": "npm run type-check --workspaces --if-present"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "shadcn",
+    "react",
+    "tailwind"
+  ],
+  "author": "Acronis International GmbH",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "typescript": "^5.3.3"
+  }
+}
