@@ -1,0 +1,307 @@
+# Token System Migration Guide
+
+## Overview
+
+The UI kit has been updated with a new 3-layer token architecture that reduces complexity and improves maintainability.
+
+**Key Changes:**
+
+- ✅ Reduced from 150+ component-specific tokens to ~30 semantic tokens
+- ✅ New token structure: Figma → Primitives → Semantics → Tailwind → Components
+- ✅ Improved dark mode support
+- ✅ Easier customization and theming
+
+---
+
+## What Changed?
+
+### Old System
+
+```scss
+// _globals.scss (549 lines)
+:root {
+  --av-input-bg: 0 0% 100%;
+  --av-input-border: 213 65% 46%;
+  --av-checkbox-bg: 0 0% 100%;
+  --av-checkbox-border: 213 65% 46%;
+  --av-table-header-bg: 0 0% 100%;
+  --search-input-bg: 0 0% 100%;
+  // ... 150+ more tokens
+}
+```
+
+### New System
+
+```scss
+// tokens/semantic.scss
+:root {
+  --semantic-bg-elevated: var(--color-surface-primary);
+  --semantic-border-default: var(--color-brand-primary);
+  --semantic-text-primary: var(--color-text-primary);
+  // ... ~30 semantic tokens
+}
+```
+
+---
+
+## Backward Compatibility
+
+**Good News:** The old `_globals.scss` file is still imported, so existing components will continue to work.
+
+**Migration Path:**
+
+1. ✅ New token system is active (already done)
+2. ⏳ Gradually migrate components to use Tailwind classes
+3. ⏳ Remove old tokens from `_globals.scss` as components are migrated
+4. ⏳ Eventually delete `_variables.scss` (duplicate of `_globals.scss`)
+
+---
+
+## How to Migrate Components
+
+### Step 1: Identify Current Token Usage
+
+**Before:**
+
+```tsx
+// Using old component-specific tokens
+<input
+  className="bg-white border-[hsl(var(--av-input-border))]"
+  style={{ borderColor: 'hsl(var(--av-input-border-focus))' }}
+/>
+```
+
+### Step 2: Map to Semantic Tokens
+
+Use this mapping table:
+
+| Old Token Pattern  | New Tailwind Class | Semantic Token                   |
+| ------------------ | ------------------ | -------------------------------- |
+| `--av-background`  | `bg-background`    | `--semantic-bg-base`             |
+| `--av-foreground`  | `text-foreground`  | `--semantic-text-primary`        |
+| `--av-card`        | `bg-card`          | `--semantic-bg-elevated`         |
+| `--av-primary`     | `bg-primary`       | `--semantic-interactive-default` |
+| `--av-secondary`   | `bg-secondary`     | `--semantic-bg-muted`            |
+| `--av-muted`       | `bg-muted`         | `--semantic-bg-muted`            |
+| `--av-border`      | `border-border`    | `--semantic-border-default`      |
+| `--av-input`       | `border-input`     | `--semantic-border-default`      |
+| `--av-ring`        | `ring-ring`        | `--semantic-interactive-focus`   |
+| `--av-destructive` | `bg-destructive`   | `--semantic-status-danger`       |
+| `--av-success`     | `bg-success`       | `--semantic-status-success`      |
+| `--av-warning`     | `bg-warning`       | `--semantic-status-warning`      |
+| `--av-info`        | `bg-info`          | `--semantic-status-info`         |
+
+**Component-Specific Tokens → Semantic Mapping:**
+
+| Old Component Token    | New Semantic Token          |
+| ---------------------- | --------------------------- |
+| `--av-input-bg`        | `--semantic-bg-elevated`    |
+| `--av-input-border`    | `--semantic-border-default` |
+| `--av-checkbox-bg`     | `--semantic-bg-elevated`    |
+| `--av-checkbox-border` | `--semantic-border-default` |
+| `--av-table-header-bg` | `--semantic-bg-elevated`    |
+| `--search-input-bg`    | `--semantic-bg-elevated`    |
+| `--dialog-bg`          | `--semantic-bg-muted`       |
+| `--popover-bg`         | `--semantic-bg-elevated`    |
+| `--tooltip-bg`         | `--semantic-bg-overlay`     |
+
+### Step 3: Update Component Code
+
+**After:**
+
+```tsx
+// Using new Tailwind classes with semantic tokens
+<input className="bg-background border border-input focus:border-primary" />
+```
+
+---
+
+## Common Migration Patterns
+
+### Pattern 1: Backgrounds
+
+**Before:**
+
+```tsx
+<div style={{ background: 'hsl(var(--av-card))' }}>
+```
+
+**After:**
+
+```tsx
+<div className="bg-card">
+```
+
+### Pattern 2: Text Colors
+
+**Before:**
+
+```tsx
+<span style={{ color: 'hsl(var(--av-foreground))' }}>
+<span style={{ color: 'hsl(var(--av-muted-foreground))' }}>
+```
+
+**After:**
+
+```tsx
+<span className="text-foreground">
+<span className="text-muted-foreground">
+```
+
+### Pattern 3: Borders
+
+**Before:**
+
+```tsx
+<div style={{ borderColor: 'hsl(var(--av-border))' }}>
+```
+
+**After:**
+
+```tsx
+<div className="border border-border">
+```
+
+### Pattern 4: Status Colors
+
+**Before:**
+
+```tsx
+<div style={{
+  background: 'hsl(var(--av-success))',
+  color: 'hsl(var(--av-success-foreground))'
+}}>
+```
+
+**After:**
+
+```tsx
+<div className="bg-success text-success-foreground">
+```
+
+### Pattern 5: Interactive States
+
+**Before:**
+
+```tsx
+<button style={{
+  background: 'hsl(var(--av-primary))',
+  color: 'hsl(var(--av-primary-foreground))'
+}}>
+```
+
+**After:**
+
+```tsx
+<button className="bg-primary text-primary-foreground hover:bg-primary/90">
+```
+
+---
+
+## Opacity Modifiers
+
+Tailwind now supports opacity modifiers with the new token system:
+
+```tsx
+// 50% opacity
+<div className="bg-primary/50">
+
+// 20% opacity
+<div className="bg-primary/20">
+
+// Hover with opacity
+<button className="bg-primary hover:bg-primary/90">
+```
+
+---
+
+## Dark Mode
+
+Dark mode now works automatically through semantic tokens:
+
+```tsx
+// Automatically adapts to dark mode
+<div className="bg-background text-foreground border-border">Content</div>
+```
+
+No need for dark mode variants in most cases. The semantic tokens handle it.
+
+---
+
+## Custom Themes
+
+### Option 1: Override Semantic Tokens
+
+```scss
+// In your app's CSS
+.theme-ocean {
+  --semantic-interactive-default: 200 90% 45%;
+  --semantic-bg-brand: 190 85% 50%;
+}
+```
+
+### Option 2: Override Primitive Tokens
+
+```scss
+// In your app's CSS
+.theme-forest {
+  --color-brand-primary: 140 70% 40%;
+  --color-brand-secondary: 120 65% 45%;
+}
+```
+
+---
+
+## Testing Your Migration
+
+1. **Visual Check**: Compare before/after in both light and dark modes
+2. **Token Usage**: Search for old token patterns in your code
+3. **Console Warnings**: Check for missing CSS variables
+4. **Storybook**: Verify all component variants still work
+
+### Search for Old Patterns
+
+```bash
+# Find old token usage
+grep -r "var(--av-" src/components/
+grep -r "var(--search-" src/components/
+grep -r "var(--dialog-" src/components/
+```
+
+---
+
+## Gradual Migration Strategy
+
+You don't need to migrate everything at once. Here's a recommended order:
+
+1. **Phase 1**: New components use new system (already done via Tailwind config)
+2. **Phase 2**: Migrate high-traffic components (buttons, inputs, cards)
+3. **Phase 3**: Migrate complex components (tables, forms, dialogs)
+4. **Phase 4**: Migrate specialized components (charts, trees, etc.)
+5. **Phase 5**: Clean up old tokens from `_globals.scss`
+
+---
+
+## Need Help?
+
+- **Documentation**: See `src/styles/tokens/README.md`
+- **Examples**: Check updated components in `src/components/ui/`
+- **Token Reference**: See `src/styles/tokens/semantic.scss` for all available tokens
+
+---
+
+## Breaking Changes
+
+### None (Yet)
+
+The old token system is still in place for backward compatibility. However, we recommend migrating to avoid future breaking changes when the old system is removed.
+
+### Future Breaking Changes (Planned)
+
+When all components are migrated, we will:
+
+1. Remove old tokens from `_globals.scss`
+2. Delete `_variables.scss` (duplicate)
+3. Remove `--av-*` prefix tokens
+
+**Timeline**: TBD (after component migration is complete)
