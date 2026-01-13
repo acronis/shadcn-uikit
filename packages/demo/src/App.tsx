@@ -62,7 +62,7 @@ import { Toaster } from 'sonner'
 function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Toaster position="top-right" />
         <Routes>
           <Route path="/demo/*" element={<DemoApp />} />
