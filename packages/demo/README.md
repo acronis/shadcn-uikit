@@ -1,53 +1,35 @@
 # @acronis-platform/shadcn-uikit-demo
 
-Interactive demo application showcasing the shadcn-uikit components and color schemes.
+Demo application showcasing all components from the @acronis-platform/shadcn-uikit library.
 
-## Features
-
-- **Multiple Color Schemes**: Six pre-configured themes including:
-  - Default Light
-  - Default Dark
-  - Acronis Blue (brand color)
-  - Acronis Orange (brand color)
-  - Green
-  - Purple
-
-- **Component Showcase**: Demonstrates all available components:
-  - Button variants and sizes
-  - Card variants (default, elevated, outlined)
-  - Input fields
-  - Form examples
-
-## Running the Demo
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-The demo will open in your browser at `http://localhost:3000`.
+The demo app will be available at `http://localhost:3000`
 
-## Building for Production
+## Features
 
-```bash
-npm run build
-npm run preview
-```
+- **Component Gallery** - Browse all available components
+- **Interactive Examples** - See components in action with various states
+- **Design Tokens** - View and customize design tokens
+- **Playground** - Experiment with theme customization
+- **Secondary Navigation** - Example of nested routing with secondary menu
 
-## Theme Customization
+## Structure
 
-Themes are defined in `src/index.css` using CSS variables. Each theme can be customized by adjusting the HSL color values.
+- `/src/components` - Demo-specific components
+- `/src/pages` - Demo pages
+- `/src/store` - State management for playground
+- `/src/constants` - Demo constants and configurations
 
-## Project Structure
+## Development
 
-```
-demo/
-├── src/
-│   ├── App.tsx          # Main demo application
-│   ├── main.tsx         # Entry point
-│   ├── index.css        # Global styles and themes
-│   └── themes/          # Theme definitions
-├── index.html
-├── vite.config.ts
-└── tailwind.config.js
-```
+This demo app uses the `@acronis-platform/shadcn-uikit` library as a workspace dependency, allowing you to develop and test components in real-time.
+
+## License
+
+MIT © Acronis

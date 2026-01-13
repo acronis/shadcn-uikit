@@ -1,0 +1,30 @@
+{
+  "title": "Einstellungen",
+  "subtitle": "Verwalten Sie Ihre Kontoeinstellungen und Präferenzen",
+  "tabs": {
+    "profile": "Profil",
+    "preferences": "Präferenzen",
+    "account": "Konto"
+  },
+  "profile": {
+    "title": "Profilinformationen",
+    "description": "Aktualisieren Sie Ihre Profilinformationen",
+    "name": "Name",
+    "email": "E-Mail",
+    "avatar": "Avatar-URL"
+  },
+  "preferences": {
+    "title": "Benutzerpräferenzen",
+    "description": "Passen Sie Ihre Erfahrung an",
+    "theme": "Thema",
+    "language": "Sprache",
+    "notifications": "Benachrichtigungen"
+  },
+  "account": {
+    "title": "Kontosicherheit",
+    "description": "Verwalten Sie Ihr Passwort und Ihre Sicherheitseinstellungen",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Passwort Bestätigen"
+  }
+}

@@ -1,191 +1,133 @@
-import { useState } from 'react'
-import { Button, Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Input } from '@acronis-platform/shadcn-uikit'
-import { themes, type Theme } from './themes'
-import './index.css'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Layout } from '@/components/Layout.tsx'
+import { Home } from '@/pages/Home.tsx'
+import { ButtonDemo } from '@/components/ButtonDemo.tsx'
+import { AlertDemo } from '@/components/AlertDemo.tsx'
+import { BreadcrumbDemo } from '@/components/BreadcrumbDemo.tsx'
+import { TooltipDemo } from '@/components/TooltipDemo.tsx'
+import { DropdownMenuDemo } from '@/components/DropdownMenuDemo.tsx'
+import { InputLayout } from '@/components/input/InputLayout.tsx'
+import { BasicInputDemo } from '@/components/input/BasicInputDemo.tsx'
+import { InputTypesDemo } from '@/components/input/InputTypesDemo.tsx'
+import { InputWithLabelsDemo } from '@/components/input/InputWithLabelsDemo.tsx'
+import { InputWithIconsDemo } from '@/components/input/InputWithIconsDemo.tsx'
+import { InputStatesDemo } from '@/components/input/InputStatesDemo.tsx'
+import { InputValidationDemo } from '@/components/input/InputValidationDemo.tsx'
+import { InputSizesDemo } from '@/components/input/InputSizesDemo.tsx'
+import { InputFormDemo } from '@/components/input/InputFormDemo.tsx'
+import { InputSearchDemo } from '@/components/input/InputSearchDemo.tsx'
+import { TextareaDemo } from '@/components/TextareaDemo.tsx'
+import { SidebarDemo } from '@/components/SidebarDemo.tsx'
+import { DialogDemo } from '@/components/DialogDemo.tsx'
+import { EmptyDemo } from '@/components/EmptyDemo.tsx'
+import { ChipDemo } from '@/components/ChipDemo.tsx'
+import { TagDemo } from '@/components/TagDemo.tsx'
+import { ComboboxDemo } from '@/components/ComboboxDemo.tsx'
+import { DatePickerDemo } from '@/components/DatePickerDemo.tsx'
+import { CalendarDemo } from '@/components/CalendarDemo.tsx'
+import { NavigationMenuDemo } from '@/components/NavigationMenuDemo.tsx'
+import { PopoverDemo } from '@/components/PopoverDemo.tsx'
+import { ProgressDemo } from '@/components/ProgressDemo.tsx'
+import { RadioGroupDemo } from '@/components/RadioGroupDemo.tsx'
+import { SelectDemo } from '@/components/SelectDemo.tsx'
+import { SwitchDemo } from '@/components/SwitchDemo.tsx'
+import { TabsDemo } from '@/components/TabsDemo.tsx'
+import { CardDemo } from '@/components/CardDemo.tsx'
+import { SeparatorDemo } from '@/components/SeparatorDemo.tsx'
+import { TableDemo } from '@/components/TableDemo.tsx'
+import { BadgeDemo } from '@/components/BadgeDemo.tsx'
+import { CheckboxDemo } from '@/components/CheckboxDemo.tsx'
+import { FormDemo } from '@/components/FormDemo.tsx'
+import { SonnerDemo } from '@/components/SonnerDemo.tsx'
+import { SpinnerDemo } from '@/components/SpinnerDemo.tsx'
+import { TreeDemo } from '@/components/TreeDemo.tsx'
+import { DesignTokensDemo } from '@/components/DesignTokensDemo.tsx'
+import { IconsDemo } from '@/components/IconsDemo.tsx'
+import { ButtonGroupDemo } from '@/components/ButtonGroupDemo.tsx'
+import { CarouselDemo } from '@/components/CarouselDemo.tsx'
+import { FilterDemo } from '@/components/FilterDemo.tsx'
+import { ContainerDemo } from '@/components/ContainerDemo.tsx'
+import { DataTableDemo } from '@/components/DataTableDemo.tsx'
+import { ChartDemo } from '@/components/ChartDemo.tsx'
+import { PaginationDemo } from '@/components/PaginationDemo.tsx'
+import { PasswordInputDemo } from '@/components/PasswordInputDemo.tsx'
+import { InputDemoWithSecondaryMenu } from '@/components/InputDemoWithSecondaryMenu.tsx'
+import { SecondaryMenuDemo } from '@/components/SecondaryMenuDemo.tsx'
+import { PlaygroundPage } from '@/pages/playground/PlaygroundPage.tsx'
+import '@/App.css'
+import { ThemeProvider } from '@acronis-platform/shadcn-uikit/react'
+import { DemoApp } from '@/app/App'
+import { Toaster } from 'sonner'
 
 function App() {
-  const [currentTheme, setCurrentTheme] = useState<Theme>(themes[0])
-  const [formData, setFormData] = useState({ name: '', email: '' })
-
-  const handleThemeChange = (theme: Theme) => {
-    setCurrentTheme(theme)
-    document.documentElement.className = theme.className
-  }
-
   return (
-    <div className="min-h-screen p-8">
-      <div className="container mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Shadcn UIKit Demo</h1>
-          <p className="text-muted-foreground">
-            Explore custom shadcn components with multiple color schemes
-          </p>
-        </div>
-
-        {/* Theme Selector */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Theme Selector</CardTitle>
-            <CardDescription>
-              Choose from multiple color schemes
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {themes.map((theme) => (
-                <Button
-                  key={theme.name}
-                  variant={currentTheme.name === theme.name ? "default" : "outline"}
-                  onClick={() => handleThemeChange(theme)}
-                >
-                  {theme.icon} {theme.name}
-                </Button>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Components Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          {/* Button Variants */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Button Variants</CardTitle>
-              <CardDescription>Different button styles and sizes</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <p className="text-sm font-medium">Variants</p>
-                <div className="flex flex-wrap gap-2">
-                  <Button>Default</Button>
-                  <Button variant="secondary">Secondary</Button>
-                  <Button variant="outline">Outline</Button>
-                  <Button variant="ghost">Ghost</Button>
-                  <Button variant="link">Link</Button>
-                  <Button variant="destructive">Destructive</Button>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <p className="text-sm font-medium">Sizes</p>
-                <div className="flex items-center flex-wrap gap-2">
-                  <Button size="sm">Small</Button>
-                  <Button size="default">Default</Button>
-                  <Button size="lg">Large</Button>
-                  <Button size="icon">⚙️</Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Form Example */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Form Example</CardTitle>
-              <CardDescription>Input fields with validation</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  placeholder="Enter your name"
-                  value={formData.name}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, name: e.target.value })}
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={formData.email}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, email: e.target.value })}
-                />
-              </div>
-            </CardContent>
-            <CardFooter className="flex justify-between">
-              <Button variant="outline" onClick={() => setFormData({ name: '', email: '' })}>
-                Clear
-              </Button>
-              <Button>Submit</Button>
-            </CardFooter>
-          </Card>
-
-          {/* Card Variants */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Card Component</CardTitle>
-              <CardDescription>Default card variant</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm">
-                This is the default card style with shadow and border.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card variant="elevated">
-            <CardHeader>
-              <CardTitle>Elevated Card</CardTitle>
-              <CardDescription>Card with enhanced shadow</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm">
-                This card has an elevated appearance with a stronger shadow.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card variant="outlined">
-            <CardHeader>
-              <CardTitle>Outlined Card</CardTitle>
-              <CardDescription>Card with prominent border</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm">
-                This card emphasizes the border without shadow.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Feature Showcase */}
-        <Card>
-          <CardHeader>
-            <CardTitle>About This Demo</CardTitle>
-            <CardDescription>Shadcn UIKit Features</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="space-y-2">
-                <h3 className="font-semibold">🎨 Multiple Themes</h3>
-                <p className="text-sm text-muted-foreground">
-                  Six pre-configured color schemes including Acronis brand colors
-                </p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-semibold">🧩 Reusable Components</h3>
-                <p className="text-sm text-muted-foreground">
-                  Built on shadcn/ui with custom variants and styling
-                </p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-semibold">⚡ Fast Development</h3>
-                <p className="text-sm text-muted-foreground">
-                  TypeScript support with excellent DX and performance
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <BrowserRouter>
+        <Toaster position="top-right" />
+        <Routes>
+          <Route path="/demo/*" element={<DemoApp />} />
+          <Route path="/playground" element={<PlaygroundPage />} />
+          <Route path="/input-with-secondary-menu" element={<InputDemoWithSecondaryMenu />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="button" element={<ButtonDemo />} />
+            <Route path="button-group" element={<ButtonGroupDemo />} />
+            <Route path="alert" element={<AlertDemo />} />
+            <Route path="badge" element={<BadgeDemo />} />
+            <Route path="breadcrumb" element={<BreadcrumbDemo />} />
+            <Route path="carousel" element={<CarouselDemo />} />
+            <Route path="checkbox" element={<CheckboxDemo />} />
+            <Route path="tooltip" element={<TooltipDemo />} />
+            <Route path="dropdown-menu" element={<DropdownMenuDemo />} />
+            <Route path="filter" element={<FilterDemo />} />
+            <Route path="form" element={<FormDemo />} />
+            <Route path="input" element={<InputLayout />}>
+              <Route index element={<Navigate to="/input/basic" replace />} />
+              <Route path="basic" element={<BasicInputDemo />} />
+              <Route path="types" element={<InputTypesDemo />} />
+              <Route path="labels" element={<InputWithLabelsDemo />} />
+              <Route path="icons" element={<InputWithIconsDemo />} />
+              <Route path="states" element={<InputStatesDemo />} />
+              <Route path="validation" element={<InputValidationDemo />} />
+              <Route path="sizes" element={<InputSizesDemo />} />
+              <Route path="form" element={<InputFormDemo />} />
+              <Route path="search" element={<InputSearchDemo />} />
+            </Route>
+            <Route path="textarea" element={<TextareaDemo />} />
+            <Route path="sidebar" element={<SidebarDemo />} />
+            <Route path="dialog" element={<DialogDemo />} />
+            <Route path="empty" element={<EmptyDemo />} />
+            <Route path="chip" element={<ChipDemo />} />
+            <Route path="tag" element={<TagDemo />} />
+            <Route path="combobox" element={<ComboboxDemo />} />
+            <Route path="datepicker" element={<DatePickerDemo />} />
+            <Route path="calendar" element={<CalendarDemo />} />
+            <Route path="navigation-menu" element={<NavigationMenuDemo />} />
+            <Route path="popover" element={<PopoverDemo />} />
+            <Route path="progress" element={<ProgressDemo />} />
+            <Route path="chart" element={<ChartDemo />} />
+            <Route path="radio-group" element={<RadioGroupDemo />} />
+            <Route path="select" element={<SelectDemo />} />
+            <Route path="sonner" element={<SonnerDemo />} />
+            <Route path="spinner" element={<SpinnerDemo />} />
+            <Route path="switch" element={<SwitchDemo />} />
+            <Route path="tabs" element={<TabsDemo />} />
+            <Route path="tree" element={<TreeDemo />} />
+            <Route path="card" element={<CardDemo />} />
+            <Route path="separator" element={<SeparatorDemo />} />
+            <Route path="table" element={<TableDemo />} />
+            <Route path="data-table" element={<DataTableDemo />} />
+            <Route path="pagination" element={<PaginationDemo />} />
+            <Route path="password-input" element={<PasswordInputDemo />} />
+            <Route path="secondary-menu" element={<SecondaryMenuDemo />} />
+            <Route path="design-tokens" element={<DesignTokensDemo />} />
+            <Route path="icons" element={<IconsDemo />} />
+            <Route path="container" element={<ContainerDemo />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

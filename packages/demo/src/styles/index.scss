@@ -1,0 +1,19 @@
+/**
+ * Demo App Styles Entry Point
+ *
+ * This file imports the library's token system and adds Tailwind directives
+ * for processing demo-app specific styles in development mode.
+ */
+
+/* Import library's design tokens */
+@use '../../../ui/src/styles/tokens';
+
+/* Tailwind directives - will be processed by demo-app's PostCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Demo-app specific styles can be added here */
+body {
+  @apply bg-background text-foreground;
+}
