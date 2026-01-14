@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import {
   Sidebar,
@@ -12,7 +13,6 @@ import {
   SidebarHeader,
 } from '@acronis-platform/shadcn-uikit/react'
 import { ScrollArea } from '@acronis-platform/shadcn-uikit/react'
-import { ModeToggle } from '@acronis-platform/shadcn-uikit/react'
 import {
   LayoutDashboard,
   Bell,
@@ -49,6 +49,11 @@ import {
   Image,
   Lock,
 } from 'lucide-react'
+import { TokenSelector } from '@/components/playground/TokenSelector.tsx'
+import { ThemeSwitcher } from '@/components/playground/ThemeSwitcher.tsx'
+import { usePlaygroundStore } from '@/store/playground/playgroundStore.ts'
+import { applyTokenSet } from '@/lib/playground/cssVariables.ts'
+import { ThemeMode } from '@/types/playground/index.ts'
 
 const navigationItems = [
   {
@@ -111,6 +116,20 @@ const navigationItems = [
 
 export function Layout() {
   const location = useLocation()
+  const { theme, activeTokenSetId, tokenSets, customTokenSet } = usePlaygroundStore()
+
+  useEffect(() => {
+    const activeTokenSet = customTokenSet || tokenSets[activeTokenSetId]
+    if (activeTokenSet) {
+      const effectiveTheme =
+        theme.mode === ThemeMode.SYSTEM
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? ThemeMode.DARK
+            : ThemeMode.LIGHT
+          : theme.mode
+      applyTokenSet(activeTokenSet, effectiveTheme)
+    }
+  }, [theme, activeTokenSetId, tokenSets, customTokenSet])
 
   return (
     <SidebarProvider defaultOpen={true}>
@@ -126,7 +145,9 @@ export function Layout() {
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-semibold">Acronis UIKit</span>
-                <span className="text-xs text-sidebar-foreground/70">Component Library</span>
+                <span className="text-xs text-sidebar-foreground/70">
+                  Component Library
+                </span>
               </div>
             </Link>
           </SidebarHeader>
@@ -165,7 +186,10 @@ export function Layout() {
         <div className="flex flex-1 flex-col">
           <header className="sticky top-0 z-10 flex h-16 items-center justify-between gap-4 border-b bg-background text-foreground px-6">
             <h1 className="text-xl font-semibold">Shadcn UIKit - React Demo</h1>
-            <ModeToggle />
+            <div className="flex items-center gap-3">
+              <TokenSelector />
+              <ThemeSwitcher showLabel />
+            </div>
           </header>
 
           <main className="flex-1 overflow-auto">
@@ -174,5 +198,5 @@ export function Layout() {
         </div>
       </div>
     </SidebarProvider>
-  )
+  );
 }

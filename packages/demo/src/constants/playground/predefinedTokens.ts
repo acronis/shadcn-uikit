@@ -3,18 +3,24 @@ import { TokenSet, ColorToken } from '@/types/playground'
 /**
  * Helper to create a color token from HSL values
  */
-const createToken = (h: number, s: number, l: number): ColorToken => ({
+const createToken = (h: number, s: number, l: number, opacity?: number): ColorToken => ({
   h,
   s,
   l,
+  opacity,
   css: `${h} ${s}% ${l}%`,
-  hex: hslToHex(h, s, l),
-})
+  hex: hslToHex(h, s, l, opacity),
+});
 
 /**
  * Convert HSL to hex color
+ * @param h Hue (0-360)
+ * @param s Saturation (0-100)
+ * @param l Lightness (0-100)
+ * @param opacity Optional opacity (0-100)
+ * @returns Hex color string with optional alpha channel
  */
-function hslToHex(h: number, s: number, l: number): string {
+function hslToHex(h: number, s: number, l: number, opacity?: number): string {
   const sDecimal = s / 100
   const lDecimal = l / 100
   const c = (1 - Math.abs(2 * lDecimal - 1)) * sDecimal
@@ -55,7 +61,15 @@ function hslToHex(h: number, s: number, l: number): string {
     return hex.length === 1 ? '0' + hex : hex
   }
 
-  return `#${toHex(r)}${toHex(g)}${toHex(b)}`
+  const hexColor = `#${toHex(r)}${toHex(g)}${toHex(b)}`
+
+  // Add alpha channel if opacity is provided
+  if (opacity !== undefined) {
+    const alpha = Math.round((opacity / 100) * 255).toString(16)
+    return `${hexColor}${alpha.length === 1 ? '0' + alpha : alpha}`
+  }
+
+  return hexColor
 }
 
 /**
@@ -116,6 +130,71 @@ export const DEFAULT_TOKEN_SET: TokenSet = {
     full: '9999px',
   },
 }
+
+/**
+ * Cyber Chat token set
+ */
+export const CYBER_CHAT_TOKEN_SET: TokenSet = {
+  id: 'chat',
+  name: 'Cyber Chat',
+  description: 'Cyber Chat UI theme',
+  light: {
+    background: createToken(0, 0, 100),
+    foreground: createToken(0, 0, 4),
+    card: createToken(210, 50, 98),
+    cardBorder: createToken(210, 55, 96),
+    cardForeground: createToken(0, 0, 4),
+    popover: createToken(0, 0, 100),
+    popoverForeground: createToken(222.2, 84, 4.9),
+    primary: createToken(209, 100, 50),
+    primaryForeground: createToken(0, 0, 100),
+    secondary: createToken(0, 0, 100),
+    secondaryForeground: createToken(0, 0, 4, 50),
+    muted: createToken(217.2, 32.6, 17.5),
+    mutedForeground: createToken(215, 20.2, 65.1),
+    accent: createToken(209, 100, 50, 5),
+    accentForeground: createToken(222.2, 47.4, 11.2),
+    destructive: createToken(0, 62.8, 30.6),
+    destructiveForeground: createToken(210, 40, 98),
+    border: createToken(224, 11, 74, 50),
+    borderAccent: createToken(209, 100, 50, 20),
+    separator: createToken(224, 11, 74, 25),
+    input: createToken(224, 11, 74, 50),
+    sidebar: createToken(218, 57, 97, 50),
+    sidebarForeground: createToken(0, 0, 4),
+    sidebarSeparator: createToken(215, 68, 46, 5),
+    ring: createToken(212.7, 26.8, 83.9),
+  },
+  dark: {
+    background: createToken(222.2, 84, 4.9),
+    foreground: createToken(210, 40, 98),
+    card: createToken(222.2, 84, 4.9),
+    cardForeground: createToken(210, 40, 98),
+    popover: createToken(222.2, 84, 4.9),
+    popoverForeground: createToken(210, 40, 98),
+    primary: createToken(210, 40, 98),
+    primaryForeground: createToken(222.2, 47.4, 11.2),
+    secondary: createToken(217.2, 32.6, 17.5),
+    secondaryForeground: createToken(210, 40, 98),
+    muted: createToken(217.2, 32.6, 17.5),
+    mutedForeground: createToken(215, 20.2, 65.1),
+    accent: createToken(217.2, 32.6, 17.5),
+    accentForeground: createToken(210, 40, 98),
+    destructive: createToken(0, 62.8, 30.6),
+    destructiveForeground: createToken(210, 40, 98),
+    border: createToken(217.2, 32.6, 17.5),
+    input: createToken(217.2, 32.6, 17.5),
+    ring: createToken(212.7, 26.8, 83.9),
+  },
+  radius: {
+    sm: '0.25rem',
+    md: '0.375rem',
+    lg: '0.5rem',
+    xl: '0.75rem',
+    '2xl': '1rem',
+    full: '9999px',
+  },
+};
 
 /**
  * Ocean theme (Blue)
@@ -477,9 +556,10 @@ export const ACRONIS_TOKEN_SET: TokenSet = {
 export const PREDEFINED_TOKEN_SETS: Record<string, TokenSet> = {
   acronis: ACRONIS_TOKEN_SET,
   default: DEFAULT_TOKEN_SET,
+  chat: CYBER_CHAT_TOKEN_SET,
   ocean: OCEAN_TOKEN_SET,
   forest: FOREST_TOKEN_SET,
   sunset: SUNSET_TOKEN_SET,
   lavender: LAVENDER_TOKEN_SET,
   monochrome: MONOCHROME_TOKEN_SET,
-}
+};

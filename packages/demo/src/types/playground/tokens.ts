@@ -7,6 +7,7 @@ export interface ColorToken {
   l: number
   css: string
   hex: string
+  opacity?: number
   oklch?: {
     l: number
     c: number
@@ -19,25 +20,31 @@ export interface ColorToken {
  * Complete color palette for a theme
  */
 export interface ColorPalette {
-  background: ColorToken
-  foreground: ColorToken
-  card: ColorToken
-  cardForeground: ColorToken
-  popover: ColorToken
-  popoverForeground: ColorToken
-  primary: ColorToken
-  primaryForeground: ColorToken
-  secondary: ColorToken
-  secondaryForeground: ColorToken
-  muted: ColorToken
-  mutedForeground: ColorToken
-  accent: ColorToken
-  accentForeground: ColorToken
-  destructive: ColorToken
-  destructiveForeground: ColorToken
-  border: ColorToken
-  input: ColorToken
-  ring: ColorToken
+  background: ColorToken;
+  foreground: ColorToken;
+  card: ColorToken;
+  cardForeground: ColorToken;
+  popover: ColorToken;
+  popoverForeground: ColorToken;
+  primary: ColorToken;
+  primaryForeground: ColorToken;
+  secondary: ColorToken;
+  secondaryForeground: ColorToken;
+  muted: ColorToken;
+  mutedForeground: ColorToken;
+  accent: ColorToken;
+  accentForeground: ColorToken;
+  destructive: ColorToken;
+  destructiveForeground: ColorToken;
+  border: ColorToken;
+  input: ColorToken;
+  ring: ColorToken;
+  borderAccent?: ColorToken;
+  separator?: ColorToken;
+  cardBorder?: ColorToken;
+  sidebar?: ColorToken;
+  sidebarForeground?: ColorToken;
+  sidebarSeparator?: ColorToken;
 }
 
 /**

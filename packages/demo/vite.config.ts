@@ -45,7 +45,8 @@ const resolveAtAlias = (): Plugin => ({
   },
 })
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: process.env.VITE_BASE_PATH || '/',
   plugins: [
     react(),
     resolveAtAlias(),
@@ -74,4 +75,4 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react', 'react-dom'],
   },
-})
+}))

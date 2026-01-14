@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 import svgr from 'vite-plugin-svgr'
@@ -8,7 +7,6 @@ import svgr from 'vite-plugin-svgr'
 export default defineConfig({
   plugins: [
     react(),
-    vue(),
     svgr({
       svgrOptions: {
         exportType: 'default',
@@ -39,7 +37,6 @@ export default defineConfig({
         'react',
         'react-dom',
         'react/jsx-runtime',
-        'vue',
         '@radix-ui/react-accordion',
         '@radix-ui/react-checkbox',
         '@radix-ui/react-dialog',
@@ -56,15 +53,12 @@ export default defineConfig({
         '@radix-ui/react-switch',
         '@radix-ui/react-tabs',
         '@radix-ui/react-tooltip',
-        'radix-vue',
         'lucide-react',
-        'lucide-vue-next',
       ],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          vue: 'Vue',
         },
         assetFileNames: (assetInfo) => {
           if (assetInfo.name === 'style.css') return 'styles.css'

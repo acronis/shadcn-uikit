@@ -6,7 +6,7 @@ export default {
   content: [
     './index.html',
     './src/**/*.{js,jsx,ts,tsx,vue}',
-    '../shadcn-uikit/src/**/*.{js,jsx,ts,tsx,vue}', // Include library components
+    '../ui/src/**/*.{js,jsx,ts,tsx,vue}', // Include library components
   ],
   // Extend the library's config
   presets: [libraryConfig],

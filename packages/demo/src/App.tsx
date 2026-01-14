@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { Layout } from '@/components/Layout.tsx'
+import { Layout } from '@/layouts/Layout.tsx'
 import { Home } from '@/pages/Home.tsx'
 import { ButtonDemo } from '@/components/ButtonDemo.tsx'
 import { AlertDemo } from '@/components/AlertDemo.tsx'
@@ -62,7 +62,7 @@ import { Toaster } from 'sonner'
 function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Toaster position="top-right" />
         <Routes>
           <Route path="/demo/*" element={<DemoApp />} />
