@@ -7,8 +7,9 @@ import { ThemeMode } from '@/types/playground/index.ts'
 import { ThemeSwitcher } from '@/components/playground/ThemeSwitcher.tsx'
 import { TokenSelector } from '@/components/playground/TokenSelector.tsx'
 import { TokenEditor } from '@/components/playground/TokenEditor.tsx'
-import { ComponentShowcase } from '@/components/playground/ComponentShowcase.tsx'
+// import { ComponentShowcase } from '@/components/playground/ComponentShowcase.tsx'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
+import { ChatComponentsShowcase } from '@/components/playground/ChatComponentsShowcase.tsx';
 
 const PlaygroundPage: React.FC = () => {
   const { theme, activeTokenSetId, tokenSets, customTokenSet } = usePlaygroundStore()
@@ -61,7 +62,8 @@ const PlaygroundPage: React.FC = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-2">Token Editor</h2>
                 <p className="text-sm text-muted-foreground">
-                  Customize colors, radius, and other design tokens. Changes apply in real-time.
+                  Customize colors, radius, and other design tokens. Changes
+                  apply in real-time.
                 </p>
               </div>
 
@@ -72,19 +74,21 @@ const PlaygroundPage: React.FC = () => {
           <section className="bg-muted/30 p-6 overflow-y-auto">
             <div className="max-w-4xl mx-auto space-y-6">
               <div>
-                <h2 className="text-2xl font-semibold mb-2">Component Preview</h2>
+                <h2 className="text-2xl font-semibold mb-2">
+                  Component Preview
+                </h2>
                 <p className="text-sm text-muted-foreground">
                   See how your tokens affect all components in real-time
                 </p>
               </div>
 
-              <ComponentShowcase />
+              <ChatComponentsShowcase />
             </div>
           </section>
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 export { PlaygroundPage }
