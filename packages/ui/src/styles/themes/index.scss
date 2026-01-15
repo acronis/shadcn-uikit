@@ -1,0 +1,21 @@
+/**
+ * Theme System Entry Point
+ * 
+ * This file exports all available themes.
+ * Import individual themes as needed to reduce bundle size.
+ * 
+ * USAGE:
+ * 
+ * Option 1: Import all themes (larger bundle)
+ * @use '@acronis/shadcn-uikit/styles/themes';
+ * 
+ * Option 2: Import specific themes (smaller bundle)
+ * @use '@acronis/shadcn-uikit/styles/themes/acronis-default';
+ * @use '@acronis/shadcn-uikit/styles/themes/acronis-ocean';
+ * 
+ * Then apply theme via JavaScript:
+ * document.documentElement.className = 'theme-acronis-ocean';
+ */
+
+@use './acronis-default';
+@use './acronis-ocean';

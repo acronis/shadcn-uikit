@@ -7,6 +7,7 @@
 
 /* Import library's design tokens */
 @use '../../../ui/src/styles/tokens';
+@use '../../../ui/src/styles/themes';
 
 /* Tailwind directives - will be processed by demo-app's PostCSS */
 @tailwind base;
