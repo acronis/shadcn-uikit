@@ -6,7 +6,7 @@
  * color mode switching (light/dark).
  */
 
-export type ThemeName = 'acronis-default' | 'acronis-ocean' | 'custom'
+export type ThemeName = 'acronis-default' | 'acronis-ocean' | 'cyber-chat' | 'custom'
 export type ColorMode = 'light' | 'dark' | 'system'
 
 const THEME_CLASS_PREFIX = 'theme-'

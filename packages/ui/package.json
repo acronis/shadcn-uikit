@@ -19,6 +19,7 @@
     "./styles/themes": "./dist/themes/acronis-default.css",
     "./styles/themes/acronis-default": "./dist/themes/acronis-default.css",
     "./styles/themes/acronis-ocean": "./dist/themes/acronis-ocean.css",
+    "./styles/themes/cyber-chat": "./dist/themes/cyber-chat.css",
     "./components/*": "./dist/components/*"
   },
   "files": [

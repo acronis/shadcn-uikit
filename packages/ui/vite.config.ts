@@ -31,6 +31,7 @@ export default defineConfig({
         styles: resolve(__dirname, 'src/styles/index.scss'),
         'themes/acronis-default': resolve(__dirname, 'src/styles/theme-acronis-default.scss'),
         'themes/acronis-ocean': resolve(__dirname, 'src/styles/theme-acronis-ocean.scss'),
+        'themes/cyber-chat': resolve(__dirname, 'src/styles/theme-cyber-chat.scss'),
       },
       formats: ['es'],
       fileName: (format, entryName) => `${entryName}.js`,

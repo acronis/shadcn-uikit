@@ -12,6 +12,10 @@ The standard Acronis brand theme with the official color palette. This is the de
 
 An alternative blue-focused theme with deeper ocean tones. Provides a fresh, modern look while maintaining Acronis brand identity.
 
+### `cyber-chat.scss`
+
+A tech-focused theme designed for chat applications with bright cyber blue (#0285FF) and deep navy (#00204D). Features high contrast and modern aesthetics optimized for conversational interfaces.
+
 ### `_template.scss`
 
 A template file for creating custom themes. Copy this file and customize the color values to create your own theme.
@@ -29,6 +33,7 @@ A template file for creating custom themes. Copy this file and customize the col
 ```scss
 @use '@acronis/shadcn-uikit/styles/themes/acronis-default';
 @use '@acronis/shadcn-uikit/styles/themes/acronis-ocean';
+@use '@acronis/shadcn-uikit/styles/themes/cyber-chat';
 ```
 
 ### Apply Theme via JavaScript
@@ -37,6 +42,8 @@ A template file for creating custom themes. Copy this file and customize the col
 import { applyTheme } from '@acronis/shadcn-uikit';
 
 applyTheme('acronis-ocean');
+// or
+applyTheme('cyber-chat');
 ```
 
 ### Apply Theme via CSS Class
@@ -44,6 +51,11 @@ applyTheme('acronis-ocean');
 ```html
 <html class="theme-acronis-ocean">
   <!-- Your app -->
+</html>
+
+<!-- For cyber chat theme -->
+<html class="theme-cyber-chat">
+  <!-- Your chat app -->
 </html>
 ```
 
