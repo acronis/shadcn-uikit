@@ -54,45 +54,176 @@ npm run dev
 
 The demo will be available at `http://localhost:3000`.
 
-## 🎨 Color Schemes
+## 🎨 Themes
 
-The UI kit includes six pre-configured color schemes:
+The UI kit includes multiple pre-built themes with light and dark mode support:
 
-1. **Default Light** - Classic light theme
-2. **Default Dark** - Dark mode variant
-3. **Acronis Blue** - Brand blue theme
-4. **Acronis Orange** - Brand orange theme
-5. **Green** - Nature-inspired green theme
-6. **Purple** - Modern purple theme
+### Built-in Themes
 
-All themes are fully customizable through CSS variables.
+1. **Acronis Default** - Standard Acronis brand colors (included by default)
+2. **Acronis Ocean** - Alternative blue-focused theme with deeper ocean tones
+
+### Theme Features
+
+- ✅ **Light & Dark modes** - All themes support both modes
+- ✅ **CSS-based** - Zero JavaScript overhead
+- ✅ **Tree-shakeable** - Import only themes you use
+- ✅ **Customizable** - Override CSS variables or create custom themes
+- ✅ **SSR-compatible** - Works with server-side rendering
+
+### Creating Custom Themes
+
+You can create custom themes by copying the template file and customizing colors:
+
+```bash
+# See packages/ui/src/styles/themes/_template.scss for the template
+```
+
+All themes use CSS variables and can be fully customized. See [Theme Documentation](./packages/docs/THEMES.md) for details.
 
 ## 📖 Usage
 
-### Installing the UI Package
+### Installation
 
 ```bash
 npm install @acronis-platform/shadcn-uikit
+# or
+pnpm add @acronis-platform/shadcn-uikit
+# or
+yarn add @acronis-platform/shadcn-uikit
+```
+
+### Import Styles
+
+Import the main styles in your application entry point:
+
+```typescript
+// main.tsx or App.tsx
+import '@acronis-platform/shadcn-uikit/styles';
+```
+
+### Initialize Theme System (Optional)
+
+For theme switching and dark mode support:
+
+```typescript
+import { initializeThemeSystem } from '@acronis-platform/shadcn-uikit';
+
+// Initialize on app startup
+initializeThemeSystem();
 ```
 
 ### Using Components
 
+All components are exported from the main package:
+
 ```tsx
-import { Button, Card, CardHeader, CardTitle, CardContent, Input } from '@acronis-platform/shadcn-uikit';
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+  Input,
+  Label,
+  Badge,
+  Alert,
+  AlertTitle,
+  AlertDescription,
+} from '@acronis-platform/shadcn-uikit';
 
 function MyComponent() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Hello World</CardTitle>
+        <CardTitle>Welcome</CardTitle>
       </CardHeader>
-      <CardContent>
-        <Input placeholder="Enter text" />
-        <Button>Submit</Button>
+      <CardContent className="space-y-4">
+        <div>
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" type="email" placeholder="Enter your email" />
+        </div>
+        <Alert>
+          <AlertTitle>Info</AlertTitle>
+          <AlertDescription>This is an informational message.</AlertDescription>
+        </Alert>
       </CardContent>
+      <CardFooter>
+        <Button>Submit</Button>
+        <Badge variant="secondary">New</Badge>
+      </CardFooter>
     </Card>
   );
 }
+```
+
+### Available Components
+
+The library includes 40+ components:
+
+- **Layout**: Card, Separator, Sidebar, ScrollArea
+- **Forms**: Input, Textarea, Select, Checkbox, Radio, Switch, Label, Form
+- **Buttons**: Button, ButtonGroup
+- **Navigation**: NavigationMenu, Breadcrumb, Tabs, Pagination
+- **Overlays**: Dialog, Sheet, Drawer, Popover, Tooltip, AlertDialog
+- **Feedback**: Alert, Badge, Chip, Tag, Progress, Spinner, Toast (Sonner)
+- **Data Display**: Table, DataTable, Tree, Avatar, Calendar, DatePicker
+- **Advanced**: Combobox, Command, Filter, Chart, Empty, Carousel
+
+### Theme Switching
+
+Switch between themes programmatically:
+
+```typescript
+import { applyTheme, applyColorMode, toggleColorMode } from '@acronis-platform/shadcn-uikit';
+
+// Switch to ocean theme
+applyTheme('acronis-ocean');
+
+// Toggle dark mode
+toggleColorMode();
+
+// Or set specific mode
+applyColorMode('dark');
+applyColorMode('light');
+applyColorMode('system'); // Follow system preference
+```
+
+### Using Alternative Themes
+
+Import additional theme CSS files:
+
+```typescript
+// Import ocean theme
+import '@acronis-platform/shadcn-uikit/styles/themes/acronis-ocean';
+
+// Then apply it
+import { applyTheme } from '@acronis-platform/shadcn-uikit';
+applyTheme('acronis-ocean');
+```
+
+### TypeScript Support
+
+The library is fully typed with TypeScript:
+
+```tsx
+import type { ButtonProps, CardProps } from '@acronis-platform/shadcn-uikit';
+
+const MyButton: React.FC<ButtonProps> = (props) => {
+  return <Button {...props} />;
+};
+```
+
+### Utility Functions
+
+Access utility functions for styling:
+
+```typescript
+import { cn } from '@acronis-platform/shadcn-uikit';
+
+// Merge class names with Tailwind
+const className = cn('base-class', condition && 'conditional-class', 'another-class');
 ```
 
 ## 🏗️ Project Structure
@@ -146,8 +277,69 @@ See [LICENSE](./LICENSE) for more details.
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## 🚀 Quick Reference
+
+### Complete Setup Example
+
+```tsx
+// main.tsx
+import '@acronis-platform/shadcn-uikit/styles';
+import { initializeThemeSystem } from '@acronis-platform/shadcn-uikit';
+
+initializeThemeSystem();
+
+// App.tsx
+import { Button, Card, CardHeader, CardTitle, CardContent } from '@acronis-platform/shadcn-uikit';
+
+export function App() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>My App</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button>Click me</Button>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+### Build Output
+
+The package includes:
+- **JavaScript**: `dist/index.js` (49KB) - All components bundled
+- **TypeScript**: `dist/index.d.ts` + `dist/components/**/*.d.ts` - Full type definitions
+- **Styles**: `dist/shadcn-uikit.css` (15KB) - Main styles with default theme
+- **Themes**: `dist/themes/*.css` - Separate theme files (7-14KB each)
+
+### Package Exports
+
+```typescript
+// Main entry - all components
+import { Button } from '@acronis-platform/shadcn-uikit';
+
+// React-only entry
+import { Button } from '@acronis-platform/shadcn-uikit/react';
+
+// Styles
+import '@acronis-platform/shadcn-uikit/styles';
+
+// Themes
+import '@acronis-platform/shadcn-uikit/styles/themes/acronis-ocean';
+
+// Utils
+import { cn } from '@acronis-platform/shadcn-uikit';
+
+// Theme utilities
+import { applyTheme, toggleColorMode } from '@acronis-platform/shadcn-uikit';
+```
+
 ## 📚 Documentation
 
+- [Theme System Guide](./packages/docs/THEMES.md) - Complete theme usage guide
+- [Theme Build Configuration](./packages/docs/THEME_BUILD.md) - Build setup details
+- [Theme Architecture](./packages/demo/docs/THEME_ARCHITECTURE.md) - Token system architecture
 - [UI Package Documentation](./packages/ui/README.md)
 - [Demo Package Documentation](./packages/demo/README.md)
 
