@@ -86,6 +86,7 @@ export interface ChatService {
   clearSession(): void
   subscribe(listener: (state: ChatState) => void): () => void
   getState(): ChatState
+  answerQuestion(option: string): Promise<void>
 }
 
 export interface ChatContainerProps {
