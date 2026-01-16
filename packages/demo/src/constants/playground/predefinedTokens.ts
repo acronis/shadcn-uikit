@@ -150,7 +150,7 @@ export const CYBER_CHAT_TOKEN_SET: TokenSet = {
     primaryForeground: createToken(0, 0, 100),
     secondary: createToken(0, 0, 100),
     secondaryForeground: createToken(0, 0, 52),
-    muted: createToken(217.2, 32.6, 17.5),
+    muted: createToken(210, 50, 57),
     mutedForeground: createToken(215, 20.2, 65.1),
     accent: createToken(208, 100, 97),
     accentForeground: createToken(222.2, 47.4, 11.2),
