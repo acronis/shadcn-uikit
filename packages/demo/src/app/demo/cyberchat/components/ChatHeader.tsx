@@ -1,6 +1,8 @@
 import { Button, Switch } from '@acronis-platform/shadcn-uikit/react'
 import { ChevronDown } from 'lucide-react'
 import { useCyberChatStore } from '../store/useCyberChatStore'
+import { ThemeSwitcher } from '@/components/playground/ThemeSwitcher'
+import { TokenSelector } from '@/components/playground/TokenSelector'
 
 export function ChatHeader() {
   const {
@@ -27,6 +29,8 @@ export function ChatHeader() {
           />
           <span className="text-sm">Temporary chat</span>
         </div>
+        <TokenSelector />
+        <ThemeSwitcher variant="dropdown" size="sm" />
         <div className="relative">
           <Button
             variant="outline"

@@ -7,10 +7,28 @@ import { ChatInput } from './components/ChatInput'
 import { UserMessage } from './components/messages/UserMessage'
 import { AIMessage } from './components/messages/AIMessage'
 import { LoadingMessage } from './components/messages/LoadingMessage'
+import { usePlaygroundStore } from '@/store/playground/playgroundStore'
+import { applyTokenSet } from '@/lib/playground/cssVariables'
+import { ThemeMode } from '@/types/playground/index'
 
 export function CyberChatPage() {
   const { messages, isTyping } = useCyberChatStore()
+  const { theme, activeTokenSetId, tokenSets, customTokenSet } = usePlaygroundStore()
   const messagesEndRef = useRef<HTMLDivElement>(null)
+
+  // Apply theme and token sets
+  useEffect(() => {
+    const activeTokenSet = customTokenSet || tokenSets[activeTokenSetId]
+    if (activeTokenSet) {
+      const effectiveTheme =
+        theme.mode === ThemeMode.SYSTEM
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? ThemeMode.DARK
+            : ThemeMode.LIGHT
+          : theme.mode
+      applyTokenSet(activeTokenSet, effectiveTheme)
+    }
+  }, [theme, activeTokenSetId, tokenSets, customTokenSet])
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {

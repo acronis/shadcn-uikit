@@ -123,6 +123,11 @@
   --av-chart-3: 38 92% 50%; /* Orange */
   --av-chart-4: 280 100% 50%; /* Purple */
   --av-chart-5: 0 84% 60%; /* Red */
+  
+  /* Table specific - matching Figma design */
+  --av-table-background: 210 50% 97%; /* rgba(244,247,252,0.5) equivalent */
+  --av-table-border: 210 40% 93%; /* #eef4fa */
+  --av-table-row-separator: 213 65% 46%; /* rgba(38,104,197,0.05) - using base color, opacity in component */
 }
 
 @mixin theme-cyber-chat-dark {
@@ -199,6 +204,11 @@
   --av-sidebar-accent-foreground: 0 0% 98%;
   --av-sidebar-border: 210 40% 20%;
   --av-sidebar-ring: var(--color-brand-primary);
+  
+  /* Table specific - Dark mode */
+  --av-table-background: 210 60% 14%; /* Darker blue background */
+  --av-table-border: 210 40% 20%; /* Darker border */
+  --av-table-row-separator: 210 100% 50%; /* Primary blue for separators, opacity in component */
 }
 
 /* Theme class for explicit application */
