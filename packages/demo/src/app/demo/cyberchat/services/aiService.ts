@@ -173,9 +173,86 @@ What specific technology or concept would you like to discuss?`,
     }
   }
 
-  // Default response for general queries
-  return {
-    content: `I understand you're asking about: "${userMessage}"
+  // ELIZA-style responses for unknown messages
+  return generateElizaResponse(userMessage)
+}
+
+/**
+ * Generate ELIZA-style conversational responses
+ * Based on classic pattern matching and reflection techniques
+ */
+function generateElizaResponse(input: string): AIResponse {
+  const lowerInput = input.toLowerCase()
+
+  // Pattern: "I am/I'm ..."
+  if (lowerInput.match(/\b(i am|i'm)\b/)) {
+    const responses = [
+      `How long have you been ${input.toLowerCase().replace(/.*\b(i am|i'm)\s+/, '')}?`,
+      `Why do you tell me you're ${input.toLowerCase().replace(/.*\b(i am|i'm)\s+/, '')}?`,
+      `Do you believe it's normal to be ${input.toLowerCase().replace(/.*\b(i am|i'm)\s+/, '')}?`,
+    ]
+    return {
+      content: responses[Math.floor(Math.random() * responses.length)],
+    }
+  }
+
+  // Pattern: "I feel ..."
+  if (lowerInput.match(/\bi feel\b/)) {
+    return {
+      content: `Tell me more about these feelings. What makes you feel this way?`,
+    }
+  }
+
+  // Pattern: "I need ..."
+  if (lowerInput.match(/\bi need\b/)) {
+    const need = input.toLowerCase().replace(/.*\bi need\s+/, '')
+    return {
+      content: `Why do you need ${need}? What would having ${need} mean to you?`,
+    }
+  }
+
+  // Pattern: "Why ..."
+  if (lowerInput.startsWith('why')) {
+    return {
+      content: `That's an interesting question. Why do you think that might be? What's your intuition telling you?`,
+    }
+  }
+
+  // Pattern: "Can you ..."
+  if (lowerInput.match(/\bcan you\b/)) {
+    return {
+      content: `I can certainly try to help. What specific aspect would you like me to focus on? The more details you provide, the better I can assist you.`,
+    }
+  }
+
+  // Pattern: Questions with "what", "how", "when", "where"
+  if (lowerInput.match(/\b(what|how|when|where)\b/)) {
+    const responses = [
+      `That's a thoughtful question. Let me help you explore this. Could you provide more context about what you're trying to achieve?`,
+      `Interesting question! To give you the most relevant answer, could you tell me more about your specific situation or use case?`,
+      `I'd be happy to help with that. What's the broader context? Understanding your goals will help me provide better guidance.`,
+    ]
+    return {
+      content: responses[Math.floor(Math.random() * responses.length)],
+    }
+  }
+
+  // Pattern: Short inputs (1-3 words)
+  if (input.trim().split(/\s+/).length <= 3) {
+    const responses = [
+      `Could you elaborate on that? I'd like to understand better so I can provide more helpful insights.`,
+      `Tell me more about what you mean by "${input}". What specific aspect interests you?`,
+      `That's quite concise! Could you expand on what you'd like to know about "${input}"?`,
+    ]
+    return {
+      content: responses[Math.floor(Math.random() * responses.length)],
+    }
+  }
+
+  // Default conversational response
+  const defaultResponses = [
+    {
+      content: `I understand you're asking about: "${input}"
 
 I can help you with:
 - **Analysis and Research** - Deep dive into topics with structured insights
@@ -189,8 +266,34 @@ Could you provide more details about what specific aspect you'd like to explore?
 - Do you have any specific constraints or requirements?
 
 I'm here to provide detailed, actionable insights tailored to your needs.`,
-    badges: [
-      { text: 'General', variant: 'outline' },
-    ],
-  }
+    },
+    {
+      content: `That's an interesting topic! To give you the most relevant response, could you help me understand:
+
+**What's your context?**
+- Are you exploring this for a project, learning, or solving a specific problem?
+- What's your current level of familiarity with this topic?
+
+**What's your goal?**
+- Are you looking for an overview, detailed implementation, or best practices?
+- Do you have any specific constraints or requirements?
+
+The more context you provide, the more tailored and useful my response can be!`,
+    },
+    {
+      content: `I'd love to help you with that! Let me ask a few clarifying questions to ensure I give you the most relevant information:
+
+**Scope:**
+- Are you looking for a high-level overview or detailed technical guidance?
+- Is this for a specific use case or general understanding?
+
+**Background:**
+- What do you already know about this topic?
+- What's prompted this question?
+
+Feel free to share as much or as little as you'd like - I'll adapt my response accordingly!`,
+    },
+  ]
+
+  return defaultResponses[Math.floor(Math.random() * defaultResponses.length)]
 }
