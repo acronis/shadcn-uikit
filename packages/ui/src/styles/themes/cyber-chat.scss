@@ -27,7 +27,7 @@
   --color-text-inverse: 0 0% 100%; /* #FFFFFF - White text */
   
   /* Border Colors */
-  --color-border-primary: 210 20% 86%; /* #DADCE1 - Light gray border */
+  --color-border-primary: 220 13% 88%; /* #E0E2E5 - Light gray border matching Figma rgba(181,185,196,0.5) */
   --color-border-secondary: 210 40% 93%; /* #EEF4FA - Very light blue border */
   --color-border-accent: 210 100% 50%; /* #0285FF - Accent border */
   
@@ -180,7 +180,7 @@
   --av-info-foreground: 0 0% 98%;
   
   /* Border */
-  --av-border: 210 40% 24%; /* #234561 - Dark border */
+  --av-border: 220 13% 35%; /* #525761 - Lighter dark border for better visibility */
   --av-border-accent: var(--color-brand-primary);
   
   /* Input */
