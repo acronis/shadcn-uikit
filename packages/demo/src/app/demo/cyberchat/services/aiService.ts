@@ -20,157 +20,188 @@ export async function generateAIResponse(userMessage: string): Promise<AIRespons
 
   // Contextual responses based on keywords
   if (lowerMessage.includes('feedback') || lowerMessage.includes('triage')) {
-    return {
-      content: `I'll help you analyze customer feedback triage strategies.
+    const responses = [
+      {
+        content: `Okay so customer feedback triage - this is actually fascinating because most companies completely mess this up. Let me break down what actually works:
 
-**Key Framework Recommendations:**
+The RICE framework is your friend here. Reach × Impact × Confidence ÷ Effort. Sounds simple but people forget the Confidence part and end up chasing shiny features that nobody wants.
 
-**RICE Prioritization Model**
-- Reach: Number of customers affected
-- Impact: Degree of improvement
-- Confidence: Certainty in estimates
-- Effort: Time and resources required
+Here's what I've seen work in practice:
+- Tag everything immediately (bug, feature, improvement, question)
+- Use sentiment analysis to catch the angry customers first
+- Weekly triage meetings, not daily - daily is overkill
+- The Kano Model helps separate "must-haves" from "delighters"
 
-**Categorization Approach**
-1. **Urgent Issues** - Critical bugs, security concerns
-2. **Feature Requests** - New functionality suggestions
-3. **Improvements** - Enhancement to existing features
-4. **Questions** - Support and clarification needs
+The HEART framework (Happiness, Engagement, Adoption, Retention, Task Success) is great for measuring impact after you ship. Don't sleep on it.
 
-**Modern Tools & AI/NLP Solutions**
-- Sentiment analysis for priority detection
-- Automatic categorization using ML models
-- HEART framework (Happiness, Engagement, Adoption, Retention, Task Success)
-- Kano Model for feature prioritization
+Oh and if you're dealing with scale, definitely look into automated categorization with NLP. We're talking BERT models fine-tuned on your domain. Game changer.
 
-Would you like me to dive deeper into any specific framework or provide implementation examples?`,
-      badges: [
-        { text: 'Product Management', variant: 'outline' },
-        { text: 'AI/ML', variant: 'outline' },
-      ],
-    }
+What's your current volume looking like? That'll determine if you need the fancy ML stuff or can stick with manual tagging.`,
+        badges: [{ text: 'Product Management', variant: 'outline' }],
+      },
+      {
+        content: `Customer feedback triage! Right, so this is one of those things that seems straightforward until you actually try to do it at scale.
+
+First off - RICE prioritization. Everyone talks about it, fewer people actually use it correctly. The formula is (Reach × Impact × Confidence) / Effort. The Confidence score is what separates good PMs from great ones.
+
+Real talk though? The frameworks are just tools. What matters is:
+
+1. Speed of initial categorization (automate this if you can)
+2. Consistent severity levels across your team
+3. Actually closing the loop with customers who gave feedback
+
+For the ML/AI angle - sentiment analysis is table stakes now. You can use pre-trained models or fine-tune on your data. I'd recommend starting with something like DistilBERT for classification, it's fast and good enough for most use cases.
+
+The Kano Model is underrated for understanding which features will actually move the needle vs which ones customers just expect to work.
+
+Are you building this from scratch or integrating with existing tools?`,
+        badges: [{ text: 'AI/ML', variant: 'outline' }],
+      },
+    ]
+    return responses[Math.floor(Math.random() * responses.length)]
   }
 
   if (lowerMessage.includes('security') || lowerMessage.includes('cybersecurity')) {
-    return {
-      content: `Here's a comprehensive overview of modern cybersecurity best practices:
+    const responses = [
+      {
+        content: `Cybersecurity in 2025 is wild. Zero Trust isn't just a buzzword anymore - it's basically mandatory if you're handling any sensitive data.
 
-**Core Security Principles:**
+The core idea: never trust, always verify. Every request gets authenticated and authorized, even if it's coming from inside your network. Because let's be honest, the perimeter is dead. Everyone's remote, everything's in the cloud.
 
-**1. Zero Trust Architecture**
-- Never trust, always verify
-- Micro-segmentation of networks
-- Continuous authentication and authorization
+Defense in depth is still your best friend - multiple layers so if one fails, you're not completely screwed. Think endpoint protection, network segmentation, application firewalls, the whole stack.
 
-**2. Defense in Depth**
-- Multiple layers of security controls
-- Endpoint protection
-- Network security
-- Application security
+MFA everywhere. Non-negotiable. And I mean real MFA, not SMS codes (those can be SIM-swapped). Use authenticator apps or hardware keys.
 
-**3. Key Implementation Areas**
-- Multi-factor authentication (MFA)
-- Encryption at rest and in transit
-- Regular security audits and penetration testing
-- Incident response planning
-- Security awareness training
+The scary stuff right now? AI-powered attacks are getting sophisticated. Supply chain compromises (remember SolarWinds?). Cloud misconfigurations - seriously, so many breaches are just S3 buckets left open.
 
-**Emerging Threats:**
-- AI-powered attacks
-- Supply chain vulnerabilities
-- Cloud misconfigurations
-- Ransomware evolution
+Ransomware is evolving too. It's not just encryption anymore, they're exfiltrating data first for double extortion.
 
-Would you like specific recommendations for any particular area?`,
-      badges: [
-        { text: 'Security', variant: 'outline' },
-        { text: 'Best Practices', variant: 'outline' },
-      ],
-    }
+What's your threat model? Enterprise, startup, personal?`,
+        badges: [{ text: 'Security', variant: 'outline' }],
+      },
+      {
+        content: `Security! Okay so the landscape has changed a lot. Zero Trust Architecture is the new standard - basically assume everything is compromised until proven otherwise.
+
+Key things to focus on:
+- MFA on everything (and I mean EVERYTHING)
+- Encrypt data at rest and in transit
+- Regular pen testing and security audits
+- Have an actual incident response plan (not just "we'll figure it out")
+- Security awareness training for your team (humans are always the weakest link)
+
+The threat landscape is getting nastier. AI-powered attacks can now bypass traditional detection. Supply chain attacks are huge - attackers compromise a vendor to get to you. Cloud misconfigs are still the #1 cause of breaches (seriously, check your S3 buckets).
+
+Ransomware groups are now doing double extortion - encrypt your data AND threaten to leak it if you don't pay.
+
+Defense in depth is your strategy - multiple layers of security so a single failure doesn't sink you. Endpoint, network, application, data - protect at every level.
+
+What specific area are you most concerned about?`,
+        badges: [{ text: 'Best Practices', variant: 'outline' }],
+      },
+    ]
+    return responses[Math.floor(Math.random() * responses.length)]
   }
 
   if (lowerMessage.includes('design') || lowerMessage.includes('ui') || lowerMessage.includes('ux')) {
-    return {
-      content: `Let me share insights on modern UI/UX design principles:
+    const responses = [
+      {
+        content: `UI/UX design right now is all about systems thinking. You can't just design screens anymore - you need a whole design system or you'll end up with inconsistent garbage.
 
-**Core Design Principles:**
+User-centered design sounds obvious but most teams skip the research part and jump straight to wireframes. Bad move. Talk to actual users first. Build personas. Map their journeys. Find the pain points BEFORE you start designing.
 
-**1. User-Centered Design**
-- Understand user needs and pain points
-- Create user personas and journey maps
-- Conduct usability testing
+Visual hierarchy is your secret weapon. Size, color, spacing - use them to guide attention. If everything is emphasized, nothing is emphasized. Learn this or your designs will be chaotic.
 
-**2. Visual Hierarchy**
-- Use size, color, and spacing effectively
-- Guide user attention to important elements
-- Maintain consistency across interfaces
+Accessibility isn't optional anymore. WCAG 2.1 AA is the baseline. 4.5:1 contrast ratio for text, keyboard navigation, screen reader support, visible focus indicators. It's not just about compliance - it makes your product better for everyone.
 
-**3. Accessibility (WCAG)**
-- Color contrast ratios (4.5:1 minimum)
-- Keyboard navigation support
+Current trends worth following:
+- Design systems (Figma + Storybook combo is chef's kiss)
+- Dark mode (but do it right, not just inverted colors)
+- Micro-interactions that feel good
+- Responsive design that actually adapts, not just scales
+
+Tailwind CSS has changed the game for implementation. Utility-first styling means designers and devs speak the same language.
+
+What are you building?`,
+        badges: [{ text: 'Design', variant: 'outline' }],
+      },
+      {
+        content: `Design! Okay so modern UI/UX is way more sophisticated than it used to be.
+
+First principle: user-centered design. Sounds basic but you'd be surprised how many teams skip this. Do the research. Build personas. Map user journeys. Test early and often. Your assumptions are probably wrong.
+
+Visual hierarchy - this is what separates good designers from great ones. Use size, color, whitespace to create a clear path for the eye. Every element should have a purpose in the hierarchy.
+
+Accessibility is non-negotiable now. WCAG guidelines exist for a reason:
+- 4.5:1 contrast minimum for normal text
+- Keyboard navigation for everything
 - Screen reader compatibility
-- Focus indicators
+- Proper focus states
 
-**Modern Trends:**
-- Design systems and component libraries
-- Dark mode support
-- Micro-interactions and animations
-- Responsive and adaptive design
+The tooling has gotten so good. Figma for collaboration, design systems for consistency, Tailwind for implementation. If you're not using a design system yet, start building one.
 
-**Tools & Frameworks:**
-- Figma for design collaboration
-- Tailwind CSS for utility-first styling
-- React/Vue for component-based architecture
+Dark mode is expected now, not a nice-to-have. But do it properly - don't just invert colors, rethink the whole palette.
 
-What specific aspect would you like to explore further?`,
-      badges: [
-        { text: 'Design', variant: 'outline' },
-        { text: 'UX', variant: 'outline' },
-      ],
-    }
+Micro-interactions matter more than you think. That little animation when you click a button? It makes the UI feel alive.
+
+Are you designing for web, mobile, or both?`,
+        badges: [{ text: 'UX', variant: 'outline' }],
+      },
+    ]
+    return responses[Math.floor(Math.random() * responses.length)]
   }
 
   if (lowerMessage.includes('code') || lowerMessage.includes('programming') || lowerMessage.includes('development')) {
-    return {
-      content: `I can help with software development best practices:
+    const responses = [
+      {
+        content: `Development best practices! Alright, let's talk about what actually matters vs what people argue about on Twitter.
 
-**Clean Code Principles:**
+Clean code is real. Meaningful names, small functions, self-documenting code. If you need comments to explain what your code does, your code isn't clear enough. (Exception: WHY something is done, not WHAT it does.)
 
-**1. Readability**
-- Use meaningful variable and function names
-- Keep functions small and focused
-- Write self-documenting code
+SOLID principles are good guidelines but don't be dogmatic. Single Responsibility is gold. The others... use them when they make sense, not because you memorized the acronym.
 
-**2. SOLID Principles**
-- Single Responsibility Principle
-- Open/Closed Principle
-- Liskov Substitution Principle
-- Interface Segregation Principle
-- Dependency Inversion Principle
+Testing pyramid: lots of unit tests, some integration tests, few e2e tests. Unit tests are fast and catch most bugs. Integration tests catch the stuff that breaks when things connect. E2e tests are slow but test real user flows.
 
-**3. Testing Strategy**
-- Unit tests for individual components
-- Integration tests for system interactions
-- End-to-end tests for user workflows
+Modern dev workflow:
+- Git for version control (learn rebase, your history will thank you)
+- CI/CD pipelines (automate everything you can)
+- Code reviews (best way to share knowledge and catch bugs)
+- Pair programming for complex stuff
+- Document your APIs properly (OpenAPI/Swagger is your friend)
 
-**Modern Development Practices:**
-- Version control with Git
-- CI/CD pipelines
-- Code reviews and pair programming
-- Documentation and API design
-- Performance optimization
+Current tech stacks that don't suck:
+- Frontend: React/Next.js with TypeScript (or Vue if that's your thing)
+- Backend: Node.js, Python (FastAPI is great), or Go for performance
+- Database: PostgreSQL for relational, MongoDB if you really need document store, Redis for caching
 
-**Popular Tech Stacks:**
-- Frontend: React, Vue, TypeScript
-- Backend: Node.js, Python, Go
-- Database: PostgreSQL, MongoDB, Redis
+What are you building?`,
+        badges: [{ text: 'Development', variant: 'outline' }],
+      },
+      {
+        content: `Software development! Let's cut through the noise and talk about what actually works.
 
-What specific technology or concept would you like to discuss?`,
-      badges: [
-        { text: 'Development', variant: 'outline' },
-        { text: 'Best Practices', variant: 'outline' },
-      ],
-    }
+Clean code isn't about being fancy - it's about being clear. Name things well. Keep functions small and focused. If your function does more than one thing, split it up. Future you will be grateful.
+
+SOLID principles are useful but don't worship them. Single Responsibility Principle is probably the most important - one class/function should have one reason to change. The rest are good guidelines but use judgment.
+
+Testing: write tests. Seriously. Unit tests for your functions, integration tests for your APIs, e2e tests for critical user flows. The testing pyramid is real - lots of unit tests, fewer integration tests, even fewer e2e tests.
+
+Version control: Git. Learn it properly. Commit messages should explain WHY, not what (the diff shows what). Use branches. Rebase to keep history clean.
+
+CI/CD is not optional anymore. Automate your builds, tests, and deployments. If you're manually deploying in 2025, you're doing it wrong.
+
+Code reviews are gold. They catch bugs, share knowledge, and improve code quality. Don't skip them.
+
+Tech stack recommendations:
+- TypeScript > JavaScript (the type safety is worth it)
+- React/Next.js or Vue for frontend
+- Node.js, Python, or Go for backend
+- PostgreSQL for most use cases, Redis for caching
+
+What's your stack looking like?`,
+        badges: [{ text: 'Best Practices', variant: 'outline' }],
+      },
+    ]
+    return responses[Math.floor(Math.random() * responses.length)]
   }
 
   // ELIZA-style responses for unknown messages

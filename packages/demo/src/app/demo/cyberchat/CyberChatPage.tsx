@@ -36,39 +36,47 @@ export function CyberChatPage() {
   }, [messages, isTyping])
 
   return (
-    <div className="flex h-screen bg-background">
+    <div className="flex h-screen bg-background overflow-hidden">
       <CyberChatSidebar />
 
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col">
-        <ChatHeader />
+      <div className="flex-1 flex flex-col min-h-0">
+        {/* Sticky Header */}
+        <div className="flex-shrink-0">
+          <ChatHeader />
+        </div>
 
-        {/* Chat Messages */}
-        <ScrollArea className="flex-1 px-6 py-6">
-          <div className="max-w-4xl mx-auto space-y-6">
-            {messages.map((message) => {
-              if (message.type === 'user') {
-                return <UserMessage key={message.id} message={message} />
-              }
-              if (message.type === 'ai') {
-                return <AIMessage key={message.id} message={message} />
-              }
-              if (message.type === 'loading') {
-                return (
-                  <LoadingMessage
-                    key={message.id}
-                    title={typeof message.content === 'string' ? message.content : 'Processing...'}
-                  />
-                )
-              }
-              return null
-            })}
-            {isTyping && <LoadingMessage />}
-            <div ref={messagesEndRef} />
-          </div>
-        </ScrollArea>
+        {/* Chat Messages - Scrollable */}
+        <div className="flex-1 overflow-hidden">
+          <ScrollArea className="h-full px-6 py-6">
+            <div className="max-w-4xl mx-auto space-y-6">
+              {messages.map((message) => {
+                if (message.type === 'user') {
+                  return <UserMessage key={message.id} message={message} />
+                }
+                if (message.type === 'ai') {
+                  return <AIMessage key={message.id} message={message} />
+                }
+                if (message.type === 'loading') {
+                  return (
+                    <LoadingMessage
+                      key={message.id}
+                      title={typeof message.content === 'string' ? message.content : 'Processing...'}
+                    />
+                  )
+                }
+                return null
+              })}
+              {isTyping && <LoadingMessage />}
+              <div ref={messagesEndRef} />
+            </div>
+          </ScrollArea>
+        </div>
 
-        <ChatInput />
+        {/* Fixed Input */}
+        <div className="flex-shrink-0">
+          <ChatInput />
+        </div>
       </div>
     </div>
   )
