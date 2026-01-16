@@ -22,7 +22,9 @@ export function MessageAvatar({ type, size = 'md' }: MessageAvatarProps) {
   if (type === 'ai') {
     return (
       <Avatar className={`${sizeClass} flex-shrink-0`}>
-        <AvatarFallback className={textSizeClass}>AI</AvatarFallback>
+        <AvatarFallback className={`${textSizeClass} bg-secondary text-foreground`}>
+          AI
+        </AvatarFallback>
       </Avatar>
     )
   }

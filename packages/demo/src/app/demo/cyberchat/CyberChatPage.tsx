@@ -36,7 +36,7 @@ export function CyberChatPage() {
   }, [messages, isTyping])
 
   return (
-    <div className="flex h-screen bg-background">
+    <div className="flex h-screen bg-background theme-cyber-chat">
       <CyberChatSidebar />
 
       {/* Main Chat Area */}

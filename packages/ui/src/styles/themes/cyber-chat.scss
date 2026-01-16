@@ -65,11 +65,11 @@
   --av-primary-foreground: var(--color-text-inverse);
   
   /* Secondary */
-  --av-secondary: var(--color-surface-quaternary);
+  --av-secondary: 210 30% 94%; /* #EEF4FA - Subtle blue for secondary elements */
   --av-secondary-foreground: var(--color-text-primary);
   
   /* Muted */
-  --av-muted: var(--color-surface-tertiary);
+  --av-muted: 210 50% 97%; /* #F4F7FC - Light blue-gray matching Figma table background */
   --av-muted-foreground: var(--color-text-secondary);
   
   /* Accent */
@@ -153,11 +153,11 @@
   --av-primary-foreground: var(--color-text-inverse);
   
   /* Secondary */
-  --av-secondary: 210 40% 18%; /* #1A3552 - Dark blue-gray */
+  --av-secondary: 210 40% 18%; /* #1A3552 - Dark blue-gray for secondary elements */
   --av-secondary-foreground: 0 0% 98%;
   
   /* Muted */
-  --av-muted: 210 40% 16%; /* #142E47 - Muted dark blue */
+  --av-muted: 210 50% 20%; /* #1A2E47 - Darker blue-gray for muted backgrounds */
   --av-muted-foreground: 0 0% 64%;
   
   /* Accent */
