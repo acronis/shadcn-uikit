@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { usePlaygroundStore } from '@/store/playground/playgroundStore.ts'
@@ -13,6 +13,7 @@ import { ChatComponentsShowcase } from '@/components/playground/ChatComponentsSh
 
 const PlaygroundPage: React.FC = () => {
   const { theme, activeTokenSetId, tokenSets, customTokenSet } = usePlaygroundStore()
+  const [activeTab, setActiveTab] = useState('components')
 
   useEffect(() => {
     const activeTokenSet = customTokenSet || tokenSets[activeTokenSetId]
@@ -28,8 +29,8 @@ const PlaygroundPage: React.FC = () => {
   }, [theme, activeTokenSetId, tokenSets, customTokenSet])
 
   return (
-    <div className="playground-page min-h-screen bg-background text-foreground flex flex-col">
-      <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
+    <div className="playground-page h-screen bg-background text-foreground flex flex-col">
+      <header className="flex-shrink-0 z-50 border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
         <div className="w-full px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -55,7 +56,7 @@ const PlaygroundPage: React.FC = () => {
         </div>
       </header>
 
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
           <section className="border-r border-border bg-background p-6 overflow-y-auto">
             <div className="max-w-3xl mx-auto space-y-6">
@@ -71,48 +72,65 @@ const PlaygroundPage: React.FC = () => {
             </div>
           </section>
 
-          <section className="bg-muted/30 p-6 overflow-y-auto">
-            <div className="max-w-4xl mx-auto space-y-6">
-              <div>
-                <h2 className="text-2xl font-semibold mb-2">
-                  Component Preview
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  See how your tokens affect all components in real-time
-                </p>
+          <section className="bg-muted/30 flex flex-col h-full overflow-y-auto">
+            <Tabs
+              value={activeTab}
+              onValueChange={setActiveTab}
+              className="flex flex-col h-full"
+            >
+              <div className="flex-shrink-0 p-6 pb-4 border-b border-border">
+                <div className="max-w-4xl mx-auto space-y-6">
+                  <div>
+                    <h2 className="text-2xl font-semibold mb-2">
+                      Component Preview
+                    </h2>
+                    <p className="text-sm text-muted-foreground">
+                      See how your tokens affect all components in real-time
+                    </p>
+                  </div>
+
+                  <TabsList className="grid w-full grid-cols-5">
+                    <TabsTrigger value="components">Components</TabsTrigger>
+                    <TabsTrigger value="chat">Chat</TabsTrigger>
+                    <TabsTrigger value="showcase3" disabled>
+                      Showcase 3
+                    </TabsTrigger>
+                    <TabsTrigger value="showcase4" disabled>
+                      Showcase 4
+                    </TabsTrigger>
+                    <TabsTrigger value="showcase5" disabled>
+                      Showcase 5
+                    </TabsTrigger>
+                  </TabsList>
+                </div>
               </div>
 
-              <Tabs defaultValue="components" className="w-full">
-                <TabsList className="grid w-full grid-cols-5">
-                  <TabsTrigger value="components">Components</TabsTrigger>
-                  <TabsTrigger value="chat">Chat</TabsTrigger>
-                  <TabsTrigger value="showcase3" disabled>Showcase 3</TabsTrigger>
-                  <TabsTrigger value="showcase4" disabled>Showcase 4</TabsTrigger>
-                  <TabsTrigger value="showcase5" disabled>Showcase 5</TabsTrigger>
-                </TabsList>
-                <TabsContent value="components" className="mt-6">
-                  <ComponentShowcase />
-                </TabsContent>
-                <TabsContent value="chat" className="mt-6">
-                  <ChatComponentsShowcase />
-                </TabsContent>
-                <TabsContent value="showcase3" className="mt-6">
-                  <div className="text-center text-muted-foreground py-8">
-                    Showcase 3 - Coming soon
-                  </div>
-                </TabsContent>
-                <TabsContent value="showcase4" className="mt-6">
-                  <div className="text-center text-muted-foreground py-8">
-                    Showcase 4 - Coming soon
-                  </div>
-                </TabsContent>
-                <TabsContent value="showcase5" className="mt-6">
-                  <div className="text-center text-muted-foreground py-8">
-                    Showcase 5 - Coming soon
-                  </div>
-                </TabsContent>
-              </Tabs>
-            </div>
+              <div className="flex-1 overflow-y-auto px-6 pb-6">
+                <div className="max-w-4xl mx-auto">
+                  <TabsContent value="components" className="mt-0">
+                    <ComponentShowcase />
+                  </TabsContent>
+                  <TabsContent value="chat" className="mt-0">
+                    <ChatComponentsShowcase />
+                  </TabsContent>
+                  <TabsContent value="showcase3" className="mt-0">
+                    <div className="text-center text-muted-foreground py-8">
+                      Showcase 3 - Coming soon
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="showcase4" className="mt-0">
+                    <div className="text-center text-muted-foreground py-8">
+                      Showcase 4 - Coming soon
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="showcase5" className="mt-0">
+                    <div className="text-center text-muted-foreground py-8">
+                      Showcase 5 - Coming soon
+                    </div>
+                  </TabsContent>
+                </div>
+              </div>
+            </Tabs>
           </section>
         </div>
       </main>
