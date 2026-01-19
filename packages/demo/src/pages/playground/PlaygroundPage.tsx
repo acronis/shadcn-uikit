@@ -7,8 +7,8 @@ import { ThemeMode } from '@/types/playground/index.ts'
 import { ThemeSwitcher } from '@/components/playground/ThemeSwitcher.tsx'
 import { TokenSelector } from '@/components/playground/TokenSelector.tsx'
 import { TokenEditor } from '@/components/playground/TokenEditor.tsx'
-// import { ComponentShowcase } from '@/components/playground/ComponentShowcase.tsx'
-import { Button } from '@acronis-platform/shadcn-uikit/react'
+import { ComponentShowcase } from '@/components/playground/ComponentShowcase.tsx'
+import { Button, Tabs, TabsContent, TabsList, TabsTrigger } from '@acronis-platform/shadcn-uikit/react'
 import { ChatComponentsShowcase } from '@/components/playground/ChatComponentsShowcase.tsx';
 
 const PlaygroundPage: React.FC = () => {
@@ -82,7 +82,36 @@ const PlaygroundPage: React.FC = () => {
                 </p>
               </div>
 
-              <ChatComponentsShowcase />
+              <Tabs defaultValue="components" className="w-full">
+                <TabsList className="grid w-full grid-cols-5">
+                  <TabsTrigger value="components">Components</TabsTrigger>
+                  <TabsTrigger value="chat">Chat</TabsTrigger>
+                  <TabsTrigger value="showcase3" disabled>Showcase 3</TabsTrigger>
+                  <TabsTrigger value="showcase4" disabled>Showcase 4</TabsTrigger>
+                  <TabsTrigger value="showcase5" disabled>Showcase 5</TabsTrigger>
+                </TabsList>
+                <TabsContent value="components" className="mt-6">
+                  <ComponentShowcase />
+                </TabsContent>
+                <TabsContent value="chat" className="mt-6">
+                  <ChatComponentsShowcase />
+                </TabsContent>
+                <TabsContent value="showcase3" className="mt-6">
+                  <div className="text-center text-muted-foreground py-8">
+                    Showcase 3 - Coming soon
+                  </div>
+                </TabsContent>
+                <TabsContent value="showcase4" className="mt-6">
+                  <div className="text-center text-muted-foreground py-8">
+                    Showcase 4 - Coming soon
+                  </div>
+                </TabsContent>
+                <TabsContent value="showcase5" className="mt-6">
+                  <div className="text-center text-muted-foreground py-8">
+                    Showcase 5 - Coming soon
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
           </section>
         </div>
