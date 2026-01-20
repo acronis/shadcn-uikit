@@ -1,3 +1,16 @@
+## [0.11.0](https://github.com/acronis/shadcn-uikit/compare/v0.10.0...v0.11.0) (2026-01-20)
+
+
+### Features
+
+* add ResizablePanel components and integrate react-resizable-panels ([e3ffa84](https://github.com/acronis/shadcn-uikit/commit/e3ffa84efb12e070789b86137a22e2c12832d8d2))
+* implement typography settings with CSS variables and update Tailwind configuration ([e8d9872](https://github.com/acronis/shadcn-uikit/commit/e8d987267bd5bd84f3fa0896086f847024027a7d))
+
+
+### Bug Fixes
+
+* update tailwind configuration for consistency in color and screen settings ([c044e94](https://github.com/acronis/shadcn-uikit/commit/c044e94e7ffdd1e3ed7d3daa76a9c883867bc837))
+
 ## [0.10.0](https://github.com/acronis/shadcn-uikit/compare/v0.9.2...v0.10.0) (2026-01-19)
 
 
@@ -31,16 +44,4 @@
 ### Bug Fixes
 
 * update table component styles for improved design consistency ([439fdc2](https://github.com/acronis/shadcn-uikit/commit/439fdc2d63034fba231948a91b3d2c77d2acb5d0))
-
-## [0.8.0](https://github.com/acronis/shadcn-uikit/compare/v0.7.0...v0.8.0) (2026-01-16)
-
-
-### Features
-
-* integrate ThemeSwitcher and TokenSelector in ChatHeader ([8fb5e33](https://github.com/acronis/shadcn-uikit/commit/8fb5e33268098db172eb96bf4a7616b0be35a3e0))
-
-
-### Bug Fixes
-
-* update button outline color and adjust border colors for better design consistency ([7636a48](https://github.com/acronis/shadcn-uikit/commit/7636a48e554373cf94d0f541c3759baafeb8e22b))
 
