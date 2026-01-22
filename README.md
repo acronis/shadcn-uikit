@@ -27,8 +27,8 @@ Interactive demo application showcasing all components with multiple color schem
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm 9+
+- Node.js 18+
+- pnpm 10+
 
 ### Installation
 
@@ -38,10 +38,10 @@ git clone https://github.com/acronis/shadcn-uikit.git
 cd shadcn-uikit
 
 # Install dependencies
-npm install
+pnpm install
 
 # Build all packages
-npm run build
+pnpm run build
 ```
 
 ### Running the Demo
@@ -49,7 +49,7 @@ npm run build
 ```bash
 # Start the demo application
 cd packages/demo
-npm run dev
+pnpm run dev
 ```
 
 The demo will be available at `http://localhost:3000`.
@@ -252,19 +252,19 @@ shadcn-uikit/
 ### Build All Packages
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 ### Type Checking
 
 ```bash
-npm run type-check
+pnpm run type-check
 ```
 
 ### Linting
 
 ```bash
-npm run lint
+pnpm run lint
 ```
 
 ## 📝 License
