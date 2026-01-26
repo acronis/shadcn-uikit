@@ -1,3 +1,10 @@
+## [0.13.0](https://github.com/acronis/shadcn-uikit/compare/v0.12.1...v0.13.0) (2026-01-26)
+
+
+### Features
+
+* add PostCSS configuration with Tailwind CSS and Autoprefixer plugins ([6dcdab5](https://github.com/acronis/shadcn-uikit/commit/6dcdab5628061b0fb4f122532b31bc2db1dc2e6a))
+
 ## [0.12.1](https://github.com/acronis/shadcn-uikit/compare/v0.12.0...v0.12.1) (2026-01-21)
 
 
@@ -31,11 +38,4 @@
 ### Features
 
 * reorganize exports in react.ts for improved component structure ([26653ee](https://github.com/acronis/shadcn-uikit/commit/26653ee7fa82af718fc319181e9f11568b5484bd))
-
-## [0.9.2](https://github.com/acronis/shadcn-uikit/compare/v0.9.1...v0.9.2) (2026-01-16)
-
-
-### Bug Fixes
-
-* update muted color token for improved design consistency and dynamic theming ([d1cb2de](https://github.com/acronis/shadcn-uikit/commit/d1cb2dee7a285bf89e2f9acbac71b276e626b4de))
 
