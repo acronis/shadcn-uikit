@@ -146,8 +146,10 @@ If you're building your own Tailwind setup:
 
 ```javascript
 // tailwind.config.js
-module.exports = {
-  presets: [require('@acronis-platform/shadcn-uikit/tailwind-preset')],
+import preset from '@acronis-platform/shadcn-uikit/tailwind-preset';
+
+export default {
+  presets: [preset],
   content: [
     './src/**/*.{js,jsx,ts,tsx}',
     './node_modules/@acronis-platform/shadcn-uikit/dist/**/*.js',
@@ -174,8 +176,10 @@ You can extend or override the preset configuration:
 
 ```javascript
 // tailwind.config.js
-module.exports = {
-  presets: [require('@acronis-platform/shadcn-uikit/tailwind-preset')],
+import preset from '@acronis-platform/shadcn-uikit/tailwind-preset';
+
+export default {
+  presets: [preset],
   theme: {
     extend: {
       colors: {
