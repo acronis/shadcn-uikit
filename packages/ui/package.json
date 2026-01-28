@@ -16,19 +16,30 @@
       "types": "./dist/react.d.ts"
     },
     "./styles": "./dist/shadcn-uikit.css",
+    "./styles/full": "./dist/shadcn-uikit-full.css",
+    "./styles/tokens": "./dist/tokens.css",
+    "./styles/base": "./dist/base.css",
+    "./styles/components": "./dist/components.css",
+    "./styles/utilities": "./dist/utilities.css",
     "./styles/themes": "./dist/themes/acronis-default.css",
     "./styles/themes/acronis-default": "./dist/themes/acronis-default.css",
     "./styles/themes/acronis-ocean": "./dist/themes/acronis-ocean.css",
     "./styles/themes/cyber-chat": "./dist/themes/cyber-chat.css",
+    "./tailwind-preset": {
+      "require": "./tailwind.preset.cjs",
+      "import": "./dist/tailwind-preset.js"
+    },
     "./components/*": "./dist/components/*"
   },
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "tailwind.preset.cjs"
   ],
   "scripts": {
-    "build": "npm run build:lib && npm run build:llms",
+    "build": "pnpm run build:preset && pnpm run build:lib && pnpm run build:llms",
+    "build:preset": "tsx scripts/generate-preset.ts",
     "build:lib": "vite build",
     "build:types": "tsc --project tsconfig.build.json",
     "build:llms": "tsx scripts/generate-llms-txt.ts",
@@ -46,13 +57,17 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "peerDependenciesMeta": {
     "react": {
       "optional": true
     },
     "react-dom": {
+      "optional": true
+    },
+    "tailwindcss-animate": {
       "optional": true
     }
   },
