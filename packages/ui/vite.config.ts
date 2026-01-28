@@ -29,6 +29,11 @@ export default defineConfig({
         index: resolve(__dirname, 'src/index.ts'),
         react: resolve(__dirname, 'src/react.ts'),
         styles: resolve(__dirname, 'src/styles/index.scss'),
+        'styles-tokens': resolve(__dirname, 'src/styles/tokens-only.scss'),
+        'styles-full': resolve(__dirname, 'src/styles/full.scss'),
+        'styles-base': resolve(__dirname, 'src/styles/base-only.scss'),
+        'styles-components': resolve(__dirname, 'src/styles/components-only.scss'),
+        'styles-utilities': resolve(__dirname, 'src/styles/utilities-only.scss'),
         'themes/acronis-default': resolve(__dirname, 'src/styles/theme-acronis-default.scss'),
         'themes/acronis-ocean': resolve(__dirname, 'src/styles/theme-acronis-ocean.scss'),
         'themes/cyber-chat': resolve(__dirname, 'src/styles/theme-cyber-chat.scss'),
@@ -69,6 +74,17 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
         },
         assetFileNames: (assetInfo) => {
+          // Tokens CSS
+          if (assetInfo.name === 'styles-tokens.css') return 'tokens.css';
+
+          // Full unpurged build
+          if (assetInfo.name === 'styles-full.css') return 'shadcn-uikit-full.css';
+
+          // Modular builds
+          if (assetInfo.name === 'styles-base.css') return 'base.css';
+          if (assetInfo.name === 'styles-components.css') return 'components.css';
+          if (assetInfo.name === 'styles-utilities.css') return 'utilities.css';
+
           // Main styles output
           if (assetInfo.name === 'style.css' || assetInfo.name === 'styles.css') {
             return 'shadcn-uikit.css'
