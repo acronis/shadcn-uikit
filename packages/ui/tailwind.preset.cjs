@@ -108,7 +108,7 @@ module.exports = {
   			},
   			border: 'hsl(var(--av-border))',
   			input: 'hsl(var(--av-input))',
-  			ring: 'hsl(var(--av-ring)',
+  			ring: 'hsl(var(--av-ring))',
   			sidebar: {
   				DEFAULT: 'hsl(var(--av-nav-bg))',
   				foreground: 'hsl(var(--av-nav-text))',
