@@ -26,15 +26,15 @@ Provide three CSS distribution strategies with comprehensive documentation:
 
 ### CSS Output Files
 
-| File | Content | Size Estimate | Use Case |
-|------|---------|---------------|----------|
-| `tokens.css` | CSS variables only | ~5-10KB | Custom Tailwind builds |
-| `shadcn-uikit.css` | Purged Tailwind + components | ~96KB | Current behavior (production) |
-| `shadcn-uikit-full.css` | All Tailwind utilities + components | ~200-300KB | Quick start, prototyping |
-| `base.css` | @tailwind base + CSS variables | ~20-30KB | Modular: base layer |
-| `components.css` | @tailwind components | ~30-40KB | Modular: component layer |
-| `utilities.css` | @tailwind utilities | ~150-200KB | Modular: utilities layer |
-| `themes/*.css` | Individual themes | ~5-10KB each | Existing theme system |
+| File                    | Content                             | Size Estimate | Use Case                      |
+| ----------------------- | ----------------------------------- | ------------- | ----------------------------- |
+| `tokens.css`            | CSS variables only                  | ~5-10KB       | Custom Tailwind builds        |
+| `shadcn-uikit.css`      | Purged Tailwind + components        | ~96KB         | Current behavior (production) |
+| `shadcn-uikit-full.css` | All Tailwind utilities + components | ~200-300KB    | Quick start, prototyping      |
+| `base.css`              | @tailwind base + CSS variables      | ~20-30KB      | Modular: base layer           |
+| `components.css`        | @tailwind components                | ~30-40KB      | Modular: component layer      |
+| `utilities.css`         | @tailwind utilities                 | ~150-200KB    | Modular: utilities layer      |
+| `themes/*.css`          | Individual themes                   | ~5-10KB each  | Existing theme system         |
 
 ### Package Exports
 
@@ -110,29 +110,47 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: { /* existing config */ },
-      screens: { /* existing config */ }
+      padding: {
+        /* existing config */
+      },
+      screens: {
+        /* existing config */
+      },
     },
     extend: {
-      fontFamily: { /* existing config */ },
-      fontSize: { /* existing config */ },
-      colors: { /* all semantic color mappings */ },
-      borderRadius: { /* existing config */ },
-      keyframes: { /* existing animations */ },
-      animation: { /* existing animations */ }
-    }
+      fontFamily: {
+        /* existing config */
+      },
+      fontSize: {
+        /* existing config */
+      },
+      colors: {
+        /* all semantic color mappings */
+      },
+      borderRadius: {
+        /* existing config */
+      },
+      keyframes: {
+        /* existing animations */
+      },
+      animation: {
+        /* existing animations */
+      },
+    },
   },
-  plugins: [require('tailwindcss-animate')]
-}
+  plugins: [require('tailwindcss-animate')],
+};
 ```
 
 **Key Design Decisions:**
+
 - Use `.cjs` extension for CommonJS compatibility (package.json has `"type": "module"`)
 - Include `tailwindcss-animate` plugin
 - NO `content` array - consumers define their own
 - Export as CommonJS module for maximum compatibility
 
 **ESM Wrapper:** `dist/tailwind-preset.js`
+
 ```javascript
 import preset from '../tailwind.preset.cjs';
 export default preset;
@@ -157,14 +175,29 @@ export default defineConfig({
         'styles-tokens': resolve(__dirname, 'src/styles/tokens-only.scss'),
         'styles-full': resolve(__dirname, 'src/styles/full.scss'),
         'styles-base': resolve(__dirname, 'src/styles/base-only.scss'),
-        'styles-components': resolve(__dirname, 'src/styles/components-only.scss'),
-        'styles-utilities': resolve(__dirname, 'src/styles/utilities-only.scss'),
+        'styles-components': resolve(
+          __dirname,
+          'src/styles/components-only.scss'
+        ),
+        'styles-utilities': resolve(
+          __dirname,
+          'src/styles/utilities-only.scss'
+        ),
 
         // Existing theme entries
-        'themes/acronis-default': resolve(__dirname, 'src/styles/theme-acronis-default.scss'),
-        'themes/acronis-ocean': resolve(__dirname, 'src/styles/theme-acronis-ocean.scss'),
-        'themes/cyber-chat': resolve(__dirname, 'src/styles/theme-cyber-chat.scss'),
-      }
+        'themes/acronis-default': resolve(
+          __dirname,
+          'src/styles/theme-acronis-default.scss'
+        ),
+        'themes/acronis-ocean': resolve(
+          __dirname,
+          'src/styles/theme-acronis-ocean.scss'
+        ),
+        'themes/cyber-chat': resolve(
+          __dirname,
+          'src/styles/theme-cyber-chat.scss'
+        ),
+      },
     },
     rollupOptions: {
       output: {
@@ -187,10 +220,10 @@ export default defineConfig({
 
           // Themes (existing logic)
           return assetInfo.name || 'assets/[name]-[hash][extname]';
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 });
 ```
 
@@ -209,6 +242,7 @@ export default {
 **PostCSS Configuration:**
 
 Need to detect which entry is being processed and apply appropriate config:
+
 - `full.scss` → `tailwind.config.full.js` (no purging)
 - Other entries → `tailwind.config.js` (with purging)
 
@@ -236,10 +270,7 @@ const esmWrapper = `import preset from '../tailwind.preset.cjs';
 export default preset;
 `;
 
-writeFileSync(
-  resolve(__dirname, '../dist/tailwind-preset.js'),
-  esmWrapper
-);
+writeFileSync(resolve(__dirname, '../dist/tailwind-preset.js'), esmWrapper);
 
 console.log('✓ Generated ESM wrapper for tailwind preset');
 ```
@@ -267,12 +298,7 @@ console.log('✓ Generated ESM wrapper for tailwind preset');
 
 ```json
 {
-  "files": [
-    "dist",
-    "tailwind.preset.cjs",
-    "README.md",
-    "LICENSE"
-  ]
+  "files": ["dist", "tailwind.preset.cjs", "README.md", "LICENSE"]
 }
 ```
 
@@ -282,26 +308,32 @@ console.log('✓ Generated ESM wrapper for tailwind preset');
 
 #### 1. CSS Import Options (New Section)
 
-```markdown
+````markdown
 ## CSS Import Options
 
 ### Full CSS Bundle (Recommended for Quick Start)
+
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles/full';
 ```
+````
+
 - Size: ~200-300KB (uncompressed)
 - Includes all Tailwind utilities (not purged)
 - Best for: Rapid prototyping, small projects
 
 ### Optimized Bundle (Recommended for Production)
+
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles';
 ```
+
 - Size: ~96KB (current bundle)
 - Includes only CSS used in imported components
 - Best for: Production builds
 
 ### Modular Imports (Advanced)
+
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles/base';
 import '@acronis-platform/shadcn-uikit/styles/components';
@@ -309,12 +341,15 @@ import '@acronis-platform/shadcn-uikit/styles/utilities';
 ```
 
 ### Tokens Only
+
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles/tokens';
 ```
+
 - Just CSS variables
 - Use with Tailwind preset for custom builds
-```
+
+````
 
 #### 2. Using with Tailwind CSS (New Section)
 
@@ -332,19 +367,22 @@ module.exports = {
     './node_modules/@acronis-platform/shadcn-uikit/dist/**/*.js'
   ],
 }
-```
+````
 
 Then import only the tokens:
+
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles/tokens';
 ```
 
 This approach:
+
 - Gives you all design tokens as CSS variables
 - Tailwind generates utilities based on preset configuration
 - Smallest bundle size (only utilities you actually use)
 - Full control over Tailwind configuration
-```
+
+````
 
 #### 3. Migration Guide (New Section)
 
@@ -358,18 +396,21 @@ This approach:
 **Before:**
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles';
-```
+````
 
 **After (same behavior):**
+
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles';
 ```
 
 **New Options Available:**
+
 - `styles/full` - Complete unpurged CSS
 - `styles/tokens` - CSS variables only
 - `styles/base`, `styles/components`, `styles/utilities` - Modular imports
 - `tailwind-preset` - Tailwind configuration preset
+
 ```
 
 ## Testing Strategy
@@ -422,3 +463,4 @@ import '@acronis-platform/shadcn-uikit/styles';
 - Tailwind purging unused utility classes from library bundle
 - Consumers need design tokens for custom components
 - Request for Tailwind preset to maintain consistency
+```

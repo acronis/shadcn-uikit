@@ -13,6 +13,7 @@
 ## Task 1: Create SCSS Entry Files
 
 **Files:**
+
 - Create: `packages/ui/src/styles/tokens-only.scss`
 - Create: `packages/ui/src/styles/full.scss`
 - Create: `packages/ui/src/styles/base-only.scss`
@@ -74,6 +75,7 @@ git commit -m "feat: add SCSS entry files for modular CSS builds"
 ## Task 2: Create Tailwind Config for Full Build
 
 **Files:**
+
 - Create: `packages/ui/tailwind.config.full.js`
 - Reference: `packages/ui/tailwind.config.js`
 
@@ -87,152 +89,163 @@ export default {
   darkMode: ['class'],
   content: [], // Empty = no purging
   theme: {
-  	container: {
-  		center: true,
-  		padding: {
-  			DEFAULT: '1rem',
-  			sm: '1.5rem',
-  			lg: '2rem',
-  			xl: '2.5rem',
-  			'2xl': '3rem',
-  			'3xl': '3rem'
-  		},
-  		screens: {
-  			sm: '640px',
-  			md: '768px',
-  			lg: '1024px',
-  			xl: '1280px',
-  			'2xl': '1400px',
-  			'3xl': '1920px'
-  		}
-  	},
-  	extend: {
-  		fontFamily: {
-  			sans: ['var(--av-font-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-  		},
-  		fontSize: {
-  			base: ['var(--av-font-size-base, 16px)', { lineHeight: 'var(--av-line-height-base, 1.5)' }],
-  		},
-  		lineHeight: {
-  			base: 'var(--av-line-height-base, 1.5)',
-  		},
-  		letterSpacing: {
-  			base: 'var(--av-letter-spacing-base, 0)',
-  		},
-  		colors: {
-  			background: 'hsl(var(--av-background))',
-  			foreground: 'hsl(var(--av-foreground))',
-  			primary: {
-  				DEFAULT: 'hsl(var(--av-primary))',
-  				foreground: 'hsl(var(--av-primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--av-secondary))',
-  				foreground: 'hsl(var(--av-secondary-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--av-muted))',
-  				foreground: 'hsl(var(--av-muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--av-accent))',
-  				foreground: 'hsl(var(--av-accent-foreground))'
-  			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--av-destructive))',
-  				foreground: 'hsl(var(--av-destructive-foreground))',
-  				light: 'hsl(var(--av-status-danger-bg))',
-  				accent: 'hsl(var(--av-status-danger))'
-  			},
-  			danger: {
-  				DEFAULT: 'hsl(var(--av-status-danger-bg))',
-  				foreground: 'hsl(var(--av-status-danger-text))',
-  				accent: 'hsl(var(--av-status-danger))'
-  			},
-  			success: {
-  				DEFAULT: 'hsl(var(--av-status-success-bg))',
-  				foreground: 'hsl(var(--av-status-success-text))',
-  				accent: 'hsl(var(--av-status-success))'
-  			},
-  			warning: {
-  				DEFAULT: 'hsl(var(--av-status-warning-bg))',
-  				foreground: 'hsl(var(--av-status-warning-text))',
-  				accent: 'hsl(var(--av-status-warning))'
-  			},
-  			info: {
-  				DEFAULT: 'hsl(var(--av-status-info-bg))',
-  				foreground: 'hsl(var(--av-status-info-text))',
-  				accent: 'hsl(var(--av-status-info))'
-  			},
-  			critical: {
-  				DEFAULT: 'hsl(var(--av-status-critical-bg))',
-  				foreground: 'hsl(var(--av-status-critical-text))',
-  				accent: 'hsl(var(--av-status-critical))'
-  			},
-  			neutral: {
-  				DEFAULT: 'hsl(var(--av-status-neutral-bg))',
-  				foreground: 'hsl(var(--av-status-neutral-text))',
-  				accent: 'hsl(var(--av-status-neutral))'
-  			},
-  			ai: {
-  				DEFAULT: 'hsl(var(--av-status-ai-bg))',
-  				foreground: 'hsl(var(--av-status-ai-text))',
-  				accent: 'hsl(var(--av-status-ai))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--av-popover))',
-  				foreground: 'hsl(var(--av-popover-foreground))'
-  			},
-  			tooltip: {
-  				DEFAULT: 'hsl(var(--av-tooltip))',
-  				foreground: 'hsl(var(--av-text-inverse))'
-  			},
-  			card: {
-  				DEFAULT: 'hsl(var(--av-elevated))',
-  				foreground: 'hsl(var(--av-foreground))'
-  			},
-  			border: 'hsl(var(--av-border))',
-  			input: 'hsl(var(--av-input))',
-  			ring: 'hsl(var(--av-ring)',
-  			sidebar: {
-  				DEFAULT: 'hsl(var(--av-nav-bg))',
-  				foreground: 'hsl(var(--av-nav-text))',
-  				primary: 'hsl(var(--av-nav-bg))',
-  				'primary-foreground': 'hsl(var(--av-text-inverse))',
-  				accent: 'hsl(var(--av-nav-active))',
-  				'accent-foreground': 'hsl(var(--av-text-inverse))',
-  				border: 'hsl(var(--av-nav-bg))',
-  				ring: 'hsl(var(--av-ring))'
-  			}
-  		},
-  		borderRadius: {
-  			lg: 'var(--av-radius)',
-  			md: 'calc(var(--av-radius) - 2px)',
-  			sm: 'calc(var(--av-radius) - 4px)'
-  		},
-  		keyframes: {
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			}
-  		},
-  		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
-  	}
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+        lg: '2rem',
+        xl: '2.5rem',
+        '2xl': '3rem',
+        '3xl': '3rem',
+      },
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1400px',
+        '3xl': '1920px',
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: [
+          'var(--av-font-sans)',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'sans-serif',
+        ],
+      },
+      fontSize: {
+        base: [
+          'var(--av-font-size-base, 16px)',
+          { lineHeight: 'var(--av-line-height-base, 1.5)' },
+        ],
+      },
+      lineHeight: {
+        base: 'var(--av-line-height-base, 1.5)',
+      },
+      letterSpacing: {
+        base: 'var(--av-letter-spacing-base, 0)',
+      },
+      colors: {
+        background: 'hsl(var(--av-background))',
+        foreground: 'hsl(var(--av-foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--av-primary))',
+          foreground: 'hsl(var(--av-primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--av-secondary))',
+          foreground: 'hsl(var(--av-secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--av-muted))',
+          foreground: 'hsl(var(--av-muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--av-accent))',
+          foreground: 'hsl(var(--av-accent-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--av-destructive))',
+          foreground: 'hsl(var(--av-destructive-foreground))',
+          light: 'hsl(var(--av-status-danger-bg))',
+          accent: 'hsl(var(--av-status-danger))',
+        },
+        danger: {
+          DEFAULT: 'hsl(var(--av-status-danger-bg))',
+          foreground: 'hsl(var(--av-status-danger-text))',
+          accent: 'hsl(var(--av-status-danger))',
+        },
+        success: {
+          DEFAULT: 'hsl(var(--av-status-success-bg))',
+          foreground: 'hsl(var(--av-status-success-text))',
+          accent: 'hsl(var(--av-status-success))',
+        },
+        warning: {
+          DEFAULT: 'hsl(var(--av-status-warning-bg))',
+          foreground: 'hsl(var(--av-status-warning-text))',
+          accent: 'hsl(var(--av-status-warning))',
+        },
+        info: {
+          DEFAULT: 'hsl(var(--av-status-info-bg))',
+          foreground: 'hsl(var(--av-status-info-text))',
+          accent: 'hsl(var(--av-status-info))',
+        },
+        critical: {
+          DEFAULT: 'hsl(var(--av-status-critical-bg))',
+          foreground: 'hsl(var(--av-status-critical-text))',
+          accent: 'hsl(var(--av-status-critical))',
+        },
+        neutral: {
+          DEFAULT: 'hsl(var(--av-status-neutral-bg))',
+          foreground: 'hsl(var(--av-status-neutral-text))',
+          accent: 'hsl(var(--av-status-neutral))',
+        },
+        ai: {
+          DEFAULT: 'hsl(var(--av-status-ai-bg))',
+          foreground: 'hsl(var(--av-status-ai-text))',
+          accent: 'hsl(var(--av-status-ai))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--av-popover))',
+          foreground: 'hsl(var(--av-popover-foreground))',
+        },
+        tooltip: {
+          DEFAULT: 'hsl(var(--av-tooltip))',
+          foreground: 'hsl(var(--av-text-inverse))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--av-elevated))',
+          foreground: 'hsl(var(--av-foreground))',
+        },
+        border: 'hsl(var(--av-border))',
+        input: 'hsl(var(--av-input))',
+        ring: 'hsl(var(--av-ring)',
+        sidebar: {
+          DEFAULT: 'hsl(var(--av-nav-bg))',
+          foreground: 'hsl(var(--av-nav-text))',
+          primary: 'hsl(var(--av-nav-bg))',
+          'primary-foreground': 'hsl(var(--av-text-inverse))',
+          accent: 'hsl(var(--av-nav-active))',
+          'accent-foreground': 'hsl(var(--av-text-inverse))',
+          border: 'hsl(var(--av-nav-bg))',
+          ring: 'hsl(var(--av-ring))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--av-radius)',
+        md: 'calc(var(--av-radius) - 2px)',
+        sm: 'calc(var(--av-radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
   },
   plugins: [require('tailwindcss-animate')],
 };
@@ -255,6 +268,7 @@ git commit -m "feat: add Tailwind config for unpurged full build"
 ## Task 3: Create Tailwind Preset (CJS)
 
 **Files:**
+
 - Create: `packages/ui/tailwind.preset.cjs`
 - Reference: `packages/ui/tailwind.config.js`
 
@@ -266,152 +280,163 @@ Copy theme configuration from existing config, but export as CommonJS and remove
 module.exports = {
   darkMode: ['class'],
   theme: {
-  	container: {
-  		center: true,
-  		padding: {
-  			DEFAULT: '1rem',
-  			sm: '1.5rem',
-  			lg: '2rem',
-  			xl: '2.5rem',
-  			'2xl': '3rem',
-  			'3xl': '3rem'
-  		},
-  		screens: {
-  			sm: '640px',
-  			md: '768px',
-  			lg: '1024px',
-  			xl: '1280px',
-  			'2xl': '1400px',
-  			'3xl': '1920px'
-  		}
-  	},
-  	extend: {
-  		fontFamily: {
-  			sans: ['var(--av-font-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-  		},
-  		fontSize: {
-  			base: ['var(--av-font-size-base, 16px)', { lineHeight: 'var(--av-line-height-base, 1.5)' }],
-  		},
-  		lineHeight: {
-  			base: 'var(--av-line-height-base, 1.5)',
-  		},
-  		letterSpacing: {
-  			base: 'var(--av-letter-spacing-base, 0)',
-  		},
-  		colors: {
-  			background: 'hsl(var(--av-background))',
-  			foreground: 'hsl(var(--av-foreground))',
-  			primary: {
-  				DEFAULT: 'hsl(var(--av-primary))',
-  				foreground: 'hsl(var(--av-primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--av-secondary))',
-  				foreground: 'hsl(var(--av-secondary-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--av-muted))',
-  				foreground: 'hsl(var(--av-muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--av-accent))',
-  				foreground: 'hsl(var(--av-accent-foreground))'
-  			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--av-destructive))',
-  				foreground: 'hsl(var(--av-destructive-foreground))',
-  				light: 'hsl(var(--av-status-danger-bg))',
-  				accent: 'hsl(var(--av-status-danger))'
-  			},
-  			danger: {
-  				DEFAULT: 'hsl(var(--av-status-danger-bg))',
-  				foreground: 'hsl(var(--av-status-danger-text))',
-  				accent: 'hsl(var(--av-status-danger))'
-  			},
-  			success: {
-  				DEFAULT: 'hsl(var(--av-status-success-bg))',
-  				foreground: 'hsl(var(--av-status-success-text))',
-  				accent: 'hsl(var(--av-status-success))'
-  			},
-  			warning: {
-  				DEFAULT: 'hsl(var(--av-status-warning-bg))',
-  				foreground: 'hsl(var(--av-status-warning-text))',
-  				accent: 'hsl(var(--av-status-warning))'
-  			},
-  			info: {
-  				DEFAULT: 'hsl(var(--av-status-info-bg))',
-  				foreground: 'hsl(var(--av-status-info-text))',
-  				accent: 'hsl(var(--av-status-info))'
-  			},
-  			critical: {
-  				DEFAULT: 'hsl(var(--av-status-critical-bg))',
-  				foreground: 'hsl(var(--av-status-critical-text))',
-  				accent: 'hsl(var(--av-status-critical))'
-  			},
-  			neutral: {
-  				DEFAULT: 'hsl(var(--av-status-neutral-bg))',
-  				foreground: 'hsl(var(--av-status-neutral-text))',
-  				accent: 'hsl(var(--av-status-neutral))'
-  			},
-  			ai: {
-  				DEFAULT: 'hsl(var(--av-status-ai-bg))',
-  				foreground: 'hsl(var(--av-status-ai-text))',
-  				accent: 'hsl(var(--av-status-ai))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--av-popover))',
-  				foreground: 'hsl(var(--av-popover-foreground))'
-  			},
-  			tooltip: {
-  				DEFAULT: 'hsl(var(--av-tooltip))',
-  				foreground: 'hsl(var(--av-text-inverse))'
-  			},
-  			card: {
-  				DEFAULT: 'hsl(var(--av-elevated))',
-  				foreground: 'hsl(var(--av-foreground))'
-  			},
-  			border: 'hsl(var(--av-border))',
-  			input: 'hsl(var(--av-input))',
-  			ring: 'hsl(var(--av-ring)',
-  			sidebar: {
-  				DEFAULT: 'hsl(var(--av-nav-bg))',
-  				foreground: 'hsl(var(--av-nav-text))',
-  				primary: 'hsl(var(--av-nav-bg))',
-  				'primary-foreground': 'hsl(var(--av-text-inverse))',
-  				accent: 'hsl(var(--av-nav-active))',
-  				'accent-foreground': 'hsl(var(--av-text-inverse))',
-  				border: 'hsl(var(--av-nav-bg))',
-  				ring: 'hsl(var(--av-ring))'
-  			}
-  		},
-  		borderRadius: {
-  			lg: 'var(--av-radius)',
-  			md: 'calc(var(--av-radius) - 2px)',
-  			sm: 'calc(var(--av-radius) - 4px)'
-  		},
-  		keyframes: {
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			}
-  		},
-  		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
-  	}
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+        lg: '2rem',
+        xl: '2.5rem',
+        '2xl': '3rem',
+        '3xl': '3rem',
+      },
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1400px',
+        '3xl': '1920px',
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: [
+          'var(--av-font-sans)',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'sans-serif',
+        ],
+      },
+      fontSize: {
+        base: [
+          'var(--av-font-size-base, 16px)',
+          { lineHeight: 'var(--av-line-height-base, 1.5)' },
+        ],
+      },
+      lineHeight: {
+        base: 'var(--av-line-height-base, 1.5)',
+      },
+      letterSpacing: {
+        base: 'var(--av-letter-spacing-base, 0)',
+      },
+      colors: {
+        background: 'hsl(var(--av-background))',
+        foreground: 'hsl(var(--av-foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--av-primary))',
+          foreground: 'hsl(var(--av-primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--av-secondary))',
+          foreground: 'hsl(var(--av-secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--av-muted))',
+          foreground: 'hsl(var(--av-muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--av-accent))',
+          foreground: 'hsl(var(--av-accent-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--av-destructive))',
+          foreground: 'hsl(var(--av-destructive-foreground))',
+          light: 'hsl(var(--av-status-danger-bg))',
+          accent: 'hsl(var(--av-status-danger))',
+        },
+        danger: {
+          DEFAULT: 'hsl(var(--av-status-danger-bg))',
+          foreground: 'hsl(var(--av-status-danger-text))',
+          accent: 'hsl(var(--av-status-danger))',
+        },
+        success: {
+          DEFAULT: 'hsl(var(--av-status-success-bg))',
+          foreground: 'hsl(var(--av-status-success-text))',
+          accent: 'hsl(var(--av-status-success))',
+        },
+        warning: {
+          DEFAULT: 'hsl(var(--av-status-warning-bg))',
+          foreground: 'hsl(var(--av-status-warning-text))',
+          accent: 'hsl(var(--av-status-warning))',
+        },
+        info: {
+          DEFAULT: 'hsl(var(--av-status-info-bg))',
+          foreground: 'hsl(var(--av-status-info-text))',
+          accent: 'hsl(var(--av-status-info))',
+        },
+        critical: {
+          DEFAULT: 'hsl(var(--av-status-critical-bg))',
+          foreground: 'hsl(var(--av-status-critical-text))',
+          accent: 'hsl(var(--av-status-critical))',
+        },
+        neutral: {
+          DEFAULT: 'hsl(var(--av-status-neutral-bg))',
+          foreground: 'hsl(var(--av-status-neutral-text))',
+          accent: 'hsl(var(--av-status-neutral))',
+        },
+        ai: {
+          DEFAULT: 'hsl(var(--av-status-ai-bg))',
+          foreground: 'hsl(var(--av-status-ai-text))',
+          accent: 'hsl(var(--av-status-ai))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--av-popover))',
+          foreground: 'hsl(var(--av-popover-foreground))',
+        },
+        tooltip: {
+          DEFAULT: 'hsl(var(--av-tooltip))',
+          foreground: 'hsl(var(--av-text-inverse))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--av-elevated))',
+          foreground: 'hsl(var(--av-foreground))',
+        },
+        border: 'hsl(var(--av-border))',
+        input: 'hsl(var(--av-input))',
+        ring: 'hsl(var(--av-ring)',
+        sidebar: {
+          DEFAULT: 'hsl(var(--av-nav-bg))',
+          foreground: 'hsl(var(--av-nav-text))',
+          primary: 'hsl(var(--av-nav-bg))',
+          'primary-foreground': 'hsl(var(--av-text-inverse))',
+          accent: 'hsl(var(--av-nav-active))',
+          'accent-foreground': 'hsl(var(--av-text-inverse))',
+          border: 'hsl(var(--av-nav-bg))',
+          ring: 'hsl(var(--av-ring))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--av-radius)',
+        md: 'calc(var(--av-radius) - 2px)',
+        sm: 'calc(var(--av-radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
   },
   plugins: [require('tailwindcss-animate')],
 };
@@ -434,6 +459,7 @@ git commit -m "feat: add Tailwind preset as CommonJS module"
 ## Task 4: Create Preset Generation Script
 
 **Files:**
+
 - Create: `packages/ui/scripts/generate-preset.ts`
 
 **Step 1: Create generate-preset.ts**
@@ -487,6 +513,7 @@ git commit -m "feat: add script to generate ESM wrapper for Tailwind preset"
 ## Task 5: Update Vite Configuration
 
 **Files:**
+
 - Modify: `packages/ui/vite.config.ts`
 
 **Step 1: Read current vite.config.ts**
@@ -526,12 +553,12 @@ assetFileNames: (assetInfo) => {
 
   // Main purged build (existing)
   if (name === 'style.css' || name === 'styles.css') {
-    return 'shadcn-uikit.css'
+    return 'shadcn-uikit.css';
   }
 
   // Theme CSS files are already named correctly by cssCodeSplit
-  return assetInfo.name || 'assets/[name]-[hash][extname]'
-}
+  return assetInfo.name || 'assets/[name]-[hash][extname]';
+};
 ```
 
 **Step 4: Verify syntax**
@@ -551,6 +578,7 @@ git commit -m "feat: add CSS entry points and asset naming for modular builds"
 ## Task 6: Update Package.json - Scripts
 
 **Files:**
+
 - Modify: `packages/ui/package.json`
 
 **Step 1: Read current package.json**
@@ -560,11 +588,13 @@ Check existing build script structure.
 **Step 2: Update build script**
 
 Change:
+
 ```json
 "build": "npm run build:lib && npm run build:llms"
 ```
 
 To:
+
 ```json
 "build": "pnpm run build:preset && pnpm run build:lib && pnpm run build:llms",
 "build:preset": "tsx scripts/generate-preset.ts"
@@ -587,6 +617,7 @@ git commit -m "feat: add build:preset script to generate ESM wrapper"
 ## Task 7: Update Package.json - Exports
 
 **Files:**
+
 - Modify: `packages/ui/package.json`
 
 **Step 1: Read current exports**
@@ -626,6 +657,7 @@ git commit -m "feat: add package exports for new CSS bundles and Tailwind preset
 ## Task 8: Update Package.json - Files & Peer Dependencies
 
 **Files:**
+
 - Modify: `packages/ui/package.json`
 
 **Step 1: Add tailwind.preset.cjs to files array**
@@ -635,11 +667,13 @@ Add `"tailwind.preset.cjs"` to the `files` array.
 **Step 2: Add tailwindcss-animate as optional peer dependency**
 
 Add to `peerDependencies`:
+
 ```json
 "tailwindcss-animate": "^1.0.7"
 ```
 
 Add to `peerDependenciesMeta`:
+
 ```json
 "tailwindcss-animate": { "optional": true }
 ```
@@ -661,6 +695,7 @@ git commit -m "feat: add tailwind.preset.cjs to files and tailwindcss-animate as
 ## Task 9: Build and Verify CSS Outputs
 
 **Files:**
+
 - Test: Build process generates all expected CSS files
 
 **Step 1: Run build**
@@ -672,6 +707,7 @@ Expected: Build completes without errors
 
 Run: `ls -lh packages/ui/dist/*.css`
 Expected:
+
 - `tokens.css`
 - `shadcn-uikit.css` (existing)
 - `shadcn-uikit-full.css`
@@ -683,6 +719,7 @@ Expected:
 
 Run: `du -h packages/ui/dist/*.css`
 Expected approximate sizes:
+
 - `tokens.css`: 5-10KB
 - `base.css`: 20-30KB
 - `components.css`: 30-40KB
@@ -709,6 +746,7 @@ This is verification only.
 ## Task 10: Test Package Exports Resolution
 
 **Files:**
+
 - Test: Package exports resolve correctly
 
 **Step 1: Test CommonJS preset import**
@@ -735,6 +773,7 @@ This is verification only.
 ## Task 11: Update README - CSS Import Options
 
 **Files:**
+
 - Modify: `packages/ui/README.md`
 
 **Step 1: Read current README structure**
@@ -745,7 +784,7 @@ Locate the "Styling" section.
 
 Replace the existing "Styling" section with:
 
-```markdown
+````markdown
 ## CSS Import Options
 
 The library provides multiple ways to import styles based on your needs:
@@ -757,6 +796,7 @@ Includes all Tailwind utilities and component styles (not purged):
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles/full';
 ```
+````
 
 - **Size:** ~200-300KB (uncompressed)
 - **Use when:** Rapid prototyping, small projects, or you want all utilities available
@@ -777,9 +817,9 @@ import '@acronis-platform/shadcn-uikit/styles';
 Import only what you need:
 
 ```tsx
-import '@acronis-platform/shadcn-uikit/styles/base';       // CSS variables + base styles
+import '@acronis-platform/shadcn-uikit/styles/base'; // CSS variables + base styles
 import '@acronis-platform/shadcn-uikit/styles/components'; // Component styles only
-import '@acronis-platform/shadcn-uikit/styles/utilities';  // Utility classes only
+import '@acronis-platform/shadcn-uikit/styles/utilities'; // Utility classes only
 ```
 
 ### Tokens Only
@@ -801,7 +841,8 @@ import '@acronis-platform/shadcn-uikit/styles/themes/acronis-default';
 import '@acronis-platform/shadcn-uikit/styles/themes/acronis-ocean';
 import '@acronis-platform/shadcn-uikit/styles/themes/cyber-chat';
 ```
-```
+
+````
 
 **Step 3: Verify markdown renders correctly**
 
@@ -812,20 +853,21 @@ Check for proper code block formatting and list syntax.
 ```bash
 git add packages/ui/README.md
 git commit -m "docs: add CSS Import Options section to README"
-```
+````
 
 ---
 
 ## Task 12: Update README - Using with Tailwind CSS
 
 **Files:**
+
 - Modify: `packages/ui/README.md`
 
 **Step 1: Add new section after CSS Import Options**
 
 Insert new section:
 
-```markdown
+````markdown
 ## Using with Tailwind CSS
 
 If you're building your own Tailwind setup, use our preset to get the design tokens:
@@ -836,10 +878,11 @@ module.exports = {
   presets: [require('@acronis-platform/shadcn-uikit/tailwind-preset')],
   content: [
     './src/**/*.{js,jsx,ts,tsx}',
-    './node_modules/@acronis-platform/shadcn-uikit/dist/**/*.js'
+    './node_modules/@acronis-platform/shadcn-uikit/dist/**/*.js',
   ],
-}
+};
 ```
+````
 
 Then import only the tokens:
 
@@ -848,6 +891,7 @@ import '@acronis-platform/shadcn-uikit/styles/tokens';
 ```
 
 This approach:
+
 - Gives you all design tokens as CSS variables
 - Tailwind generates utilities based on preset configuration
 - Smallest bundle size (only utilities you actually use)
@@ -865,12 +909,13 @@ module.exports = {
     extend: {
       colors: {
         primary: 'hsl(200 100% 50%)', // Override primary color
-      }
-    }
-  }
-}
+      },
+    },
+  },
+};
 ```
-```
+
+````
 
 **Step 2: Verify markdown syntax**
 
@@ -881,20 +926,21 @@ Check code blocks and list formatting.
 ```bash
 git add packages/ui/README.md
 git commit -m "docs: add Tailwind CSS integration guide to README"
-```
+````
 
 ---
 
 ## Task 13: Update README - Migration Guide
 
 **Files:**
+
 - Modify: `packages/ui/README.md`
 
 **Step 1: Add Migration Guide section before License**
 
 Insert new section:
 
-```markdown
+````markdown
 ## Migration Guide
 
 ### v0.14.x → v0.15.0
@@ -902,16 +948,20 @@ Insert new section:
 **No Breaking Changes** - All existing imports continue to work.
 
 **Before:**
+
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles';
 ```
+````
 
 **After (same behavior):**
+
 ```tsx
 import '@acronis-platform/shadcn-uikit/styles';
 ```
 
 **New Options Available:**
+
 - `styles/full` - Complete unpurged CSS bundle (~200-300KB)
 - `styles/tokens` - CSS variables only (~5-10KB)
 - `styles/base` - Base styles + tokens (~20-30KB)
@@ -920,7 +970,8 @@ import '@acronis-platform/shadcn-uikit/styles';
 - `tailwind-preset` - Tailwind configuration preset
 
 Choose the import strategy that best fits your needs. The default `styles` import remains unchanged and continues to provide the optimized, purged CSS bundle.
-```
+
+````
 
 **Step 2: Verify formatting**
 
@@ -931,13 +982,14 @@ Check markdown syntax.
 ```bash
 git add packages/ui/README.md
 git commit -m "docs: add migration guide for v0.15.0"
-```
+````
 
 ---
 
 ## Task 14: Run Tests
 
 **Files:**
+
 - Test: Ensure all existing tests still pass
 
 **Step 1: Run test suite**
@@ -964,6 +1016,7 @@ This is verification only.
 ## Task 15: Final Verification & Documentation
 
 **Files:**
+
 - Verify: All success criteria met
 
 **Step 1: Verify all 7 CSS bundles exist**
