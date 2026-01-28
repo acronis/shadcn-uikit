@@ -30,19 +30,6 @@ function App() {
 }
 ```
 
-### Vue
-
-```vue
-<script setup>
-import { AvButton } from '@acronis-platform/shadcn-uikit/vue';
-import '@acronis-platform/shadcn-uikit/styles';
-</script>
-
-<template>
-  <AvButton variant="primary">Click me</AvButton>
-</template>
-```
-
 ## Components
 
 ### React Components
