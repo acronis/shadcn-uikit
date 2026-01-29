@@ -48,7 +48,7 @@ export function LandingState() {
 
   return (
     <div className="flex-1 flex items-center justify-center px-6 overflow-auto bg-[#F5F7FA]">
-      <div className="max-w-3xl w-full space-y-4">
+      <div className="max-w-3xl w-full space-y-6">
         {/* Heading */}
         <div>
           <h1 className="text-xl font-normal text-foreground">
@@ -73,50 +73,50 @@ export function LandingState() {
           />
         </div>
 
-        {/* Not sure where to start section */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-4 space-y-3">
-          <p className="text-xs text-muted-foreground">Not sure where to start</p>
-
-          {/* Filter buttons and model selector */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-8 gap-1.5 rounded-lg text-xs border-gray-200"
-              >
-                <FileSearch className="h-3.5 w-3.5" />
-                <span>Use files</span>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-8 gap-1.5 rounded-lg text-xs border-gray-200"
-              >
-                <Brain className="h-3.5 w-3.5" />
-                <span>Show reports</span>
-              </Button>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-muted-foreground">{selectedModel}</span>
-              <Button
-                size="icon"
-                className="h-8 w-8 rounded-lg bg-[#0D7DE5] hover:bg-[#0B6FD1]"
-                onClick={handleSend}
-                disabled={!inputValue.trim()}
-              >
-                <Send className="h-3.5 w-3.5" />
-              </Button>
-            </div>
+        {/* Filter buttons and model selector */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-8 gap-1.5 rounded-lg text-xs border-gray-200 bg-white"
+            >
+              <FileSearch className="h-3.5 w-3.5" />
+              <span>Use files</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-8 gap-1.5 rounded-lg text-xs border-gray-200 bg-white"
+            >
+              <Brain className="h-3.5 w-3.5" />
+              <span>Show reports</span>
+            </Button>
           </div>
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-muted-foreground">{selectedModel}</span>
+            <Button
+              size="icon"
+              className="h-8 w-8 rounded-lg bg-[#0D7DE5] hover:bg-[#0B6FD1]"
+              onClick={handleSend}
+              disabled={!inputValue.trim()}
+            >
+              <Send className="h-3.5 w-3.5" />
+            </Button>
+          </div>
+        </div>
 
-          {/* Suggestion chips */}
-          <div className="grid grid-cols-2 gap-2.5">
+        {/* Not sure where to start section */}
+        <div className="space-y-3">
+          <h2 className="text-base font-medium text-foreground">Not sure where to start?</h2>
+
+          {/* Suggestion chips - flowing layout */}
+          <div className="flex flex-wrap gap-2">
             {suggestionChips.map((chip) => (
               <Button
                 key={chip.id}
                 variant="outline"
-                className="h-auto py-2.5 px-3.5 text-left justify-start font-normal text-xs whitespace-normal rounded-lg border-gray-200"
+                className="h-auto py-2 px-4 font-normal text-sm rounded-full border-gray-200 bg-white hover:bg-gray-50"
                 onClick={() => selectSuggestion(chip.text)}
               >
                 {chip.text}
