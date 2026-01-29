@@ -10,6 +10,8 @@ import { DataTablePage } from './routes/data/DataTablePage'
 import { SettingsPage } from './routes/settings/SettingsPage'
 import ChatRoute from './demo/chat/route'
 import CyberChatRoute from './demo/cyberchat/route'
+import CyberChatFlowRoute from './demo/cyberchat-flow/route'
+import CyberChatFlowAppRoute from './demo/cyberchat-flow/app/route'
 import { ErrorBoundary } from './components/ErrorBoundary'
 
 export function DemoApp() {
@@ -20,6 +22,8 @@ export function DemoApp() {
         <Routes>
         <Route path="login" element={<LoginPage />} />
         <Route path="cyberchat" element={<CyberChatRoute />} />
+        <Route path="cyberchat-flow" element={<CyberChatFlowRoute />} />
+        <Route path="cyberchat-flow/app" element={<CyberChatFlowAppRoute />} />
         <Route
           path="/"
           element={
