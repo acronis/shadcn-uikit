@@ -1,3 +1,10 @@
+## [0.16.0](https://github.com/acronis/shadcn-uikit/compare/v0.15.0...v0.16.0) (2026-02-03)
+
+
+### Features
+
+* add first structure for widgets playground ([c407751](https://github.com/acronis/shadcn-uikit/commit/c40775116e4779711e24950e78d4da5f6b8a1c16))
+
 ## [0.15.0](https://github.com/acronis/shadcn-uikit/compare/v0.14.0...v0.15.0) (2026-01-28)
 
 
@@ -37,11 +44,4 @@
 ### Bug Fixes
 
 * update react-resizable-panels version to ^4.1.1 in package.json and pnpm-lock.yaml ([0b2bd43](https://github.com/acronis/shadcn-uikit/commit/0b2bd43c99a485afe059da7a85e7f269d85ce7ba))
-
-## [0.12.0](https://github.com/acronis/shadcn-uikit/compare/v0.11.0...v0.12.0) (2026-01-20)
-
-
-### Features
-
-* add typography settings initialization and default values in PlaygroundPage ([24c090c](https://github.com/acronis/shadcn-uikit/commit/24c090c6da41db8eda99402814655d2673b5c142))
 
