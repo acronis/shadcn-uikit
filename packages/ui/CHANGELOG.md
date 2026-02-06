@@ -1,3 +1,12 @@
+## [0.17.0](https://github.com/acronis/shadcn-uikit/compare/v0.16.0...v0.17.0) (2026-02-06)
+
+
+### Features
+
+* add new separator color variable to Acronis default theme ([e8073b4](https://github.com/acronis/shadcn-uikit/commit/e8073b48e9d85cb6a931049bf0ef8f725d631c9e))
+* implement new select components with enhanced features and accessibility, #REAL-100 ([17d2b23](https://github.com/acronis/shadcn-uikit/commit/17d2b231d4300f627aedc39686218f28e1f45c39)), closes [#REAL-100](https://github.com/acronis/shadcn-uikit/issues/REAL-100)
+* rename and update theme from Cyber Chat to Acronis Electric ([e871d3a](https://github.com/acronis/shadcn-uikit/commit/e871d3a43ded74b30e326b9aef513c0a868cebb7))
+
 ## [0.16.0](https://github.com/acronis/shadcn-uikit/compare/v0.15.0...v0.16.0) (2026-02-03)
 
 
@@ -37,11 +46,4 @@
 ### Features
 
 * add PostCSS configuration with Tailwind CSS and Autoprefixer plugins ([6dcdab5](https://github.com/acronis/shadcn-uikit/commit/6dcdab5628061b0fb4f122532b31bc2db1dc2e6a))
-
-## [0.12.1](https://github.com/acronis/shadcn-uikit/compare/v0.12.0...v0.12.1) (2026-01-21)
-
-
-### Bug Fixes
-
-* update react-resizable-panels version to ^4.1.1 in package.json and pnpm-lock.yaml ([0b2bd43](https://github.com/acronis/shadcn-uikit/commit/0b2bd43c99a485afe059da7a85e7f269d85ce7ba))
 
