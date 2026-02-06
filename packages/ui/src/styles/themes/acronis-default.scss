@@ -1,6 +1,6 @@
 /**
  * Acronis Default Theme
- * 
+ *
  * This is the default Acronis brand theme with the standard color palette.
  * It includes both light and dark mode variants.
  */
@@ -106,6 +106,7 @@
 
   /* Borders */
   --av-border: 213 65% 85%;
+  --av-separator: 213 65% 85%; // New
   --av-input: 213 65% 85%;
   --av-border-strong: var(--color-brand-primary);
   --av-border-subtle: 213 65% 92%;
