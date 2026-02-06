@@ -9,6 +9,17 @@ import {
   FormattedValueSelect,
   ScrollableSelect,
 } from '@/demos/select'
+import { DemoWithCode } from './DemoWithCode'
+
+// Import actual source code files as raw strings
+import basicSelectCode from '../demos/select/BasicSelect.tsx?raw'
+import controlledSelectCode from '../demos/select/ControlledSelect.tsx?raw'
+import groupedSelectCode from '../demos/select/GroupedSelect.tsx?raw'
+import multipleSelectCode from '../demos/select/MultipleSelect.tsx?raw'
+import objectValuesSelectCode from '../demos/select/ObjectValuesSelect.tsx?raw'
+import disabledSelectCode from '../demos/select/DisabledSelect.tsx?raw'
+import formattedValueSelectCode from '../demos/select/FormattedValueSelect.tsx?raw'
+import scrollableSelectCode from '../demos/select/ScrollableSelect.tsx?raw'
 
 export function SelectDemo() {
   return (
@@ -21,71 +32,69 @@ export function SelectDemo() {
       </p>
 
       <div className="space-y-8">
-        <div className="demo-item">
-          <h3>Basic Select</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Simple select dropdown with predefined options.
-          </p>
+        <DemoWithCode
+          title="Basic Select"
+          description="Simple select dropdown with predefined options."
+          code={basicSelectCode}
+        >
           <BasicSelect />
-        </div>
+        </DemoWithCode>
 
-        <div className="demo-item">
-          <h3>Controlled Select</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Select with controlled state using React state management.
-          </p>
+        <DemoWithCode
+          title="Controlled Select"
+          description="Select with controlled state using React state management."
+          code={controlledSelectCode}
+        >
           <ControlledSelect />
-        </div>
+        </DemoWithCode>
 
-        <div className="demo-item">
-          <h3>Grouped Options</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Select with options organized into labeled groups.
-          </p>
+        <DemoWithCode
+          title="Grouped Options"
+          description="Select with options organized into labeled groups."
+          code={groupedSelectCode}
+        >
           <GroupedSelect />
-        </div>
+        </DemoWithCode>
 
-        <div className="demo-item">
-          <h3>Multiple Selection</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Select multiple values from the list. Uses array-based value state.
-          </p>
+        <DemoWithCode
+          title="Multiple Selection"
+          description="Select multiple values from the list. Uses array-based value state."
+          code={multipleSelectCode}
+        >
           <MultipleSelect />
-        </div>
+        </DemoWithCode>
 
-        <div className="demo-item">
-          <h3>Object Values</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Select with complex object values. Demonstrates custom equality comparison and string
-            conversion functions.
-          </p>
+        <DemoWithCode
+          title="Object Values"
+          description="Select with complex object values. Demonstrates custom equality comparison and string conversion functions."
+          code={objectValuesSelectCode}
+        >
           <ObjectValuesSelect />
-        </div>
+        </DemoWithCode>
 
-        <div className="demo-item">
-          <h3>Disabled States</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Examples of disabled select and individual disabled options.
-          </p>
+        <DemoWithCode
+          title="Disabled States"
+          description="Examples of disabled select and individual disabled options."
+          code={disabledSelectCode}
+        >
           <DisabledSelect />
-        </div>
+        </DemoWithCode>
 
-        <div className="demo-item">
-          <h3>Formatted Value Display</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Custom rendering of selected values with icons and formatting.
-          </p>
+        <DemoWithCode
+          title="Formatted Value Display"
+          description="Custom rendering of selected values with icons and formatting."
+          code={formattedValueSelectCode}
+        >
           <FormattedValueSelect />
-        </div>
+        </DemoWithCode>
 
-        <div className="demo-item">
-          <h3>Scrollable List</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Select with a long list of options demonstrating scroll behavior and keyboard
-            navigation.
-          </p>
+        <DemoWithCode
+          title="Scrollable List"
+          description="Select with a long list of options demonstrating scroll behavior and keyboard navigation."
+          code={scrollableSelectCode}
+        >
           <ScrollableSelect />
-        </div>
+        </DemoWithCode>
       </div>
 
       <div className="mt-8 p-4 rounded-lg bg-muted/50">
