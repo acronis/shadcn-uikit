@@ -14,10 +14,10 @@ export function SelectDemo() {
   return (
     <section className="demo-section">
       <h2>Select Component (Base UI)</h2>
-      <p className="demo-description">
-        Select component built with MUI Base UI. Provides accessible, unstyled primitives with full
-        Tailwind CSS styling support. Features include controlled/uncontrolled state, multiple
-        selection, object values, grouping, and custom formatting.
+      <p className="demo-description mb-8 text-muted-foreground">
+        Select component built with MUI Base UI.
+        Provides accessible, unstyled primitives with full Tailwind CSS styling support.
+        Features include controlled/uncontrolled state, multiple selection, object values, grouping, and custom formatting.
       </p>
 
       <div className="space-y-8">
