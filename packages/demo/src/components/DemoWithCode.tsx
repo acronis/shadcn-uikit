@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Check, Copy, ChevronDown } from 'lucide-react'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 interface DemoWithCodeProps {
   title: string
@@ -26,6 +28,17 @@ export function DemoWithCode({
     setTimeout(() => setCopied(false), 2000)
   }
 
+  // Custom style that adapts to the theme
+  const customStyle = {
+    margin: 0,
+    padding: '1rem',
+    background: 'transparent',
+    fontSize: '0.75rem',
+    lineHeight: '1.5',
+    maxHeight: '500px',
+    overflow: 'auto',
+  }
+
   return (
     <div className="demo-item space-y-4">
       <div>
@@ -42,7 +55,7 @@ export function DemoWithCode({
         </div>
 
         {/* Code Section */}
-        <div className="rounded-lg border border-border bg-muted/30">
+        <div className="rounded-lg border border-border bg-muted/30 overflow-hidden">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="flex w-full items-center justify-between px-4 py-2.5 text-sm font-medium hover:bg-muted/50 transition-colors"
@@ -57,12 +70,12 @@ export function DemoWithCode({
           
           {isExpanded && (
             <div className="border-t border-border">
-              <div className="relative">
+              <div className="relative bg-[#1e1e1e]">
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={handleCopy}
-                  className="absolute right-2 top-2 h-7 px-2 z-10"
+                  className="absolute right-2 top-2 h-7 px-2 z-10 bg-black/20 hover:bg-black/40 text-white"
                 >
                   {copied ? (
                     <>
@@ -76,9 +89,16 @@ export function DemoWithCode({
                     </>
                   )}
                 </Button>
-                <pre className="overflow-x-auto p-4 text-sm max-h-[500px] overflow-y-auto">
-                  <code className="text-foreground font-mono text-xs leading-relaxed">{code}</code>
-                </pre>
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={customStyle}
+                  showLineNumbers={false}
+                  wrapLines={true}
+                  wrapLongLines={true}
+                >
+                  {code}
+                </SyntaxHighlighter>
               </div>
             </div>
           )}
