@@ -137,6 +137,7 @@ export function PieChartPlayground() {
   const pieKey = `${dataSource}-${nameKey}-${valueKey}`
 
   const renderLabel = React.useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (entry: { [key: string]: any; name?: any; percent?: number }) => {
       if (!showLabels) return ''
       const key = String(entry[nameKey] ?? entry.name)
@@ -296,7 +297,8 @@ export function PieChartPlayground() {
                   isAnimationActive={isAnimationActive}
                   label={
                     showLabels
-                      ? (entry: any) => renderLabel(entry)
+                      ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        (entry: any) => renderLabel(entry)
                       : false
                   }
                   labelLine={labelLine}
@@ -380,6 +382,57 @@ export function PieChartPlayground() {
                 </div>
 
                 <div className="text-xs text-muted-foreground">Data changes update tooltip/legend labels and slice sizing automatically.</div>
+
+                <Separator />
+
+                {/* Slice visibility (quick toggle) */}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <Label className="text-sm font-medium">Visible Slices</Label>
+                      <p className="text-xs text-muted-foreground">Toggle slices on/off without leaving the Data tab</p>
+                    </div>
+                    <button
+                      className="text-xs text-primary hover:underline"
+                      onClick={() => {
+                        const allOn: Record<string, boolean> = {}
+                        currentSource.data.forEach((item) => {
+                          allOn[String(item[nameKey])] = true
+                        })
+                        setEnabledSlices(allOn)
+                      }}
+                    >
+                      Enable all
+                    </button>
+                  </div>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {currentSource.data.map((item, idx) => {
+                      const label = String(item[nameKey] ?? item[currentSource.nameKeys[0]] ?? 'slice')
+                      const key = label
+                      const checked = enabledSlices[key] !== false
+                      const valueDisplay = item[valueKey] ?? item[currentSource.valueKeys[0]] ?? ''
+                      return (
+                        <button
+                          key={`data-toggle-${key}`}
+                          className={`flex items-center gap-2 rounded border p-2 text-left transition hover:border-primary ${checked ? 'bg-muted/50' : 'opacity-60'}`}
+                          onClick={() =>
+                            setEnabledSlices((prev) => ({
+                              ...prev,
+                              [key]: !(prev[key] !== false),
+                            }))
+                          }
+                        >
+                          <span
+                            className="h-3 w-3 rounded-full"
+                            style={{ backgroundColor: getSliceColor(key, idx) }}
+                          />
+                          <span className="text-sm font-medium">{key}</span>
+                          <span className="ml-auto text-xs text-muted-foreground">{valueDisplay}</span>
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
 
               </TabsContent>
 
@@ -800,7 +853,7 @@ export function PieChartPlayground() {
 
       {/* Documentation Section */}
       <div className="grid gap-6 lg:grid-cols-2">
-        {/* Data Format */}
+        {/* Raw Data */}
         <Card>
           <CardHeader>
             <CardTitle>📊 Data Format</CardTitle>
@@ -823,7 +876,7 @@ const data = [
             </pre>
             <div className="space-y-2 text-sm">
               <p className="font-medium">Requirements:</p>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+              <ul className="list-disc list-inside text-muted-foreground">
                 <li><strong>nameKey</strong> - Label for each slice (string)</li>
                 <li><strong>dataKey</strong> - Numeric value for slice size</li>
                 <li><strong>Positive values</strong> - Use <code className="text-xs">minAngle</code> to reduce slivers</li>
@@ -833,7 +886,7 @@ const data = [
           </CardContent>
         </Card>
 
-        {/* Configurable Properties */}
+        {/* Configurable Props */}
         <Card>
           <CardHeader>
             <CardTitle>⚙️ Configurable Properties</CardTitle>
@@ -861,6 +914,37 @@ const data = [
                 <li><code className="text-xs">strokeDasharray</code> - Dashed pattern (&quot;5 5&quot;)</li>
               </ul>
             </div>
+          </CardContent>
+        </Card>
+
+        {/* Best Practices */}
+        <Card>
+          <CardHeader>
+            <CardTitle>✅ Best Practices</CardTitle>
+            <CardDescription>Quick guidance</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3 text-sm">
+            <ul className="list-disc list-inside text-muted-foreground space-y-1">
+              <li>Keep slices to 5-8 for readability; combine “Other” if needed</li>
+              <li>Use donut (innerRadius &gt; 0) when comparing multiple pies side-by-side</li>
+              <li>Leverage <code className="text-xs">minAngle</code> to avoid hairline slices</li>
+              <li>Use labels sparingly; tooltips + legend often suffice</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* When to Use */}
+        <Card>
+          <CardHeader>
+            <CardTitle>💡 When to use</CardTitle>
+            <CardDescription>Pick PieChart over other charts when…</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3 text-sm">
+            <ul className="list-disc list-inside text-muted-foreground space-y-1">
+              <li>Showing part-to-whole proportions</li>
+              <li>Comparing a handful of categories</li>
+              <li>Need a compact, at-a-glance distribution</li>
+            </ul>
           </CardContent>
         </Card>
       </div>
