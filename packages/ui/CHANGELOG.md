@@ -1,3 +1,11 @@
+## [0.18.0](https://github.com/acronis/shadcn-uikit/compare/v0.17.0...v0.18.0) (2026-02-17)
+
+
+### Features
+
+* add DropdownMenu components with various examples and interactive features ([ce39123](https://github.com/acronis/shadcn-uikit/commit/ce39123410e6c968b1610870204dc754bc6402d0))
+* add SelectPortal and reorganize exports in base-select.tsx ([1234aaf](https://github.com/acronis/shadcn-uikit/commit/1234aaf513c3360182a74091bc1e49e2373c2981))
+
 ## [0.17.0](https://github.com/acronis/shadcn-uikit/compare/v0.16.0...v0.17.0) (2026-02-06)
 
 
@@ -39,11 +47,4 @@
 ### Features
 
 * add typography configuration with base font settings and update import structure ([7d7795b](https://github.com/acronis/shadcn-uikit/commit/7d7795bdf8a9a575697849aca5573aad6d06b398))
-
-## [0.13.0](https://github.com/acronis/shadcn-uikit/compare/v0.12.1...v0.13.0) (2026-01-26)
-
-
-### Features
-
-* add PostCSS configuration with Tailwind CSS and Autoprefixer plugins ([6dcdab5](https://github.com/acronis/shadcn-uikit/commit/6dcdab5628061b0fb4f122532b31bc2db1dc2e6a))
 
