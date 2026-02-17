@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils'
 const Select = BaseSelect.Root
 
 const SelectGroup = BaseSelect.Group
-
 const SelectValue = BaseSelect.Value
+const SelectPortal = BaseSelect.Portal
 
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof BaseSelect.Trigger>,
@@ -80,8 +80,8 @@ const SelectContent = React.forwardRef<
   }
 >(({ className, children, alignItemWithTrigger = false, side, sideOffset = 4, ...props }, ref) => (
   <BaseSelect.Portal>
-    <BaseSelect.Positioner 
-      alignItemWithTrigger={alignItemWithTrigger} 
+    <BaseSelect.Positioner
+      alignItemWithTrigger={alignItemWithTrigger}
       side={side}
       sideOffset={sideOffset}
       className="z-50"
@@ -165,13 +165,14 @@ SelectSeparator.displayName = 'SelectSeparator'
 
 export {
   Select,
-  SelectGroup,
-  SelectValue,
-  SelectTrigger,
   SelectContent,
-  SelectLabel,
+  SelectGroup,
   SelectItem,
-  SelectSeparator,
-  SelectScrollUpButton,
+  SelectLabel,
+  SelectPortal,
   SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
 }
