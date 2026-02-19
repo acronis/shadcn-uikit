@@ -1,3 +1,10 @@
+## [0.19.0](https://github.com/acronis/shadcn-uikit/compare/v0.18.0...v0.19.0) (2026-02-19)
+
+
+### Features
+
+* reorganize Tailwind CSS configuration for improved structure and readability ([70ddd25](https://github.com/acronis/shadcn-uikit/commit/70ddd257caa0a366599d05dc6afd4b97cf740418))
+
 ## [0.18.0](https://github.com/acronis/shadcn-uikit/compare/v0.17.0...v0.18.0) (2026-02-17)
 
 
@@ -40,11 +47,4 @@
 * add missing closing parenthesis in ring color definition ([7daac02](https://github.com/acronis/shadcn-uikit/commit/7daac02d365941d21f2aeb277aa1a8076d293400))
 * adjust build order to preserve preset file and ensure all CSS outputs generate ([03d337c](https://github.com/acronis/shadcn-uikit/commit/03d337c9610ecc26ade27c29a51efe8611247dd6))
 * generate full CSS with all utilities using Tailwind CLI and reference file ([c8cf376](https://github.com/acronis/shadcn-uikit/commit/c8cf37683f7d4841807f5ca4ccc9a8864fe56178))
-
-## [0.14.0](https://github.com/acronis/shadcn-uikit/compare/v0.13.0...v0.14.0) (2026-01-26)
-
-
-### Features
-
-* add typography configuration with base font settings and update import structure ([7d7795b](https://github.com/acronis/shadcn-uikit/commit/7d7795bdf8a9a575697849aca5573aad6d06b398))
 
