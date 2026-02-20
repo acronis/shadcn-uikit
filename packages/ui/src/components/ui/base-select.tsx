@@ -77,9 +77,10 @@ const SelectContent = React.forwardRef<
     alignItemWithTrigger?: boolean
     side?: 'top' | 'bottom'
     sideOffset?: number
+    portal?: boolean
   }
->(({ className, children, alignItemWithTrigger = false, side, sideOffset = 4, ...props }, ref) => (
-  <BaseSelect.Portal>
+>(({ className, children, alignItemWithTrigger = false, side, sideOffset = 4, portal = true, ...props }, ref) => {
+  const element = (<>
     <BaseSelect.Positioner
       alignItemWithTrigger={alignItemWithTrigger}
       side={side}
@@ -107,8 +108,10 @@ const SelectContent = React.forwardRef<
         <SelectScrollDownButton />
       </BaseSelect.Popup>
     </BaseSelect.Positioner>
-  </BaseSelect.Portal>
-))
+  </>)
+
+  return portal ? <BaseSelect.Portal>{element}</BaseSelect.Portal> : element
+})
 SelectContent.displayName = 'SelectContent'
 
 const SelectLabel = React.forwardRef<
