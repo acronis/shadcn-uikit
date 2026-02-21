@@ -25,14 +25,18 @@
     "./styles/themes/acronis-default": "./dist/themes/acronis-default.css",
     "./styles/themes/acronis-ocean": "./dist/themes/acronis-ocean.css",
     "./styles/themes/cyber-chat": "./dist/themes/cyber-chat.css",
-    "./tailwind-preset": "./tailwind.preset.js",
+    "./tailwind-preset": {
+      "import": "./tailwind.preset.js",
+      "types": "./tailwind.preset.d.ts"
+    },
     "./components/*": "./dist/components/*"
   },
   "files": [
     "dist",
     "README.md",
     "LICENSE",
-    "tailwind.preset.js"
+    "tailwind.preset.js",
+    "tailwind.preset.d.ts"
   ],
   "scripts": {
     "build": "pnpm run build:lib && pnpm run build:full-css && pnpm run build:llms",
