@@ -1,3 +1,10 @@
+## [0.21.0](https://github.com/acronis/shadcn-uikit/compare/v0.20.0...v0.21.0) (2026-02-21)
+
+
+### Features
+
+* update Tailwind preset configuration and add TypeScript definitions ([95d044c](https://github.com/acronis/shadcn-uikit/commit/95d044c6611b53c334ce08f885889f7b1d72736d))
+
 ## [0.20.0](https://github.com/acronis/shadcn-uikit/compare/v0.19.0...v0.20.0) (2026-02-20)
 
 
@@ -28,11 +35,4 @@
 * add new separator color variable to Acronis default theme ([e8073b4](https://github.com/acronis/shadcn-uikit/commit/e8073b48e9d85cb6a931049bf0ef8f725d631c9e))
 * implement new select components with enhanced features and accessibility, #REAL-100 ([17d2b23](https://github.com/acronis/shadcn-uikit/commit/17d2b231d4300f627aedc39686218f28e1f45c39)), closes [#REAL-100](https://github.com/acronis/shadcn-uikit/issues/REAL-100)
 * rename and update theme from Cyber Chat to Acronis Electric ([e871d3a](https://github.com/acronis/shadcn-uikit/commit/e871d3a43ded74b30e326b9aef513c0a868cebb7))
-
-## [0.16.0](https://github.com/acronis/shadcn-uikit/compare/v0.15.0...v0.16.0) (2026-02-03)
-
-
-### Features
-
-* add first structure for widgets playground ([c407751](https://github.com/acronis/shadcn-uikit/commit/c40775116e4779711e24950e78d4da5f6b8a1c16))
 
