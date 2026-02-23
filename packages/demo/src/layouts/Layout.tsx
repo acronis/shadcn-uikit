@@ -48,6 +48,9 @@ import {
   Palette,
   Image,
   Lock,
+  LayoutTemplate,
+  Layout as LayoutIcon,
+  AppWindow,
 } from 'lucide-react'
 import { TokenSelector } from '@/components/playground/TokenSelector.tsx'
 import { ThemeSwitcher } from '@/components/playground/ThemeSwitcher.tsx'
@@ -117,6 +120,14 @@ const navigationItems = [
     title: 'Widgets',
     items: [
       { id: 'widgets', title: 'Dashboard Widgets', icon: LayoutDashboard, path: '/widgets' },
+    ],
+  },
+  {
+    title: 'Layouts & Patterns',
+    items: [
+      { id: 'generic-components', title: 'Generic Components', icon: LayoutTemplate, path: '/generic-components' },
+      { id: 'layouts', title: 'Layouts', icon: LayoutIcon, path: '/layouts' },
+      { id: 'patterns', title: 'Pattern Demos', icon: AppWindow, path: '/patterns' },
     ],
   },
 ]

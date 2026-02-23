@@ -66,6 +66,9 @@ import { PasswordInputDemo } from '@/components/PasswordInputDemo.tsx'
 import { InputDemoWithSecondaryMenu } from '@/components/InputDemoWithSecondaryMenu.tsx'
 import { SecondaryMenuDemo } from '@/components/SecondaryMenuDemo.tsx'
 import { WidgetDemo } from '@/components/WidgetDemo.tsx'
+import { GenericComponentsDemo } from '@/components/GenericComponentsDemo.tsx'
+import { LayoutsDemo } from '@/components/LayoutsDemo.tsx'
+import { PatternsDemo } from '@/components/PatternsDemo.tsx'
 import { PlaygroundPage } from '@/pages/playground/PlaygroundPage.tsx'
 import '@/App.css'
 import { DemoApp } from '@/app/App'
@@ -161,6 +164,9 @@ function App() {
             <Route path="icons" element={<IconsDemo />} />
             <Route path="container" element={<ContainerDemo />} />
             <Route path="widgets" element={<WidgetDemo />} />
+            <Route path="generic-components" element={<GenericComponentsDemo />} />
+            <Route path="layouts" element={<LayoutsDemo />} />
+            <Route path="patterns" element={<PatternsDemo />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
