@@ -113,6 +113,12 @@ const navigationItems = [
       { id: 'tree', title: 'Tree', icon: Network, path: '/tree' },
     ],
   },
+  {
+    title: 'Widgets',
+    items: [
+      { id: 'widgets', title: 'Dashboard Widgets', icon: LayoutDashboard, path: '/widgets' },
+    ],
+  },
 ]
 
 export function Layout() {

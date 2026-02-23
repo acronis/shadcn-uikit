@@ -65,6 +65,7 @@ import { PaginationDemo } from '@/components/PaginationDemo.tsx'
 import { PasswordInputDemo } from '@/components/PasswordInputDemo.tsx'
 import { InputDemoWithSecondaryMenu } from '@/components/InputDemoWithSecondaryMenu.tsx'
 import { SecondaryMenuDemo } from '@/components/SecondaryMenuDemo.tsx'
+import { WidgetDemo } from '@/components/WidgetDemo.tsx'
 import { PlaygroundPage } from '@/pages/playground/PlaygroundPage.tsx'
 import '@/App.css'
 import { DemoApp } from '@/app/App'
@@ -159,6 +160,7 @@ function App() {
             <Route path="design-tokens" element={<DesignTokensDemo />} />
             <Route path="icons" element={<IconsDemo />} />
             <Route path="container" element={<ContainerDemo />} />
+            <Route path="widgets" element={<WidgetDemo />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

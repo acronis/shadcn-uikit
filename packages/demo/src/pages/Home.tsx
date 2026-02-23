@@ -64,6 +64,15 @@ export function Home() {
 
         <div className="rounded-lg border p-6 border-primary">
           <h3 className="mb-2 text-lg font-semibold">
+            <Link to="/widgets">Dashboard Widgets</Link>
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Chart widgets, alerts, progress, data tables, text metrics, and placeholders
+          </p>
+        </div>
+
+        <div className="rounded-lg border p-6 border-primary">
+          <h3 className="mb-2 text-lg font-semibold">
             <Link to="/chart-playground">� LineChart Playground</Link>
           </h3>
           <p className="text-sm text-muted-foreground">
