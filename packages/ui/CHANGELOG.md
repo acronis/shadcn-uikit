@@ -1,3 +1,10 @@
+## [0.23.0](https://github.com/acronis/shadcn-uikit/compare/v0.22.0...v0.23.0) (2026-02-23)
+
+
+### Features
+
+* **PLTFRM-86108:** add generic components, layout components and pattern demos ([42a150f](https://github.com/acronis/shadcn-uikit/commit/42a150f009485e0acca2443d49eb7d93c307d959))
+
 ## [0.22.0](https://github.com/acronis/shadcn-uikit/compare/v0.21.0...v0.22.0) (2026-02-23)
 
 
@@ -26,12 +33,4 @@
 ### Features
 
 * reorganize Tailwind CSS configuration for improved structure and readability ([70ddd25](https://github.com/acronis/shadcn-uikit/commit/70ddd257caa0a366599d05dc6afd4b97cf740418))
-
-## [0.18.0](https://github.com/acronis/shadcn-uikit/compare/v0.17.0...v0.18.0) (2026-02-17)
-
-
-### Features
-
-* add DropdownMenu components with various examples and interactive features ([ce39123](https://github.com/acronis/shadcn-uikit/commit/ce39123410e6c968b1610870204dc754bc6402d0))
-* add SelectPortal and reorganize exports in base-select.tsx ([1234aaf](https://github.com/acronis/shadcn-uikit/commit/1234aaf513c3360182a74091bc1e49e2373c2981))
 
