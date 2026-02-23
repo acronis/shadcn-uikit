@@ -73,6 +73,33 @@ export function Home() {
 
         <div className="rounded-lg border p-6 border-primary">
           <h3 className="mb-2 text-lg font-semibold">
+            <Link to="/generic-components">Generic Components</Link>
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            PageHeader, PageContent, Section, Stack, Grid — layout building blocks
+          </p>
+        </div>
+
+        <div className="rounded-lg border p-6 border-primary">
+          <h3 className="mb-2 text-lg font-semibold">
+            <Link to="/layouts">Layout Components</Link>
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            AppShell, AuthLayout, DashboardLayout, SplitLayout — page-level structural shells
+          </p>
+        </div>
+
+        <div className="rounded-lg border p-6 border-primary">
+          <h3 className="mb-2 text-lg font-semibold">
+            <Link to="/patterns">Pattern Demos</Link>
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Dashboard, Settings, Data Management, Login/Signup, Error Pages — semi-functional page compositions
+          </p>
+        </div>
+
+        <div className="rounded-lg border p-6 border-primary">
+          <h3 className="mb-2 text-lg font-semibold">
             <Link to="/chart-playground">� LineChart Playground</Link>
           </h3>
           <p className="text-sm text-muted-foreground">
