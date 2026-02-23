@@ -1,3 +1,11 @@
+## [0.22.0](https://github.com/acronis/shadcn-uikit/compare/v0.21.0...v0.22.0) (2026-02-23)
+
+
+### Features
+
+* add new widget components for dashboard ([6877885](https://github.com/acronis/shadcn-uikit/commit/6877885f439ed6e7a6b317c145801844f76dc5e7))
+* export additional widget components from UI module ([51fe7fa](https://github.com/acronis/shadcn-uikit/commit/51fe7fadfdf0d3e3b591455e1dab3959221d8457))
+
 ## [0.21.0](https://github.com/acronis/shadcn-uikit/compare/v0.20.0...v0.21.0) (2026-02-21)
 
 
@@ -26,13 +34,4 @@
 
 * add DropdownMenu components with various examples and interactive features ([ce39123](https://github.com/acronis/shadcn-uikit/commit/ce39123410e6c968b1610870204dc754bc6402d0))
 * add SelectPortal and reorganize exports in base-select.tsx ([1234aaf](https://github.com/acronis/shadcn-uikit/commit/1234aaf513c3360182a74091bc1e49e2373c2981))
-
-## [0.17.0](https://github.com/acronis/shadcn-uikit/compare/v0.16.0...v0.17.0) (2026-02-06)
-
-
-### Features
-
-* add new separator color variable to Acronis default theme ([e8073b4](https://github.com/acronis/shadcn-uikit/commit/e8073b48e9d85cb6a931049bf0ef8f725d631c9e))
-* implement new select components with enhanced features and accessibility, #REAL-100 ([17d2b23](https://github.com/acronis/shadcn-uikit/commit/17d2b231d4300f627aedc39686218f28e1f45c39)), closes [#REAL-100](https://github.com/acronis/shadcn-uikit/issues/REAL-100)
-* rename and update theme from Cyber Chat to Acronis Electric ([e871d3a](https://github.com/acronis/shadcn-uikit/commit/e871d3a43ded74b30e326b9aef513c0a868cebb7))
 
