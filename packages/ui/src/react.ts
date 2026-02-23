@@ -48,6 +48,15 @@ export * from './components/ui/tag'
 export * from './components/ui/textarea'
 export * from './components/ui/tooltip'
 export * from './components/ui/tree'
+export * from './components/ui/widget'
+export * from './components/ui/widget-alert'
+export * from './components/ui/widget-progress-tiers'
+export * from './components/ui/widget-progress-chunks'
+export * from './components/ui/widget-placeholder'
+export * from './components/ui/widget-protection-status'
+export * from './components/ui/widget-protection-summary'
+export * from './components/ui/widget-table-data'
+export * from './components/ui/widget-text'
 export {
   Empty,
   EmptyIcon as EmptyIconComponent,
