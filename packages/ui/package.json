@@ -27,6 +27,7 @@
     "./styles/themes/cyber-chat": "./dist/themes/cyber-chat.css",
     "./tailwind-preset": {
       "import": "./tailwind.preset.js",
+      "require": "./tailwind.preset.js",
       "types": "./tailwind.preset.d.ts"
     },
     "./components/*": "./dist/components/*"
