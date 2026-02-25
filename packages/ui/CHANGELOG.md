@@ -1,3 +1,10 @@
+## [0.23.1](https://github.com/acronis/shadcn-uikit/compare/v0.23.0...v0.23.1) (2026-02-25)
+
+
+### Bug Fixes
+
+* **package:** add require field for tailwind preset in package.json ([32f99c6](https://github.com/acronis/shadcn-uikit/commit/32f99c6614d6953d1d297acdc3af129b4970dfd8))
+
 ## [0.23.0](https://github.com/acronis/shadcn-uikit/compare/v0.22.0...v0.23.0) (2026-02-23)
 
 
@@ -26,11 +33,4 @@
 ### Features
 
 * add portal props to fixed components to avoid conflicts ([8494522](https://github.com/acronis/shadcn-uikit/commit/8494522f3bfecd0e7e781069293c72c30748487d))
-
-## [0.19.0](https://github.com/acronis/shadcn-uikit/compare/v0.18.0...v0.19.0) (2026-02-19)
-
-
-### Features
-
-* reorganize Tailwind CSS configuration for improved structure and readability ([70ddd25](https://github.com/acronis/shadcn-uikit/commit/70ddd257caa0a366599d05dc6afd4b97cf740418))
 
