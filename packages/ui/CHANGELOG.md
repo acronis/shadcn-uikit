@@ -1,3 +1,10 @@
+## [0.23.2](https://github.com/acronis/shadcn-uikit/compare/v0.23.1...v0.23.2) (2026-02-26)
+
+
+### Bug Fixes
+
+* **package:** update @radix-ui/react-visually-hidden version to ^1.2.3 ([8fa7580](https://github.com/acronis/shadcn-uikit/commit/8fa75801c3f8ad25619d8dca7c12473d9232de25))
+
 ## [0.23.1](https://github.com/acronis/shadcn-uikit/compare/v0.23.0...v0.23.1) (2026-02-25)
 
 
@@ -26,11 +33,4 @@
 ### Features
 
 * update Tailwind preset configuration and add TypeScript definitions ([95d044c](https://github.com/acronis/shadcn-uikit/commit/95d044c6611b53c334ce08f885889f7b1d72736d))
-
-## [0.20.0](https://github.com/acronis/shadcn-uikit/compare/v0.19.0...v0.20.0) (2026-02-20)
-
-
-### Features
-
-* add portal props to fixed components to avoid conflicts ([8494522](https://github.com/acronis/shadcn-uikit/commit/8494522f3bfecd0e7e781069293c72c30748487d))
 
