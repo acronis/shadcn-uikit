@@ -1,3 +1,10 @@
+## [0.23.4](https://github.com/acronis/shadcn-uikit/compare/v0.23.3...v0.23.4) (2026-02-26)
+
+
+### Bug Fixes
+
+* **package:** add exports field for package.json in package.json ([d0772de](https://github.com/acronis/shadcn-uikit/commit/d0772de03d7ff5fb5eb3c67b01ed7cb7d3859906))
+
 ## [0.23.3](https://github.com/acronis/shadcn-uikit/compare/v0.23.2...v0.23.3) (2026-02-26)
 
 
@@ -25,12 +32,4 @@
 ### Features
 
 * **PLTFRM-86108:** add generic components, layout components and pattern demos ([42a150f](https://github.com/acronis/shadcn-uikit/commit/42a150f009485e0acca2443d49eb7d93c307d959))
-
-## [0.22.0](https://github.com/acronis/shadcn-uikit/compare/v0.21.0...v0.22.0) (2026-02-23)
-
-
-### Features
-
-* add new widget components for dashboard ([6877885](https://github.com/acronis/shadcn-uikit/commit/6877885f439ed6e7a6b317c145801844f76dc5e7))
-* export additional widget components from UI module ([51fe7fa](https://github.com/acronis/shadcn-uikit/commit/51fe7fadfdf0d3e3b591455e1dab3959221d8457))
 
