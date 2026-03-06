@@ -133,6 +133,9 @@ export default {
           ring: 'hsl(var(--av-ring))',
         },
       },
+      translate: {
+        'dialog-offset': '48%',
+      },
       borderRadius: {
         lg: 'var(--av-radius)',
         md: 'calc(var(--av-radius) - 2px)',
