@@ -1,3 +1,10 @@
+## [0.26.0](https://github.com/acronis/shadcn-uikit/compare/v0.25.1...v0.26.0) (2026-03-12)
+
+
+### Features
+
+* **widget:** add storybook stories for Widget component with various sizes and configurations ([6078d37](https://github.com/acronis/shadcn-uikit/commit/6078d37257cfd73d9d40e19385b97b3b4bdc622f))
+
 ## [0.25.1](https://github.com/acronis/shadcn-uikit/compare/v0.25.0...v0.25.1) (2026-03-06)
 
 
@@ -25,11 +32,4 @@
 ### Bug Fixes
 
 * **package:** add exports field for package.json in package.json ([d0772de](https://github.com/acronis/shadcn-uikit/commit/d0772de03d7ff5fb5eb3c67b01ed7cb7d3859906))
-
-## [0.23.3](https://github.com/acronis/shadcn-uikit/compare/v0.23.2...v0.23.3) (2026-02-26)
-
-
-### Bug Fixes
-
-* **package:** reorder require field for tailwind preset in package.json ([b54dc46](https://github.com/acronis/shadcn-uikit/commit/b54dc46400add83821300ed7a843f62e0e59e8cb))
 
