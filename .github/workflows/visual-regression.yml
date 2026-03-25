@@ -1,7 +1,7 @@
 # .github/workflows/visual-regression.yml
 name: Visual Regression
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   visual-regression:
