@@ -1,6 +1,8 @@
 import type { TestRunnerConfig } from '@storybook/test-runner';
-import process from 'node:process';
+import * as process from 'node:process';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
+import { expect } from '@storybook/test';
+import 'jest-image-snapshot';
 
 const config: TestRunnerConfig = {
     setup() {
@@ -10,9 +12,13 @@ const config: TestRunnerConfig = {
         // Wait for fonts and images to load
         await page.waitForLoadState('networkidle');
 
-        // Screenshot the story root element with padding to avoid a tight crop on tiny components
-        const root = page.locator('#storybook-root');
-        const box = await root.boundingBox();
+        // For portal-based overlays (dialog, sheet, etc.) the content renders outside
+        // #storybook-root, so screenshot the overlay element directly. Otherwise
+        // screenshot the story root element with padding.
+        const overlay = page.locator('[role="dialog"], [role="alertdialog"]').first();
+        const hasOverlay = (await overlay.count()) > 0;
+        const target = hasOverlay ? overlay : page.locator('#storybook-root');
+        const box = await target.boundingBox();
         const padding = 24;
         const image = await page.screenshot({
             animations: 'disabled',
