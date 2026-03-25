@@ -1,8 +1,6 @@
 import type { TestRunnerConfig } from '@storybook/test-runner';
 import * as process from 'node:process';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
-import { expect } from '@storybook/test';
-import 'jest-image-snapshot';
 
 const config: TestRunnerConfig = {
     setup() {
