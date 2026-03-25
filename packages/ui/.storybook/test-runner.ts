@@ -13,7 +13,7 @@ const config: TestRunnerConfig = {
         // For portal-based overlays (dialog, sheet, etc.) the content renders outside
         // #storybook-root, so screenshot the overlay element directly. Otherwise
         // screenshot the story root element with padding.
-        const overlay = page.locator('[role="dialog"], [role="alertdialog"]').first();
+        const overlay = page.locator('[role="dialog"], [role="alertdialog"], [role="menu"]').first();
         const hasOverlay = (await overlay.count()) > 0;
         const target = hasOverlay ? overlay : page.locator('#storybook-root');
         const box = await target.boundingBox();

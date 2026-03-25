@@ -148,13 +148,15 @@ const DropdownMenuRadioItem = React.forwardRef<
 ))
 DropdownMenuRadioItem.displayName = 'DropdownMenuRadioItem'
 
+// Menu.GroupLabel requires a Menu.Group parent (Base UI constraint), but shadcn's
+// DropdownMenuLabel is used standalone. Render a plain div to match the original API.
 const DropdownMenuLabel = React.forwardRef<
   HTMLDivElement,
-  Omit<Menu.GroupLabel.Props, 'ref'> & {
+  React.HTMLAttributes<HTMLDivElement> & {
     inset?: boolean
   }
 >(({ className, inset, ...props }, ref) => (
-  <Menu.GroupLabel
+  <div
     ref={ref}
     className={cn('px-4 py-2 text-sm font-semibold leading-6', inset && 'pl-8', className)}
     {...props}
