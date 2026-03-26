@@ -9,21 +9,22 @@ const Slider = React.forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
 >(({ className, defaultValue, value, ...props }, ref) => {
-  // Determine thumb count from the value array; Base UI accepts number | readonly number[]
-  // but a single number is not a valid slider value in practice — normalise to array first.
-  const resolvedValue = value ?? defaultValue ?? [0]
-  const thumbCount = Array.isArray(resolvedValue) ? resolvedValue.length : 1
+  // Normalize values to arrays for consistency. Base UI accepts number | readonly number[]
+  // but arrays provide more predictable behavior for thumb rendering and state management.
+  const normalizedValue = value ? (Array.isArray(value) ? value : [value]) : undefined
+  const normalizedDefaultValue = defaultValue ? (Array.isArray(defaultValue) ? defaultValue : [defaultValue]) : [0]
+  const thumbCount = (normalizedValue || normalizedDefaultValue).length
 
   return (
     <SliderPrimitive.Root
       ref={ref}
-      value={value}
-      defaultValue={defaultValue ?? [0]}
+      value={normalizedValue}
+      defaultValue={normalizedDefaultValue}
       className={cn('relative flex w-full touch-none select-none items-center', className)}
       {...props}
     >
       <SliderPrimitive.Control className="relative flex w-full items-center">
-        <SliderPrimitive.Track className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-secondary">
+        <SliderPrimitive.Track className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-input">
           <SliderPrimitive.Indicator className="absolute h-full bg-primary" />
         </SliderPrimitive.Track>
         {Array.from({ length: thumbCount }, (_, i) => (
