@@ -147,21 +147,26 @@ export default {
             height: '0',
           },
           to: {
-            height: 'var(--radix-accordion-content-height)',
+            height: 'var(--accordion-panel-height)',
           },
         },
         'accordion-up': {
           from: {
-            height: 'var(--radix-accordion-content-height)',
+            height: 'var(--accordion-panel-height)',
           },
           to: {
             height: '0',
           },
         },
+        'indeterminate-progress': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(400%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'indeterminate-progress': 'indeterminate-progress 1.5s ease-in-out infinite',
       },
     },
   },

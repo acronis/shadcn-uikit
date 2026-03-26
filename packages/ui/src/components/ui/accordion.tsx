@@ -6,8 +6,13 @@ import { ChevronDown } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
-// Re-export Root as Accordion to match the original API surface.
-const AccordionRoot = Accordion.Root
+const AccordionRoot = React.forwardRef<
+  React.ElementRef<typeof Accordion.Root>,
+  React.ComponentPropsWithoutRef<typeof Accordion.Root>
+>(({ keepMounted = true, ...props }, ref) => (
+  <Accordion.Root ref={ref} keepMounted={keepMounted} {...props} />
+))
+AccordionRoot.displayName = 'Accordion'
 
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof Accordion.Item>,
@@ -47,7 +52,8 @@ const AccordionContent = React.forwardRef<
   // Accordion.Panel replaces Accordion.Content; data-open/data-closed replace data-[state=open/closed]
   <Accordion.Panel
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[closed]:animate-accordion-up data-[open]:animate-accordion-down"
+    className="overflow-hidden text-sm"
+    style={{ height: 'var(--accordion-panel-height)', transition: 'height 0.2s ease-out' }}
     {...props}
   >
     <div className={cn('pb-4 pt-0', className)}>{children}</div>
