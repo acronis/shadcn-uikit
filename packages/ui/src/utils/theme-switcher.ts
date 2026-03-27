@@ -29,7 +29,7 @@ const COLOR_MODE_STORAGE_KEY = 'av-color-mode'
  * 
  * @example
  * ```typescript
- * import { applyTheme } from '@acronis/shadcn-uikit/utils/theme-switcher'
+ * import { applyTheme } from '@acronis-platform/shadcn-uikit/utils/theme-switcher'
  * 
  * applyTheme('acronis-ocean')
  * 
