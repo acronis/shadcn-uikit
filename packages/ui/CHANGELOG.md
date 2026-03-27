@@ -1,3 +1,11 @@
+## [0.28.0](https://github.com/acronis/shadcn-uikit/compare/v0.27.0...v0.28.0) (2026-03-27)
+
+
+### Features
+
+* **ADP-49599:** simplified theme logic, removed applyNavVariant ([14320b5](https://github.com/acronis/shadcn-uikit/commit/14320b552b57dd3e4a5680e635ea42aa04271eea))
+* **ADP-49599:** updated applyTheme and applyNavVariant to work with shadow root ([c5500cf](https://github.com/acronis/shadcn-uikit/commit/c5500cf4d7868e6d37c560258bfc9ab5b6446500))
+
 ## [0.27.0](https://github.com/acronis/shadcn-uikit/compare/v0.26.0...v0.27.0) (2026-03-20)
 
 
@@ -25,11 +33,4 @@
 ### Features
 
 * add portal prop to AlertDialog component ([0db9cf1](https://github.com/acronis/shadcn-uikit/commit/0db9cf1ddcde251e12537ee4269b0429e307cee5))
-
-## [0.24.0](https://github.com/acronis/shadcn-uikit/compare/v0.23.4...v0.24.0) (2026-03-05)
-
-
-### Features
-
-* add portal prop to Sheet component ([e261103](https://github.com/acronis/shadcn-uikit/commit/e2611030a7471994ea075a898196edc929b28101))
 
