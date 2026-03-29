@@ -1,6 +1,6 @@
 /**
  * Auto-generated icon components
- * Generated on: 2026-03-29T13:07:40.464Z
+ * Generated on: 2026-03-29T13:29:07.028Z
  * Do not edit manually - run 'npm run generate:icons' to regenerate
  */
 
