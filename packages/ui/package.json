@@ -47,6 +47,7 @@
     "build:lib": "vite build",
     "build:types": "tsc --project tsconfig.build.json",
     "build:llms": "tsx scripts/generate-llms-txt.ts",
+    "generate:icons": "tsx scripts/generate-icons.ts",
     "dev": "vite build --watch",
     "type-check": "tsc --noEmit",
     "test": "vitest",
