@@ -23,6 +23,7 @@ const __dirname = path.dirname(__filename)
 const ICONS_DIR = path.resolve(__dirname, '../src/components/icons')
 const SVG_DIR = path.resolve(ICONS_DIR, 'svg')
 const OUTPUT_FILE = path.resolve(ICONS_DIR, 'auto-generated.tsx')
+const CATEGORIES_FILE = path.resolve(ICONS_DIR, 'categories.json')
 
 /** Valid icon sizes used in the design system */
 const VALID_SIZES = new Set([16, 24, 32, 48, 72, 96])
@@ -229,6 +230,86 @@ function generateTsx(groups: IconGroup[]): void {
   fs.writeFileSync(OUTPUT_FILE, L.join('\n'), 'utf-8')
 }
 
+// ─── Generate categories.json ───────────────────────────────────────
+
+function generateCategories(groups: IconGroup[]): void {
+  const MIN_GROUP_SIZE = 5
+  const MAX_OTHER_CHUNK = 60
+
+  // Collect all icon entries (baseName-size format)
+  const allEntries: Array<{ entry: string; baseName: string }> = []
+  for (const group of groups) {
+    const allSizes = [group.defaultSize, ...group.variants.map((v) => v.size)]
+    for (const size of allSizes) {
+      allEntries.push({ entry: `${group.baseName}-${size}`, baseName: group.baseName })
+    }
+  }
+
+  // Phase 1: Group by first name segment (prefix)
+  const prefixGroups: Record<string, string[]> = {}
+  for (const { entry, baseName } of allEntries) {
+    const firstDash = baseName.indexOf('-')
+    const prefix = firstDash > 0 ? baseName.substring(0, firstDash) : baseName
+    if (!prefixGroups[prefix]) prefixGroups[prefix] = []
+    prefixGroups[prefix].push(entry)
+  }
+
+  // Phase 2: Keep groups above threshold, collect leftovers
+  const categories: Record<string, string[]> = {}
+  const other: string[] = []
+  for (const [prefix, entries] of Object.entries(prefixGroups)) {
+    if (entries.length >= MIN_GROUP_SIZE) {
+      categories[prefix] = entries.sort()
+    } else {
+      other.push(...entries)
+    }
+  }
+
+  // Phase 3: Split leftovers into alphabetical chunks instead of one huge "other"
+  if (other.length > 0) {
+    other.sort()
+    if (other.length <= MAX_OTHER_CHUNK) {
+      categories['other'] = other
+    } else {
+      let chunkStart = 0
+      while (chunkStart < other.length) {
+        const chunkEnd = Math.min(chunkStart + MAX_OTHER_CHUNK, other.length)
+        const first = other[chunkStart][0].toUpperCase()
+        const last = other[chunkEnd - 1][0].toUpperCase()
+        const label = first === last ? `other-${first}` : `other-${first}-${last}`
+        categories[label] = other.slice(chunkStart, chunkEnd)
+        chunkStart = chunkEnd
+      }
+    }
+  }
+
+  // Phase 4: Add pattern-based cross-cutting categories
+  const patterns: Record<string, RegExp> = {
+    'illustrations': /-ill$/,
+    'tray': /-tray$/,
+    'navigation': /-nav(-dark)?$/,
+    'multicolor': /-mix$/,
+    'outlined': /-o$/,
+    'status-dots': /^dot-(chart-|critical|custom|danger|info|success|unknown|warning)/,
+  }
+  for (const [catName, regex] of Object.entries(patterns)) {
+    const matches = allEntries
+      .filter(({ baseName }) => regex.test(baseName))
+      .map(({ entry }) => entry)
+    if (matches.length >= MIN_GROUP_SIZE) {
+      categories[catName] = matches.sort()
+    }
+  }
+
+  // Sort categories by name
+  const sorted: Record<string, string[]> = {}
+  for (const key of Object.keys(categories).sort()) {
+    sorted[key] = categories[key]
+  }
+
+  fs.writeFileSync(CATEGORIES_FILE, JSON.stringify(sorted, null, 2) + '\n', 'utf-8')
+}
+
 // ─── Main ───────────────────────────────────────────────────────────
 
 function main() {
@@ -245,6 +326,10 @@ function main() {
   console.log('Generating auto-generated.tsx…')
   generateTsx(groups)
   console.log(`  Written → ${path.relative(process.cwd(), OUTPUT_FILE)}`)
+
+  console.log('Generating categories.json…')
+  generateCategories(groups)
+  console.log(`  Written → ${path.relative(process.cwd(), CATEGORIES_FILE)}`)
 
   console.log('Done!')
 }
