@@ -149,7 +149,6 @@ src/components/icons/
 │   ├── info.svg
 │   ├── success.svg
 │   └── ...
-├── alert-icons.tsx           # Legacy manual icons
 ├── icon-library.tsx          # Manual icon components
 ├── base-icon.tsx            # Base wrapper component
 ├── dynamic-icons.tsx        # Dynamic loading utilities
