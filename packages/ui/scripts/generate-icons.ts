@@ -10,7 +10,7 @@
  * For icons with multiple sizes, a component with a `size` prop is generated.
  * The largest available size is used as the default.
  *
- * Run with: npm run generate:icons
+ * Run with: pnpm --filter ./packages/ui run generate:icons
  */
 
 import fs from 'fs'
