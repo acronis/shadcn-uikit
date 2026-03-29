@@ -1,6 +1,3 @@
-// Legacy exports (keep for backward compatibility)
-// export * from './alert-icons'
-
 // New icon library with BaseIcon wrapper
 // export * from './icon-library'
 export * from './base-icon'
