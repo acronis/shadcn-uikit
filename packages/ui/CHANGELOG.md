@@ -1,3 +1,10 @@
+## [0.30.1](https://github.com/acronis/shadcn-uikit/compare/v0.30.0...v0.30.1) (2026-03-30)
+
+
+### Bug Fixes
+
+* **theme:** regenerate white-label from ui-syntax-tokens, add generator script ([dfa59eb](https://github.com/acronis/shadcn-uikit/commit/dfa59eb7e58cda9b62484683a68b8e563c6aa902))
+
 ## [0.30.0](https://github.com/acronis/shadcn-uikit/compare/v0.29.0...v0.30.0) (2026-03-30)
 
 
@@ -84,11 +91,4 @@
 ### Features
 
 * **theme:** add white-label theme with 20 nav variants PLTFRM-87974 ([52d62c0](https://github.com/acronis/shadcn-uikit/commit/52d62c025c7c9d830fd6b90139993b2c29e2bad8)), closes [#44515](https://github.com/acronis/shadcn-uikit/issues/44515)
-
-## [0.26.0](https://github.com/acronis/shadcn-uikit/compare/v0.25.1...v0.26.0) (2026-03-12)
-
-
-### Features
-
-* **widget:** add storybook stories for Widget component with various sizes and configurations ([6078d37](https://github.com/acronis/shadcn-uikit/commit/6078d37257cfd73d9d40e19385b97b3b4bdc622f))
 
