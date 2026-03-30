@@ -9,11 +9,11 @@ interface BaseIconProps extends React.SVGProps<SVGSVGElement> {
 /**
  * Base icon wrapper component that provides consistent sizing and styling
  */
-export function BaseIcon({ children, className, ...props }: BaseIconProps) {
+export function BaseIcon({ children, className, viewBox = '0 0 16 16', ...props }: BaseIconProps) {
   return (
     <svg
       className={cn('size-4 shrink-0', className)}
-      viewBox="0 0 16 16"
+      viewBox={viewBox}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
