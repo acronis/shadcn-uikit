@@ -49,6 +49,7 @@
     "build:llms": "tsx scripts/generate-llms-txt.ts",
     "generate:icons": "tsx scripts/generate-icons.ts",
     "generate:icon-stories": "tsx scripts/generate-icon-stories.ts",
+    "generate:themes": "tsx scripts/generate-white-label-themes.ts",
     "dev": "vite build --watch",
     "type-check": "tsc --noEmit",
     "test": "vitest",
