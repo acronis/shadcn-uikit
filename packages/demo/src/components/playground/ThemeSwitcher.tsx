@@ -79,11 +79,9 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size={size} className={className} aria-label="Select theme">
-          {getIcon()}
-          {showLabel && <span className="ml-2">{getLabel()}</span>}
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" size={size} className={className} aria-label="Select theme" />}>
+        {getIcon()}
+        {showLabel && <span className="ml-2">{getLabel()}</span>}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem

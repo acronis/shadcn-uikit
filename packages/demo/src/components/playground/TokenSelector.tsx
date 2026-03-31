@@ -31,11 +31,9 @@ export const TokenSelector: React.FC<TokenSelectorProps> = ({ className = '' }) 
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" className={className}>
-          <Palette className="mr-2 h-4 w-4" />
-          <span>{activeTokenSet?.name || 'Select Theme'}</span>
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" className={className} />}>
+        <Palette className="mr-2 h-4 w-4" />
+        <span>{activeTokenSet?.name || 'Select Theme'}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel>Theme Presets</DropdownMenuLabel>
