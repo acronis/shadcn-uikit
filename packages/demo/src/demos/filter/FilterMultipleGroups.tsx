@@ -55,10 +55,8 @@ export function FilterMultipleGroups() {
         <div className="space-y-6">
           <div className="flex gap-2 flex-wrap">
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Filter count={statusFilters.length} active={statusFilters.length > 0}>
-                  Status
-                </Filter>
+              <DropdownMenuTrigger render={<Filter count={statusFilters.length} active={statusFilters.length > 0} />}>
+                Status
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel>Filter by Status</DropdownMenuLabel>
@@ -76,10 +74,8 @@ export function FilterMultipleGroups() {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Filter count={categoryFilters.length} active={categoryFilters.length > 0}>
-                  Category
-                </Filter>
+              <DropdownMenuTrigger render={<Filter count={categoryFilters.length} active={categoryFilters.length > 0} />}>
+                Category
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel>Filter by Category</DropdownMenuLabel>

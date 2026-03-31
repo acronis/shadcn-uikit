@@ -12,8 +12,8 @@ import { Mail, MessageSquare, Settings, Keyboard } from 'lucide-react'
 export function DropdownMenuMultipleSections() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Options</Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        Options
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Actions</DropdownMenuLabel>

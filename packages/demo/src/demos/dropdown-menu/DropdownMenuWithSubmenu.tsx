@@ -22,8 +22,8 @@ import {
 export function DropdownMenuWithSubmenu() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">More Actions</Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        More Actions
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuItem>

@@ -15,8 +15,8 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => (
     <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="outline">Open Popover</Button>
+      <PopoverTrigger render={<Button variant="outline" />}>
+        Open Popover
       </PopoverTrigger>
       <PopoverContent>
         <div className="grid gap-4">

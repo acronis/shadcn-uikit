@@ -146,7 +146,7 @@ describe('Button', () => {
   describe('asChild prop', () => {
     it('renders as Slot when asChild is true', () => {
       render(
-        <Button asChild>
+        <Button>
           <a href="/test">Link Button</a>
         </Button>
       )

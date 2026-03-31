@@ -11,10 +11,8 @@ import { MoreVertical, Edit, Copy, Download, Trash } from 'lucide-react'
 export function DropdownMenuWithIcons() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <MoreVertical className="h-4 w-4" />
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" size="icon" />}>
+        <MoreVertical className="h-4 w-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
         <DropdownMenuItem>

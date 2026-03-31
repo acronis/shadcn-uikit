@@ -14,8 +14,8 @@ import { Loader2 } from 'lucide-react'
 export function DialogLoading() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Process Data</Button>
+      <DialogTrigger render={<Button />}>
+        Process Data
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>

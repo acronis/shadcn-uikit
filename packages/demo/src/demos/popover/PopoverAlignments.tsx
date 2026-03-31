@@ -5,8 +5,8 @@ export function PopoverAlignments() {
   return (
     <div className="flex flex-wrap justify-center gap-4 rounded-lg border p-8">
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Align Start</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Align Start
         </PopoverTrigger>
         <PopoverContent align="start" className="w-64">
           <p className="text-sm">Aligned to the start.</p>
@@ -14,8 +14,8 @@ export function PopoverAlignments() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Align Center</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Align Center
         </PopoverTrigger>
         <PopoverContent align="center" className="w-64">
           <p className="text-sm">Aligned to the center.</p>
@@ -23,8 +23,8 @@ export function PopoverAlignments() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Align End</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Align End
         </PopoverTrigger>
         <PopoverContent align="end" className="w-64">
           <p className="text-sm">Aligned to the end.</p>

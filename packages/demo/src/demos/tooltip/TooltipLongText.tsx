@@ -11,8 +11,8 @@ export function TooltipLongText() {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild>
-          <Button variant="outline">Hover for details</Button>
+        <TooltipTrigger render={<Button variant="outline" />}>
+          Hover for details
         </TooltipTrigger>
         <TooltipContent className="max-w-xs">
           <p>

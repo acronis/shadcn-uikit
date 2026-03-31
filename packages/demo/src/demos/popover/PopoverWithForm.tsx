@@ -5,8 +5,8 @@ export function PopoverWithForm() {
   return (
     <div className="flex justify-center rounded-lg border p-8">
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Settings</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Settings
         </PopoverTrigger>
         <PopoverContent className="w-80">
           <div className="grid gap-4">

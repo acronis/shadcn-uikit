@@ -11,8 +11,8 @@ export function TooltipCustomDelay() {
   return (
     <TooltipProvider delayDuration={800}>
       <Tooltip>
-        <TooltipTrigger asChild>
-          <Button variant="outline">Slow to appear</Button>
+        <TooltipTrigger render={<Button variant="outline" />}>
+          Slow to appear
         </TooltipTrigger>
         <TooltipContent>
           <p>This tooltip has a longer delay</p>

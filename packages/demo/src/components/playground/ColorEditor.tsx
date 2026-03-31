@@ -49,7 +49,7 @@ export const ColorEditor: React.FC<ColorEditorProps> = ({
       </div>
 
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
+        <PopoverTrigger>
           <Button
             variant="outline"
             className="w-full justify-start text-left font-normal"

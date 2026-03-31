@@ -6,10 +6,8 @@ export function PopoverIconTriggers() {
   return (
     <div className="flex flex-wrap justify-center gap-4 rounded-lg border p-8">
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="ghost" size="icon">
-            <HelpCircle className="h-5 w-5" />
-          </Button>
+        <PopoverTrigger render={<Button variant="ghost" size="icon" />}>
+          <HelpCircle className="h-5 w-5" />
         </PopoverTrigger>
         <PopoverContent className="w-80">
           <div className="space-y-2">
@@ -23,10 +21,8 @@ export function PopoverIconTriggers() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="ghost" size="icon">
-            <Settings className="h-5 w-5" />
-          </Button>
+        <PopoverTrigger render={<Button variant="ghost" size="icon" />}>
+          <Settings className="h-5 w-5" />
         </PopoverTrigger>
         <PopoverContent className="w-80">
           <div className="space-y-2">
@@ -39,10 +35,8 @@ export function PopoverIconTriggers() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="ghost" size="icon">
-            <Bell className="h-5 w-5" />
-          </Button>
+        <PopoverTrigger render={<Button variant="ghost" size="icon" />}>
+          <Bell className="h-5 w-5" />
         </PopoverTrigger>
         <PopoverContent className="w-80">
           <div className="space-y-2">
@@ -55,10 +49,8 @@ export function PopoverIconTriggers() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="ghost" size="icon">
-            <User className="h-5 w-5" />
-          </Button>
+        <PopoverTrigger render={<Button variant="ghost" size="icon" />}>
+          <User className="h-5 w-5" />
         </PopoverTrigger>
         <PopoverContent className="w-80">
           <div className="space-y-2">

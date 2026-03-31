@@ -11,8 +11,8 @@ export function DropdownMenuVariants() {
   return (
     <div className="flex gap-4 flex-wrap">
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="default">Default</Button>
+        <DropdownMenuTrigger render={<Button variant="default" />}>
+          Default
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem>Profile</DropdownMenuItem>
@@ -23,8 +23,8 @@ export function DropdownMenuVariants() {
       </DropdownMenu>
 
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="secondary">Secondary</Button>
+        <DropdownMenuTrigger render={<Button variant="secondary" />}>
+          Secondary
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem>Profile</DropdownMenuItem>
@@ -35,8 +35,8 @@ export function DropdownMenuVariants() {
       </DropdownMenu>
 
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">Outline</Button>
+        <DropdownMenuTrigger render={<Button variant="outline" />}>
+          Outline
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem>Profile</DropdownMenuItem>

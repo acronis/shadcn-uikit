@@ -20,10 +20,8 @@ export function FilterWithDropdown() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Filter count={statusFilters.length} active={statusFilters.length > 0}>
-          Status
-        </Filter>
+      <DropdownMenuTrigger render={<Filter count={statusFilters.length} active={statusFilters.length > 0} />}>
+        Status
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Filter by Status</DropdownMenuLabel>

@@ -33,11 +33,9 @@ export function DropdownMenuComplex() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">
-          Advanced Menu
-          <ChevronDown className="ml-2 h-4 w-4" />
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        Advanced Menu
+        <ChevronDown className="ml-2 h-4 w-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-64">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

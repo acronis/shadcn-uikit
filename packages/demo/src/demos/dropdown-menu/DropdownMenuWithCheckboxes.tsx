@@ -16,8 +16,8 @@ export function DropdownMenuWithCheckboxes() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">View Options</Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        View Options
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Appearance</DropdownMenuLabel>

@@ -14,8 +14,8 @@ import { CheckCircle } from 'lucide-react'
 export function DialogSuccess() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Complete Task</Button>
+      <DialogTrigger render={<Button />}>
+        Complete Task
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -36,8 +36,8 @@ export function DialogSuccess() {
           </div>
         </DialogBody>
         <DialogFooter>
-          <DialogTrigger asChild>
-            <Button>Close</Button>
+          <DialogTrigger render={<Button />}>
+            Close
           </DialogTrigger>
         </DialogFooter>
       </DialogContent>

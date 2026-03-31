@@ -16,22 +16,24 @@ export function DatePickerForm() {
           Appointment Date <span className="text-red-500">*</span>
         </label>
         <Popover>
-          <PopoverTrigger asChild>
-            <Button
-              id="appointment-date"
-              variant="outline"
-              className={cn(
-                'w-full justify-start text-left font-normal',
-                !appointmentDate && 'text-muted-foreground'
-              )}
-            >
-              <CalendarIcon className="mr-2 h-4 w-4" />
-              {appointmentDate ? (
-                format(appointmentDate, 'PPP')
-              ) : (
-                <span>Select appointment date</span>
-              )}
-            </Button>
+          <PopoverTrigger
+            render={
+              <Button
+                id="appointment-date"
+                variant="outline"
+                className={cn(
+                  'w-full justify-start text-left font-normal',
+                  !appointmentDate && 'text-muted-foreground'
+                )}
+              />
+            }
+          >
+            <CalendarIcon className="mr-2 h-4 w-4" />
+            {appointmentDate ? (
+              format(appointmentDate, 'PPP')
+            ) : (
+              <span>Select appointment date</span>
+            )}
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0">
             <Calendar
@@ -53,15 +55,17 @@ export function DatePickerForm() {
           Event Date
         </label>
         <Popover>
-          <PopoverTrigger asChild>
-            <Button
-              id="event-date"
-              variant="outline"
-              className="w-full justify-start text-left font-normal text-muted-foreground"
-            >
-              <CalendarIcon className="mr-2 h-4 w-4" />
-              <span>Optional event date</span>
-            </Button>
+          <PopoverTrigger
+            render={
+              <Button
+                id="event-date"
+                variant="outline"
+                className="w-full justify-start text-left font-normal text-muted-foreground"
+              />
+            }
+          >
+            <CalendarIcon className="mr-2 h-4 w-4" />
+            <span>Optional event date</span>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0">
             <Calendar mode="single" initialFocus />

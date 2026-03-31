@@ -1233,11 +1233,9 @@ export function TablePlayground() {
         return (
           <TooltipProvider>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="cursor-help inline-flex items-center gap-1">
-                  {content}
-                  <Info className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100" />
-                </div>
+              <TooltipTrigger render={<div className="cursor-help inline-flex items-center gap-1" />}>
+                {content}
+                <Info className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100" />
               </TooltipTrigger>
               <TooltipContent>
                 <p className="text-xs max-w-xs">{rowData.tooltip}</p>
