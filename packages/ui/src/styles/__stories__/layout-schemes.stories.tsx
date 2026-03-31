@@ -6,7 +6,7 @@ import '../themes/cyber-chat.scss'
 
 const meta = {
   title: 'Themes/Layout Schemes',
-  parameters: { layout: 'fullscreen' },
+  parameters: { layout: 'fullscreen', snapshot: { fullPage: true } },
   tags: ['autodocs'],
 } satisfies Meta
 
