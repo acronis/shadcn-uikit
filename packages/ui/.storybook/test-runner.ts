@@ -30,7 +30,7 @@ const config: TestRunnerConfig = {
             // default viewport — screenshot the full page so nothing is clipped.
             image = await page.screenshot({ animations: 'disabled', fullPage: true });
         } else {
-            const overlay = page.locator('[role="dialog"], [role="alertdialog"], [role="menu"]').first();
+            const overlay = page.locator('[role="dialog"], [role="alertdialog"], [role="menu"], [role="listbox"]').first();
             const hasOverlay = (await overlay.count()) > 0;
             const target = hasOverlay ? overlay : page.locator('#storybook-root');
             const box = await target.boundingBox();
