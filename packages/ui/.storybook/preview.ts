@@ -1,5 +1,8 @@
 import type { Preview } from '@storybook/react'
 import '../src/styles/index.scss'
+import '../src/styles/themes/acronis-ocean.scss'
+import '../src/styles/themes/cyber-chat.scss'
+import '../src/styles/themes/acronis-white-label.scss'
 
 const preview: Preview = {
   globalTypes: {
