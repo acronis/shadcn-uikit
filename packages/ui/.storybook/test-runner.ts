@@ -1,4 +1,5 @@
 import type { TestRunnerConfig } from '@storybook/test-runner';
+import { getStoryContext } from '@storybook/test-runner';
 import * as process from 'node:process';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 
@@ -17,12 +18,16 @@ const config: TestRunnerConfig = {
         // affects Playwright's screenshot, not Sonner's CSS transitions in the page)
         await page.waitForTimeout(400);
 
+        const storyContext = await getStoryContext(page, context);
+        const snapshotFullPage = storyContext.parameters?.snapshot?.fullPage === true;
+
         const toaster = page.locator('[data-sonner-toaster]:has([data-sonner-toast])');
         const hasToasts = (await toaster.count()) > 0;
 
         let image: Buffer;
-        if (hasToasts) {
-            // Toasts render in a fixed portal — screenshot the full page so nothing is clipped
+        if (hasToasts || snapshotFullPage) {
+            // Toasts render in a fixed portal, and some stories are too tall for the
+            // default viewport — screenshot the full page so nothing is clipped.
             image = await page.screenshot({ animations: 'disabled', fullPage: true });
         } else {
             const overlay = page.locator('[role="dialog"], [role="alertdialog"], [role="menu"]').first();
