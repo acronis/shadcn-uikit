@@ -14,14 +14,14 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: () => {
-    const [date, setDate] = useState<Date | undefined>(new Date())
-    return <Calendar mode="single" selected={date} onSelect={setDate} />
+    const [date, setDate] = useState<Date | undefined>(new Date('2025-01-15'))
+    return <Calendar mode="single" selected={date} onSelect={setDate} defaultMonth={new Date('2025-01-01')} />
   },
 }
 
 export const WithoutSelection: Story = {
   render: () => {
     const [date, setDate] = useState<Date | undefined>()
-    return <Calendar mode="single" selected={date} onSelect={setDate} />
+    return <Calendar mode="single" selected={date} onSelect={setDate} defaultMonth={new Date('2025-01-01')} />
   },
 }
