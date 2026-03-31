@@ -25,8 +25,8 @@ type Story = StoryObj<typeof meta>
 export const Open: Story = {
   render: () => (
     <Dialog>
-      <DialogTrigger>
-        <Button variant="outline">Open Dialog</Button>
+      <DialogTrigger render={<Button variant="outline" />}>
+        Open Dialog
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -46,8 +46,7 @@ export const Open: Story = {
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    // getAllByRole because Base UI DialogTrigger asChild produces nested buttons
-    const [trigger] = canvas.getAllByRole('button', { name: 'Open Dialog' })
+    const trigger = canvas.getByRole('button', { name: 'Open Dialog' })
     await userEvent.click(trigger)
   },
 }
@@ -55,8 +54,8 @@ export const Open: Story = {
 export const Default: Story = {
   render: () => (
     <Dialog>
-      <DialogTrigger>
-        <Button variant="outline">Open Dialog</Button>
+      <DialogTrigger render={<Button variant="outline" />}>
+        Open Dialog
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

@@ -79,15 +79,13 @@ export function Header({ onMenuToggle, showMenuButton = true }: HeaderProps) {
           <LanguageSelector />
 
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-9 w-9 rounded-full">
-                <Avatar className="h-9 w-9">
-                  <AvatarImage src={user?.avatar} alt={user?.name} />
-                  <AvatarFallback>
-                    {user?.name?.charAt(0).toUpperCase() || 'U'}
-                  </AvatarFallback>
-                </Avatar>
-              </Button>
+            <DropdownMenuTrigger render={<Button variant="ghost" className="relative h-9 w-9 rounded-full" />}>
+              <Avatar className="h-9 w-9">
+                <AvatarImage src={user?.avatar} alt={user?.name} />
+                <AvatarFallback>
+                  {user?.name?.charAt(0).toUpperCase() || 'U'}
+                </AvatarFallback>
+              </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
               <DropdownMenuLabel>

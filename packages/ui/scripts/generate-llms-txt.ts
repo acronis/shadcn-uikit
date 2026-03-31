@@ -166,8 +166,8 @@ function generateLlmsTxt(): string {
   content += `\`\`\`tsx\n`
   content += `import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, Button } from '@acronis-platform/shadcn-uikit/react';\n\n`
   content += `<Dialog>\n`
-  content += `  <DialogTrigger asChild>\n`
-  content += `    <Button>Open Dialog</Button>\n`
+  content += `  <DialogTrigger render={<Button />}>\n`
+  content += `    Open Dialog\n`
   content += `  </DialogTrigger>\n`
   content += `  <DialogContent>\n`
   content += `    <DialogHeader>\n`
