@@ -1634,7 +1634,7 @@ export function TablePlayground() {
     const classes = []
 
     // Shadow
-    const shadowMap = { none: '', sm: 'shadow-sm', md: 'shadow-md', lg: 'shadow-lg', xl: 'shadow-xl', '2xl': 'shadow-2xl' }
+    const shadowMap = { none: '', sm: 'shadow-xs', md: 'shadow-md', lg: 'shadow-lg', xl: 'shadow-xl', '2xl': 'shadow-2xl' }
     if (shadowDepth !== 'none') classes.push(shadowMap[shadowDepth])
 
     // Border radius
