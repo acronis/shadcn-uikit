@@ -1,3 +1,10 @@
+## [0.31.0](https://github.com/acronis/shadcn-uikit/compare/v0.30.1...v0.31.0) (2026-03-31)
+
+
+### Features
+
+* refactor components to use base UI library and improve accessibility ([b766cc8](https://github.com/acronis/shadcn-uikit/commit/b766cc891035ac30626b69e2cd63b9527a842f6c))
+
 ## [0.30.1](https://github.com/acronis/shadcn-uikit/compare/v0.30.0...v0.30.1) (2026-03-30)
 
 
@@ -84,11 +91,4 @@
 
 * **ADP-49599:** simplified theme logic, removed applyNavVariant ([14320b5](https://github.com/acronis/shadcn-uikit/commit/14320b552b57dd3e4a5680e635ea42aa04271eea))
 * **ADP-49599:** updated applyTheme and applyNavVariant to work with shadow root ([c5500cf](https://github.com/acronis/shadcn-uikit/commit/c5500cf4d7868e6d37c560258bfc9ab5b6446500))
-
-## [0.27.0](https://github.com/acronis/shadcn-uikit/compare/v0.26.0...v0.27.0) (2026-03-20)
-
-
-### Features
-
-* **theme:** add white-label theme with 20 nav variants PLTFRM-87974 ([52d62c0](https://github.com/acronis/shadcn-uikit/commit/52d62c025c7c9d830fd6b90139993b2c29e2bad8)), closes [#44515](https://github.com/acronis/shadcn-uikit/issues/44515)
 
