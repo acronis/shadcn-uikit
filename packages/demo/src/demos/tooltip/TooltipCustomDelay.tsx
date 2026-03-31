@@ -9,9 +9,9 @@ import {
 
 export function TooltipCustomDelay() {
   return (
-    <TooltipProvider delayDuration={800}>
+    <TooltipProvider delay={800}>
       <Tooltip>
-        <TooltipTrigger asChild>
+        <TooltipTrigger>
           <Button variant="outline">Slow to appear</Button>
         </TooltipTrigger>
         <TooltipContent>

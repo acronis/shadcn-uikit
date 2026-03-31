@@ -9,20 +9,14 @@
 @use '../../../ui/src/styles/tokens';
 @use '../../../ui/src/styles/themes';
 
-/* Tailwind directives - will be processed by demo-app's PostCSS */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind v4 imports */
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import url("tw-animate-css");
+
+@config "../../tailwind.config.js";
 
 /* Demo-app specific styles can be added here */
-html,
-body,
-#root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   @apply bg-background text-foreground font-sans text-base;
   letter-spacing: var(--av-letter-spacing-base, 0);

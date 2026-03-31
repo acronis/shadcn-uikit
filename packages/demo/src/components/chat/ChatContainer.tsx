@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@acronis-platform/shadcn-uikit/react'
-import { ChatContainerProps } from '../../../lib/chat/types';
+import { ChatContainerProps } from '../../lib/chat/types';
 import { ChatInterface } from './ChatInterface';
 
 export function ChatContainer({
@@ -12,7 +12,7 @@ export function ChatContainer({
   maxHeight
 }: ChatContainerProps) {
   const containerClasses = cn(
-    'bg-background border rounded-lg shadow-sm flex flex-col',
+    'bg-background border rounded-lg shadow-xs flex flex-col',
     {
       'h-full': layout === 'full',
       'h-96': layout === 'dialog',
