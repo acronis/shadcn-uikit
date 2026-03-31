@@ -1,5 +1,7 @@
 @use './globals';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import url("tw-animate-css");
+
+@config "../../tailwind.config.js";
