@@ -1,3 +1,4 @@
+// @ts-expect-error -- Storybook types use package.json "exports" which require moduleResolution "bundler"
 import type { Preview } from '@storybook/react'
 import '../src/styles/index.scss'
 import '../src/styles/themes/acronis-ocean.scss'

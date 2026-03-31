@@ -123,6 +123,12 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
+      // tw-animate-css only exports "." with a "style" condition — Vite
+      // can't resolve the subpath import used in SCSS files
+      'tw-animate-css/dist/tw-animate.css': resolve(
+        __dirname,
+        'node_modules/tw-animate-css/dist/tw-animate.css'
+      ),
     },
   },
   test: {
