@@ -12,6 +12,7 @@ import {
   DropdownMenuRadioItem,
 } from '../dropdown-menu'
 import { Button } from '../button'
+import { withDarkMode } from './utils'
 
 const meta = {
   title: 'UI/DropdownMenu',
@@ -95,4 +96,59 @@ export const WithRadioGroup: Story = {
       </DropdownMenuContent>
     </DropdownMenu>
   ),
+}
+
+const dropdownRender = () => (
+  <DropdownMenu>
+    <DropdownMenuTrigger render={<Button variant="outline" />}>
+      Open Menu
+    </DropdownMenuTrigger>
+    <DropdownMenuContent>
+      <DropdownMenuLabel>My Account</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem>Profile</DropdownMenuItem>
+      <DropdownMenuItem>Settings</DropdownMenuItem>
+      <DropdownMenuItem>Logout</DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+)
+
+const openMenuPlay = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+  const canvas = within(canvasElement)
+  await userEvent.click(canvas.getByRole('button', { name: 'Open Menu' }))
+}
+
+export const DarkDefault: Story = {
+  name: 'Dark / Default',
+  decorators: [withDarkMode()],
+  render: dropdownRender,
+  play: openMenuPlay,
+}
+
+export const DarkAcronisDefault: Story = {
+  name: 'Dark / Acronis Default',
+  decorators: [withDarkMode('theme-acronis-default')],
+  render: dropdownRender,
+  play: openMenuPlay,
+}
+
+export const DarkAcronisOcean: Story = {
+  name: 'Dark / Acronis Ocean',
+  decorators: [withDarkMode('theme-acronis-ocean')],
+  render: dropdownRender,
+  play: openMenuPlay,
+}
+
+export const DarkCyberChat: Story = {
+  name: 'Dark / Cyber Chat',
+  decorators: [withDarkMode('theme-cyber-chat')],
+  render: dropdownRender,
+  play: openMenuPlay,
+}
+
+export const DarkAcronisElectric: Story = {
+  name: 'Dark / Acronis Electric',
+  decorators: [withDarkMode('theme-acronis-electric')],
+  render: dropdownRender,
+  play: openMenuPlay,
 }
