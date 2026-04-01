@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { within } from '@storybook/test'
+import { userEvent, waitFor, within } from '@storybook/test'
 import { Toaster } from '../sonner'
 import { Button } from '../button'
 import { toast } from 'sonner'
@@ -7,7 +7,7 @@ import { toast } from 'sonner'
 const meta = {
   title: 'UI/Sonner',
   component: Toaster,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', snapshot: { fullPage: true } },
   tags: ['autodocs'],
 } satisfies Meta<typeof Toaster>
 
@@ -23,7 +23,8 @@ export const Default: Story = {
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    canvas.getByText('Show Toast').click()
+    await userEvent.click(canvas.getByText('Show Toast'))
+    await waitFor(() => document.querySelector('[data-sonner-toast]'), { timeout: 2000 })
   },
 }
 
@@ -36,7 +37,8 @@ export const Success: Story = {
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    canvas.getByText('Show Success').click()
+    await userEvent.click(canvas.getByText('Show Success'))
+    await waitFor(() => document.querySelector('[data-sonner-toast]'), { timeout: 2000 })
   },
 }
 
@@ -49,7 +51,8 @@ export const Error: Story = {
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    canvas.getByText('Show Error').click()
+    await userEvent.click(canvas.getByText('Show Error'))
+    await waitFor(() => document.querySelector('[data-sonner-toast]'), { timeout: 2000 })
   },
 }
 
@@ -70,7 +73,8 @@ export const MultipleToasts: Story = {
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    canvas.getByText('Show Multiple Toasts').click()
+    await userEvent.click(canvas.getByText('Show Multiple Toasts'))
+    await waitFor(() => document.querySelector('[data-sonner-toast]'), { timeout: 2000 })
   },
 }
 
@@ -94,6 +98,7 @@ export const WithAction: Story = {
   ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    canvas.getByText('Show Toast with Action').click()
+    await userEvent.click(canvas.getByText('Show Toast with Action'))
+    await waitFor(() => document.querySelector('[data-sonner-toast]'), { timeout: 2000 })
   },
 }

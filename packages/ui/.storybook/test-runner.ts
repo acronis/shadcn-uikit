@@ -21,6 +21,16 @@ const config: TestRunnerConfig = {
         const storyContext = await getStoryContext(page, context);
         const snapshotFullPage = storyContext.parameters?.snapshot?.fullPage === true;
 
+        // If a Sonner <Toaster> is mounted, give the toast up to 1.5 s to appear.
+        // The play function's DOM click is not awaited, so React state updates may
+        // not have settled yet by the time postVisit runs.
+        const sonnerContainer = page.locator('[data-sonner-toaster]');
+        if ((await sonnerContainer.count()) > 0) {
+            await page.locator('[data-sonner-toaster]:has([data-sonner-toast])')
+                .waitFor({ state: 'attached', timeout: 1500 })
+                .catch(() => {}); // silence timeout — no toast is a valid state
+        }
+
         const toaster = page.locator('[data-sonner-toaster]:has([data-sonner-toast])');
         const hasToasts = (await toaster.count()) > 0;
 
