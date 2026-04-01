@@ -220,6 +220,17 @@
     --av-interactive-disabled: 210 10% 40%;
     --av-focus: 210 16% 50%;
   
+    /* Textarea */
+    --av-textarea-text: 0 0% 100%; /* #FFFFFF */
+  
+    /* Popover */
+    --av-popover-foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Sidebar - NavMenu Primary */
+    --sidebar-background: 240 18% 11%; /* #171721 */
+    --av-nav-bg: 240 18% 11%; /* #171721 - overrides nav-* colour themes in dark mode */
+    --av-nav-active: 240 7% 28%; /* #45454D - overrides nav-* colour themes in dark mode */
+
     /* Status backgrounds */
     --av-status-success-bg: 73 68% 20%;
     --av-status-success-text: var(--color-status-success-light);
