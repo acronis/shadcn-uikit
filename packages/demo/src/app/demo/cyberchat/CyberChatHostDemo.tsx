@@ -56,7 +56,7 @@ export function CyberChatHostDemo() {
   return (
     <div className="flex flex-col h-screen bg-muted">
       {/* Host App Controls Bar */}
-      <div className="flex-shrink-0 flex items-center gap-4 px-4 py-2 bg-background border-b shadow-sm flex-wrap">
+      <div className="flex-shrink-0 flex items-center gap-4 px-4 py-2 bg-background border-b shadow-xs flex-wrap">
         <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
           Host App
         </span>

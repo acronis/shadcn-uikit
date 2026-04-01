@@ -11,7 +11,7 @@ export function TooltipBasic() {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild>
+        <TooltipTrigger>
           <Button variant="outline">Hover me</Button>
         </TooltipTrigger>
         <TooltipContent>

@@ -1,4 +1,7 @@
 @use './tokens';
 @use './base';
 
-@tailwind base;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+
+@config "../../tailwind.config.js";

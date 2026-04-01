@@ -213,7 +213,7 @@ const iconOptions = Object.keys(iconMap)
 
 const shadowClasses: Record<ShadowSize, string> = {
   none: '',
-  sm: 'shadow-sm',
+  sm: 'shadow-xs',
   md: 'shadow-md',
   lg: 'shadow-lg',
   xl: 'shadow-xl',
@@ -1133,7 +1133,7 @@ import { TrendingUp, DollarSign } from 'lucide-react'
               <p className="font-medium mb-1">Shadow</p>
               <ul className="list-disc list-inside text-muted-foreground space-y-0.5">
                 <li><code className="text-xs">shadow-none</code> - Flat appearance</li>
-                <li><code className="text-xs">shadow-sm</code> - Subtle (default for KPI)</li>
+                <li><code className="text-xs">shadow-xs</code> - Subtle (default for KPI)</li>
                 <li><code className="text-xs">shadow-md / lg / xl</code> - Elevated appearance</li>
               </ul>
             </div>

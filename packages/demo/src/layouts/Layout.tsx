@@ -150,13 +150,12 @@ export function Layout() {
   }, [theme, activeTokenSetId, tokenSets, customTokenSet])
 
   return (
-    <SidebarProvider defaultOpen={true}>
-      <div className="flex min-h-screen w-full">
+    <SidebarProvider defaultOpen={true} className="h-screen overflow-hidden">
         <Sidebar collapsible="icon">
-          <SidebarHeader className="border-b border-sidebar-border">
+          <SidebarHeader className="h-16 shrink-0 border-b border-sidebar-border">
             <Link
               to="/"
-              className="flex items-center gap-2 px-4 py-3 hover:bg-sidebar-accent/50 transition-colors"
+              className="flex items-center gap-2 px-4 py-3 h-full hover:bg-sidebar-accent/50 transition-colors"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-accent text-sidebar-accent-foreground">
                 <LayoutDashboard className="h-4 w-4" />
@@ -201,8 +200,8 @@ export function Layout() {
           </SidebarContent>
         </Sidebar>
 
-        <div className="flex flex-1 flex-col">
-          <header className="sticky top-0 z-10 flex h-16 items-center justify-between gap-4 border-b bg-background text-foreground px-6">
+        <div className="flex flex-1 flex-col overflow-hidden">
+          <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center justify-between gap-4 border-b bg-background text-foreground px-6">
             <h1 className="text-xl font-semibold">Shadcn UIKit - React Demo</h1>
             <div className="flex items-center gap-3">
               <TokenSelector />
@@ -214,7 +213,6 @@ export function Layout() {
             <Outlet />
           </main>
         </div>
-      </div>
     </SidebarProvider>
   );
 }

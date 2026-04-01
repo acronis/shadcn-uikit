@@ -1,10 +1,19 @@
-import tailwindcssAnimate from 'tailwindcss-animate';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
   theme: {
     extend: {
+      // Register all container breakpoints as theme screens so they exist in v4's
+      // --breakpoint-* namespace even when tailwindcss/theme.css is not loaded.
+      // Without this, container.screens references cause a sort crash in v4.2.2.
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1400px',
+        '3xl': '1920px',
+      },
       container: {
         center: true,
         padding: {
@@ -14,14 +23,6 @@ export default {
           xl: '2.5rem',
           '2xl': '3rem',
           '3xl': '3rem',
-        },
-        screens: {
-          sm: '640px',
-          md: '768px',
-          lg: '1024px',
-          xl: '1280px',
-          '2xl': '1400px',
-          '3xl': '1920px',
         },
       },
       fontFamily: {
@@ -170,5 +171,4 @@ export default {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
 };

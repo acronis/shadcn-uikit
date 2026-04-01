@@ -35,7 +35,7 @@ const AuthLayoutCard = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'w-full max-w-sm rounded-lg border bg-card p-6 shadow-sm',
+      'w-full max-w-sm rounded-lg border bg-card p-6 shadow-xs',
       className
     )}
     {...props}

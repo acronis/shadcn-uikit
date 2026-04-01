@@ -67,6 +67,10 @@ export default defineConfig(({ mode }) => ({
       '@acronis-platform/shadcn-uikit/styles': resolve(__dirname, '../ui/src/styles/index.scss'),
       '@acronis-platform/shadcn-uikit': resolve(__dirname, '../ui/src/react.ts'),
       '@uikit-utils': resolve(__dirname, '../ui/src/utils'),
+      'tw-animate-css/dist/tw-animate.css': resolve(
+        __dirname,
+        '../ui/node_modules/tw-animate-css/dist/tw-animate.css'
+      ),
     },
     extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],
   },
