@@ -1,6 +1,6 @@
 {
   "name": "@acronis-platform/shadcn-uikit",
-  "version": "0.32.2",
+  "version": "0.32.3",
   "description": "Acronis shadcn UI component library built with TypeScript, following shadcn design principles",
   "type": "module",
   "main": "./dist/index.js",
