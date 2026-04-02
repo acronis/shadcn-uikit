@@ -1,3 +1,16 @@
+## [0.33.0](https://github.com/acronis/shadcn-uikit/compare/v0.32.4...v0.33.0) (2026-04-02)
+
+
+### Features
+
+* **ui:** migrate lucide-react from stories to internal icons ([a7935cf](https://github.com/acronis/shadcn-uikit/commit/a7935cf2232774c9ec90cdeb5d9ad23893711b92))
+* **ui:** migrate lucide-react to internal icons ([b3440f3](https://github.com/acronis/shadcn-uikit/commit/b3440f39ca16859c478836fdfbaea9a25e58f055))
+
+
+### Bug Fixes
+
+* **empty:** set default size for empty icon component ([a8723cd](https://github.com/acronis/shadcn-uikit/commit/a8723cd46b779aa78a058ac778410726f971a852))
+
 ## [0.32.4](https://github.com/acronis/shadcn-uikit/compare/v0.32.3...v0.32.4) (2026-04-02)
 
 
@@ -34,14 +47,4 @@
 
 * dropdowns do not get dark theme – fix popover foreground vars and add visual regression stories ([5756028](https://github.com/acronis/shadcn-uikit/commit/57560284245a7eebb2f50beb6b4661240b1b3184))
 * **visual-regression:** prevent ui-sonner--error size mismatch in CI ([ee40652](https://github.com/acronis/shadcn-uikit/commit/ee40652f1f111f0ab048e97246202cb431dbbf44))
-
-## [0.32.0](https://github.com/acronis/shadcn-uikit/compare/v0.31.0...v0.32.0) (2026-03-31)
-
-
-### Features
-
-* add Storybook stories for theme layouts and text colors ([dd540ca](https://github.com/acronis/shadcn-uikit/commit/dd540ca94d6fd2dac25969af31fcb7ccce512678))
-* add Storybook support for styles and update TypeScript configuration ([606ce26](https://github.com/acronis/shadcn-uikit/commit/606ce26ed4790a10307221267cf8fa87de87fd0c))
-* enhance test runner to support full-page snapshots in Storybook stories ([d6aacb9](https://github.com/acronis/shadcn-uikit/commit/d6aacb9a05dd26f85c6060cb49e8105db4f248ba))
-* enhance theme support with global types and new Storybook stories for color and status tokens ([3c4459d](https://github.com/acronis/shadcn-uikit/commit/3c4459db6d685edf6c02f1c38fac0db2fe14b5fb))
 
