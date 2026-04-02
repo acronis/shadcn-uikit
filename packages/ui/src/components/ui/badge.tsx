@@ -20,6 +20,8 @@ const badgeVariants = cva(
         critical: 'bg-critical border-critical-accent text-critical-foreground',
         danger: 'bg-destructive border-destructive-accent text-destructive-foreground',
         neutral: 'bg-neutral border-neutral-accent text-neutral-foreground',
+        ai: 'bg-ai badge-ai-gradient text-ai-foreground',
+        'ai-solid': 'badge-ai-solid text-white',
       },
     },
     defaultVariants: {
