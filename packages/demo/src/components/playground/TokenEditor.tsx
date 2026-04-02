@@ -3,7 +3,7 @@ import { ColorToken } from '@/types/playground'
 import { TokenGroup } from './TokenGroup'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { RotateCcw } from 'lucide-react'
+import { RotateIcon } from '@acronis-platform/shadcn-uikit'
 
 export const TokenEditor: React.FC = () => {
   const { activeTokenSetId, tokenSets, customTokenSet, updateCustomTokens, resetCustomTokens } =
@@ -62,7 +62,7 @@ export const TokenEditor: React.FC = () => {
         </div>
         {isCustom && (
           <Button variant="outline" size="sm" onClick={resetCustomTokens}>
-            <RotateCcw className="mr-2 h-4 w-4" />
+            <RotateIcon className="mr-2 h-4 w-4" />
             Reset to Default
           </Button>
         )}

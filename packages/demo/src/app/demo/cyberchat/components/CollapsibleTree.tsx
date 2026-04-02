@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronRight } from 'lucide-react'
+import { ChevronDownIcon, ChevronRightIcon } from '@acronis-platform/shadcn-uikit'
 import type { Project } from '../types'
 
 interface CollapsibleTreeProps {
@@ -39,9 +39,9 @@ export function CollapsibleTree({
               {hasChildren && (
                 <span className="flex-shrink-0">
                   {isExpanded && !hasSearchQuery ? (
-                    <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+                    <ChevronDownIcon className="h-4 w-4 transition-transform duration-200" />
                   ) : (
-                    <ChevronRight className="h-4 w-4 transition-transform duration-200" />
+                    <ChevronRightIcon className="h-4 w-4 transition-transform duration-200" />
                   )}
                 </span>
               )}

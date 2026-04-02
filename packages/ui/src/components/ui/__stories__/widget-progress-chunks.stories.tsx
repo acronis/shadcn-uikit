@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Activity, MoreVertical } from 'lucide-react'
+import { HeartbeatIcon } from '@/components/icons'
+
+const MoreVerticalIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+  </svg>
+)
 import {
   WidgetProgressChunks,
   WidgetProgressChunksHeader,
@@ -24,9 +30,9 @@ export const Default: Story = {
   render: () => (
     <WidgetProgressChunks className="w-[360px]">
       <WidgetProgressChunksHeader>
-        <WidgetProgressChunksIcon><Activity /></WidgetProgressChunksIcon>
+        <WidgetProgressChunksIcon><HeartbeatIcon /></WidgetProgressChunksIcon>
         <WidgetProgressChunksTitle>Backup Progress</WidgetProgressChunksTitle>
-        <MoreVertical className="h-4 w-4 ml-auto text-muted-foreground" />
+        <MoreVerticalIcon className="h-4 w-4 ml-auto text-muted-foreground" />
       </WidgetProgressChunksHeader>
       <WidgetProgressChunksBody>
         <WidgetProgressChunkRow
@@ -56,7 +62,7 @@ export const WithFooter: Story = {
   render: () => (
     <WidgetProgressChunks className="w-[360px]">
       <WidgetProgressChunksHeader>
-        <WidgetProgressChunksIcon><Activity /></WidgetProgressChunksIcon>
+        <WidgetProgressChunksIcon><HeartbeatIcon /></WidgetProgressChunksIcon>
         <WidgetProgressChunksTitle>Storage Usage</WidgetProgressChunksTitle>
       </WidgetProgressChunksHeader>
       <WidgetProgressChunksBody>
@@ -96,7 +102,7 @@ export const Interactive: Story = {
   render: () => (
     <WidgetProgressChunks interactive className="w-[360px]">
       <WidgetProgressChunksHeader>
-        <WidgetProgressChunksIcon><Activity /></WidgetProgressChunksIcon>
+        <WidgetProgressChunksIcon><HeartbeatIcon /></WidgetProgressChunksIcon>
         <WidgetProgressChunksTitle>Protection Coverage</WidgetProgressChunksTitle>
       </WidgetProgressChunksHeader>
       <WidgetProgressChunksBody>

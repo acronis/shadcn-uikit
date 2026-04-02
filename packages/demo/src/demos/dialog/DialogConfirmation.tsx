@@ -9,8 +9,7 @@ import {
   DialogTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { AlertCircle } from 'lucide-react'
-
+import { ExclamationCircleIcon } from '@acronis-platform/shadcn-uikit'
 export function DialogConfirmation() {
   return (
     <Dialog>
@@ -24,7 +23,7 @@ export function DialogConfirmation() {
         </DialogHeader>
         <DialogBody>
           <div className="flex items-start gap-4">
-            <AlertCircle className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
+            <ExclamationCircleIcon className="h-6 w-6 text-red-500 flex-shrink-0 mt-1" />
             <div className="space-y-2">
               <p className="text-sm font-medium">
                 Are you sure you want to delete this item?

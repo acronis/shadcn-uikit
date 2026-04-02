@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { X } from 'lucide-react'
+import { CloseIcon } from '@/components/icons'
 import { cn } from '@/lib/utils'
 
 export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -28,7 +28,7 @@ const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
             className="flex h-full items-center justify-center rounded-br-full rounded-tr-full pl-1 pr-2 hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1"
             aria-label="Remove"
           >
-            <X className="h-4 w-4" />
+            <CloseIcon className="h-4 w-4" />
           </button>
         )}
       </div>

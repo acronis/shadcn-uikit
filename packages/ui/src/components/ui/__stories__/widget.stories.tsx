@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { BarChart3, MoreVertical, TrendingUp, Shield, AlertTriangle, Activity } from 'lucide-react'
+import { ShieldIcon, WarningCircleIcon, HeartbeatIcon } from '@/components/icons'
 import {
   Widget,
   WidgetHeader,
@@ -13,6 +13,24 @@ import {
   WidgetDivider,
 } from '../widget'
 import { Button } from '../button'
+
+const BarChart3Icon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>
+  </svg>
+)
+
+const MoreVerticalIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+  </svg>
+)
+
+const TrendingUpIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+  </svg>
+)
 
 const meta = {
   title: 'UI/Widget',
@@ -38,12 +56,12 @@ export const Default: Story = {
     <Widget className="w-[350px]">
       <WidgetHeader>
         <WidgetIcon>
-          <BarChart3 />
+          <BarChart3Icon />
         </WidgetIcon>
         <WidgetTitle>Widget Title</WidgetTitle>
         <WidgetActions>
           <button type="button" aria-label="More options">
-            <MoreVertical />
+            <MoreVerticalIcon />
           </button>
         </WidgetActions>
       </WidgetHeader>
@@ -89,7 +107,7 @@ export const SizeLarge: Story = {
     <Widget size="lg" className="w-[350px]">
       <WidgetHeader>
         <WidgetIcon>
-          <BarChart3 />
+          <BarChart3Icon />
         </WidgetIcon>
         <WidgetTitle>Large Widget</WidgetTitle>
       </WidgetHeader>
@@ -109,12 +127,12 @@ export const SizeXL: Story = {
     <Widget size="xl" className="w-[350px]">
       <WidgetHeader>
         <WidgetIcon>
-          <BarChart3 />
+          <BarChart3Icon />
         </WidgetIcon>
         <WidgetTitle>Extra Large Widget</WidgetTitle>
         <WidgetActions>
           <button type="button" aria-label="More options">
-            <MoreVertical />
+            <MoreVerticalIcon />
           </button>
         </WidgetActions>
       </WidgetHeader>
@@ -143,7 +161,7 @@ export const Interactive: Story = {
     <Widget interactive className="w-[350px]">
       <WidgetHeader>
         <WidgetIcon>
-          <TrendingUp />
+          <TrendingUpIcon />
         </WidgetIcon>
         <WidgetTitle>Clickable Widget</WidgetTitle>
       </WidgetHeader>
@@ -163,12 +181,12 @@ export const WithIconAndActions: Story = {
     <Widget className="w-[350px]">
       <WidgetHeader>
         <WidgetIcon>
-          <Shield />
+          <ShieldIcon />
         </WidgetIcon>
         <WidgetTitle>Protection Status</WidgetTitle>
         <WidgetActions>
           <Button variant="ghost" size="icon" className="h-6 w-6">
-            <MoreVertical className="h-4 w-4" />
+            <MoreVerticalIcon className="h-4 w-4" />
           </Button>
         </WidgetActions>
       </WidgetHeader>
@@ -199,7 +217,7 @@ export const WithDivider: Story = {
     <Widget className="w-[350px]">
       <WidgetHeader>
         <WidgetIcon>
-          <Activity />
+          <HeartbeatIcon />
         </WidgetIcon>
         <WidgetTitle>System Health</WidgetTitle>
       </WidgetHeader>
@@ -244,12 +262,12 @@ export const HeaderOnly: Story = {
     <Widget size="sm" className="w-[350px]">
       <WidgetHeader>
         <WidgetIcon>
-          <AlertTriangle />
+          <WarningCircleIcon />
         </WidgetIcon>
         <WidgetTitle>3 Alerts Require Attention</WidgetTitle>
         <WidgetActions>
           <Button variant="ghost" size="icon" className="h-6 w-6">
-            <MoreVertical className="h-4 w-4" />
+            <MoreVerticalIcon className="h-4 w-4" />
           </Button>
         </WidgetActions>
       </WidgetHeader>
@@ -264,7 +282,7 @@ export const DashboardGrid: Story = {
       <Widget interactive>
         <WidgetHeader>
           <WidgetIcon>
-            <Shield />
+            <ShieldIcon />
           </WidgetIcon>
           <WidgetTitle>Protected</WidgetTitle>
         </WidgetHeader>
@@ -277,7 +295,7 @@ export const DashboardGrid: Story = {
       <Widget interactive>
         <WidgetHeader>
           <WidgetIcon>
-            <AlertTriangle />
+            <WarningCircleIcon />
           </WidgetIcon>
           <WidgetTitle>Alerts</WidgetTitle>
         </WidgetHeader>
@@ -290,7 +308,7 @@ export const DashboardGrid: Story = {
       <Widget interactive>
         <WidgetHeader>
           <WidgetIcon>
-            <TrendingUp />
+            <TrendingUpIcon />
           </WidgetIcon>
           <WidgetTitle>Storage</WidgetTitle>
         </WidgetHeader>
@@ -303,12 +321,12 @@ export const DashboardGrid: Story = {
       <Widget size="lg" className="col-span-2">
         <WidgetHeader>
           <WidgetIcon>
-            <BarChart3 />
+            <BarChart3Icon />
           </WidgetIcon>
           <WidgetTitle>Backup Success Rate</WidgetTitle>
           <WidgetActions>
             <Button variant="ghost" size="icon" className="h-6 w-6">
-              <MoreVertical className="h-4 w-4" />
+              <MoreVerticalIcon className="h-4 w-4" />
             </Button>
           </WidgetActions>
         </WidgetHeader>
@@ -323,7 +341,7 @@ export const DashboardGrid: Story = {
       <Widget size="lg">
         <WidgetHeader>
           <WidgetIcon>
-            <Activity />
+            <HeartbeatIcon />
           </WidgetIcon>
           <WidgetTitle>Activity</WidgetTitle>
         </WidgetHeader>

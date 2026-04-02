@@ -3,7 +3,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Badge } from '@acronis-platform/shadcn-uikit/react'
 import { Separator } from '@acronis-platform/shadcn-uikit/react'
-import { Edit, Trash2 } from 'lucide-react'
+import { EditIcon, TrashOIcon } from '@acronis-platform/shadcn-uikit'
 import { format } from 'date-fns'
 import type { DataRow } from '../../types'
 
@@ -105,7 +105,7 @@ export function DetailView({ row, open, onOpenChange, onEdit, onDelete }: Detail
 
           <div className="flex gap-2">
             <Button onClick={() => onEdit(row)} className="flex-1">
-              <Edit className="mr-2 h-4 w-4" />
+              <EditIcon className="mr-2 h-4 w-4" />
               Edit
             </Button>
             <Button
@@ -116,7 +116,7 @@ export function DetailView({ row, open, onOpenChange, onEdit, onDelete }: Detail
               }}
               className="flex-1"
             >
-              <Trash2 className="mr-2 h-4 w-4" />
+              <TrashOIcon className="mr-2 h-4 w-4" />
               Delete
             </Button>
           </div>

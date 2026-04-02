@@ -7,8 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Search, ChevronDown } from 'lucide-react'
-
+import { ChevronDownIcon, SearchIcon } from '@acronis-platform/shadcn-uikit'
 export function DropdownMenuWithSearch() {
   const [searchQuery, setSearchQuery] = useState('')
 
@@ -32,13 +31,13 @@ export function DropdownMenuWithSearch() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           Select Value
-          <ChevronDown className="ml-2 h-4 w-4" />
+          <ChevronDownIcon className="ml-2 h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <div className="px-2 py-2">
           <div className="relative">
-            <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+            <SearchIcon className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Search..."
               value={searchQuery}

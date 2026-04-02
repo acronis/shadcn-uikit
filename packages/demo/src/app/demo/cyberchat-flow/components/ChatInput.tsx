@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Paperclip, Globe } from 'lucide-react'
+import { GlobeIcon } from '@acronis-platform/shadcn-uikit'
+import { PaperclipIcon } from '@/components/icons/missing-icons'
 import { useChatFlowStore } from '../store/useChatFlowStore'
 
 export function ChatInput() {
@@ -72,7 +73,7 @@ export function ChatInput() {
                 size="sm"
                 className="h-9 gap-2 rounded-xl text-sm border-gray-200 bg-white hover:bg-gray-50"
               >
-                <Paperclip className="h-4 w-4" />
+                <PaperclipIcon className="h-4 w-4" />
                 <span>Add files</span>
               </Button>
               <Button
@@ -85,7 +86,7 @@ export function ChatInput() {
                 }`}
                 onClick={toggleWebSearch}
               >
-                <Globe className="h-4 w-4" />
+                <GlobeIcon className="h-4 w-4" />
                 <span>Web search</span>
               </Button>
             </div>

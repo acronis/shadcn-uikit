@@ -9,8 +9,8 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Home, Search, BarChart, Settings } from 'lucide-react'
-
+import { HomeFolderIcon, SearchIcon, SettingsIcon } from '@acronis-platform/shadcn-uikit'
+import { BarChartIcon } from '@/components/icons/missing-icons'
 export function SidebarWithSections() {
   return (
     <div className="h-[400px] border rounded-lg overflow-hidden flex">
@@ -25,13 +25,13 @@ export function SidebarWithSections() {
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton isActive>
-                      <Home />
+                      <HomeFolderIcon />
                       <span>Dashboard</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <Search />
+                      <SearchIcon />
                       <span>Search</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -47,13 +47,13 @@ export function SidebarWithSections() {
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <BarChart />
+                      <BarChartIcon />
                       <span>Analytics</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <Settings />
+                      <SettingsIcon />
                       <span>Settings</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

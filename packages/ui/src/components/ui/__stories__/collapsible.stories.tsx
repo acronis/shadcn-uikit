@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ChevronsUpDown } from 'lucide-react'
+import { ChevronUpdownIcon } from '@/components/icons'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../collapsible'
 import { Button } from '../button'
 
@@ -21,7 +21,7 @@ export const Default: Story = {
         <CollapsibleTrigger
           render={
             <Button variant="ghost" size="icon">
-              <ChevronsUpDown className="h-4 w-4" />
+              <ChevronUpdownIcon className="h-4 w-4" />
               <span className="sr-only">Toggle</span>
             </Button>
           }
@@ -46,7 +46,7 @@ export const Open: Story = {
         <CollapsibleTrigger
           render={
             <Button variant="ghost" size="icon">
-              <ChevronsUpDown className="h-4 w-4" />
+              <ChevronUpdownIcon className="h-4 w-4" />
               <span className="sr-only">Toggle</span>
             </Button>
           }

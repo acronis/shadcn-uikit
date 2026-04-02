@@ -1,20 +1,20 @@
 import { Button, ButtonGroup } from '@acronis-platform/shadcn-uikit/react'
-import { SkipBack, Play, Pause, SkipForward } from 'lucide-react'
-
+import { PauseIcon, PlayIcon } from '@acronis-platform/shadcn-uikit'
+import { SkipBackIcon, SkipForwardIcon } from '@/components/icons/missing-icons'
 export function ButtonGroupMediaControls() {
   return (
     <ButtonGroup>
       <Button variant="outline" size="icon">
-        <SkipBack className="h-4 w-4" />
+        <SkipBackIcon className="h-4 w-4" />
       </Button>
       <Button variant="outline" size="icon">
-        <Play className="h-4 w-4" />
+        <PlayIcon className="h-4 w-4" />
       </Button>
       <Button variant="outline" size="icon">
-        <Pause className="h-4 w-4" />
+        <PauseIcon className="h-4 w-4" />
       </Button>
       <Button variant="outline" size="icon">
-        <SkipForward className="h-4 w-4" />
+        <SkipForwardIcon className="h-4 w-4" />
       </Button>
     </ButtonGroup>
   )

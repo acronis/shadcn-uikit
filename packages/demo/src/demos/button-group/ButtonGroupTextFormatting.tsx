@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Button, ButtonGroup } from '@acronis-platform/shadcn-uikit/react'
-import { Bold, Italic, Underline } from 'lucide-react'
-
+import { BoldIcon, ItalicIcon, UnderlineIcon } from '@/components/icons/missing-icons'
 export function ButtonGroupTextFormatting() {
   const [textFormat, setTextFormat] = React.useState<string[]>([])
 
@@ -18,21 +17,21 @@ export function ButtonGroupTextFormatting() {
         size="icon"
         onClick={() => toggleFormat('bold')}
       >
-        <Bold className="h-4 w-4" />
+        <BoldIcon className="h-4 w-4" />
       </Button>
       <Button
         variant={textFormat.includes('italic') ? 'default' : 'outline'}
         size="icon"
         onClick={() => toggleFormat('italic')}
       >
-        <Italic className="h-4 w-4" />
+        <ItalicIcon className="h-4 w-4" />
       </Button>
       <Button
         variant={textFormat.includes('underline') ? 'default' : 'outline'}
         size="icon"
         onClick={() => toggleFormat('underline')}
       >
-        <Underline className="h-4 w-4" />
+        <UnderlineIcon className="h-4 w-4" />
       </Button>
     </ButtonGroup>
   )

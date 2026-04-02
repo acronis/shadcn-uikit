@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Table2, MoreVertical } from 'lucide-react'
+import { TableIcon } from '@/components/icons'
+
+const MoreVerticalIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+  </svg>
+)
 import {
   WidgetTableData,
   WidgetTableDataHeader,
@@ -43,9 +49,9 @@ export const Default: Story = {
   render: () => (
     <WidgetTableData className="w-[480px]">
       <WidgetTableDataHeader>
-        <WidgetTableDataIcon><Table2 /></WidgetTableDataIcon>
+        <WidgetTableDataIcon><TableIcon /></WidgetTableDataIcon>
         <WidgetTableDataTitle>Recent Backups</WidgetTableDataTitle>
-        <MoreVertical className="h-4 w-4 ml-auto text-muted-foreground" />
+        <MoreVerticalIcon className="h-4 w-4 ml-auto text-muted-foreground" />
       </WidgetTableDataHeader>
       <WidgetTableDataContent>
         <WidgetTableDataTable>
@@ -81,7 +87,7 @@ export const WithFooter: Story = {
   render: () => (
     <WidgetTableData className="w-[480px]">
       <WidgetTableDataHeader>
-        <WidgetTableDataIcon><Table2 /></WidgetTableDataIcon>
+        <WidgetTableDataIcon><TableIcon /></WidgetTableDataIcon>
         <WidgetTableDataTitle>Recent Backups</WidgetTableDataTitle>
       </WidgetTableDataHeader>
       <WidgetTableDataContent>
@@ -119,7 +125,7 @@ export const Interactive: Story = {
   render: () => (
     <WidgetTableData interactive className="w-[480px]">
       <WidgetTableDataHeader>
-        <WidgetTableDataIcon><Table2 /></WidgetTableDataIcon>
+        <WidgetTableDataIcon><TableIcon /></WidgetTableDataIcon>
         <WidgetTableDataTitle>Click to open full report</WidgetTableDataTitle>
       </WidgetTableDataHeader>
       <WidgetTableDataContent>

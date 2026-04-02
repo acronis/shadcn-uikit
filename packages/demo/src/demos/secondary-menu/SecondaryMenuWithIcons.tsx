@@ -5,8 +5,13 @@ import {
   SecondaryMenuGroup,
   SecondaryMenuItem,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Home, Settings, User, Bell, Mail } from 'lucide-react'
-
+import {
+  BellIcon,
+  HomeFolderIcon,
+  MailIcon,
+  SettingsIcon,
+  UserIcon,
+} from '@acronis-platform/shadcn-uikit'
 export function SecondaryMenuWithIcons() {
   const [activeItem, setActiveItem] = useState('home')
 
@@ -18,35 +23,35 @@ export function SecondaryMenuWithIcons() {
             <SecondaryMenuItem
               active={activeItem === 'home'}
               onClick={() => setActiveItem('home')}
-              icon={<Home className="h-4 w-4" />}
+              icon={<HomeFolderIcon className="h-4 w-4" />}
             >
               Home
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'profile'}
               onClick={() => setActiveItem('profile')}
-              icon={<User className="h-4 w-4" />}
+              icon={<UserIcon className="h-4 w-4" />}
             >
               Profile
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'notifications'}
               onClick={() => setActiveItem('notifications')}
-              icon={<Bell className="h-4 w-4" />}
+              icon={<BellIcon className="h-4 w-4" />}
             >
               Notifications
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'messages'}
               onClick={() => setActiveItem('messages')}
-              icon={<Mail className="h-4 w-4" />}
+              icon={<MailIcon className="h-4 w-4" />}
             >
               Messages
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'config'}
               onClick={() => setActiveItem('config')}
-              icon={<Settings className="h-4 w-4" />}
+              icon={<SettingsIcon className="h-4 w-4" />}
             >
               Configuration
             </SecondaryMenuItem>

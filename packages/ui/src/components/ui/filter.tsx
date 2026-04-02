@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Filter as FilterIcon } from 'lucide-react'
+import { FilterIcon } from '@/components/icons'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 

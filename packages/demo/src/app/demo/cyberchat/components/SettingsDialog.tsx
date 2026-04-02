@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Settings } from 'lucide-react'
+import { SettingsIcon } from '@acronis-platform/shadcn-uikit'
 
 interface SettingsDialogProps {
   trigger?: React.ReactNode
@@ -22,7 +22,7 @@ export function SettingsDialog({ trigger }: SettingsDialogProps) {
       <DialogTrigger asChild>
         {trigger || (
           <Button variant="ghost" size="icon" className="h-6 w-6">
-            <Settings className="h-4 w-4" />
+            <SettingsIcon className="h-4 w-4" />
           </Button>
         )}
       </DialogTrigger>

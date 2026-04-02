@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { FileSearch, Brain } from 'lucide-react'
+import { FileSearchIcon, BrainIcon } from '@/components/icons/missing-icons'
 import { useChatFlowStore } from '../store/useChatFlowStore'
 
 export function LandingState() {
@@ -80,7 +80,7 @@ export function LandingState() {
                 size="sm"
                 className="h-9 gap-2 rounded-xl text-sm border-gray-200 bg-white hover:bg-gray-50"
               >
-                <FileSearch className="h-4 w-4" />
+                <FileSearchIcon className="h-4 w-4" />
                 <span>Add files</span>
               </Button>
               <Button
@@ -88,7 +88,7 @@ export function LandingState() {
                 size="sm"
                 className="h-9 gap-2 rounded-xl text-sm border-gray-200 bg-white hover:bg-gray-50"
               >
-                <Brain className="h-4 w-4" />
+                <BrainIcon className="h-4 w-4" />
                 <span>Web search</span>
               </Button>
             </div>

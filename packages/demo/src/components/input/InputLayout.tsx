@@ -5,8 +5,8 @@ import {
   SecondaryMenuGroup,
   SecondaryMenuItem,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Mail, AlertCircle, Ruler } from 'lucide-react'
-
+import { ExclamationCircleIcon, MailIcon } from '@acronis-platform/shadcn-uikit'
+import { RulerIcon } from '@/components/icons/missing-icons'
 export function InputLayout() {
   const navigate = useNavigate()
   const location = useLocation()
@@ -41,7 +41,7 @@ export function InputLayout() {
             <SecondaryMenuItem
               active={isActive('/input/icons')}
               onClick={() => navigate('/input/icons')}
-              icon={<Mail className="h-4 w-4" />}
+              icon={<MailIcon className="h-4 w-4" />}
             >
               With Icons
             </SecondaryMenuItem>
@@ -57,7 +57,7 @@ export function InputLayout() {
             <SecondaryMenuItem
               active={isActive('/input/validation')}
               onClick={() => navigate('/input/validation')}
-              icon={<AlertCircle className="h-4 w-4" />}
+              icon={<ExclamationCircleIcon className="h-4 w-4" />}
             >
               Validation
             </SecondaryMenuItem>
@@ -67,7 +67,7 @@ export function InputLayout() {
             <SecondaryMenuItem
               active={isActive('/input/sizes')}
               onClick={() => navigate('/input/sizes')}
-              icon={<Ruler className="h-4 w-4" />}
+              icon={<RulerIcon className="h-4 w-4" />}
             >
               Different Sizes
             </SecondaryMenuItem>

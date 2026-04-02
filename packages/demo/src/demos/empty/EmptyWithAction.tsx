@@ -7,14 +7,13 @@ import {
   EmptyActions,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { FolderOpen } from 'lucide-react'
-
+import { FolderIcon } from '@acronis-platform/shadcn-uikit'
 export function EmptyWithAction() {
   return (
     <div className="flex min-h-[300px] items-center justify-center border rounded-lg bg-gray-50">
       <Empty>
         <EmptyIcon className="h-24 w-24">
-          <FolderOpen className="text-[#2668C5]" />
+          <FolderIcon className="text-[#2668C5]" />
         </EmptyIcon>
         <EmptyHeader>
           <EmptyTitle>No files</EmptyTitle>

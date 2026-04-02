@@ -8,14 +8,13 @@ import {
   EmptyLinks,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Users } from 'lucide-react'
-
+import { UsersIcon } from '@acronis-platform/shadcn-uikit'
 export function EmptyWithMultipleLinks() {
   return (
     <div className="flex min-h-[300px] items-center justify-center border rounded-lg bg-gray-50">
       <Empty>
         <EmptyIcon className="h-24 w-24">
-          <Users className="text-[#2668C5]" />
+          <UsersIcon className="text-[#2668C5]" />
         </EmptyIcon>
         <EmptyHeader>
           <EmptyTitle>No team members</EmptyTitle>

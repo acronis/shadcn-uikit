@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Plus } from 'lucide-react'
+import { PlusIcon } from '@acronis-platform/shadcn-uikit'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import {
   AlertDialog,
@@ -80,7 +80,7 @@ export function DataTablePage() {
           </p>
         </div>
         <Button onClick={handleCreate}>
-          <Plus className="mr-2 h-4 w-4" />
+          <PlusIcon className="mr-2 h-4 w-4" />
           {t('actions.create')}
         </Button>
       </div>

@@ -1,6 +1,5 @@
 import { Input } from '@acronis-platform/shadcn-uikit/react'
-import { EyeOff } from 'lucide-react'
-
+import { HideIcon } from '@acronis-platform/shadcn-uikit'
 export function PasswordInputDisabled() {
   return (
     <div className="space-y-4">
@@ -18,7 +17,7 @@ export function PasswordInputDisabled() {
             className="absolute right-3 top-1/2 -translate-y-1/2 text-[rgba(38,104,197,0.3)] cursor-not-allowed"
             aria-label="Show password"
           >
-            <EyeOff className="h-4 w-4" />
+            <HideIcon className="h-4 w-4" />
           </button>
         </div>
       </div>
@@ -40,7 +39,7 @@ export function PasswordInputDisabled() {
             className="absolute right-3 top-1/2 -translate-y-1/2 text-[rgba(38,104,197,0.3)] cursor-not-allowed"
             aria-label="Show password"
           >
-            <EyeOff className="h-4 w-4" />
+            <HideIcon className="h-4 w-4" />
           </button>
         </div>
         <p className="text-xs font-medium text-[rgba(36,49,67,0.7)] px-0 py-1">

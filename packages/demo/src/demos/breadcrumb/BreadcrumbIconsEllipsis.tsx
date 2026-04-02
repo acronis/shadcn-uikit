@@ -7,15 +7,14 @@ import {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 } from '@acronis-platform/shadcn-uikit/react'
-import { HomeIcon, FolderIcon, FileIcon } from 'lucide-react'
-
+import { FileIcon, FolderIcon, HomeFolderIcon } from '@acronis-platform/shadcn-uikit'
 export function BreadcrumbIconsEllipsis() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink href="/" className="flex items-center gap-2">
-            <HomeIcon className="w-4 h-4" />
+            <HomeFolderIcon className="w-4 h-4" />
             First
           </BreadcrumbLink>
         </BreadcrumbItem>

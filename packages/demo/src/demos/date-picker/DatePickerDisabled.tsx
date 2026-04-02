@@ -1,6 +1,6 @@
-import { Calendar as CalendarIcon } from 'lucide-react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 
+import { CalendarIcon } from '@acronis-platform/shadcn-uikit'
 export function DatePickerDisabled() {
   return (
     <Button

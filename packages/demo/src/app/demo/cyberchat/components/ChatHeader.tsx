@@ -1,5 +1,5 @@
 import { Button, Switch } from '@acronis-platform/shadcn-uikit/react'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDownIcon } from '@acronis-platform/shadcn-uikit'
 import { useCyberChatStore } from '../store/useCyberChatStore'
 import { ThemeSwitcher } from '@/components/playground/ThemeSwitcher'
 import { TokenSelector } from '@/components/playground/TokenSelector'
@@ -38,7 +38,7 @@ export function ChatHeader() {
             onClick={toggleShareDropdown}
           >
             Share & Export
-            <ChevronDown className="ml-2 h-4 w-4" />
+            <ChevronDownIcon className="ml-2 h-4 w-4" />
           </Button>
           {shareDropdownOpen && (
             <div className="absolute right-0 top-full mt-2 w-48 bg-popover border border-border rounded-lg shadow-lg py-1 z-50">

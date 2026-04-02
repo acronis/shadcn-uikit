@@ -7,15 +7,15 @@ import {
   EmptyActions,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Database, ShoppingCart, Calendar, Mail } from 'lucide-react'
-
+import { CalendarIcon, MailIcon, ShoppingCartIcon } from '@acronis-platform/shadcn-uikit'
+import { DatabaseIcon } from '@/components/icons/missing-icons'
 export function EmptyVariousStates() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       <div className="flex min-h-[250px] items-center justify-center border rounded-lg bg-gray-50">
         <Empty>
           <EmptyIcon className="h-24 w-24">
-            <Database className="text-[#2668C5]" />
+            <DatabaseIcon className="text-[#2668C5]" />
           </EmptyIcon>
           <EmptyHeader>
             <EmptyTitle>No data available</EmptyTitle>
@@ -27,7 +27,7 @@ export function EmptyVariousStates() {
       <div className="flex min-h-[250px] items-center justify-center border rounded-lg bg-gray-50">
         <Empty>
           <EmptyIcon className="h-24 w-24">
-            <ShoppingCart className="text-[#2668C5]" />
+            <ShoppingCartIcon className="text-[#2668C5]" />
           </EmptyIcon>
           <EmptyHeader>
             <EmptyTitle>Cart is empty</EmptyTitle>
@@ -42,7 +42,7 @@ export function EmptyVariousStates() {
       <div className="flex min-h-[250px] items-center justify-center border rounded-lg bg-gray-50">
         <Empty>
           <EmptyIcon className="h-24 w-24">
-            <Calendar className="text-[#2668C5]" />
+            <CalendarIcon className="text-[#2668C5]" />
           </EmptyIcon>
           <EmptyHeader>
             <EmptyTitle>No events scheduled</EmptyTitle>
@@ -57,7 +57,7 @@ export function EmptyVariousStates() {
       <div className="flex min-h-[250px] items-center justify-center border rounded-lg bg-gray-50">
         <Empty>
           <EmptyIcon className="h-24 w-24">
-            <Mail className="text-[#2668C5]" />
+            <MailIcon className="text-[#2668C5]" />
           </EmptyIcon>
           <EmptyHeader>
             <EmptyTitle>Inbox is empty</EmptyTitle>

@@ -1,5 +1,43 @@
 import * as React from 'react'
 import {
+  CheckCircleIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CircleIcon,
+  CloseIcon,
+  ClockIcon,
+  EditIcon,
+  ExclamationCircleIcon,
+  ExternalLinkIcon,
+  InfoIcon,
+  MailIcon,
+  MinusIcon,
+  ShieldIcon,
+  ShowIcon,
+  StarIcon,
+  TimesCircleIcon,
+  TrashOIcon,
+  UserIcon,
+} from '@acronis-platform/shadcn-uikit'
+import {
+  ActivityIcon,
+  ArrowUpDownIcon,
+  AwardIcon,
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+  GripVerticalIcon,
+  HeartIcon,
+  MoveLeftIcon,
+  MoveRightIcon,
+  PackageIcon,
+  TagIcon,
+  TrendingDownIcon,
+  TrendingUpIcon,
+  ZapIcon,
+} from '@/components/icons/missing-icons'
+import {
   Card,
   CardContent,
   CardDescription,
@@ -38,45 +76,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
-import {
-  ArrowUpDown,
-  ChevronLeft,
-  ChevronRight,
-  ChevronDown,
-  Check,
-  X,
-  TrendingUp,
-  TrendingDown,
-  Minus,
-  Star,
-  Circle,
-  Edit,
-  Trash,
-  Eye,
-  ExternalLink,
-  Mail,
-  User,
-  Package,
-  ShoppingCart,
-  DollarSign,
-  AlertCircle,
-  CheckCircle,
-  XCircle,
-  Clock,
-  Heart,
-  Zap,
-  Award,
-  Shield,
-  Activity,
-  Tag,
-  Info,
-  GripVertical,
-  ChevronsLeft,
-  ChevronsRight,
-  MoveLeft,
-  MoveRight,
-} from 'lucide-react'
-
 // Multiple datasources with diverse data types
 const dataSources = {
   users: {
@@ -214,7 +213,7 @@ const columnGroups: Record<string, Array<{ group: string; columns: string[] }>> 
     { group: 'User Info', columns: ['name', 'email'] },
     { group: 'Account', columns: ['role', 'status', 'verified'] },
     { group: 'Financial', columns: ['amount'] },
-    { group: 'Activity', columns: ['lastLogin'] }
+    { group: 'ActivityIcon', columns: ['lastLogin'] }
   ],
   products: [
     { group: 'Identification', columns: ['name', 'sku', 'category'] },
@@ -223,7 +222,7 @@ const columnGroups: Record<string, Array<{ group: string; columns: string[] }>> 
     { group: 'Reviews', columns: ['rating', 'featured'] }
   ],
   orders: [
-    { group: 'Order Info', columns: ['customer', 'date', 'items'] },
+    { group: 'Order InfoIcon', columns: ['customer', 'date', 'items'] },
     { group: 'Financial', columns: ['total', 'payment'] },
     { group: 'Status', columns: ['status', 'priority'] }
   ],
@@ -1236,7 +1235,7 @@ export function TablePlayground() {
               <TooltipTrigger asChild>
                 <div className="cursor-help inline-flex items-center gap-1">
                   {content}
-                  <Info className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100" />
+                  <InfoIcon className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100" />
                 </div>
               </TooltipTrigger>
               <TooltipContent>
@@ -1251,7 +1250,7 @@ export function TablePlayground() {
 
     // Boolean values with icons
     if (typeof value === 'boolean') {
-      const icon = value ? <CheckCircle className="h-4 w-4 text-green-500" /> : <XCircle className="h-4 w-4 text-gray-400" />
+      const icon = value ? <CheckCircleIcon className="h-4 w-4 text-green-500" /> : <TimesCircleIcon className="h-4 w-4 text-gray-400" />
       return wrapWithTooltip(icon)
     }
 
@@ -1261,7 +1260,7 @@ export function TablePlayground() {
         <div className="flex flex-wrap gap-1">
           {value.map((tag, idx) => (
             <Badge key={idx} variant="outline" className="text-xs">
-              <Tag className="h-2.5 w-2.5 mr-1" />
+              <TagIcon className="h-2.5 w-2.5 mr-1" />
               {tag}
             </Badge>
           ))}
@@ -1317,7 +1316,7 @@ export function TablePlayground() {
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline flex items-center gap-1"
         >
-          <ExternalLink className="h-3 w-3" />
+          <ExternalLinkIcon className="h-3 w-3" />
           Visit
         </a>
       )
@@ -1327,7 +1326,7 @@ export function TablePlayground() {
     if (column === 'email' && showLinks && typeof value === 'string') {
       return (
         <a href={`mailto:${value}`} className="text-blue-600 hover:underline flex items-center gap-1">
-          <Mail className="h-3 w-3" />
+          <MailIcon className="h-3 w-3" />
           {value}
         </a>
       )
@@ -1335,19 +1334,19 @@ export function TablePlayground() {
 
     // Trend with icons
     if (column === 'trend' && showIcons && typeof value === 'string') {
-      if (value === 'up') return <TrendingUp className="h-4 w-4 text-green-500" />
-      if (value === 'down') return <TrendingDown className="h-4 w-4 text-red-500" />
-      return <Minus className="h-4 w-4 text-gray-400" />
+      if (value === 'up') return <TrendingUpIcon className="h-4 w-4 text-green-500" />
+      if (value === 'down') return <TrendingDownIcon className="h-4 w-4 text-red-500" />
+      return <MinusIcon className="h-4 w-4 text-gray-400" />
     }
 
     // Priority with color indicators (circles)
     if (column === 'priority' && showIcons && typeof value === 'string') {
       const priorityConfig = {
-        High: { color: 'text-red-500', icon: AlertCircle },
-        Normal: { color: 'text-yellow-500', icon: Clock },
-        Low: { color: 'text-green-500', icon: CheckCircle }
+        High: { color: 'text-red-500', icon: ExclamationCircleIcon },
+        Normal: { color: 'text-yellow-500', icon: ClockIcon },
+        Low: { color: 'text-green-500', icon: CheckCircleIcon }
       }
-      const config = priorityConfig[value as keyof typeof priorityConfig] || { color: 'text-gray-500', icon: Circle }
+      const config = priorityConfig[value as keyof typeof priorityConfig] || { color: 'text-gray-500', icon: CircleIcon }
       const Icon = config.icon
       return (
         <div className="flex items-center gap-2">
@@ -1360,15 +1359,15 @@ export function TablePlayground() {
     // Status with enhanced color indicators
     if (column === 'status' && showBadges && typeof value === 'string') {
       const statusConfig: Record<string, { variant: BadgeVariant; icon: any; color: string }> = {
-        'Active': { variant: 'default', icon: CheckCircle, color: 'text-green-500' },
-        'Inactive': { variant: 'destructive', icon: XCircle, color: 'text-red-500' },
-        'Pending': { variant: 'secondary', icon: Clock, color: 'text-yellow-500' },
-        'Processing': { variant: 'secondary', icon: Activity, color: 'text-blue-500' },
-        'Delivered': { variant: 'default', icon: CheckCircle, color: 'text-green-500' },
-        'Shipped': { variant: 'secondary', icon: Package, color: 'text-blue-500' },
-        'Cancelled': { variant: 'destructive', icon: XCircle, color: 'text-red-500' }
+        'Active': { variant: 'default', icon: CheckCircleIcon, color: 'text-green-500' },
+        'Inactive': { variant: 'destructive', icon: TimesCircleIcon, color: 'text-red-500' },
+        'Pending': { variant: 'secondary', icon: ClockIcon, color: 'text-yellow-500' },
+        'Processing': { variant: 'secondary', icon: ActivityIcon, color: 'text-blue-500' },
+        'Delivered': { variant: 'default', icon: CheckCircleIcon, color: 'text-green-500' },
+        'Shipped': { variant: 'secondary', icon: PackageIcon, color: 'text-blue-500' },
+        'Cancelled': { variant: 'destructive', icon: TimesCircleIcon, color: 'text-red-500' }
       }
-      const config = statusConfig[value] || { variant: 'outline' as BadgeVariant, icon: Circle, color: 'text-gray-500' }
+      const config = statusConfig[value] || { variant: 'outline' as BadgeVariant, icon: CircleIcon, color: 'text-gray-500' }
       const Icon = config.icon
       return (
         <Badge variant={config.variant} className="gap-1">
@@ -1383,7 +1382,7 @@ export function TablePlayground() {
       return (
         <div className="flex items-center gap-1">
           {[...Array(5)].map((_, i) => (
-            <Star
+            <StarIcon
               key={i}
               className={`h-3 w-3 ${i < Math.floor(value) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
             />
@@ -1395,7 +1394,7 @@ export function TablePlayground() {
 
     // Completion with enhanced progress bar (with icon)
     if (column === 'completion' && showProgress && typeof value === 'number') {
-      const Icon = value >= 90 ? CheckCircle : value >= 50 ? Activity : Clock
+      const Icon = value >= 90 ? CheckCircleIcon : value >= 50 ? ActivityIcon : ClockIcon
       const color = value >= 90 ? 'text-green-500' : value >= 50 ? 'text-blue-500' : 'text-yellow-500'
       return (
         <div className="flex items-center gap-2 min-w-[120px]">
@@ -1422,11 +1421,11 @@ export function TablePlayground() {
     // Role with custom icons
     if (column === 'role' && showBadges && showIcons && typeof value === 'string') {
       const roleConfig: Record<string, { icon: any; color: string }> = {
-        'Admin': { icon: Shield, color: 'text-red-500' },
-        'Editor': { icon: Edit, color: 'text-blue-500' },
-        'User': { icon: User, color: 'text-gray-500' }
+        'Admin': { icon: ShieldIcon, color: 'text-red-500' },
+        'Editor': { icon: EditIcon, color: 'text-blue-500' },
+        'User': { icon: UserIcon, color: 'text-gray-500' }
       }
-      const config = roleConfig[value] || { icon: User, color: 'text-gray-500' }
+      const config = roleConfig[value] || { icon: UserIcon, color: 'text-gray-500' }
       const Icon = config.icon
       return (
         <Badge variant={getBadgeVariant(value)} className="gap-1">
@@ -1457,7 +1456,7 @@ export function TablePlayground() {
 
     // Change percentage with icon
     if (column === 'change' && showIcons && typeof value === 'number') {
-      const Icon = value > 0 ? TrendingUp : value < 0 ? TrendingDown : Minus
+      const Icon = value > 0 ? TrendingUpIcon : value < 0 ? TrendingDownIcon : MinusIcon
       const color = value > 0 ? 'text-green-600' : value < 0 ? 'text-red-600' : 'text-gray-500'
       return (
         <div className={`flex items-center gap-1 ${color}`}>
@@ -1475,19 +1474,19 @@ export function TablePlayground() {
     // Category with custom icons library
     if (column === 'category' && showTags && showIcons && typeof value === 'string') {
       const categoryIcons: Record<string, { icon: any; color: string }> = {
-        Electronics: { icon: Zap, color: 'text-blue-500' },
-        Accessories: { icon: Package, color: 'text-gray-500' },
-        Audio: { icon: Activity, color: 'text-purple-500' },
-        Office: { icon: Package, color: 'text-orange-500' },
-        Gaming: { icon: Award, color: 'text-red-500' },
-        RGB: { icon: Heart, color: 'text-pink-500' },
-        Income: { icon: DollarSign, color: 'text-green-500' },
-        Food: { icon: ShoppingCart, color: 'text-orange-500' },
-        Transport: { icon: Package, color: 'text-blue-500' },
-        Housing: { icon: Package, color: 'text-purple-500' },
-        Bills: { icon: DollarSign, color: 'text-red-500' },
+        Electronics: { icon: ZapIcon, color: 'text-blue-500' },
+        Accessories: { icon: PackageIcon, color: 'text-gray-500' },
+        Audio: { icon: ActivityIcon, color: 'text-purple-500' },
+        Office: { icon: PackageIcon, color: 'text-orange-500' },
+        Gaming: { icon: AwardIcon, color: 'text-red-500' },
+        RGB: { icon: HeartIcon, color: 'text-pink-500' },
+        Income: { icon: DollarSignIcon, color: 'text-green-500' },
+        Food: { icon: ShoppingCartIcon, color: 'text-orange-500' },
+        Transport: { icon: PackageIcon, color: 'text-blue-500' },
+        Housing: { icon: PackageIcon, color: 'text-purple-500' },
+        Bills: { icon: DollarSignIcon, color: 'text-red-500' },
       }
-      const config = categoryIcons[value] || { icon: Package, color: 'text-gray-500' }
+      const config = categoryIcons[value] || { icon: PackageIcon, color: 'text-gray-500' }
       const Icon = config.icon
       return (
         <Badge variant="outline" className="gap-1">
@@ -1501,12 +1500,12 @@ export function TablePlayground() {
     if (column === 'verified' && typeof value === 'boolean') {
       return value ? (
         <Badge variant="default" className="gap-1">
-          {showIcons && <Shield className="h-3 w-3 text-green-500" />}
+          {showIcons && <ShieldIcon className="h-3 w-3 text-green-500" />}
           Verified
         </Badge>
       ) : (
         <Badge variant="outline" className="gap-1">
-          {showIcons && <AlertCircle className="h-3 w-3 text-yellow-500" />}
+          {showIcons && <ExclamationCircleIcon className="h-3 w-3 text-yellow-500" />}
           Unverified
         </Badge>
       )
@@ -1516,7 +1515,7 @@ export function TablePlayground() {
     if (column === 'featured' && typeof value === 'boolean') {
       return value ? (
         <Badge variant="default" className="gap-1">
-          {showIcons && <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />}
+          {showIcons && <StarIcon className="h-3 w-3 fill-yellow-400 text-yellow-400" />}
           Featured
         </Badge>
       ) : null
@@ -1894,6 +1893,46 @@ import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
 import React from 'react'
 
+import {
+  CheckCircleIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CircleIcon,
+  ClockIcon,
+  CloseIcon,
+  EditIcon,
+  ExclamationCircleIcon,
+  InfoIcon,
+  MailIcon,
+  ShieldIcon,
+  ShoppingCartIcon,
+  ShowIcon,
+  StarIcon,
+  TimesCircleIcon,
+  TrashOIcon,
+  UserIcon,
+} from '@acronis-platform/shadcn-uikit'
+import {
+  ActivityIcon,
+  ArrowUpDownIcon,
+  AwardIcon,
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+  DollarSignIcon,
+  ExternalLinkIcon,
+  GripVerticalIcon,
+  HeartIcon,
+  MinusIcon,
+  MoveLeftIcon,
+  MoveRightIcon,
+  PackageIcon,
+  TagIcon,
+  TrendingDownIcon,
+  TrendingUpIcon,
+  ZapIcon,
+} from '@/components/icons/missing-icons'
 // Table Configuration
 // Features enabled: ${features.join(', ')}
 
@@ -2063,7 +2102,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                     Delete Selected
                   </Button>
                   <Button variant="ghost" size="sm" onClick={() => setSelectedRows([])}>
-                    <X className="h-4 w-4" />
+                    <CloseIcon className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
@@ -2251,7 +2290,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                           onClick={() => setGlobalSearch('')}
                           className="ml-1 hover:bg-secondary-foreground/20 rounded-full p-0.5"
                         >
-                          <X className="h-3 w-3" />
+                          <CloseIcon className="h-3 w-3" />
                         </button>
                       </Badge>
                     )}
@@ -2262,7 +2301,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                           onClick={() => clearColumnFilter(col)}
                           className="ml-1 hover:bg-secondary-foreground/20 rounded-full p-0.5"
                         >
-                          <X className="h-3 w-3" />
+                          <CloseIcon className="h-3 w-3" />
                         </button>
                       </Badge>
                     ))}
@@ -2273,7 +2312,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                           onClick={() => clearColumnFilter(col)}
                           className="ml-1 hover:bg-secondary-foreground/20 rounded-full p-0.5"
                         >
-                          <X className="h-3 w-3" />
+                          <CloseIcon className="h-3 w-3" />
                         </button>
                       </Badge>
                     ))}
@@ -2284,7 +2323,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                           onClick={() => clearColumnFilter(col)}
                           className="ml-1 hover:bg-secondary-foreground/20 rounded-full p-0.5"
                         >
-                          <X className="h-3 w-3" />
+                          <CloseIcon className="h-3 w-3" />
                         </button>
                       </Badge>
                     ))}
@@ -2334,7 +2373,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                           onClick={() => deleteFilterPreset(index)}
                           className="hover:bg-secondary rounded-full p-1"
                         >
-                          <X className="h-3 w-3" />
+                          <CloseIcon className="h-3 w-3" />
                         </button>
                       </div>
                     ))}
@@ -2465,7 +2504,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                           {col}
                           {/* Single sort indicator */}
                           {!enableMultiSort && sortColumn === col && (
-                            <ArrowUpDown className="ml-1 h-3 w-3" />
+                            <ArrowUpDownIcon className="ml-1 h-3 w-3" />
                           )}
                           {/* Multi-sort indicator */}
                           {enableMultiSort && isMultiSorted && (
@@ -2588,7 +2627,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                       <TableCell colSpan={activeColumns.length + (enableRowExpansion ? 1 : 0) + (showSelection ? 1 : 0) + (showActions ? 1 : 0) + (showRowNumbers ? 1 : 0)} className="h-64">
                         <div className="flex flex-col items-center justify-center space-y-4">
                           <div className="rounded-full bg-destructive/10 p-4">
-                            <XCircle className="h-12 w-12 text-destructive" />
+                            <TimesCircleIcon className="h-12 w-12 text-destructive" />
                           </div>
                           <div className="text-center space-y-2">
                             <h3 className="text-lg font-semibold">Error Loading Data</h3>
@@ -2615,7 +2654,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                           /* Custom Empty Component */
                           <div className="flex flex-col items-center justify-center space-y-4">
                             <div className="rounded-full bg-primary/10 p-4">
-                              <AlertCircle className="h-12 w-12 text-primary" />
+                              <ExclamationCircleIcon className="h-12 w-12 text-primary" />
                             </div>
                             <div className="text-center space-y-2">
                               <h3 className="text-lg font-semibold">Custom Empty State</h3>
@@ -2634,7 +2673,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                           /* Default No Data Message */
                           <div className="flex flex-col items-center justify-center space-y-4">
                             <div className="rounded-full bg-muted p-4">
-                              <Circle className="h-12 w-12 text-muted-foreground" />
+                              <CircleIcon className="h-12 w-12 text-muted-foreground" />
                             </div>
                             <div className="text-center space-y-2">
                               <h3 className="text-lg font-semibold">No Data</h3>
@@ -2670,9 +2709,9 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                             >
                               <div className="flex items-center gap-2">
                                 {isCollapsed ? (
-                                  <ChevronRight className="h-4 w-4" />
+                                  <ChevronRightIcon className="h-4 w-4" />
                                 ) : (
-                                  <ChevronDown className="h-4 w-4" />
+                                  <ChevronDownIcon className="h-4 w-4" />
                                 )}
                                 <span className="font-semibold">{row._groupColumn}:</span>
                                 <span>{row._groupValue}</span>
@@ -2738,9 +2777,9 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                               onClick={() => toggleRowExpansion(index)}
                             >
                               {expandedRows.has(index) ? (
-                                <ChevronDown className="h-4 w-4" />
+                                <ChevronDownIcon className="h-4 w-4" />
                               ) : (
-                                <ChevronRight className="h-4 w-4" />
+                                <ChevronRightIcon className="h-4 w-4" />
                               )}
                             </Button>
                           </TableCell>
@@ -2765,7 +2804,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                 onClick={() => handleView(index)}
                                 title="View"
                               >
-                                <Eye className="h-3 w-3" />
+                                <ShowIcon className="h-3 w-3" />
                               </Button>
                               <Button
                                 variant="ghost"
@@ -2774,7 +2813,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                 onClick={() => handleEdit(index)}
                                 title="Edit"
                               >
-                                <Edit className="h-3 w-3" />
+                                <EditIcon className="h-3 w-3" />
                               </Button>
                               <Button
                                 variant="ghost"
@@ -2783,7 +2822,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                 onClick={() => handleDelete(index)}
                                 title="Delete"
                               >
-                                <Trash className="h-3 w-3" />
+                                <TrashOIcon className="h-3 w-3" />
                               </Button>
                             </div>
                           </TableCell>
@@ -2863,7 +2902,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                     className="h-6 w-6 p-0 text-green-600"
                                     onClick={saveInlineEdit}
                                   >
-                                    <Check className="h-3 w-3" />
+                                    <CheckIcon className="h-3 w-3" />
                                   </Button>
                                   <Button
                                     variant="ghost"
@@ -2871,7 +2910,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                     className="h-6 w-6 p-0 text-red-600"
                                     onClick={cancelInlineEdit}
                                   >
-                                    <X className="h-3 w-3" />
+                                    <CloseIcon className="h-3 w-3" />
                                   </Button>
                                 </div>
                               ) : (
@@ -2897,9 +2936,9 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                           }}
                                         >
                                           {expandedTreeNodes.has(row[treeChildColumn]) ? (
-                                            <ChevronDown className="h-3 w-3" />
+                                            <ChevronDownIcon className="h-3 w-3" />
                                           ) : (
-                                            <ChevronRight className="h-3 w-3" />
+                                            <ChevronRightIcon className="h-3 w-3" />
                                           )}
                                         </Button>
                                       ) : (
@@ -2942,7 +2981,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                 onClick={() => handleView(index)}
                                 title="View"
                               >
-                                <Eye className="h-3 w-3" />
+                                <ShowIcon className="h-3 w-3" />
                               </Button>
                               <Button
                                 variant="ghost"
@@ -2951,7 +2990,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                 onClick={() => handleEdit(index)}
                                 title="Edit"
                               >
-                                <Edit className="h-3 w-3" />
+                                <EditIcon className="h-3 w-3" />
                               </Button>
                               <Button
                                 variant="ghost"
@@ -2960,7 +2999,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                 onClick={() => handleDelete(index)}
                                 title="Delete"
                               >
-                                <Trash className="h-3 w-3" />
+                                <TrashOIcon className="h-3 w-3" />
                               </Button>
                             </div>
                           </TableCell>
@@ -3061,7 +3100,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                       closeContextMenu()
                     }}
                   >
-                    <Eye className="h-4 w-4" />
+                    <ShowIcon className="h-4 w-4" />
                     View Details
                   </button>
                   <button
@@ -3071,7 +3110,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                       closeContextMenu()
                     }}
                   >
-                    <Edit className="h-4 w-4" />
+                    <EditIcon className="h-4 w-4" />
                     Edit Row
                   </button>
                   <div className="border-t my-1" />
@@ -3082,7 +3121,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                       closeContextMenu()
                     }}
                   >
-                    <Trash className="h-4 w-4" />
+                    <TrashOIcon className="h-4 w-4" />
                     Delete Row
                   </button>
                 </div>
@@ -3161,7 +3200,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                         disabled={currentPage === 1}
                         title="First page"
                       >
-                        <ChevronsLeft className="h-4 w-4" />
+                        <ChevronsLeftIcon className="h-4 w-4" />
                       </Button>
                       <Button
                         variant="outline"
@@ -3170,7 +3209,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                         disabled={currentPage === 1}
                         title="Previous page"
                       >
-                        <ChevronLeft className="h-4 w-4" />
+                        <ChevronLeftIcon className="h-4 w-4" />
                       </Button>
                       <Button
                         variant="outline"
@@ -3179,7 +3218,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                         disabled={currentPage === totalPages}
                         title="Next page"
                       >
-                        <ChevronRight className="h-4 w-4" />
+                        <ChevronRightIcon className="h-4 w-4" />
                       </Button>
                       <Button
                         variant="outline"
@@ -3188,7 +3227,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                         disabled={currentPage === totalPages}
                         title="Last page"
                       >
-                        <ChevronsRight className="h-4 w-4" />
+                        <ChevronsRightIcon className="h-4 w-4" />
                       </Button>
                     </div>
                   </div>
@@ -3334,7 +3373,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                   <div className="space-y-1 max-h-[200px] overflow-y-auto">
                     {columnOrder.map((col, index) => (
                       <div key={col} className="flex items-center gap-2 p-2 bg-muted/50 rounded">
-                        <GripVertical className="h-4 w-4 text-muted-foreground" />
+                        <GripVerticalIcon className="h-4 w-4 text-muted-foreground" />
                         <span className="text-sm flex-1">{col}</span>
                         <div className="flex gap-1">
                           <Button
@@ -3344,7 +3383,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                             onClick={() => moveColumn(col, 'left')}
                             disabled={index === 0}
                           >
-                            <MoveLeft className="h-3 w-3" />
+                            <MoveLeftIcon className="h-3 w-3" />
                           </Button>
                           <Button
                             variant="ghost"
@@ -3353,7 +3392,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                             onClick={() => moveColumn(col, 'right')}
                             disabled={index === columnOrder.length - 1}
                           >
-                            <MoveRight className="h-3 w-3" />
+                            <MoveRightIcon className="h-3 w-3" />
                           </Button>
                         </div>
                       </div>
@@ -4820,7 +4859,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                         setConditionalRules(conditionalRules.filter((_, i) => i !== ruleIndex))
                                       }}
                                     >
-                                      <X className="h-3 w-3" />
+                                      <CloseIcon className="h-3 w-3" />
                                     </Button>
                                   </div>
 

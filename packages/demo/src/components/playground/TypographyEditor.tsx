@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Button } from '@acronis-platform/shadcn-uikit/react'
-import { RotateCcw } from 'lucide-react'
+import { RotateIcon } from '@acronis-platform/shadcn-uikit'
 import { applyTypographySettings, TypographySettings } from '@/lib/playground/cssVariables'
 
 const FONT_FAMILIES = [
@@ -93,7 +93,7 @@ export const TypographyEditor: React.FC = () => {
         </div>
         {isCustom && (
           <Button variant="outline" size="sm" onClick={handleReset}>
-            <RotateCcw className="mr-2 h-4 w-4" />
+            <RotateIcon className="mr-2 h-4 w-4" />
             Reset to Default
           </Button>
         )}

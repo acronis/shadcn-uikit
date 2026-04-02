@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Input, Button } from '@acronis-platform/shadcn-uikit/react'
-import { Mail, Lock } from 'lucide-react'
-
+import { LockIcon, MailIcon } from '@acronis-platform/shadcn-uikit'
 export function InputForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -19,7 +18,7 @@ export function InputForm() {
           Email <span className="text-red-500">*</span>
         </label>
         <div className="relative">
-          <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+          <MailIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
           <Input
             id="form-email"
             className="pl-10"
@@ -36,7 +35,7 @@ export function InputForm() {
           Password <span className="text-red-500">*</span>
         </label>
         <div className="relative">
-          <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+          <LockIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
           <Input
             id="form-password"
             className="pl-10"

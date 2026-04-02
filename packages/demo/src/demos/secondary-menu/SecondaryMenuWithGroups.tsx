@@ -6,16 +6,15 @@ import {
   SecondaryMenuItem,
 } from '@acronis-platform/shadcn-uikit/react'
 import {
-  FileText,
-  Image,
-  Video,
-  Music,
-  Upload,
-  Download,
-  Edit,
-  Trash,
-} from 'lucide-react'
-
+  DownloadIcon,
+  EditIcon,
+  FileTextIcon,
+  ImageIcon,
+  TrashOIcon,
+  UploadIcon,
+  VideosIcon,
+} from '@acronis-platform/shadcn-uikit'
+import { MusicIcon } from '@/components/icons/missing-icons'
 export function SecondaryMenuWithGroups() {
   const [activeItem, setActiveItem] = useState('documents')
 
@@ -27,28 +26,28 @@ export function SecondaryMenuWithGroups() {
             <SecondaryMenuItem
               active={activeItem === 'documents'}
               onClick={() => setActiveItem('documents')}
-              icon={<FileText className="h-4 w-4" />}
+              icon={<FileTextIcon className="h-4 w-4" />}
             >
               Documents
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'images'}
               onClick={() => setActiveItem('images')}
-              icon={<Image className="h-4 w-4" />}
+              icon={<ImageIcon className="h-4 w-4" />}
             >
               Images
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'videos'}
               onClick={() => setActiveItem('videos')}
-              icon={<Video className="h-4 w-4" />}
+              icon={<VideosIcon className="h-4 w-4" />}
             >
               Videos
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'audio'}
               onClick={() => setActiveItem('audio')}
-              icon={<Music className="h-4 w-4" />}
+              icon={<MusicIcon className="h-4 w-4" />}
             >
               Audio Files
             </SecondaryMenuItem>
@@ -58,28 +57,28 @@ export function SecondaryMenuWithGroups() {
             <SecondaryMenuItem
               active={activeItem === 'upload'}
               onClick={() => setActiveItem('upload')}
-              icon={<Upload className="h-4 w-4" />}
+              icon={<UploadIcon className="h-4 w-4" />}
             >
               Upload
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'download'}
               onClick={() => setActiveItem('download')}
-              icon={<Download className="h-4 w-4" />}
+              icon={<DownloadIcon className="h-4 w-4" />}
             >
               Download
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'edit'}
               onClick={() => setActiveItem('edit')}
-              icon={<Edit className="h-4 w-4" />}
+              icon={<EditIcon className="h-4 w-4" />}
             >
               Edit
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'delete'}
               onClick={() => setActiveItem('delete')}
-              icon={<Trash className="h-4 w-4" />}
+              icon={<TrashOIcon className="h-4 w-4" />}
             >
               Delete
             </SecondaryMenuItem>

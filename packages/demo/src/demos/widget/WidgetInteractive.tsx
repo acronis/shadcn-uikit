@@ -8,15 +8,14 @@ import {
   WidgetValue,
   WidgetLabel,
 } from '@acronis-platform/shadcn-uikit/react'
-import { TrendingUp } from 'lucide-react'
-
+import { TrendingUpIcon } from '@/components/icons/missing-icons'
 export function WidgetInteractive() {
   return (
     <div className="flex gap-4 flex-wrap">
       <Widget interactive className="w-[280px]">
         <WidgetHeader>
           <WidgetIcon>
-            <TrendingUp className="h-4 w-4" />
+            <TrendingUpIcon className="h-4 w-4" />
           </WidgetIcon>
           <WidgetTitle>Clickable Widget</WidgetTitle>
         </WidgetHeader>

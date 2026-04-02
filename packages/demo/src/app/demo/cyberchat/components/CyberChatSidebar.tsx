@@ -6,7 +6,7 @@ import {
   Input,
   ScrollArea,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Search, Plus } from 'lucide-react'
+import { SearchIcon, PlusIcon } from '@acronis-platform/shadcn-uikit'
 import { useCyberChatStore } from '../store/useCyberChatStore'
 import { CollapsibleTree } from './CollapsibleTree'
 import { ChatListItem } from './ChatListItem'
@@ -56,7 +56,7 @@ export function CyberChatSidebar() {
       {/* Search */}
       <div className="p-4 border-b border-border/50">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             placeholder="Search..."
             value={searchQuery}
@@ -79,7 +79,7 @@ export function CyberChatSidebar() {
               console.log('Add project')
             }}
           >
-            <Plus className="h-3 w-3" />
+            <PlusIcon className="h-3 w-3" />
           </Button>
         </div>
         {filteredProjects.length > 0 && (
@@ -107,7 +107,7 @@ export function CyberChatSidebar() {
               console.log('Add skill')
             }}
           >
-            <Plus className="h-3 w-3" />
+            <PlusIcon className="h-3 w-3" />
           </Button>
         </div>
         {filteredSkills.length > 0 && (
@@ -135,7 +135,7 @@ export function CyberChatSidebar() {
               console.log('New chat')
             }}
           >
-            <Plus className="h-3 w-3" />
+            <PlusIcon className="h-3 w-3" />
           </Button>
         </div>
         <ScrollArea className="flex-1 px-2">

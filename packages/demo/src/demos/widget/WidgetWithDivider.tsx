@@ -8,14 +8,13 @@ import {
   WidgetValue,
   WidgetLabel,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Activity } from 'lucide-react'
-
+import { ActivityIcon } from '@/components/icons/missing-icons'
 export function WidgetWithDivider() {
   return (
     <Widget className="w-[350px]">
       <WidgetHeader>
         <WidgetIcon>
-          <Activity className="h-4 w-4" />
+          <ActivityIcon className="h-4 w-4" />
         </WidgetIcon>
         <WidgetTitle>System Health</WidgetTitle>
       </WidgetHeader>

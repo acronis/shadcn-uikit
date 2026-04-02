@@ -100,8 +100,16 @@ import {
   YAxis,
   CartesianGrid,
 } from 'recharts'
-import { MoreHorizontal, Info, CheckCircle, AlertTriangle, XCircle, Shield, Database, FileText } from 'lucide-react'
-
+import {
+  CheckCircleIcon,
+  EllipsisHIcon,
+  FileTextIcon,
+  InfoIcon,
+  ShieldIcon,
+  TimesCircleIcon,
+  WarningCircleIcon,
+} from '@acronis-platform/shadcn-uikit'
+import { DatabaseIcon } from '@/components/icons/missing-icons'
 // ── Sample Data ──
 
 const barData = [
@@ -185,9 +193,9 @@ export function WidgetAll() {
             {/* Bar Chart Widget */}
             <Widget size="lg" interactive>
               <WidgetHeader>
-                <WidgetIcon><Database className="h-4 w-4" /></WidgetIcon>
+                <WidgetIcon><DatabaseIcon className="h-4 w-4" /></WidgetIcon>
                 <WidgetTitle>Backup Jobs</WidgetTitle>
-                <WidgetActions><MoreHorizontal className="h-4 w-4" /></WidgetActions>
+                <WidgetActions><EllipsisHIcon className="h-4 w-4" /></WidgetActions>
               </WidgetHeader>
               <WidgetContent className="flex-1">
                 <ChartContainer config={{ value: { label: 'Jobs', color: 'var(--av-chart-blue)' } }} className="h-[160px] w-full">
@@ -208,9 +216,9 @@ export function WidgetAll() {
             {/* Line Chart Widget */}
             <Widget size="lg" interactive>
               <WidgetHeader>
-                <WidgetIcon><Database className="h-4 w-4" /></WidgetIcon>
+                <WidgetIcon><DatabaseIcon className="h-4 w-4" /></WidgetIcon>
                 <WidgetTitle>Recovery Points</WidgetTitle>
-                <WidgetActions><MoreHorizontal className="h-4 w-4" /></WidgetActions>
+                <WidgetActions><EllipsisHIcon className="h-4 w-4" /></WidgetActions>
               </WidgetHeader>
               <WidgetContent className="flex-1">
                 <ChartContainer config={{
@@ -235,9 +243,9 @@ export function WidgetAll() {
             {/* Donut Chart Widget */}
             <Widget size="lg" interactive>
               <WidgetHeader>
-                <WidgetIcon><Shield className="h-4 w-4" /></WidgetIcon>
+                <WidgetIcon><ShieldIcon className="h-4 w-4" /></WidgetIcon>
                 <WidgetTitle>Protection Coverage</WidgetTitle>
-                <WidgetActions><MoreHorizontal className="h-4 w-4" /></WidgetActions>
+                <WidgetActions><EllipsisHIcon className="h-4 w-4" /></WidgetActions>
               </WidgetHeader>
               <WidgetContent className="flex-1 flex items-center justify-center">
                 <ChartContainer config={{}} className="h-[160px] w-[200px]">
@@ -266,9 +274,9 @@ export function WidgetAll() {
             {/* Stacked Area Widget */}
             <Widget size="lg" interactive>
               <WidgetHeader>
-                <WidgetIcon><Database className="h-4 w-4" /></WidgetIcon>
+                <WidgetIcon><DatabaseIcon className="h-4 w-4" /></WidgetIcon>
                 <WidgetTitle>Storage Usage</WidgetTitle>
-                <WidgetActions><MoreHorizontal className="h-4 w-4" /></WidgetActions>
+                <WidgetActions><EllipsisHIcon className="h-4 w-4" /></WidgetActions>
               </WidgetHeader>
               <WidgetContent className="flex-1">
                 <ChartContainer config={{
@@ -295,9 +303,9 @@ export function WidgetAll() {
             {/* Treemap Widget */}
             <Widget size="lg" interactive className="md:col-span-2">
               <WidgetHeader>
-                <WidgetIcon><Database className="h-4 w-4" /></WidgetIcon>
+                <WidgetIcon><DatabaseIcon className="h-4 w-4" /></WidgetIcon>
                 <WidgetTitle>Data Protection Map — Organizations</WidgetTitle>
-                <WidgetActions><MoreHorizontal className="h-4 w-4" /></WidgetActions>
+                <WidgetActions><EllipsisHIcon className="h-4 w-4" /></WidgetActions>
               </WidgetHeader>
               <WidgetContent className="flex-1">
                 <ChartContainer config={{}} className="h-[200px] w-full">
@@ -314,7 +322,7 @@ export function WidgetAll() {
             {/* Progress Tiers */}
             <WidgetProgressTiers interactive>
               <WidgetProgressTiersHeader>
-                <WidgetProgressTiersIcon><Shield className="h-4 w-4" /></WidgetProgressTiersIcon>
+                <WidgetProgressTiersIcon><ShieldIcon className="h-4 w-4" /></WidgetProgressTiersIcon>
                 <WidgetProgressTiersTitle>Protection Status</WidgetProgressTiersTitle>
               </WidgetProgressTiersHeader>
               <WidgetProgressTiersBar tiers={progressTiers} />
@@ -331,7 +339,7 @@ export function WidgetAll() {
             {/* Progress Chunks */}
             <WidgetProgressChunks interactive>
               <WidgetProgressChunksHeader>
-                <WidgetProgressChunksIcon><Database className="h-4 w-4" /></WidgetProgressChunksIcon>
+                <WidgetProgressChunksIcon><DatabaseIcon className="h-4 w-4" /></WidgetProgressChunksIcon>
                 <WidgetProgressChunksTitle>Storage Quotas</WidgetProgressChunksTitle>
               </WidgetProgressChunksHeader>
               <WidgetProgressChunksBody>
@@ -348,7 +356,7 @@ export function WidgetAll() {
             {/* Protection Status */}
             <WidgetProtectionStatus interactive>
               <WidgetProtectionStatusHeader>
-                <WidgetProtectionStatusIcon><Shield className="h-4 w-4" /></WidgetProtectionStatusIcon>
+                <WidgetProtectionStatusIcon><ShieldIcon className="h-4 w-4" /></WidgetProtectionStatusIcon>
                 <WidgetProtectionStatusTitle>Overall Status</WidgetProtectionStatusTitle>
               </WidgetProtectionStatusHeader>
               <WidgetProtectionStatusContent>
@@ -363,7 +371,7 @@ export function WidgetAll() {
             {/* Protection Summary */}
             <WidgetProtectionSummary interactive>
               <WidgetProtectionSummaryHeader>
-                <WidgetProtectionSummaryIcon><Shield className="h-4 w-4" /></WidgetProtectionSummaryIcon>
+                <WidgetProtectionSummaryIcon><ShieldIcon className="h-4 w-4" /></WidgetProtectionSummaryIcon>
                 <WidgetProtectionSummaryTitle>Protection Summary</WidgetProtectionSummaryTitle>
               </WidgetProtectionSummaryHeader>
               <WidgetProtectionSummaryContent>
@@ -381,43 +389,43 @@ export function WidgetAll() {
         <TabsContent value="alerts" className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
             <WidgetAlert variant="info" interactive>
-              <WidgetAlertIcon><Info className="h-4 w-4" /></WidgetAlertIcon>
+              <WidgetAlertIcon><InfoIcon className="h-4 w-4" /></WidgetAlertIcon>
               <WidgetAlertContent>
                 <WidgetAlertTitle>System Update Available</WidgetAlertTitle>
                 <WidgetAlertDate>Feb 23, 2026 — 14:30</WidgetAlertDate>
                 <WidgetAlertDescription>A new version of the backup agent is available for download.</WidgetAlertDescription>
               </WidgetAlertContent>
-              <WidgetAlertActions><MoreHorizontal className="h-4 w-4" /></WidgetAlertActions>
+              <WidgetAlertActions><EllipsisHIcon className="h-4 w-4" /></WidgetAlertActions>
             </WidgetAlert>
 
             <WidgetAlert variant="success" interactive>
-              <WidgetAlertIcon><CheckCircle className="h-4 w-4" /></WidgetAlertIcon>
+              <WidgetAlertIcon><CheckCircleIcon className="h-4 w-4" /></WidgetAlertIcon>
               <WidgetAlertContent>
                 <WidgetAlertTitle>Backup Completed</WidgetAlertTitle>
                 <WidgetAlertDate>Feb 23, 2026 — 12:00</WidgetAlertDate>
                 <WidgetAlertDescription>All 156 devices backed up successfully.</WidgetAlertDescription>
               </WidgetAlertContent>
-              <WidgetAlertActions><MoreHorizontal className="h-4 w-4" /></WidgetAlertActions>
+              <WidgetAlertActions><EllipsisHIcon className="h-4 w-4" /></WidgetAlertActions>
             </WidgetAlert>
 
             <WidgetAlert variant="warning" interactive>
-              <WidgetAlertIcon><AlertTriangle className="h-4 w-4" /></WidgetAlertIcon>
+              <WidgetAlertIcon><WarningCircleIcon className="h-4 w-4" /></WidgetAlertIcon>
               <WidgetAlertContent>
                 <WidgetAlertTitle>Storage Running Low</WidgetAlertTitle>
                 <WidgetAlertDate>Feb 23, 2026 — 10:15</WidgetAlertDate>
                 <WidgetAlertDescription>Cloud storage is at 92% capacity. Consider upgrading your plan.</WidgetAlertDescription>
               </WidgetAlertContent>
-              <WidgetAlertActions><MoreHorizontal className="h-4 w-4" /></WidgetAlertActions>
+              <WidgetAlertActions><EllipsisHIcon className="h-4 w-4" /></WidgetAlertActions>
             </WidgetAlert>
 
             <WidgetAlert variant="danger" interactive>
-              <WidgetAlertIcon><XCircle className="h-4 w-4" /></WidgetAlertIcon>
+              <WidgetAlertIcon><TimesCircleIcon className="h-4 w-4" /></WidgetAlertIcon>
               <WidgetAlertContent>
                 <WidgetAlertTitle>Backup Failed</WidgetAlertTitle>
                 <WidgetAlertDate>Feb 23, 2026 — 08:45</WidgetAlertDate>
                 <WidgetAlertDescription>3 devices failed to complete backup. Check agent connectivity.</WidgetAlertDescription>
               </WidgetAlertContent>
-              <WidgetAlertActions><MoreHorizontal className="h-4 w-4" /></WidgetAlertActions>
+              <WidgetAlertActions><EllipsisHIcon className="h-4 w-4" /></WidgetAlertActions>
             </WidgetAlert>
           </div>
 
@@ -425,13 +433,13 @@ export function WidgetAll() {
           <h3 className="text-lg font-semibold mt-6">Compact Alerts</h3>
           <div className="space-y-2">
             <WidgetAlert variant="info">
-              <WidgetAlertIcon><Info className="h-4 w-4" /></WidgetAlertIcon>
+              <WidgetAlertIcon><InfoIcon className="h-4 w-4" /></WidgetAlertIcon>
               <WidgetAlertContent>
                 <WidgetAlertTitle>Scheduled maintenance window: Sunday 02:00–04:00 UTC</WidgetAlertTitle>
               </WidgetAlertContent>
             </WidgetAlert>
             <WidgetAlert variant="success">
-              <WidgetAlertIcon><CheckCircle className="h-4 w-4" /></WidgetAlertIcon>
+              <WidgetAlertIcon><CheckCircleIcon className="h-4 w-4" /></WidgetAlertIcon>
               <WidgetAlertContent>
                 <WidgetAlertTitle>All recovery tests passed successfully</WidgetAlertTitle>
               </WidgetAlertContent>
@@ -445,7 +453,7 @@ export function WidgetAll() {
             {/* Text Widgets */}
             <WidgetText interactive>
               <WidgetTextHeader>
-                <WidgetTextIcon><Database className="h-4 w-4" /></WidgetTextIcon>
+                <WidgetTextIcon><DatabaseIcon className="h-4 w-4" /></WidgetTextIcon>
                 <WidgetTextTitle>Total Backups</WidgetTextTitle>
               </WidgetTextHeader>
               <WidgetTextContent>
@@ -456,7 +464,7 @@ export function WidgetAll() {
 
             <WidgetText interactive>
               <WidgetTextHeader>
-                <WidgetTextIcon><Shield className="h-4 w-4" /></WidgetTextIcon>
+                <WidgetTextIcon><ShieldIcon className="h-4 w-4" /></WidgetTextIcon>
                 <WidgetTextTitle>Protected Devices</WidgetTextTitle>
               </WidgetTextHeader>
               <WidgetTextContent>
@@ -467,7 +475,7 @@ export function WidgetAll() {
 
             <WidgetText interactive>
               <WidgetTextHeader>
-                <WidgetTextIcon><FileText className="h-4 w-4" /></WidgetTextIcon>
+                <WidgetTextIcon><FileTextIcon className="h-4 w-4" /></WidgetTextIcon>
                 <WidgetTextTitle>Failed Jobs</WidgetTextTitle>
               </WidgetTextHeader>
               <WidgetTextContent>
@@ -480,7 +488,7 @@ export function WidgetAll() {
           {/* Table Data Widget */}
           <WidgetTableData interactive>
             <WidgetTableDataHeader>
-              <WidgetTableDataIcon><Database className="h-4 w-4" /></WidgetTableDataIcon>
+              <WidgetTableDataIcon><DatabaseIcon className="h-4 w-4" /></WidgetTableDataIcon>
               <WidgetTableDataTitle>Recent Backup Jobs</WidgetTableDataTitle>
             </WidgetTableDataHeader>
             <WidgetTableDataContent>
@@ -536,12 +544,12 @@ export function WidgetAll() {
           <div className="grid gap-4 md:grid-cols-2">
             <WidgetPlaceholder interactive>
               <WidgetPlaceholderHeader>
-                <WidgetPlaceholderIcon><Database className="h-4 w-4" /></WidgetPlaceholderIcon>
+                <WidgetPlaceholderIcon><DatabaseIcon className="h-4 w-4" /></WidgetPlaceholderIcon>
                 <WidgetPlaceholderTitle>Disaster Recovery</WidgetPlaceholderTitle>
               </WidgetPlaceholderHeader>
               <WidgetPlaceholderContent>
                 <WidgetPlaceholderImage>
-                  <Shield className="h-[72px] w-[72px]" />
+                  <ShieldIcon className="h-[72px] w-[72px]" />
                 </WidgetPlaceholderImage>
                 <WidgetPlaceholderText>No disaster recovery plans configured yet.</WidgetPlaceholderText>
                 <WidgetPlaceholderAction>Set up disaster recovery →</WidgetPlaceholderAction>
@@ -550,12 +558,12 @@ export function WidgetAll() {
 
             <WidgetPlaceholder>
               <WidgetPlaceholderHeader>
-                <WidgetPlaceholderIcon><FileText className="h-4 w-4" /></WidgetPlaceholderIcon>
+                <WidgetPlaceholderIcon><FileTextIcon className="h-4 w-4" /></WidgetPlaceholderIcon>
                 <WidgetPlaceholderTitle>Reports</WidgetPlaceholderTitle>
               </WidgetPlaceholderHeader>
               <WidgetPlaceholderContent>
                 <WidgetPlaceholderImage>
-                  <FileText className="h-[72px] w-[72px]" />
+                  <FileTextIcon className="h-[72px] w-[72px]" />
                 </WidgetPlaceholderImage>
                 <WidgetPlaceholderText>No reports have been generated.</WidgetPlaceholderText>
                 <WidgetPlaceholderAction>Generate a report →</WidgetPlaceholderAction>

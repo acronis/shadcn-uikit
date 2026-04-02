@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { ScrollArea } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Copy, ThumbsUp, ThumbsDown, RotateCw } from 'lucide-react'
+import { CopyIcon, RotateIcon } from '@acronis-platform/shadcn-uikit'
+import { ThumbsUpIcon, ThumbsDownIcon } from '@/components/icons/missing-icons'
 import { useChatFlowStore } from '../store/useChatFlowStore'
 import type { Message } from '../types'
 
@@ -31,16 +32,16 @@ function AIMessage({ message }: { message: Message }) {
         </div>
         <div className="flex items-center gap-1">
           <Button variant="ghost" size="icon" className="h-8 w-8">
-            <Copy className="h-4 w-4" />
+            <CopyIcon className="h-4 w-4" />
           </Button>
           <Button variant="ghost" size="icon" className="h-8 w-8">
-            <ThumbsUp className="h-4 w-4" />
+            <ThumbsUpIcon className="h-4 w-4" />
           </Button>
           <Button variant="ghost" size="icon" className="h-8 w-8">
-            <ThumbsDown className="h-4 w-4" />
+            <ThumbsDownIcon className="h-4 w-4" />
           </Button>
           <Button variant="ghost" size="icon" className="h-8 w-8">
-            <RotateCw className="h-4 w-4" />
+            <RotateIcon className="h-4 w-4" />
           </Button>
         </div>
       </div>

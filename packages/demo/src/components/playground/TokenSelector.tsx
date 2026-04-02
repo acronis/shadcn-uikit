@@ -1,4 +1,5 @@
-import { Check, Palette } from 'lucide-react'
+import { CheckIcon } from '@acronis-platform/shadcn-uikit'
+import { PaletteIcon } from '@/components/icons/missing-icons'
 import { usePlaygroundStore } from '@/store/playground/playgroundStore'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import {
@@ -32,7 +33,7 @@ export const TokenSelector: React.FC<TokenSelectorProps> = ({ className = '' }) 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" className={className} />}>
-        <Palette className="mr-2 h-4 w-4" />
+        <PaletteIcon className="mr-2 h-4 w-4" />
         <span>{activeTokenSet?.name || 'Select Theme'}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
@@ -60,7 +61,7 @@ export const TokenSelector: React.FC<TokenSelectorProps> = ({ className = '' }) 
                 </div>
               </div>
               {activeTokenSetId === tokenSet.id && !isCustomActive && (
-                <Check className="h-4 w-4" />
+                <CheckIcon className="h-4 w-4" />
               )}
             </div>
           </DropdownMenuItem>
@@ -77,7 +78,7 @@ export const TokenSelector: React.FC<TokenSelectorProps> = ({ className = '' }) 
                     <div className="text-xs text-muted-foreground">Your customizations</div>
                   </div>
                 </div>
-                <Check className="h-4 w-4" />
+                <CheckIcon className="h-4 w-4" />
               </div>
             </DropdownMenuItem>
             <DropdownMenuSeparator />

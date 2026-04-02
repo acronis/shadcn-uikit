@@ -1,14 +1,13 @@
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
-import { Filter } from 'lucide-react'
-
+import { FilterIcon } from '@acronis-platform/shadcn-uikit'
 export function PopoverFilter() {
   return (
     <div className="flex justify-center rounded-lg border p-8">
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline">
-            <Filter className="mr-2 h-4 w-4" />
+            <FilterIcon className="mr-2 h-4 w-4" />
             Filters
           </Button>
         </PopoverTrigger>

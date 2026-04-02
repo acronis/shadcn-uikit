@@ -1,13 +1,12 @@
 import { Tag } from '@acronis-platform/shadcn-uikit/react'
-import { CheckCircle, Clock } from 'lucide-react'
-
+import { CheckCircleIcon, ClockIcon } from '@acronis-platform/shadcn-uikit'
 export function TagMixedSizes() {
   return (
     <div className="space-y-4">
       <div className="rounded-lg border p-4">
         <div className="mb-2 flex items-center justify-between">
           <h4 className="font-semibold">Project Alpha</h4>
-          <Tag variant="success" icon={<CheckCircle className="h-4 w-4" />}>
+          <Tag variant="success" icon={<CheckCircleIcon className="h-4 w-4" />}>
             Active
           </Tag>
         </div>
@@ -33,7 +32,7 @@ export function TagMixedSizes() {
       <div className="rounded-lg border p-4">
         <div className="mb-2 flex items-center justify-between">
           <h4 className="font-semibold">Project Beta</h4>
-          <Tag variant="warning" icon={<Clock className="h-4 w-4" />}>
+          <Tag variant="warning" icon={<ClockIcon className="h-4 w-4" />}>
             In Progress
           </Tag>
         </div>

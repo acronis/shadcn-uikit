@@ -1,5 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { TrendingUp, MoreVertical } from 'lucide-react'
+const TrendingUpIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+  </svg>
+)
+
+const MoreVerticalIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+  </svg>
+)
 import {
   WidgetProgressTiers,
   WidgetProgressTiersHeader,
@@ -32,9 +42,9 @@ export const Default: Story = {
   render: () => (
     <WidgetProgressTiers className="w-[360px]">
       <WidgetProgressTiersHeader>
-        <WidgetProgressTiersIcon><TrendingUp /></WidgetProgressTiersIcon>
+        <WidgetProgressTiersIcon><TrendingUpIcon /></WidgetProgressTiersIcon>
         <WidgetProgressTiersTitle>Backup Status</WidgetProgressTiersTitle>
-        <MoreVertical className="h-4 w-4 ml-auto text-muted-foreground" />
+        <MoreVerticalIcon className="h-4 w-4 ml-auto text-muted-foreground" />
       </WidgetProgressTiersHeader>
       <WidgetProgressTiersBar tiers={tiers} />
       <WidgetProgressTiersLegend>
@@ -50,7 +60,7 @@ export const WithFooter: Story = {
   render: () => (
     <WidgetProgressTiers className="w-[360px]">
       <WidgetProgressTiersHeader>
-        <WidgetProgressTiersIcon><TrendingUp /></WidgetProgressTiersIcon>
+        <WidgetProgressTiersIcon><TrendingUpIcon /></WidgetProgressTiersIcon>
         <WidgetProgressTiersTitle>Protection Coverage</WidgetProgressTiersTitle>
       </WidgetProgressTiersHeader>
       <WidgetProgressTiersBar tiers={tiers} />
@@ -70,7 +80,7 @@ export const TwoTiers: Story = {
   render: () => (
     <WidgetProgressTiers className="w-[360px]">
       <WidgetProgressTiersHeader>
-        <WidgetProgressTiersIcon><TrendingUp /></WidgetProgressTiersIcon>
+        <WidgetProgressTiersIcon><TrendingUpIcon /></WidgetProgressTiersIcon>
         <WidgetProgressTiersTitle>License Usage</WidgetProgressTiersTitle>
       </WidgetProgressTiersHeader>
       <WidgetProgressTiersBar tiers={[
@@ -89,7 +99,7 @@ export const Interactive: Story = {
   render: () => (
     <WidgetProgressTiers interactive className="w-[360px]">
       <WidgetProgressTiersHeader>
-        <WidgetProgressTiersIcon><TrendingUp /></WidgetProgressTiersIcon>
+        <WidgetProgressTiersIcon><TrendingUpIcon /></WidgetProgressTiersIcon>
         <WidgetProgressTiersTitle>Click for details</WidgetProgressTiersTitle>
       </WidgetProgressTiersHeader>
       <WidgetProgressTiersBar tiers={tiers} />

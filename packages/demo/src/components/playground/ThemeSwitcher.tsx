@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sun, Moon, Monitor } from 'lucide-react'
+import { SunIcon, MoonIcon, MonitorIcon } from '@/components/icons/missing-icons'
 import { usePlaygroundStore } from '@/store/playground/playgroundStore.ts'
 import { ThemeMode } from '@/types/playground/index.ts'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
@@ -35,11 +35,11 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
   const getIcon = () => {
     switch (theme.mode) {
       case ThemeMode.LIGHT:
-        return <Sun className="h-5 w-5" />
+        return <SunIcon className="h-5 w-5" />
       case ThemeMode.DARK:
-        return <Moon className="h-5 w-5" />
+        return <MoonIcon className="h-5 w-5" />
       case ThemeMode.SYSTEM:
-        return <Monitor className="h-5 w-5" />
+        return <MonitorIcon className="h-5 w-5" />
     }
   }
 
@@ -88,21 +88,21 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
           onClick={() => handleThemeChange(ThemeMode.LIGHT)}
           className="cursor-pointer"
         >
-          <Sun className="mr-2 h-4 w-4" />
+          <SunIcon className="mr-2 h-4 w-4" />
           <span>Light</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => handleThemeChange(ThemeMode.DARK)}
           className="cursor-pointer"
         >
-          <Moon className="mr-2 h-4 w-4" />
+          <MoonIcon className="mr-2 h-4 w-4" />
           <span>Dark</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => handleThemeChange(ThemeMode.SYSTEM)}
           className="cursor-pointer"
         >
-          <Monitor className="mr-2 h-4 w-4" />
+          <MonitorIcon className="mr-2 h-4 w-4" />
           <span>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

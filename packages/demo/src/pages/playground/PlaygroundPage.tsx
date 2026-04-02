@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
 import { usePlaygroundStore } from '@/store/playground/playgroundStore.ts'
 import { applyTokenSet, applyTypographySettings, TypographySettings } from '@/lib/playground/cssVariables.ts'
 import { ThemeMode } from '@/types/playground/index.ts'
@@ -16,6 +15,7 @@ import { AppLayout } from '@/app/layout/AppLayout.tsx';
 import { LocaleProvider } from '@/app/context/LocaleContext';
 import { AuthProvider } from '@/app/context/AuthContext';
 
+import { ArrowLeftIcon } from '@acronis-platform/shadcn-uikit'
 const PlaygroundPage: React.FC = () => {
   const { theme, activeTokenSetId, tokenSets, customTokenSet } = usePlaygroundStore()
   const [activeTab, setActiveTab] = useState('components')
@@ -65,7 +65,7 @@ const PlaygroundPage: React.FC = () => {
             <div className="flex items-center gap-4">
               <Link to="/">
                 <Button variant="ghost" size="sm">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  <ArrowLeftIcon className="mr-2 h-4 w-4" />
                   Back to Components
                 </Button>
               </Link>

@@ -14,19 +14,20 @@ import {
   DropdownMenuShortcut,
 } from '@acronis-platform/shadcn-uikit/react'
 import {
-  User,
-  CreditCard,
-  UserPlus,
-  Mail,
-  MessageSquare,
-  PlusCircle,
-  ExternalLink,
-  LifeBuoy,
-  Cloud,
-  LogOut,
-  ChevronDown,
-} from 'lucide-react'
-
+  ChevronDownIcon,
+  CloudIcon,
+  MailIcon,
+  MessagesIcon,
+  UserIcon,
+} from '@acronis-platform/shadcn-uikit'
+import {
+  CreditCardIcon,
+  ExternalLinkIcon,
+  LifeBuoyIcon,
+  LogOutIcon,
+  PlusCircleIcon,
+  UserPlusIcon,
+} from '@/components/icons/missing-icons'
 export function DropdownMenuComplex() {
   const [showStatusBar, setShowStatusBar] = useState(true)
   const [showActivityBar, setShowActivityBar] = useState(false)
@@ -35,18 +36,18 @@ export function DropdownMenuComplex() {
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
           Advanced Menu
-          <ChevronDown className="ml-2 h-4 w-4" />
+          <ChevronDownIcon className="ml-2 h-4 w-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-64">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <User className="mr-2 h-4 w-4" />
+          <UserIcon className="mr-2 h-4 w-4" />
           <span>Profile</span>
           <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <CreditCard className="mr-2 h-4 w-4" />
+          <CreditCardIcon className="mr-2 h-4 w-4" />
           <span>Billing</span>
           <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
         </DropdownMenuItem>
@@ -65,40 +66,40 @@ export function DropdownMenuComplex() {
         <DropdownMenuSeparator />
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
-            <UserPlus className="mr-2 h-4 w-4" />
+            <UserPlusIcon className="mr-2 h-4 w-4" />
             <span>Invite Team</span>
           </DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuItem>
-              <Mail className="mr-2 h-4 w-4" />
+              <MailIcon className="mr-2 h-4 w-4" />
               <span>By Email</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <MessageSquare className="mr-2 h-4 w-4" />
+              <MessagesIcon className="mr-2 h-4 w-4" />
               <span>By Message</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <PlusCircle className="mr-2 h-4 w-4" />
+              <PlusCircleIcon className="mr-2 h-4 w-4" />
               <span>More Options</span>
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <ExternalLink className="mr-2 h-4 w-4" />
+          <ExternalLinkIcon className="mr-2 h-4 w-4" />
           <span>GitHub</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <LifeBuoy className="mr-2 h-4 w-4" />
+          <LifeBuoyIcon className="mr-2 h-4 w-4" />
           <span>Support</span>
         </DropdownMenuItem>
         <DropdownMenuItem disabled>
-          <Cloud className="mr-2 h-4 w-4" />
+          <CloudIcon className="mr-2 h-4 w-4" />
           <span>API (Coming Soon)</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <LogOut className="mr-2 h-4 w-4" />
+          <LogOutIcon className="mr-2 h-4 w-4" />
           <span>Log out</span>
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>

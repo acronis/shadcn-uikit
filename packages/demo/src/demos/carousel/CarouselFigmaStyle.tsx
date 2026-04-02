@@ -7,8 +7,7 @@ import {
 } from '@acronis-platform/shadcn-uikit/react'
 import { Card, CardContent } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-
+import { ChevronLeftIcon, ChevronRightIcon } from '@acronis-platform/shadcn-uikit'
 export function CarouselFigmaStyle() {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
@@ -59,7 +58,7 @@ export function CarouselFigmaStyle() {
               : 'text-[hsl(var(--carousel-nav-text))] hover:opacity-80'
           }`}
         >
-          <ChevronLeft className="inline h-4 w-4" /> Prev
+          <ChevronLeftIcon className="inline h-4 w-4" /> Prev
         </button>
 
         <div className="flex gap-2">
@@ -86,7 +85,7 @@ export function CarouselFigmaStyle() {
               : 'text-[hsl(var(--carousel-nav-text))] hover:opacity-80'
           }`}
         >
-          Next <ChevronRight className="inline h-4 w-4" />
+          Next <ChevronRightIcon className="inline h-4 w-4" />
         </button>
       </div>
 

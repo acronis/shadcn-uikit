@@ -7,14 +7,13 @@ import {
   EmptyActions,
   EmptyLinks,
 } from '@acronis-platform/shadcn-uikit/react'
-import { FileText } from 'lucide-react'
-
+import { FileTextIcon } from '@acronis-platform/shadcn-uikit'
 export function EmptyOnlyLinks() {
   return (
     <div className="flex min-h-[300px] items-center justify-center border rounded-lg bg-gray-50">
       <Empty>
         <EmptyIcon className="h-24 w-24">
-          <FileText className="text-[#2668C5]" />
+          <FileTextIcon className="text-[#2668C5]" />
         </EmptyIcon>
         <EmptyHeader>
           <EmptyTitle>No documents</EmptyTitle>

@@ -5,9 +5,10 @@
  * for processing demo-app specific styles in development mode.
  */
 
-/* Import library's design tokens */
+/* Import library's design tokens and base styles */
 @use '../../../ui/src/styles/tokens';
 @use '../../../ui/src/styles/themes';
+@use '../../../ui/src/styles/base';
 
 /* Tailwind v4 imports */
 @import "tailwindcss/theme.css" layer(theme);

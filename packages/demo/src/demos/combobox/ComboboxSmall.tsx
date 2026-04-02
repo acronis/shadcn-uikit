@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Check, ChevronsUpDown } from 'lucide-react'
 import { cn } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import {
@@ -12,6 +11,7 @@ import {
 } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
 
+import { CheckIcon, ChevronUpdownIcon } from '@acronis-platform/shadcn-uikit'
 const statuses = [
   { value: 'active', label: 'Active' },
   { value: 'inactive', label: 'Inactive' },
@@ -35,7 +35,7 @@ export function ComboboxSmall() {
           {value
             ? statuses.find((status) => status.value === value)?.label
             : 'Select status...'}
-          <ChevronsUpDown className="ml-2 h-3 w-3 shrink-0 opacity-50" />
+          <ChevronUpdownIcon className="ml-2 h-3 w-3 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -53,7 +53,7 @@ export function ComboboxSmall() {
                     setOpen(false)
                   }}
                 >
-                  <Check
+                  <CheckIcon
                     className={cn(
                       'mr-2 h-3 w-3',
                       value === status.value ? 'opacity-100' : 'opacity-0'

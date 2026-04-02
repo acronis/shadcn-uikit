@@ -9,6 +9,7 @@ export function BadgeStatusVariants() {
       <Badge variant="critical">Critical</Badge>
       <Badge variant="danger">Danger</Badge>
       <Badge variant="neutral">Neutral</Badge>
+      <Badge variant="ai">AI</Badge>
     </div>
   )
 }

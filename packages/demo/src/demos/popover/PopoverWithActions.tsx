@@ -1,14 +1,13 @@
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
-import { Info } from 'lucide-react'
-
+import { InfoIcon } from '@acronis-platform/shadcn-uikit'
 export function PopoverWithActions() {
   return (
     <div className="flex justify-center rounded-lg border p-8">
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline">
-            <Info className="mr-2 h-4 w-4" />
+            <InfoIcon className="mr-2 h-4 w-4" />
             Show Info
           </Button>
         </PopoverTrigger>

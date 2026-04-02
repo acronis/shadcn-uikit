@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import { Input } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Search, X, Loader2, ChevronDown, ArrowRight } from 'lucide-react'
-
+import {
+  ArrowRightIcon,
+  ChevronDownIcon,
+  CloseIcon,
+  RotateIcon,
+  SearchIcon,
+} from '@acronis-platform/shadcn-uikit'
 export function InputSearchDemo() {
   const [search, setSearch] = useState('')
   const [searchWithFolder, setSearchWithFolder] = useState('')
@@ -39,7 +44,7 @@ export function InputSearchDemo() {
                 onChange={(e) => setSearch(e.target.value)}
                 className="h-8 pr-10 text-sm border-[rgba(38,104,197,0.3)]"
               />
-              <Search className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#2668C5]" />
+              <SearchIcon className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#2668C5]" />
             </div>
           </div>
         </div>
@@ -58,12 +63,12 @@ export function InputSearchDemo() {
                 readOnly
                 className="h-8 pr-10 text-sm border-[#2668C5] focus-visible:ring-[#2668C5]"
               />
-              <Loader2 className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#408BEA] animate-spin" />
+              <RotateIcon className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#408BEA] animate-spin" />
             </div>
             <Button onClick={handleSearch} size="sm" disabled={searchLoading}>
               {searchLoading ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <RotateIcon className="mr-2 h-4 w-4 animate-spin" />
                   Searching...
                 </>
               ) : (
@@ -94,7 +99,7 @@ export function InputSearchDemo() {
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-[#2668C5] hover:text-[#1a4d8f] transition-colors"
                   aria-label="Clear search"
                 >
-                  <X className="h-4 w-4" />
+                  <CloseIcon className="h-4 w-4" />
                 </button>
               )}
             </div>
@@ -118,7 +123,7 @@ export function InputSearchDemo() {
               <div className="absolute right-0 top-0 h-full flex items-center gap-4 pr-3">
                 <span className="text-sm font-semibold text-[#243143]">In folder</span>
                 <div className="h-full w-px bg-[rgba(38,104,197,0.3)]" />
-                <Search className="h-4 w-4 text-[#2668C5]" />
+                <SearchIcon className="h-4 w-4 text-[#2668C5]" />
               </div>
             </div>
           </div>
@@ -141,7 +146,7 @@ export function InputSearchDemo() {
               <div className="absolute right-0 top-0 h-full flex items-center gap-4 pr-3">
                 <span className="text-sm font-semibold text-[#243143]">In folder</span>
                 <div className="h-full w-px bg-[#2668C5]" />
-                <Loader2 className="h-4 w-4 text-[#408BEA] animate-spin" />
+                <RotateIcon className="h-4 w-4 text-[#408BEA] animate-spin" />
               </div>
             </div>
           </div>
@@ -169,7 +174,7 @@ export function InputSearchDemo() {
                   className="text-[#2668C5] hover:text-[#1a4d8f] transition-colors"
                   aria-label="Clear search"
                 >
-                  <X className="h-4 w-4" />
+                  <CloseIcon className="h-4 w-4" />
                 </button>
               </div>
             </div>
@@ -191,10 +196,10 @@ export function InputSearchDemo() {
               <div className="absolute right-0 top-0 h-full flex items-center gap-2 pr-3">
                 <button className="flex items-center gap-1 text-sm font-normal text-[#2668C5] hover:text-[#1a4d8f]">
                   In folder
-                  <ChevronDown className="h-3 w-3" />
+                  <ChevronDownIcon className="h-3 w-3" />
                 </button>
                 <div className="h-full w-px bg-[rgba(38,104,197,0.3)]" />
-                <Search className="h-4 w-4 text-[#2668C5]" />
+                <SearchIcon className="h-4 w-4 text-[#2668C5]" />
               </div>
             </div>
           </div>
@@ -214,7 +219,7 @@ export function InputSearchDemo() {
                 onChange={(e) => setFolderPath(e.target.value)}
                 className="h-8 pr-10 text-sm border-[rgba(38,104,197,0.3)]"
               />
-              <ArrowRight className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#2668C5]" />
+              <ArrowRightIcon className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#2668C5]" />
             </div>
           </div>
         </div>
@@ -233,7 +238,7 @@ export function InputSearchDemo() {
                 readOnly
                 className="h-8 pr-10 text-sm border-[#2668C5] focus-visible:ring-[#2668C5]"
               />
-              <Loader2 className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#408BEA] animate-spin" />
+              <RotateIcon className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#408BEA] animate-spin" />
             </div>
           </div>
         </div>
@@ -259,7 +264,7 @@ export function InputSearchDemo() {
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-[#2668C5] hover:text-[#1a4d8f] transition-colors"
                   aria-label="Clear path"
                 >
-                  <X className="h-4 w-4" />
+                  <CloseIcon className="h-4 w-4" />
                 </button>
               )}
             </div>

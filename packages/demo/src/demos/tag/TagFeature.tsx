@@ -1,13 +1,13 @@
 import { Tag } from '@acronis-platform/shadcn-uikit/react'
-import { Star, Zap } from 'lucide-react'
-
+import { StarIcon } from '@acronis-platform/shadcn-uikit'
+import { ZapIcon } from '@/components/icons/missing-icons'
 export function TagFeature() {
   return (
     <div className="flex flex-wrap gap-3">
-      <Tag variant="success" icon={<Star className="h-4 w-4" />}>
+      <Tag variant="success" icon={<StarIcon className="h-4 w-4" />}>
         Premium
       </Tag>
-      <Tag variant="info" icon={<Zap className="h-4 w-4" />}>
+      <Tag variant="info" icon={<ZapIcon className="h-4 w-4" />}>
         Fast
       </Tag>
       <Tag variant="warning" size="small">

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Button, Switch, Separator } from '@acronis-platform/shadcn-uikit/react'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDownIcon } from '@acronis-platform/shadcn-uikit'
 import { useCyberChatStore } from '../store/useCyberChatStore'
 import { RadialProgress } from './RadialProgress'
 
@@ -45,7 +45,7 @@ export function ModelSelector() {
         className="h-9 min-w-[140px]"
       >
         Model: {selectedModelName}
-        <ChevronDown className="ml-2 h-4 w-4" />
+        <ChevronDownIcon className="ml-2 h-4 w-4" />
       </Button>
 
       {modelDropdownOpen && (
