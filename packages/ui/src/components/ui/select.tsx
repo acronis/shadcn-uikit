@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Select as BaseSelect } from '@base-ui/react/select'
-import { Check, ChevronDown, ChevronUp } from 'lucide-react'
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@/components/icons'
 
 import { cn } from '@/lib/utils'
 
@@ -29,7 +29,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <BaseSelect.Icon className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-transform data-[open]:rotate-180 pointer-events-none">
-      <ChevronDown className="h-4 w-4" />
+      <ChevronDownIcon className="h-4 w-4" />
     </BaseSelect.Icon>
   </BaseSelect.Trigger>
 ))
@@ -49,7 +49,7 @@ const SelectScrollUpButton = React.forwardRef<
     )}
     {...props}
   >
-    <ChevronUp className="h-3.5 w-3.5" />
+    <ChevronUpIcon className="h-3.5 w-3.5" />
   </BaseSelect.ScrollUpArrow>
 ))
 SelectScrollUpButton.displayName = 'SelectScrollUpButton'
@@ -67,7 +67,7 @@ const SelectScrollDownButton = React.forwardRef<
     )}
     {...props}
   >
-    <ChevronDown className="h-3.5 w-3.5" />
+    <ChevronDownIcon className="h-3.5 w-3.5" />
   </BaseSelect.ScrollDownArrow>
 ))
 SelectScrollDownButton.displayName = 'SelectScrollDownButton'
@@ -148,7 +148,7 @@ const SelectItem = React.forwardRef<
     {...props}
   >
     <BaseSelect.ItemIndicator className="inline-flex h-4 w-4 shrink-0 items-center justify-center">
-      <Check className="h-3.5 w-3.5" />
+      <CheckIcon className="h-3.5 w-3.5" />
     </BaseSelect.ItemIndicator>
     <BaseSelect.ItemText className="flex-1">{children}</BaseSelect.ItemText>
   </BaseSelect.Item>

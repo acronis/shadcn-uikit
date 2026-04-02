@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Checkbox as CheckboxPrimitive } from '@base-ui/react'
-import { Check, Minus } from 'lucide-react'
+import { CheckIcon, MinusIcon } from '@/components/icons'
 
 import { cn } from '@/lib/utils'
 
@@ -41,9 +41,9 @@ const Checkbox = React.forwardRef<HTMLElement, CheckboxProps>(
         {/* keepMounted ensures the indicator stays in the DOM so we can always render the correct icon */}
         <CheckboxPrimitive.Indicator keepMounted className={cn('flex items-center justify-center text-current data-[unchecked]:hidden')}>
           {isIndeterminate ? (
-            <Minus className="h-3 w-3" />
+            <MinusIcon className="h-3 w-3" />
           ) : (
-            <Check className="h-3 w-3" />
+            <CheckIcon className="h-3 w-3" />
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>

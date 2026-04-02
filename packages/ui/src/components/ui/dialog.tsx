@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Dialog as BaseDialog } from '@base-ui/react'
-import { X } from 'lucide-react'
+import { CloseIcon } from '@/components/icons'
 
 import { cn } from '@/lib/utils'
 
@@ -105,7 +105,7 @@ const DialogCloseButton = React.forwardRef<
     )}
     {...props}
   >
-    <X className="h-6 w-6" />
+    <CloseIcon className="h-6 w-6" />
     <span className="sr-only">Close</span>
   </BaseDialog.Close>
 ))

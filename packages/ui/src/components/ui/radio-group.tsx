@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { RadioGroup as RadioGroupPrimitive } from '@base-ui/react/radio-group'
 import { Radio } from '@base-ui/react/radio'
-import { Circle } from 'lucide-react'
+import { CircleIcon } from '@/components/icons'
 
 import { cn } from '@/lib/utils'
 
@@ -27,7 +27,7 @@ const RadioGroupItem = React.forwardRef<
       {...props}
     >
       <Radio.Indicator className="flex items-center justify-center">
-        <Circle className="h-2.5 w-2.5 fill-current text-current" />
+        <CircleIcon className="h-2.5 w-2.5 fill-current text-current" />
       </Radio.Indicator>
     </Radio.Root>
   )

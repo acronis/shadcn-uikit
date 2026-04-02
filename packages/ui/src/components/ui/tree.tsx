@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ChevronRight, ChevronDown } from 'lucide-react'
+import { ChevronRightIcon, ChevronDownIcon } from '@/components/icons'
 import { cn } from '@/lib/utils'
 import { Checkbox } from './checkbox'
 
@@ -82,9 +82,9 @@ const TreeItem = React.forwardRef<HTMLDivElement, TreeItemProps>(
               className="flex items-center justify-center w-4 h-4 text-[hsl(var(--tree-icon))] hover:opacity-80"
             >
               {isExpanded ? (
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDownIcon className="w-4 h-4" />
               ) : (
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRightIcon className="w-4 h-4" />
               )}
             </button>
           ) : (
