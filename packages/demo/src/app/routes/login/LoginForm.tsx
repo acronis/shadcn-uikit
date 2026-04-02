@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Eye, EyeOff } from 'lucide-react'
+import { ShowIcon, HideIcon } from '@acronis-platform/shadcn-uikit'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Input } from '@acronis-platform/shadcn-uikit/react'
 import { Label } from '@acronis-platform/shadcn-uikit/react'
@@ -72,9 +72,9 @@ export function LoginForm({ onSubmit, isLoading = false }: LoginFormProps) {
             disabled={isLoading}
           >
             {showPassword ? (
-              <EyeOff className="h-4 w-4" />
+              <HideIcon className="h-4 w-4" />
             ) : (
-              <Eye className="h-4 w-4" />
+              <ShowIcon className="h-4 w-4" />
             )}
           </button>
         </div>

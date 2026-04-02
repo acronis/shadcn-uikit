@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ArrowUpDown, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronUpdownIcon, ChevronLeftIcon, ChevronRightIcon } from '@acronis-platform/shadcn-uikit'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Input } from '@acronis-platform/shadcn-uikit/react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@acronis-platform/shadcn-uikit/react'
@@ -152,31 +152,31 @@ export function DataTable({ data, onEdit, onDelete, onView, onBulkDelete, isLoad
               <TableHead>
                 <Button variant="ghost" onClick={() => handleSort('name')} className="h-8 px-2">
                   Name
-                  <ArrowUpDown className="ml-2 h-4 w-4" />
+                  <ChevronUpdownIcon className="ml-2 h-4 w-4" />
                 </Button>
               </TableHead>
               <TableHead>
                 <Button variant="ghost" onClick={() => handleSort('status')} className="h-8 px-2">
                   Status
-                  <ArrowUpDown className="ml-2 h-4 w-4" />
+                  <ChevronUpdownIcon className="ml-2 h-4 w-4" />
                 </Button>
               </TableHead>
               <TableHead>
                 <Button variant="ghost" onClick={() => handleSort('category')} className="h-8 px-2">
                   Category
-                  <ArrowUpDown className="ml-2 h-4 w-4" />
+                  <ChevronUpdownIcon className="ml-2 h-4 w-4" />
                 </Button>
               </TableHead>
               <TableHead>
                 <Button variant="ghost" onClick={() => handleSort('value')} className="h-8 px-2">
                   Value
-                  <ArrowUpDown className="ml-2 h-4 w-4" />
+                  <ChevronUpdownIcon className="ml-2 h-4 w-4" />
                 </Button>
               </TableHead>
               <TableHead>
                 <Button variant="ghost" onClick={() => handleSort('updatedAt')} className="h-8 px-2">
                   Updated
-                  <ArrowUpDown className="ml-2 h-4 w-4" />
+                  <ChevronUpdownIcon className="ml-2 h-4 w-4" />
                 </Button>
               </TableHead>
               <TableHead className="w-12">Actions</TableHead>
@@ -257,7 +257,7 @@ export function DataTable({ data, onEdit, onDelete, onView, onBulkDelete, isLoad
               onClick={() => setCurrentPage(Math.max(0, currentPage - 1))}
               disabled={currentPage === 0}
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeftIcon className="h-4 w-4" />
             </Button>
             <Button
               variant="outline"
@@ -265,7 +265,7 @@ export function DataTable({ data, onEdit, onDelete, onView, onBulkDelete, isLoad
               onClick={() => setCurrentPage(Math.min(totalPages - 1, currentPage + 1))}
               disabled={currentPage >= totalPages - 1}
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRightIcon className="h-4 w-4" />
             </Button>
           </div>
         </div>

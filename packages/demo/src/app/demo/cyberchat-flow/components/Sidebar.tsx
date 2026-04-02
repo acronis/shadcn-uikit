@@ -1,6 +1,6 @@
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Input } from '@acronis-platform/shadcn-uikit/react'
-import { Search, Plus } from 'lucide-react'
+import { SearchIcon, PlusIcon } from '@acronis-platform/shadcn-uikit'
 import { ScrollArea } from '@acronis-platform/shadcn-uikit/react'
 
 const mockChats = [
@@ -17,7 +17,7 @@ export function Sidebar() {
       {/* Search */}
       <div className="p-4 border-b border-border">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search..."
             className="pl-9"
@@ -32,7 +32,7 @@ export function Sidebar() {
             <div className="flex items-center justify-between mb-3 px-1">
               <h3 className="text-sm font-medium">Recent chats</h3>
               <Button variant="ghost" size="icon" className="h-6 w-6">
-                <Plus className="h-4 w-4" />
+                <PlusIcon className="h-4 w-4" />
               </Button>
             </div>
             <div className="space-y-1">

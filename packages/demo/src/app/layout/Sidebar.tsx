@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { LayoutDashboard, Table, Settings, ChevronLeft, ChevronRight, MessageSquare } from 'lucide-react'
+import { TableIcon, SettingsIcon, ChevronLeftIcon, ChevronRightIcon, MessagesIcon } from '@acronis-platform/shadcn-uikit'
+import { LayoutDashboardIcon } from '@/components/icons/missing-icons'
 import { cn } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Separator } from '@acronis-platform/shadcn-uikit/react'
@@ -19,10 +20,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { titleKey: 'navigation.dashboard', href: 'dashboard', icon: LayoutDashboard },
-  { titleKey: 'navigation.data', href: 'data', icon: Table },
-  { titleKey: 'navigation.chat', href: 'chat', icon: MessageSquare },
-  { titleKey: 'navigation.settings', href: 'settings', icon: Settings },
+  { titleKey: 'navigation.dashboard', href: 'dashboard', icon: LayoutDashboardIcon },
+  { titleKey: 'navigation.data', href: 'data', icon: TableIcon },
+  { titleKey: 'navigation.chat', href: 'chat', icon: MessagesIcon },
+  { titleKey: 'navigation.settings', href: 'settings', icon: SettingsIcon },
 ]
 
 export function Sidebar({ isCollapsed, onCollapse, className }: SidebarProps) {
@@ -48,9 +49,9 @@ export function Sidebar({ isCollapsed, onCollapse, className }: SidebarProps) {
           className={cn(isCollapsed && 'mx-auto')}
         >
           {isCollapsed ? (
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
           ) : (
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeftIcon className="h-4 w-4" />
           )}
         </Button>
       </div>

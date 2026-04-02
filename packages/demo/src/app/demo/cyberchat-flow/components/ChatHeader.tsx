@@ -1,5 +1,5 @@
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Settings } from 'lucide-react'
+import { SettingsIcon } from '@acronis-platform/shadcn-uikit'
 import { Switch } from '@acronis-platform/shadcn-uikit/react'
 
 interface ChatHeaderProps {
@@ -31,7 +31,7 @@ export function ChatHeader({ hasMessages }: ChatHeaderProps) {
             </div>
           )}
           <Button variant="ghost" size="icon">
-            <Settings className="h-5 w-5" />
+            <SettingsIcon className="h-5 w-5" />
           </Button>
         </div>
       </div>

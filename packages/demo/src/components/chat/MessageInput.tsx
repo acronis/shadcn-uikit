@@ -11,7 +11,8 @@ import {
   PopoverContent,
   PopoverTrigger
 } from '@acronis-platform/shadcn-uikit/react';
-import { Send, Smile, Eye, EyeOff } from 'lucide-react';
+import { SendIcon, ShowIcon, HideIcon } from '@acronis-platform/shadcn-uikit';
+import { SmileIcon } from '@/components/icons/missing-icons';
 
 export function MessageInput({
   value,
@@ -90,7 +91,7 @@ export function MessageInput({
                   className="h-8 w-8 p-0"
                   disabled={disabled}
                 >
-                  <Smile className="h-4 w-4" />
+                  <SmileIcon className="h-4 w-4" />
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="end">
@@ -116,12 +117,12 @@ export function MessageInput({
           >
             {showPreview ? (
               <>
-                <EyeOff className="h-3 w-3 mr-1" />
+                <HideIcon className="h-3 w-3 mr-1" />
                 Edit
               </>
             ) : (
               <>
-                <Eye className="h-3 w-3 mr-1" />
+                <ShowIcon className="h-3 w-3 mr-1" />
                 Preview
               </>
             )}
@@ -143,7 +144,7 @@ export function MessageInput({
             size="sm"
             className="h-8"
           >
-            <Send className="h-3 w-3 mr-1" />
+            <SendIcon className="h-3 w-3 mr-1" />
             Send
           </Button>
         </div>

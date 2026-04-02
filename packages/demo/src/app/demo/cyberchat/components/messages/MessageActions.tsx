@@ -1,12 +1,6 @@
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import {
-  Copy,
-  ThumbsUp,
-  ThumbsDown,
-  Share2,
-  RotateCw,
-  MoreHorizontal,
-} from 'lucide-react'
+import { CopyIcon, RotateIcon, EllipsisHIcon } from '@acronis-platform/shadcn-uikit'
+import { ThumbsUpIcon, ThumbsDownIcon, Share2Icon } from '@/components/icons/missing-icons'
 import { toast } from 'sonner'
 import type { MessageAction } from '../../types'
 import { useCyberChatStore } from '../../store/useCyberChatStore'
@@ -18,12 +12,12 @@ interface MessageActionsProps {
 }
 
 const iconMap = {
-  copy: Copy,
-  like: ThumbsUp,
-  dislike: ThumbsDown,
-  share: Share2,
-  regenerate: RotateCw,
-  more: MoreHorizontal,
+  copy: CopyIcon,
+  like: ThumbsUpIcon,
+  dislike: ThumbsDownIcon,
+  share: Share2Icon,
+  regenerate: RotateIcon,
+  more: EllipsisHIcon,
 }
 
 export function MessageActions({ messageId, actions }: MessageActionsProps) {

@@ -15,24 +15,24 @@ import {
   Switch,
 } from '@acronis-platform/shadcn-uikit/react'
 import {
-  Send,
-  Loader2,
-  Clock,
-  ThumbsUp,
-  ThumbsDown,
-  Copy,
-  Share2,
-  MoreHorizontal,
-  Plus,
-  Settings,
-  Search,
-  ChevronDown,
-  // ChevronRight,
-  FileText,
-  Brain,
-  Globe,
-  RotateCw,
-} from 'lucide-react'
+  SendIcon,
+  RotateIcon,
+  ClockIcon,
+  CopyIcon,
+  EllipsisHIcon,
+  PlusIcon,
+  SettingsIcon,
+  SearchIcon,
+  ChevronDownIcon,
+  FileTextIcon,
+  GlobeIcon,
+} from '@acronis-platform/shadcn-uikit'
+import {
+  ThumbsUpIcon,
+  ThumbsDownIcon,
+  Share2Icon,
+  BrainIcon,
+} from '@/components/icons/missing-icons'
 
 export const ChatComponentsShowcase: React.FC = () => {
   const [isTyping, setIsTyping] = useState(false)
@@ -64,13 +64,13 @@ export const ChatComponentsShowcase: React.FC = () => {
               </p>
               <div className="flex gap-3">
                 <Button size="icon" className="h-9 w-9">
-                  <Plus className="h-5 w-5" />
+                  <PlusIcon className="h-5 w-5" />
                 </Button>
                 <Button size="icon" className="h-9 w-9">
-                  <Send className="h-4 w-4" />
+                  <SendIcon className="h-4 w-4" />
                 </Button>
                 <Button size="icon" className="h-9 w-9">
-                  <Settings className="h-5 w-5" />
+                  <SettingsIcon className="h-5 w-5" />
                 </Button>
               </div>
             </div>
@@ -81,13 +81,13 @@ export const ChatComponentsShowcase: React.FC = () => {
               </p>
               <div className="flex gap-3">
                 <Button variant="outline" size="icon" className="h-9 w-9">
-                  <Globe className="h-5 w-5" />
+                  <GlobeIcon className="h-5 w-5" />
                 </Button>
                 <Button variant="outline" size="icon" className="h-9 w-9">
-                  <Brain className="h-5 w-5" />
+                  <BrainIcon className="h-5 w-5" />
                 </Button>
                 <Button variant="outline" size="icon" className="h-9 w-9">
-                  <FileText className="h-5 w-5" />
+                  <FileTextIcon className="h-5 w-5" />
                 </Button>
               </div>
             </div>
@@ -98,13 +98,13 @@ export const ChatComponentsShowcase: React.FC = () => {
               </p>
               <div className="flex gap-3">
                 <Button variant="outline" size="icon" className="h-6 w-6">
-                  <Search className="h-4 w-4" />
+                  <SearchIcon className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon" className="h-6 w-6">
-                  <Plus className="h-4 w-4" />
+                  <PlusIcon className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon" className="h-6 w-6">
-                  <Settings className="h-4 w-4" />
+                  <SettingsIcon className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -116,11 +116,11 @@ export const ChatComponentsShowcase: React.FC = () => {
               <div className="flex gap-3">
                 <Button variant="outline" size="sm">
                   Model: Auto
-                  <ChevronDown className="ml-2 h-4 w-4" />
+                  <ChevronDownIcon className="ml-2 h-4 w-4" />
                 </Button>
                 <Button variant="outline" size="sm">
                   Share & Export
-                  <ChevronDown className="ml-2 h-4 w-4" />
+                  <ChevronDownIcon className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -138,22 +138,22 @@ export const ChatComponentsShowcase: React.FC = () => {
               </p>
               <div className="flex gap-2">
                 <Button variant="ghost" size="icon" className="h-6 w-6">
-                  <Copy className="h-4 w-4" />
+                  <CopyIcon className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon" className="h-6 w-6">
-                  <ThumbsUp className="h-4 w-4" />
+                  <ThumbsUpIcon className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon" className="h-6 w-6">
-                  <ThumbsDown className="h-4 w-4" />
+                  <ThumbsDownIcon className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon" className="h-6 w-6">
-                  <Share2 className="h-4 w-4" />
+                  <Share2Icon className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon" className="h-6 w-6">
-                  <RotateCw className="h-4 w-4" />
+                  <RotateIcon className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon" className="h-6 w-6">
-                  <MoreHorizontal className="h-4 w-4" />
+                  <EllipsisHIcon className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -193,7 +193,7 @@ export const ChatComponentsShowcase: React.FC = () => {
             <div>
               <p className="text-xs text-muted-foreground mb-2">Search Input</p>
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input placeholder="Search..." className="pl-9 h-9" />
               </div>
             </div>
@@ -212,22 +212,22 @@ export const ChatComponentsShowcase: React.FC = () => {
                 <div className="flex items-center justify-between mt-2">
                   <div className="flex items-center gap-2">
                     <Button variant="outline" size="icon" className="h-9 w-9">
-                      <FileText className="h-5 w-5" />
+                      <FileTextIcon className="h-5 w-5" />
                     </Button>
                     <Button variant="outline" size="icon" className="h-9 w-9">
-                      <Brain className="h-5 w-5" />
+                      <BrainIcon className="h-5 w-5" />
                     </Button>
                     <Button variant="outline" size="icon" className="h-9 w-9">
-                      <Globe className="h-5 w-5" />
+                      <GlobeIcon className="h-5 w-5" />
                     </Button>
                   </div>
                   <div className="flex items-center gap-2">
                     <Button variant="outline" size="sm">
                       Model: Auto
-                      <ChevronDown className="ml-2 h-4 w-4" />
+                      <ChevronDownIcon className="ml-2 h-4 w-4" />
                     </Button>
                     <Button size="icon" className="h-9 w-9">
-                      <Send className="h-4 w-4" />
+                      <SendIcon className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
@@ -323,7 +323,7 @@ export const ChatComponentsShowcase: React.FC = () => {
                 Source Badge with Icon
               </p>
               <Badge className="gap-1 rounded-full px-3 py-1">
-                <Globe className="h-3 w-3" />
+                <GlobeIcon className="h-3 w-3" />
                 google.../ai+nl
               </Badge>
             </div>
@@ -356,19 +356,19 @@ export const ChatComponentsShowcase: React.FC = () => {
             <div className="flex items-center gap-6">
               <div className="text-center">
                 <div className="border border-border rounded-md p-2 inline-block">
-                  <Search className="h-4 w-4" />
+                  <SearchIcon className="h-4 w-4" />
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">16px</p>
               </div>
               <div className="text-center">
                 <div className="border border-border rounded-md p-2 inline-block">
-                  <Search className="h-5 w-5" />
+                  <SearchIcon className="h-5 w-5" />
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">20px</p>
               </div>
               <div className="text-center">
                 <div className="border border-border rounded-md p-2 inline-block">
-                  <Search className="h-6 w-6" />
+                  <SearchIcon className="h-6 w-6" />
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">24px</p>
               </div>
@@ -390,7 +390,7 @@ export const ChatComponentsShowcase: React.FC = () => {
               <div className="flex gap-3">
                 <div className="flex-shrink-0">
                   <div className="h-6 w-6 rounded-md bg-primary/10 flex items-center justify-center">
-                    <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                    <RotateIcon className="h-4 w-4 animate-spin text-primary" />
                   </div>
                 </div>
                 <div className="flex-1 space-y-2">
@@ -471,7 +471,7 @@ export const ChatComponentsShowcase: React.FC = () => {
 
               <div className="p-3 border-b border-border/50">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                   <Input placeholder="Search..." className="pl-9 h-9" />
                 </div>
               </div>
@@ -480,7 +480,7 @@ export const ChatComponentsShowcase: React.FC = () => {
                 <div className="flex items-center justify-between px-4 py-3">
                   <h4 className="text-sm font-semibold">Recent chats</h4>
                   <Button variant="ghost" size="icon" className="h-6 w-6">
-                    <Plus className="h-4 w-4" />
+                    <PlusIcon className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
@@ -517,7 +517,7 @@ export const ChatComponentsShowcase: React.FC = () => {
                           {chat.title}
                         </span>
                         {chat.hasAlert && (
-                          <Clock className="h-4 w-4 flex-shrink-0 text-destructive" />
+                          <ClockIcon className="h-4 w-4 flex-shrink-0 text-destructive" />
                         )}
                       </div>
                     </button>
@@ -536,7 +536,7 @@ export const ChatComponentsShowcase: React.FC = () => {
                     </p>
                   </div>
                   <Button variant="ghost" size="icon" className="h-6 w-6">
-                    <Settings className="h-4 w-4" />
+                    <SettingsIcon className="h-4 w-4" />
                   </Button>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Send, FileText, Brain, Globe, X } from 'lucide-react'
+import { SendIcon, FileTextIcon, GlobeIcon, CloseIcon } from '@acronis-platform/shadcn-uikit'
+import { BrainIcon } from '@/components/icons/missing-icons'
 import { toast } from 'sonner'
 import { useCyberChatStore } from '../store/useCyberChatStore'
 import { ModelSelector } from './ModelSelector'
@@ -100,13 +101,13 @@ export function ChatInput() {
                 key={index}
                 className="flex items-center gap-2 px-3 py-1.5 bg-muted rounded-lg text-sm"
               >
-                <FileText className="h-4 w-4" />
+                <FileTextIcon className="h-4 w-4" />
                 <span className="truncate max-w-[200px]">{file.name}</span>
                 <button
                   onClick={() => removeAttachedFile(index)}
                   className="hover:text-destructive transition-colors"
                 >
-                  <X className="h-4 w-4" />
+                  <CloseIcon className="h-4 w-4" />
                 </button>
               </div>
             ))}
@@ -149,7 +150,7 @@ export function ChatInput() {
                 onClick={() => fileInputRef.current?.click()}
                 title="Attach file"
               >
-                <FileText className="h-5 w-5" />
+                <FileTextIcon className="h-5 w-5" />
               </Button>
               <Button
                 variant={deepResearchEnabled ? 'default' : 'outline'}
@@ -158,7 +159,7 @@ export function ChatInput() {
                 onClick={toggleDeepResearch}
                 title="Deep research mode"
               >
-                <Brain className="h-5 w-5" />
+                <BrainIcon className="h-5 w-5" />
               </Button>
               <Button
                 variant={webSearchEnabled ? 'default' : 'outline'}
@@ -167,7 +168,7 @@ export function ChatInput() {
                 onClick={toggleWebSearch}
                 title="Web search mode"
               >
-                <Globe className="h-5 w-5" />
+                <GlobeIcon className="h-5 w-5" />
               </Button>
             </div>
 
@@ -180,7 +181,7 @@ export function ChatInput() {
                 onClick={handleSend}
                 disabled={!inputValue.trim()}
               >
-                <Send className="h-4 w-4" />
+                <SendIcon className="h-4 w-4" />
               </Button>
             </div>
           </div>

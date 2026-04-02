@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { TrendingUp, TrendingDown, Users, DollarSign, Activity } from 'lucide-react'
+import { UsersIcon } from '@acronis-platform/shadcn-uikit'
+import { TrendingUpIcon, TrendingDownIcon, DollarSignIcon, ActivityIcon } from '@/components/icons/missing-icons'
 import { Card, CardContent, CardHeader, CardTitle } from '@acronis-platform/shadcn-uikit/react'
 import type { DashboardMetrics } from '../../types'
 
@@ -13,28 +14,28 @@ export function MetricsCards({ metrics, isLoading = false }: MetricsCardsProps) 
     {
       title: 'Total Users',
       value: metrics.totalUsers.toLocaleString(),
-      icon: Users,
+      icon: UsersIcon,
       trend: metrics.growth > 0 ? 'up' : 'down',
       trendValue: `${Math.abs(metrics.growth).toFixed(1)}%`,
     },
     {
       title: 'Revenue',
       value: `$${metrics.revenue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
-      icon: DollarSign,
+      icon: DollarSignIcon,
       trend: metrics.growth > 0 ? 'up' : 'down',
       trendValue: `${Math.abs(metrics.growth).toFixed(1)}%`,
     },
     {
       title: 'Active Sessions',
       value: metrics.activeSessions.toLocaleString(),
-      icon: Activity,
+      icon: ActivityIcon,
       trend: 'up',
       trendValue: 'Live',
     },
     {
       title: 'Growth',
       value: `${metrics.growth.toFixed(1)}%`,
-      icon: metrics.growth > 0 ? TrendingUp : TrendingDown,
+      icon: metrics.growth > 0 ? TrendingUpIcon : TrendingDownIcon,
       trend: metrics.growth > 0 ? 'up' : 'down',
       trendValue: 'vs last month',
     },
@@ -73,9 +74,9 @@ export function MetricsCards({ metrics, isLoading = false }: MetricsCardsProps) 
               <div className="text-2xl font-bold">{card.value}</div>
               <div className="flex items-center text-xs text-muted-foreground mt-1">
                 {card.trend === 'up' ? (
-                  <TrendingUp className="mr-1 h-3 w-3 text-green-500" />
+                  <TrendingUpIcon className="mr-1 h-3 w-3 text-green-500" />
                 ) : (
-                  <TrendingDown className="mr-1 h-3 w-3 text-red-500" />
+                  <TrendingDownIcon className="mr-1 h-3 w-3 text-red-500" />
                 )}
                 <span>{card.trendValue}</span>
               </div>

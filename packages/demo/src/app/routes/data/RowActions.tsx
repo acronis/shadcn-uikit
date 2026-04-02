@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { MoreHorizontal, Eye, Edit, Trash2 } from 'lucide-react'
+import { EllipsisHIcon, ShowIcon, EditIcon, TrashOIcon } from '@acronis-platform/shadcn-uikit'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import {
   DropdownMenu,
@@ -23,7 +23,7 @@ export function RowActions({ onEdit, onDelete, onView }: RowActionsProps) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
-          <MoreHorizontal className="h-4 w-4" />
+          <EllipsisHIcon className="h-4 w-4" />
           <span className="sr-only">Open menu</span>
         </Button>
       </DropdownMenuTrigger>
@@ -31,16 +31,16 @@ export function RowActions({ onEdit, onDelete, onView }: RowActionsProps) {
         <DropdownMenuLabel>Actions</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={onView}>
-          <Eye className="mr-2 h-4 w-4" />
+          <ShowIcon className="mr-2 h-4 w-4" />
           View details
         </DropdownMenuItem>
         <DropdownMenuItem onClick={onEdit}>
-          <Edit className="mr-2 h-4 w-4" />
+          <EditIcon className="mr-2 h-4 w-4" />
           Edit
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={onDelete} className="text-destructive">
-          <Trash2 className="mr-2 h-4 w-4" />
+          <TrashOIcon className="mr-2 h-4 w-4" />
           Delete
         </DropdownMenuItem>
       </DropdownMenuContent>

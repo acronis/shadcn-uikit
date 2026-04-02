@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@acronis-platform/shadcn-uikit/react'
-import { AlertCircle } from 'lucide-react'
+import { ExclamationCircleIcon } from '@acronis-platform/shadcn-uikit'
 
 interface ErrorBoundaryProps {
   children: React.ReactNode
@@ -33,7 +33,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
           <Card className="max-w-md w-full">
             <CardHeader>
               <div className="flex items-center gap-2">
-                <AlertCircle className="h-5 w-5 text-destructive" />
+                <ExclamationCircleIcon className="h-5 w-5 text-destructive" />
                 <CardTitle>Something went wrong</CardTitle>
               </div>
               <CardDescription>

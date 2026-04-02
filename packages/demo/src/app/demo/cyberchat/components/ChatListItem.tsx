@@ -1,4 +1,4 @@
-import { Clock } from 'lucide-react'
+import { ClockIcon } from '@acronis-platform/shadcn-uikit'
 import type { Chat } from '../types'
 import { formatRelativeTime } from '../utils/dateUtils'
 
@@ -20,7 +20,7 @@ export function ChatListItem({ chat, isActive, onClick }: ChatListItemProps) {
       <div className="flex items-center justify-between">
         <span className="font-normal truncate pr-2">{chat.title}</span>
         {chat.hasAlert && (
-          <Clock
+          <ClockIcon
             className={`
               h-4 w-4 flex-shrink-0 text-destructive
               animate-pulse

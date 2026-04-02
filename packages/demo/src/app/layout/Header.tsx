@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useLocation } from 'react-router-dom'
-import { Moon, Sun, User, LogOut, Menu } from 'lucide-react'
+import { UserIcon, BurgerMenuIcon } from '@acronis-platform/shadcn-uikit'
+import { MoonIcon, SunIcon, LogOutIcon } from '@/components/icons/missing-icons'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Avatar, AvatarFallback, AvatarImage } from '@acronis-platform/shadcn-uikit/react'
 import {
@@ -51,7 +52,7 @@ export function Header({ onMenuToggle, showMenuButton = true }: HeaderProps) {
             onClick={onMenuToggle}
             className="md:hidden"
           >
-            <Menu className="h-5 w-5" />
+            <BurgerMenuIcon className="h-5 w-5" />
           </Button>
         )}
 
@@ -70,9 +71,9 @@ export function Header({ onMenuToggle, showMenuButton = true }: HeaderProps) {
             onClick={toggleTheme}
           >
             {theme === 'light' ? (
-              <Moon className="h-5 w-5" />
+              <MoonIcon className="h-5 w-5" />
             ) : (
-              <Sun className="h-5 w-5" />
+              <SunIcon className="h-5 w-5" />
             )}
           </Button>
 
@@ -100,12 +101,12 @@ export function Header({ onMenuToggle, showMenuButton = true }: HeaderProps) {
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <User className="mr-2 h-4 w-4" />
+                <UserIcon className="mr-2 h-4 w-4" />
                 <span>Profile</span>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={logout}>
-                <LogOut className="mr-2 h-4 w-4" />
+                <LogOutIcon className="mr-2 h-4 w-4" />
                 <span>Log out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>

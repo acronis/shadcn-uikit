@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Check, Globe } from 'lucide-react';
+import { CheckIcon, GlobeIcon } from '@acronis-platform/shadcn-uikit';
 import {
   Button,
   DropdownMenu,
@@ -38,7 +38,7 @@ export function LanguageSelector() {
           disabled={isLoading || isChanging}
           className="relative"
         >
-          <Globe className="h-5 w-5" />
+          <GlobeIcon className="h-5 w-5" />
           <span className="sr-only">Select language</span>
         </Button>
       </DropdownMenuTrigger>
@@ -59,7 +59,7 @@ export function LanguageSelector() {
                 <span className="text-xs text-muted-foreground">{language.name}</span>
               </div>
               {language.code === currentLanguage && (
-                <Check className="h-4 w-4 text-primary" />
+                <CheckIcon className="h-4 w-4 text-primary" />
               )}
             </DropdownMenuItem>
           ))}
