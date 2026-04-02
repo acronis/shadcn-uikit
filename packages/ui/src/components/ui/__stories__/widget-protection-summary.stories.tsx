@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Shield, MoreVertical } from 'lucide-react'
+import { ShieldIcon } from '@/components/icons'
+
+const MoreVerticalIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+  </svg>
+)
 import {
   WidgetProtectionSummary,
   WidgetProtectionSummaryHeader,
@@ -25,9 +31,9 @@ export const Default: Story = {
   render: () => (
     <WidgetProtectionSummary className="w-[320px]">
       <WidgetProtectionSummaryHeader>
-        <WidgetProtectionSummaryIcon><Shield /></WidgetProtectionSummaryIcon>
+        <WidgetProtectionSummaryIcon><ShieldIcon /></WidgetProtectionSummaryIcon>
         <WidgetProtectionSummaryTitle>Protection Summary</WidgetProtectionSummaryTitle>
-        <MoreVertical className="h-4 w-4 ml-auto text-muted-foreground" />
+        <MoreVerticalIcon className="h-4 w-4 ml-auto text-muted-foreground" />
       </WidgetProtectionSummaryHeader>
       <WidgetProtectionSummaryContent>
         <WidgetProtectionSummaryRow label="Protected" value={842} status="success" />
@@ -43,7 +49,7 @@ export const WithDivider: Story = {
   render: () => (
     <WidgetProtectionSummary className="w-[320px]">
       <WidgetProtectionSummaryHeader>
-        <WidgetProtectionSummaryIcon><Shield /></WidgetProtectionSummaryIcon>
+        <WidgetProtectionSummaryIcon><ShieldIcon /></WidgetProtectionSummaryIcon>
         <WidgetProtectionSummaryTitle>Backup Summary</WidgetProtectionSummaryTitle>
       </WidgetProtectionSummaryHeader>
       <WidgetProtectionSummaryContent>
@@ -61,7 +67,7 @@ export const WithFooter: Story = {
   render: () => (
     <WidgetProtectionSummary className="w-[320px]">
       <WidgetProtectionSummaryHeader>
-        <WidgetProtectionSummaryIcon><Shield /></WidgetProtectionSummaryIcon>
+        <WidgetProtectionSummaryIcon><ShieldIcon /></WidgetProtectionSummaryIcon>
         <WidgetProtectionSummaryTitle>Device Status</WidgetProtectionSummaryTitle>
       </WidgetProtectionSummaryHeader>
       <WidgetProtectionSummaryContent>
@@ -78,7 +84,7 @@ export const Interactive: Story = {
   render: () => (
     <WidgetProtectionSummary interactive className="w-[320px]">
       <WidgetProtectionSummaryHeader>
-        <WidgetProtectionSummaryIcon><Shield /></WidgetProtectionSummaryIcon>
+        <WidgetProtectionSummaryIcon><ShieldIcon /></WidgetProtectionSummaryIcon>
         <WidgetProtectionSummaryTitle>Click for details</WidgetProtectionSummaryTitle>
       </WidgetProtectionSummaryHeader>
       <WidgetProtectionSummaryContent>

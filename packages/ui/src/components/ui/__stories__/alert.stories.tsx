@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Alert, AlertIcon, AlertContent, AlertTitle, AlertDescription } from '../alert'
-import { AlertCircle, Terminal } from 'lucide-react'
+import { ExclamationCircleIcon } from '@/components/icons'
+
+const TerminalIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+  </svg>
+)
 
 const meta = {
   title: 'UI/Alert',
@@ -16,7 +22,7 @@ export const Default: Story = {
   render: () => (
     <Alert className="w-[400px]">
       <AlertIcon>
-        <Terminal className="h-4 w-4" />
+        <TerminalIcon className="h-4 w-4" />
       </AlertIcon>
       <AlertContent>
         <AlertTitle>Heads up!</AlertTitle>
@@ -30,7 +36,7 @@ export const Destructive: Story = {
   render: () => (
     <Alert variant="destructive" className="w-[400px]">
       <AlertIcon>
-        <AlertCircle className="h-4 w-4" />
+        <ExclamationCircleIcon className="h-4 w-4" />
       </AlertIcon>
       <AlertContent>
         <AlertTitle>Error</AlertTitle>

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Empty, EmptyIcon, EmptyHeader, EmptyTitle, EmptyDescription } from '../empty'
-import { Inbox } from 'lucide-react'
+import { MailboxIcon } from '@/components/icons'
 
 const meta = {
   title: 'UI/Empty',
@@ -27,7 +27,7 @@ export const WithIcon: Story = {
   render: () => (
     <Empty>
       <EmptyIcon>
-        <Inbox />
+        <MailboxIcon />
       </EmptyIcon>
       <EmptyHeader>
         <EmptyTitle>No messages</EmptyTitle>

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Chip } from '../chip'
-import { X } from 'lucide-react'
+import { CloseIcon } from '@/components/icons'
 
 const meta = {
   title: 'UI/Chip',
@@ -20,7 +20,7 @@ export const Default: Story = {
 
 export const WithIcon: Story = {
   render: () => (
-    <Chip icon={<X className="h-3 w-3" />}>Tag</Chip>
+    <Chip icon={<CloseIcon className="h-3 w-3" />}>Tag</Chip>
   ),
 }
 

@@ -84,7 +84,6 @@ export default defineConfig({
         '@radix-ui/react-switch',
         '@radix-ui/react-tabs',
         '@radix-ui/react-tooltip',
-        'lucide-react',
       ],
       output: {
         // Enable tree-shaking by preserving module structure

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Settings, Shield, Database, FileText, Bell, Users, HelpCircle } from 'lucide-react'
+import { SettingsIcon, ShieldIcon, DbIcon, FileTextIcon, BellIcon, UsersIcon, HelpCircleIcon } from '@/components/icons'
 import {
   SecondaryMenu,
   SecondaryMenuHeader,
@@ -24,18 +24,18 @@ export const Default: Story = {
     <SecondaryMenu className="h-[480px]">
       <SecondaryMenuContent>
         <SecondaryMenuGroup>
-          <SecondaryMenuItem icon={<Shield />} active>
+          <SecondaryMenuItem icon={<ShieldIcon />} active>
             Protection
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<Database />}>
+          <SecondaryMenuItem icon={<DbIcon />}>
             Backups
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<FileText />}>
+          <SecondaryMenuItem icon={<FileTextIcon />}>
             Reports
           </SecondaryMenuItem>
         </SecondaryMenuGroup>
         <SecondaryMenuGroup>
-          <SecondaryMenuItem icon={<Settings />}>
+          <SecondaryMenuItem icon={<SettingsIcon />}>
             Settings
           </SecondaryMenuItem>
         </SecondaryMenuGroup>
@@ -52,24 +52,24 @@ export const WithHeader: Story = {
       </SecondaryMenuHeader>
       <SecondaryMenuContent>
         <SecondaryMenuGroup title="Protection">
-          <SecondaryMenuItem icon={<Shield />} active>
+          <SecondaryMenuItem icon={<ShieldIcon />} active>
             Overview
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<Database />}>
+          <SecondaryMenuItem icon={<DbIcon />}>
             Backup Plans
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<FileText />}>
+          <SecondaryMenuItem icon={<FileTextIcon />}>
             Activity
           </SecondaryMenuItem>
         </SecondaryMenuGroup>
         <SecondaryMenuGroup title="Account">
-          <SecondaryMenuItem icon={<Users />}>
+          <SecondaryMenuItem icon={<UsersIcon />}>
             Users
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<Bell />}>
+          <SecondaryMenuItem icon={<BellIcon />}>
             Notifications
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<Settings />}>
+          <SecondaryMenuItem icon={<SettingsIcon />}>
             Settings
           </SecondaryMenuItem>
         </SecondaryMenuGroup>
@@ -83,22 +83,22 @@ export const WithFooter: Story = {
     <SecondaryMenu className="h-[480px]">
       <SecondaryMenuContent>
         <SecondaryMenuGroup>
-          <SecondaryMenuItem icon={<Shield />} active>
+          <SecondaryMenuItem icon={<ShieldIcon />} active>
             Protection
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<Database />}>
+          <SecondaryMenuItem icon={<DbIcon />}>
             Backups
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<FileText />}>
+          <SecondaryMenuItem icon={<FileTextIcon />}>
             Reports
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<Settings />}>
+          <SecondaryMenuItem icon={<SettingsIcon />}>
             Settings
           </SecondaryMenuItem>
         </SecondaryMenuGroup>
       </SecondaryMenuContent>
       <SecondaryMenuFooter>
-        <SecondaryMenuItem icon={<HelpCircle />} className="px-0">
+        <SecondaryMenuItem icon={<HelpCircleIcon />} className="px-0">
           Help & Support
         </SecondaryMenuItem>
       </SecondaryMenuFooter>
@@ -111,16 +111,16 @@ export const WithTags: Story = {
     <SecondaryMenu className="h-[480px]">
       <SecondaryMenuContent>
         <SecondaryMenuGroup title="Features">
-          <SecondaryMenuItem icon={<Shield />} active>
+          <SecondaryMenuItem icon={<ShieldIcon />} active>
             Protection
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<Database />} tag="New">
+          <SecondaryMenuItem icon={<DbIcon />} tag="New">
             Backups
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<FileText />} tag="Beta">
+          <SecondaryMenuItem icon={<FileTextIcon />} tag="Beta">
             Reports
           </SecondaryMenuItem>
-          <SecondaryMenuItem icon={<Settings />} disabled>
+          <SecondaryMenuItem icon={<SettingsIcon />} disabled>
             Settings
           </SecondaryMenuItem>
         </SecondaryMenuGroup>

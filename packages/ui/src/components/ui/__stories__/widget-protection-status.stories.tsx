@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Shield, MoreVertical } from 'lucide-react'
+import { ShieldIcon } from '@/components/icons'
+
+const MoreVerticalIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+  </svg>
+)
 import {
   WidgetProtectionStatus,
   WidgetProtectionStatusHeader,
@@ -27,9 +33,9 @@ export const Success_: Story = {
   render: () => (
     <WidgetProtectionStatus className="w-[240px]">
       <WidgetProtectionStatusHeader>
-        <WidgetProtectionStatusIcon><Shield /></WidgetProtectionStatusIcon>
+        <WidgetProtectionStatusIcon><ShieldIcon /></WidgetProtectionStatusIcon>
         <WidgetProtectionStatusTitle>Protected Devices</WidgetProtectionStatusTitle>
-        <MoreVertical className="h-4 w-4 ml-auto text-muted-foreground" />
+        <MoreVerticalIcon className="h-4 w-4 ml-auto text-muted-foreground" />
       </WidgetProtectionStatusHeader>
       <WidgetProtectionStatusContent>
         <WidgetProtectionStatusIndicator status="success">
@@ -46,9 +52,9 @@ export const Warning_: Story = {
   render: () => (
     <WidgetProtectionStatus className="w-[240px]">
       <WidgetProtectionStatusHeader>
-        <WidgetProtectionStatusIcon><Shield /></WidgetProtectionStatusIcon>
+        <WidgetProtectionStatusIcon><ShieldIcon /></WidgetProtectionStatusIcon>
         <WidgetProtectionStatusTitle>At Risk</WidgetProtectionStatusTitle>
-        <MoreVertical className="h-4 w-4 ml-auto text-muted-foreground" />
+        <MoreVerticalIcon className="h-4 w-4 ml-auto text-muted-foreground" />
       </WidgetProtectionStatusHeader>
       <WidgetProtectionStatusContent>
         <WidgetProtectionStatusIndicator status="warning">
@@ -65,9 +71,9 @@ export const Danger_: Story = {
   render: () => (
     <WidgetProtectionStatus className="w-[240px]">
       <WidgetProtectionStatusHeader>
-        <WidgetProtectionStatusIcon><Shield /></WidgetProtectionStatusIcon>
+        <WidgetProtectionStatusIcon><ShieldIcon /></WidgetProtectionStatusIcon>
         <WidgetProtectionStatusTitle>Failed Backups</WidgetProtectionStatusTitle>
-        <MoreVertical className="h-4 w-4 ml-auto text-muted-foreground" />
+        <MoreVerticalIcon className="h-4 w-4 ml-auto text-muted-foreground" />
       </WidgetProtectionStatusHeader>
       <WidgetProtectionStatusContent>
         <WidgetProtectionStatusIndicator status="danger">
@@ -86,7 +92,7 @@ export const AllStatuses: Story = {
       {(['success', 'warning', 'critical', 'danger', 'info', 'neutral'] as const).map((status) => (
         <WidgetProtectionStatus key={status} className="w-[200px]">
           <WidgetProtectionStatusHeader>
-            <WidgetProtectionStatusIcon><Shield /></WidgetProtectionStatusIcon>
+            <WidgetProtectionStatusIcon><ShieldIcon /></WidgetProtectionStatusIcon>
             <WidgetProtectionStatusTitle className="capitalize">{status}</WidgetProtectionStatusTitle>
           </WidgetProtectionStatusHeader>
           <WidgetProtectionStatusContent>
