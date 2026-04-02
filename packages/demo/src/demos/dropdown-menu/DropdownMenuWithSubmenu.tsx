@@ -15,15 +15,15 @@ import {
   PlusCircle,
   UserPlus,
   Cloud,
-  Github,
+  ExternalLink,
   LifeBuoy,
 } from 'lucide-react'
 
 export function DropdownMenuWithSubmenu() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">More Actions</Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        More Actions
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuItem>
@@ -58,7 +58,7 @@ export function DropdownMenuWithSubmenu() {
         </DropdownMenuSub>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Github className="mr-2 h-4 w-4" />
+          <ExternalLink className="mr-2 h-4 w-4" />
           <span>GitHub</span>
         </DropdownMenuItem>
         <DropdownMenuItem>

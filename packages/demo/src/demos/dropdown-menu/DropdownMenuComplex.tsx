@@ -20,7 +20,7 @@ import {
   Mail,
   MessageSquare,
   PlusCircle,
-  Github,
+  ExternalLink,
   LifeBuoy,
   Cloud,
   LogOut,
@@ -33,11 +33,9 @@ export function DropdownMenuComplex() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
           Advanced Menu
           <ChevronDown className="ml-2 h-4 w-4" />
-        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-64">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -87,7 +85,7 @@ export function DropdownMenuComplex() {
         </DropdownMenuSub>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Github className="mr-2 h-4 w-4" />
+          <ExternalLink className="mr-2 h-4 w-4" />
           <span>GitHub</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
