@@ -16,10 +16,8 @@ import { MoreVerticalIcon } from '@/components/icons/missing-icons'
 export function DropdownMenuWithIcons() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <MoreVerticalIcon className="h-4 w-4" />
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" size="icon" />}>
+        <MoreVerticalIcon className="h-4 w-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
         <DropdownMenuItem>

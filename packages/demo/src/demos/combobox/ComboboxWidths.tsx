@@ -44,18 +44,20 @@ export function ComboboxWidths() {
   return (
     <div className="flex flex-wrap gap-4">
       <Popover open={languageOpen} onOpenChange={setLanguageOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={languageOpen}
-            className="w-[200px] justify-between"
-          >
-            {languageValue
-              ? languages.find((lang) => lang.value === languageValue)?.label
-              : 'Select language...'}
-            <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-          </Button>
+        <PopoverTrigger
+          render={
+            <Button
+              variant="outline"
+              role="combobox"
+              aria-expanded={languageOpen}
+              className="w-[200px] justify-between"
+            />
+          }
+        >
+          {languageValue
+            ? languages.find((lang) => lang.value === languageValue)?.label
+            : 'Select language...'}
+          <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </PopoverTrigger>
         <PopoverContent className="w-[200px] p-0">
           <Command>
@@ -88,18 +90,20 @@ export function ComboboxWidths() {
       </Popover>
 
       <Popover open={countryOpen} onOpenChange={setCountryOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={countryOpen}
-            className="w-[320px] justify-between"
-          >
-            {countryValue
-              ? countries.find((country) => country.value === countryValue)?.label
-              : 'Select country...'}
-            <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-          </Button>
+        <PopoverTrigger
+          render={
+            <Button
+              variant="outline"
+              role="combobox"
+              aria-expanded={countryOpen}
+              className="w-[320px] justify-between"
+            />
+          }
+        >
+          {countryValue
+            ? countries.find((country) => country.value === countryValue)?.label
+            : 'Select country...'}
+          <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </PopoverTrigger>
         <PopoverContent className="w-[320px] p-0">
           <Command>

@@ -5,11 +5,9 @@ export function PopoverFilter() {
   return (
     <div className="flex justify-center rounded-lg border p-8">
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">
-            <FilterIcon className="mr-2 h-4 w-4" />
-            Filters
-          </Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          <FilterIcon className="mr-2 h-4 w-4" />
+          Filters
         </PopoverTrigger>
         <PopoverContent className="w-80">
           <div className="space-y-4">

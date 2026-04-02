@@ -13,8 +13,8 @@ import { CreditCardIcon, KeyboardIcon } from '@/components/icons/missing-icons'
 export function DropdownMenuWithLabels() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Account</Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        Account
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

@@ -12,17 +12,19 @@ export function DatePickerFormats() {
   return (
     <div className="flex flex-wrap gap-4">
       <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            className={cn(
-              'w-[200px] justify-start text-left font-normal',
-              !date && 'text-muted-foreground'
-            )}
-          >
-            <CalendarIcon className="mr-2 h-4 w-4" />
-            {date ? format(date, 'MM/dd/yyyy') : <span>MM/DD/YYYY</span>}
-          </Button>
+        <PopoverTrigger
+          render={
+            <Button
+              variant="outline"
+              className={cn(
+                'w-[200px] justify-start text-left font-normal',
+                !date && 'text-muted-foreground'
+              )}
+            />
+          }
+        >
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? format(date, 'MM/dd/yyyy') : <span>MM/DD/YYYY</span>}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
           <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
@@ -30,17 +32,19 @@ export function DatePickerFormats() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            className={cn(
-              'w-[200px] justify-start text-left font-normal',
-              !date && 'text-muted-foreground'
-            )}
-          >
-            <CalendarIcon className="mr-2 h-4 w-4" />
-            {date ? format(date, 'dd.MM.yyyy') : <span>DD.MM.YYYY</span>}
-          </Button>
+        <PopoverTrigger
+          render={
+            <Button
+              variant="outline"
+              className={cn(
+                'w-[200px] justify-start text-left font-normal',
+                !date && 'text-muted-foreground'
+              )}
+            />
+          }
+        >
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? format(date, 'dd.MM.yyyy') : <span>DD.MM.YYYY</span>}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
           <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
@@ -48,17 +52,19 @@ export function DatePickerFormats() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            className={cn(
-              'w-[200px] justify-start text-left font-normal',
-              !date && 'text-muted-foreground'
-            )}
-          >
-            <CalendarIcon className="mr-2 h-4 w-4" />
-            {date ? format(date, 'yyyy-MM-dd') : <span>YYYY-MM-DD</span>}
-          </Button>
+        <PopoverTrigger
+          render={
+            <Button
+              variant="outline"
+              className={cn(
+                'w-[200px] justify-start text-left font-normal',
+                !date && 'text-muted-foreground'
+              )}
+            />
+          }
+        >
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? format(date, 'yyyy-MM-dd') : <span>YYYY-MM-DD</span>}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
           <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />

@@ -15,8 +15,8 @@ export function DropdownMenuWithRadio() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Position: {position}</Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        Position: {position}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Panel Position</DropdownMenuLabel>

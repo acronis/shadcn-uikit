@@ -25,18 +25,20 @@ export function ComboboxSmall() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={open}
-          className="h-8 w-[200px] justify-between text-sm"
-        >
-          {value
-            ? statuses.find((status) => status.value === value)?.label
-            : 'Select status...'}
-          <ChevronUpdownIcon className="ml-2 h-3 w-3 shrink-0 opacity-50" />
-        </Button>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="outline"
+            role="combobox"
+            aria-expanded={open}
+            className="h-8 w-[200px] justify-between text-sm"
+          />
+        }
+      >
+        {value
+          ? statuses.find((status) => status.value === value)?.label
+          : 'Select status...'}
+        <ChevronUpdownIcon className="ml-2 h-3 w-3 shrink-0 opacity-50" />
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>

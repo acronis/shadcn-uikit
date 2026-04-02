@@ -84,15 +84,17 @@ export function MessageInput({
 
           <div className="absolute bottom-2 right-2 flex gap-1">
             <Popover open={showEmojiPicker} onOpenChange={setShowEmojiPicker}>
-              <PopoverTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-8 w-8 p-0"
-                  disabled={disabled}
-                >
-                  <SmileIcon className="h-4 w-4" />
-                </Button>
+              <PopoverTrigger
+                render={
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-8 w-8 p-0"
+                    disabled={disabled}
+                  />
+                }
+              >
+                <SmileIcon className="h-4 w-4" />
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="end">
                 <EmojiPicker

@@ -19,12 +19,8 @@ export function SettingsDialog({ trigger }: SettingsDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        {trigger || (
-          <Button variant="ghost" size="icon" className="h-6 w-6">
-            <SettingsIcon className="h-4 w-4" />
-          </Button>
-        )}
+      <DialogTrigger render={(trigger as React.ReactElement) || <Button variant="ghost" size="icon" className="h-6 w-6" />}>
+        {!trigger && <SettingsIcon className="h-4 w-4" />}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[540px]">
         <DialogHeader className="pb-4 px-6">

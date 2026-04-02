@@ -9,10 +9,8 @@ export function PopoverWithCalendar() {
   return (
     <div className="flex justify-center rounded-lg border p-8">
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">
-            {date ? date.toLocaleDateString() : 'Pick a date'}
-          </Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          {date ? date.toLocaleDateString() : 'Pick a date'}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
           <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
