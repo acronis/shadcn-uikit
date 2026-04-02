@@ -1,3 +1,10 @@
+## [0.32.4](https://github.com/acronis/shadcn-uikit/compare/v0.32.3...v0.32.4) (2026-04-02)
+
+
+### Bug Fixes
+
+* update lucide-react to version 1.7.0 for improved compatibility ([26791fd](https://github.com/acronis/shadcn-uikit/commit/26791fdc0a839a336975b3cafaff7855daff51d0))
+
 ## [0.32.3](https://github.com/acronis/shadcn-uikit/compare/v0.32.2...v0.32.3) (2026-04-01)
 
 
@@ -37,11 +44,4 @@
 * add Storybook support for styles and update TypeScript configuration ([606ce26](https://github.com/acronis/shadcn-uikit/commit/606ce26ed4790a10307221267cf8fa87de87fd0c))
 * enhance test runner to support full-page snapshots in Storybook stories ([d6aacb9](https://github.com/acronis/shadcn-uikit/commit/d6aacb9a05dd26f85c6060cb49e8105db4f248ba))
 * enhance theme support with global types and new Storybook stories for color and status tokens ([3c4459d](https://github.com/acronis/shadcn-uikit/commit/3c4459db6d685edf6c02f1c38fac0db2fe14b5fb))
-
-## [0.31.0](https://github.com/acronis/shadcn-uikit/compare/v0.30.1...v0.31.0) (2026-03-31)
-
-
-### Features
-
-* refactor components to use base UI library and improve accessibility ([b766cc8](https://github.com/acronis/shadcn-uikit/commit/b766cc891035ac30626b69e2cd63b9527a842f6c))
 
