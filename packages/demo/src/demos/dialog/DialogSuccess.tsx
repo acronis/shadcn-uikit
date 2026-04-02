@@ -9,8 +9,7 @@ import {
   DialogTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { CheckCircle } from 'lucide-react'
-
+import { CheckCircleIcon } from '@acronis-platform/shadcn-uikit'
 export function DialogSuccess() {
   return (
     <Dialog>
@@ -25,7 +24,7 @@ export function DialogSuccess() {
         <DialogBody>
           <div className="flex flex-col items-center justify-center py-8 space-y-4">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-              <CheckCircle className="h-10 w-10 text-green-600" />
+              <CheckCircleIcon className="h-10 w-10 text-green-600" />
             </div>
             <div className="text-center space-y-2">
               <p className="text-sm font-medium">Task Completed Successfully</p>

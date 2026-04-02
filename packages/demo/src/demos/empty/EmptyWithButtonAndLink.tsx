@@ -8,14 +8,13 @@ import {
   EmptyLinks,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Search } from 'lucide-react'
-
+import { SearchIcon } from '@acronis-platform/shadcn-uikit'
 export function EmptyWithButtonAndLink() {
   return (
     <div className="flex min-h-[300px] items-center justify-center border rounded-lg bg-gray-50">
       <Empty>
         <EmptyIcon className="h-24 w-24">
-          <Search className="text-[#2668C5]" />
+          <SearchIcon className="text-[#2668C5]" />
         </EmptyIcon>
         <EmptyHeader>
           <EmptyTitle>No results found</EmptyTitle>

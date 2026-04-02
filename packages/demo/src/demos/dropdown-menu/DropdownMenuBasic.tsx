@@ -6,8 +6,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
-import { User, CreditCard, Settings, LogOut } from 'lucide-react'
-
+import { SettingsIcon, UserIcon } from '@acronis-platform/shadcn-uikit'
+import { CreditCardIcon, LogOutIcon } from '@/components/icons/missing-icons'
 export function DropdownMenuBasic() {
   return (
     <DropdownMenu>
@@ -16,20 +16,20 @@ export function DropdownMenuBasic() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuItem>
-          <User className="mr-2 h-4 w-4" />
+          <UserIcon className="mr-2 h-4 w-4" />
           <span>Profile</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <CreditCard className="mr-2 h-4 w-4" />
+          <CreditCardIcon className="mr-2 h-4 w-4" />
           <span>Billing</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Settings className="mr-2 h-4 w-4" />
+          <SettingsIcon className="mr-2 h-4 w-4" />
           <span>Settings</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <LogOut className="mr-2 h-4 w-4" />
+          <LogOutIcon className="mr-2 h-4 w-4" />
           <span>Log out</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

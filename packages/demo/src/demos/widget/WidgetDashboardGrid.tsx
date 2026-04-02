@@ -10,15 +10,20 @@ import {
   WidgetLabel,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Shield, AlertTriangle, TrendingUp, BarChart3, Activity, MoreVertical } from 'lucide-react'
-
+import { ShieldIcon, WarningCircleIcon } from '@acronis-platform/shadcn-uikit'
+import {
+  ActivityIcon,
+  BarChart3Icon,
+  MoreVerticalIcon,
+  TrendingUpIcon,
+} from '@/components/icons/missing-icons'
 export function WidgetDashboardGrid() {
   return (
     <div className="grid grid-cols-3 gap-4">
       <Widget interactive>
         <WidgetHeader>
           <WidgetIcon>
-            <Shield className="h-4 w-4" />
+            <ShieldIcon className="h-4 w-4" />
           </WidgetIcon>
           <WidgetTitle>Protected</WidgetTitle>
         </WidgetHeader>
@@ -31,7 +36,7 @@ export function WidgetDashboardGrid() {
       <Widget interactive>
         <WidgetHeader>
           <WidgetIcon>
-            <AlertTriangle className="h-4 w-4" />
+            <WarningCircleIcon className="h-4 w-4" />
           </WidgetIcon>
           <WidgetTitle>Alerts</WidgetTitle>
         </WidgetHeader>
@@ -44,7 +49,7 @@ export function WidgetDashboardGrid() {
       <Widget interactive>
         <WidgetHeader>
           <WidgetIcon>
-            <TrendingUp className="h-4 w-4" />
+            <TrendingUpIcon className="h-4 w-4" />
           </WidgetIcon>
           <WidgetTitle>Storage</WidgetTitle>
         </WidgetHeader>
@@ -57,12 +62,12 @@ export function WidgetDashboardGrid() {
       <Widget size="lg" className="col-span-2">
         <WidgetHeader>
           <WidgetIcon>
-            <BarChart3 className="h-4 w-4" />
+            <BarChart3Icon className="h-4 w-4" />
           </WidgetIcon>
           <WidgetTitle>Backup Success Rate</WidgetTitle>
           <WidgetActions>
             <Button variant="ghost" size="icon" className="h-6 w-6">
-              <MoreVertical className="h-4 w-4" />
+              <MoreVerticalIcon className="h-4 w-4" />
             </Button>
           </WidgetActions>
         </WidgetHeader>
@@ -79,9 +84,9 @@ export function WidgetDashboardGrid() {
       <Widget size="lg">
         <WidgetHeader>
           <WidgetIcon>
-            <Activity className="h-4 w-4" />
+            <ActivityIcon className="h-4 w-4" />
           </WidgetIcon>
-          <WidgetTitle>Activity</WidgetTitle>
+          <WidgetTitle>ActivityIcon</WidgetTitle>
         </WidgetHeader>
         <WidgetContent>
           <div className="flex flex-col gap-2">

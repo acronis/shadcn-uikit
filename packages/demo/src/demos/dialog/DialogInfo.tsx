@@ -9,8 +9,7 @@ import {
   DialogTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Info } from 'lucide-react'
-
+import { InfoIcon } from '@acronis-platform/shadcn-uikit'
 export function DialogInfo() {
   return (
     <Dialog>
@@ -25,7 +24,7 @@ export function DialogInfo() {
         <DialogBody>
           <div className="space-y-4">
             <div className="flex items-start gap-3">
-              <Info className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
+              <InfoIcon className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
               <div className="space-y-2">
                 <p className="text-sm font-medium">Important Information</p>
                 <p className="text-sm text-gray-600">

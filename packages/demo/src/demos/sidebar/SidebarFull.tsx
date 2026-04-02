@@ -16,36 +16,35 @@ import {
   SidebarProvider,
 } from '@acronis-platform/shadcn-uikit/react'
 import {
-  Home,
-  Inbox,
-  Calendar,
-  Search,
-  Settings,
-  Users,
-  FileText,
-  BarChart,
-  Shield,
-  HelpCircle,
-  ChevronRight,
-  User,
-} from 'lucide-react'
-
+  CalendarIcon,
+  ChevronRightIcon,
+  FileTextIcon,
+  HelpCircleIcon,
+  HomeFolderIcon,
+  MailboxIcon,
+  SearchIcon,
+  SettingsIcon,
+  ShieldIcon,
+  UserIcon,
+  UsersIcon,
+} from '@acronis-platform/shadcn-uikit'
+import { BarChartIcon } from '@/components/icons/missing-icons'
 export function SidebarFull() {
   const [activeItem, setActiveItem] = useState('home')
 
   const mainNavItems = [
-    { id: 'home', title: 'Home', icon: Home },
-    { id: 'inbox', title: 'Inbox', icon: Inbox, badge: '7' },
-    { id: 'calendar', title: 'Calendar', icon: Calendar },
-    { id: 'search', title: 'Search', icon: Search },
-    { id: 'settings', title: 'Settings', icon: Settings },
+    { id: 'home', title: 'Home', icon: HomeFolderIcon },
+    { id: 'inbox', title: 'Inbox', icon: MailboxIcon, badge: '7' },
+    { id: 'calendar', title: 'Calendar', icon: CalendarIcon },
+    { id: 'search', title: 'Search', icon: SearchIcon },
+    { id: 'settings', title: 'Settings', icon: SettingsIcon },
   ]
 
   const projectNavItems = [
     {
       id: 'projects',
       title: 'Projects',
-      icon: FileText,
+      icon: FileTextIcon,
       subItems: [
         { id: 'project-1', title: 'Project Alpha' },
         { id: 'project-2', title: 'Project Beta' },
@@ -55,7 +54,7 @@ export function SidebarFull() {
     {
       id: 'team',
       title: 'Team',
-      icon: Users,
+      icon: UsersIcon,
       subItems: [
         { id: 'team-members', title: 'Members' },
         { id: 'team-roles', title: 'Roles' },
@@ -65,9 +64,9 @@ export function SidebarFull() {
   ]
 
   const analyticsNavItems = [
-    { id: 'analytics', title: 'Analytics', icon: BarChart },
-    { id: 'reports', title: 'Reports', icon: FileText },
-    { id: 'security', title: 'Security', icon: Shield, tag: 'NEW' },
+    { id: 'analytics', title: 'Analytics', icon: BarChartIcon },
+    { id: 'reports', title: 'Reports', icon: FileTextIcon },
+    { id: 'security', title: 'Security', icon: ShieldIcon, tag: 'NEW' },
   ]
 
   return (
@@ -77,7 +76,7 @@ export function SidebarFull() {
           <SidebarHeader className="border-b border-sidebar-border">
             <div className="flex items-center gap-2 px-4 py-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sidebar-accent text-sidebar-accent-foreground">
-                <Home className="h-4 w-4" />
+                <HomeFolderIcon className="h-4 w-4" />
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-semibold">Acronis UIKit</span>
@@ -124,7 +123,7 @@ export function SidebarFull() {
                       >
                         <item.icon />
                         <span>{item.title}</span>
-                        <ChevronRight className="ml-auto h-4 w-4" />
+                        <ChevronRightIcon className="ml-auto h-4 w-4" />
                       </SidebarMenuButton>
                       {item.subItems && (
                         <SidebarMenuSub>
@@ -177,13 +176,13 @@ export function SidebarFull() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <User />
+                  <UserIcon />
                   <span>Account</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton>
-                  <HelpCircle />
+                  <HelpCircleIcon />
                   <span>Help & Support</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>

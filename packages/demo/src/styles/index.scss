@@ -18,6 +18,9 @@
 @config "../../tailwind.config.js";
 @source "../../../ui/src/components";
 
+/* Import library's base styles (includes component utility classes) */
+@use '../../../ui/src/styles/base';
+
 /* Demo-app specific styles can be added here */
 body {
   @apply bg-background text-foreground font-sans text-base;

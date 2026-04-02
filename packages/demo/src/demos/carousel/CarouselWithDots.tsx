@@ -7,8 +7,7 @@ import {
 } from '@acronis-platform/shadcn-uikit/react'
 import { Card, CardContent } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-
+import { ChevronLeftIcon, ChevronRightIcon } from '@acronis-platform/shadcn-uikit'
 export function CarouselWithDots() {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
@@ -52,7 +51,7 @@ export function CarouselWithDots() {
           disabled={!api?.canScrollPrev()}
           className="text-[hsl(var(--carousel-nav-text))] disabled:text-[hsl(var(--carousel-nav-text-disabled)/0.3)]"
         >
-          <ChevronLeft className="h-4 w-4 mr-1" />
+          <ChevronLeftIcon className="h-4 w-4 mr-1" />
           Prev
         </Button>
         <div className="flex gap-2">
@@ -77,7 +76,7 @@ export function CarouselWithDots() {
           className="text-[hsl(var(--carousel-nav-text))] disabled:text-[hsl(var(--carousel-nav-text-disabled)/0.3)]"
         >
           Next
-          <ChevronRight className="h-4 w-4 ml-1" />
+          <ChevronRightIcon className="h-4 w-4 ml-1" />
         </Button>
       </div>
     </div>

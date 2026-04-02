@@ -1,14 +1,18 @@
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
-import { Settings, HelpCircle, Bell, User } from 'lucide-react'
-
+import {
+  BellIcon,
+  HelpCircleIcon,
+  SettingsIcon,
+  UserIcon,
+} from '@acronis-platform/shadcn-uikit'
 export function PopoverIconTriggers() {
   return (
     <div className="flex flex-wrap justify-center gap-4 rounded-lg border p-8">
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="ghost" size="icon">
-            <HelpCircle className="h-5 w-5" />
+            <HelpCircleIcon className="h-5 w-5" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-80">
@@ -25,7 +29,7 @@ export function PopoverIconTriggers() {
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="ghost" size="icon">
-            <Settings className="h-5 w-5" />
+            <SettingsIcon className="h-5 w-5" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-80">
@@ -41,7 +45,7 @@ export function PopoverIconTriggers() {
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="ghost" size="icon">
-            <Bell className="h-5 w-5" />
+            <BellIcon className="h-5 w-5" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-80">
@@ -57,7 +61,7 @@ export function PopoverIconTriggers() {
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="ghost" size="icon">
-            <User className="h-5 w-5" />
+            <UserIcon className="h-5 w-5" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-80">

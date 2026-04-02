@@ -8,14 +8,13 @@ import {
   EmptyLinks,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { AlertCircle } from 'lucide-react'
-
+import { ExclamationCircleIcon } from '@acronis-platform/shadcn-uikit'
 export function EmptyDiscoveryAgent() {
   return (
     <div className="flex min-h-[350px] items-center justify-center border rounded-lg bg-gray-50">
       <Empty>
         <EmptyIcon className="h-24 w-24">
-          <AlertCircle className="text-[#2668C5]" />
+          <ExclamationCircleIcon className="text-[#2668C5]" />
         </EmptyIcon>
         <EmptyHeader>
           <EmptyTitle>Discovery agent</EmptyTitle>

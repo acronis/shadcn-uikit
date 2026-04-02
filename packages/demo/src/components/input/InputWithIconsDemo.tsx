@@ -1,6 +1,13 @@
 import { Input } from '@acronis-platform/shadcn-uikit/react'
-import { Mail, Lock, Search, User, Phone, CreditCard, Calendar } from 'lucide-react'
-
+import {
+  CalendarIcon,
+  LockIcon,
+  MailIcon,
+  PhoneIcon,
+  SearchIcon,
+  UserIcon,
+} from '@acronis-platform/shadcn-uikit'
+import { CreditCardIcon } from '@/components/icons/missing-icons'
 export function InputWithIconsDemo() {
   return (
     <section className="demo-section">
@@ -14,31 +21,31 @@ export function InputWithIconsDemo() {
           <h3>Icon Inputs</h3>
           <div className="space-y-4">
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+              <MailIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
               <Input className="pl-10" type="email" placeholder="Email" />
             </div>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+              <LockIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
               <Input className="pl-10" type="password" placeholder="Password" />
             </div>
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+              <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
               <Input className="pl-10" type="search" placeholder="Search..." />
             </div>
             <div className="relative">
-              <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+              <UserIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
               <Input className="pl-10" type="text" placeholder="Full Name" />
             </div>
             <div className="relative">
-              <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+              <PhoneIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
               <Input className="pl-10" type="tel" placeholder="+1 (555) 000-0000" />
             </div>
             <div className="relative">
-              <CreditCard className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+              <CreditCardIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
               <Input className="pl-10" type="text" placeholder="1234 5678 9012 3456" />
             </div>
             <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+              <CalendarIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
               <Input className="pl-10" type="date" />
             </div>
           </div>

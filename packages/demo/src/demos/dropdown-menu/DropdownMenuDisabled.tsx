@@ -6,8 +6,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
-import { User, Settings, Mail, Cloud } from 'lucide-react'
-
+import {
+  CloudIcon,
+  MailIcon,
+  SettingsIcon,
+  UserIcon,
+} from '@acronis-platform/shadcn-uikit'
 export function DropdownMenuDisabled() {
   return (
     <DropdownMenu>
@@ -16,20 +20,20 @@ export function DropdownMenuDisabled() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuItem>
-          <User className="mr-2 h-4 w-4" />
+          <UserIcon className="mr-2 h-4 w-4" />
           <span>View Profile</span>
         </DropdownMenuItem>
         <DropdownMenuItem disabled>
-          <Settings className="mr-2 h-4 w-4" />
+          <SettingsIcon className="mr-2 h-4 w-4" />
           <span>Settings (Coming Soon)</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Mail className="mr-2 h-4 w-4" />
+          <MailIcon className="mr-2 h-4 w-4" />
           <span>Contact</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem disabled>
-          <Cloud className="mr-2 h-4 w-4" />
+          <CloudIcon className="mr-2 h-4 w-4" />
           <span>Cloud Storage (Unavailable)</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

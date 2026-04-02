@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Button, ButtonGroup } from '@acronis-platform/shadcn-uikit/react'
-import { AlignLeft, AlignCenter, AlignRight } from 'lucide-react'
-
+import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon } from '@/components/icons/missing-icons'
 export function ButtonGroupTextAlignment() {
   const [alignment, setAlignment] = React.useState<string>('left')
 
@@ -12,21 +11,21 @@ export function ButtonGroupTextAlignment() {
         size="icon"
         onClick={() => setAlignment('left')}
       >
-        <AlignLeft className="h-4 w-4" />
+        <AlignLeftIcon className="h-4 w-4" />
       </Button>
       <Button
         variant={alignment === 'center' ? 'default' : 'outline'}
         size="icon"
         onClick={() => setAlignment('center')}
       >
-        <AlignCenter className="h-4 w-4" />
+        <AlignCenterIcon className="h-4 w-4" />
       </Button>
       <Button
         variant={alignment === 'right' ? 'default' : 'outline'}
         size="icon"
         onClick={() => setAlignment('right')}
       >
-        <AlignRight className="h-4 w-4" />
+        <AlignRightIcon className="h-4 w-4" />
       </Button>
     </ButtonGroup>
   )

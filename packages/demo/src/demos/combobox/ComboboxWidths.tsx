@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Check, ChevronsUpDown } from 'lucide-react'
 import { cn } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import {
@@ -12,6 +11,7 @@ import {
 } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
 
+import { CheckIcon, ChevronUpdownIcon } from '@acronis-platform/shadcn-uikit'
 const languages = [
   { value: 'javascript', label: 'JavaScript' },
   { value: 'typescript', label: 'TypeScript' },
@@ -54,7 +54,7 @@ export function ComboboxWidths() {
             {languageValue
               ? languages.find((lang) => lang.value === languageValue)?.label
               : 'Select language...'}
-            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-[200px] p-0">
@@ -72,7 +72,7 @@ export function ComboboxWidths() {
                       setLanguageOpen(false)
                     }}
                   >
-                    <Check
+                    <CheckIcon
                       className={cn(
                         'mr-2 h-4 w-4',
                         languageValue === lang.value ? 'opacity-100' : 'opacity-0'
@@ -98,7 +98,7 @@ export function ComboboxWidths() {
             {countryValue
               ? countries.find((country) => country.value === countryValue)?.label
               : 'Select country...'}
-            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-[320px] p-0">
@@ -116,7 +116,7 @@ export function ComboboxWidths() {
                       setCountryOpen(false)
                     }}
                   >
-                    <Check
+                    <CheckIcon
                       className={cn(
                         'mr-2 h-4 w-4',
                         countryValue === country.value ? 'opacity-100' : 'opacity-0'

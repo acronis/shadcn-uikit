@@ -8,8 +8,12 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Home, Inbox, Calendar, FileText } from 'lucide-react'
-
+import {
+  CalendarIcon,
+  FileTextIcon,
+  HomeFolderIcon,
+  MailboxIcon,
+} from '@acronis-platform/shadcn-uikit'
 export function SidebarWithBadges() {
   return (
     <div className="h-[400px] border rounded-lg overflow-hidden flex">
@@ -21,13 +25,13 @@ export function SidebarWithBadges() {
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <Home />
+                      <HomeFolderIcon />
                       <span>Dashboard</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <Inbox />
+                      <MailboxIcon />
                       <span>Messages</span>
                       <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-white text-xs font-bold text-[#243143]">
                         12
@@ -36,7 +40,7 @@ export function SidebarWithBadges() {
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <Calendar />
+                      <CalendarIcon />
                       <span>Events</span>
                       <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-white text-xs font-bold text-[#243143]">
                         3
@@ -45,7 +49,7 @@ export function SidebarWithBadges() {
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <FileText />
+                      <FileTextIcon />
                       <span>Documents</span>
                       <span className="ml-auto rounded-full bg-[#DAE9AE] px-2 py-0 text-[10px] font-bold tracking-wider text-[#407009]">
                         NEW

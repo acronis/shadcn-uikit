@@ -24,23 +24,24 @@ import {
   Skeleton,
 } from '@acronis-platform/shadcn-uikit/react'
 import {
-  TrendingUp,
-  TrendingDown,
-  Minus,
-  DollarSign,
-  Users,
-  ShoppingCart,
-  Activity,
-  Zap,
-  Eye,
-  BarChart3,
-  Clock,
-  Target,
-  Percent,
-  ArrowUpRight,
-  ArrowDownRight,
-} from 'lucide-react'
-
+  ClockIcon,
+  ShoppingCartIcon,
+  ShowIcon,
+  UsersIcon,
+} from '@acronis-platform/shadcn-uikit'
+import {
+  ActivityIcon,
+  ArrowDownRightIcon,
+  ArrowUpRightIcon,
+  BarChart3Icon,
+  DollarSignIcon,
+  MinusIcon,
+  PercentIcon,
+  TargetIcon,
+  TrendingDownIcon,
+  TrendingUpIcon,
+  ZapIcon,
+} from '@/components/icons/missing-icons'
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 type TrendDirection = 'up' | 'down' | 'neutral'
@@ -87,7 +88,7 @@ const kpiPresets: Record<string, KpiPreset> = {
     trendValue: 20.1,
     trendDirection: 'up',
     comparisonText: 'from last month',
-    icon: 'DollarSign',
+    icon: 'DollarSignIcon',
     iconColor: '#16a34a',
     badgeText: 'Live',
     badgeVariant: 'success',
@@ -125,7 +126,7 @@ const kpiPresets: Record<string, KpiPreset> = {
     trendValue: -0.4,
     trendDirection: 'down',
     comparisonText: 'from last month',
-    icon: 'Target',
+    icon: 'TargetIcon',
     iconColor: '#dc2626',
     badgeText: 'Needs attention',
     badgeVariant: 'warning',
@@ -144,7 +145,7 @@ const kpiPresets: Record<string, KpiPreset> = {
     trendValue: 8.2,
     trendDirection: 'up',
     comparisonText: 'vs previous period',
-    icon: 'ShoppingCart',
+    icon: 'ShoppingCartIcon',
     iconColor: '#9333ea',
     badgeText: 'On track',
     badgeVariant: 'default',
@@ -163,7 +164,7 @@ const kpiPresets: Record<string, KpiPreset> = {
     trendValue: 0,
     trendDirection: 'neutral',
     comparisonText: 'last 30 days',
-    icon: 'Activity',
+    icon: 'ActivityIcon',
     iconColor: '#0891b2',
     badgeText: 'Healthy',
     badgeVariant: 'success',
@@ -197,17 +198,17 @@ type PresetKey = keyof typeof kpiPresets
 // ─── Constants ───────────────────────────────────────────────────────────────
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  DollarSign,
-  Users,
-  ShoppingCart,
-  Activity,
-  Zap,
-  Eye,
-  BarChart3,
-  Clock,
-  Target,
-  Percent,
-}
+  DollarSignIcon,
+  UsersIcon,
+  ShoppingCartIcon,
+  ActivityIcon,
+  ZapIcon,
+  ShowIcon,
+  BarChart3Icon,
+  ClockIcon,
+  TargetIcon,
+  PercentIcon,
+};
 
 const iconOptions = Object.keys(iconMap)
 
@@ -334,16 +335,16 @@ export function CardPlayground() {
 
   const getTrendIcon = () => {
     if (trendStyle === 'arrow') {
-      if (trendDirection === 'up') return <ArrowUpRight className="h-4 w-4" />
-      if (trendDirection === 'down') return <ArrowDownRight className="h-4 w-4" />
-      return <Minus className="h-4 w-4" />
+      if (trendDirection === 'up') return <ArrowUpRightIcon className="h-4 w-4" />
+      if (trendDirection === 'down') return <ArrowDownRightIcon className="h-4 w-4" />
+      return <MinusIcon className="h-4 w-4" />
     }
-    if (trendDirection === 'up') return <TrendingUp className="h-4 w-4" />
-    if (trendDirection === 'down') return <TrendingDown className="h-4 w-4" />
-    return <Minus className="h-4 w-4" />
+    if (trendDirection === 'up') return <TrendingUpIcon className="h-4 w-4" />
+    if (trendDirection === 'down') return <TrendingDownIcon className="h-4 w-4" />
+    return <MinusIcon className="h-4 w-4" />
   }
 
-  const IconComponent = iconMap[selectedIcon] ?? DollarSign
+  const IconComponent = iconMap[selectedIcon] ?? DollarSignIcon
 
   const renderSparkline = () => {
     if (!sparklineData.length) return null
@@ -424,7 +425,7 @@ export function CardPlayground() {
     lines.push(`    <div className="${valueSizeClasses[valueSize]}">${formatValue(value)}</div>`)
     if (showTrend) {
       lines.push(`    <p className="text-xs flex items-center gap-1 mt-1" style={{ color: "${getTrendColorValue()}" }}>`)
-      lines.push(`      <TrendingUp className="h-4 w-4" />`)
+      lines.push(`      <TrendingUpIcon className="h-4 w-4" />`)
       lines.push(`      ${trendValue >= 0 ? '+' : ''}${trendValue}% ${comparisonText}`)
       lines.push(`    </p>`)
     }
@@ -645,7 +646,7 @@ export function CardPlayground() {
                     <SelectContent>
                       <SelectItem value="number">Number (1,234)</SelectItem>
                       <SelectItem value="currency">Currency ($1,234.56)</SelectItem>
-                      <SelectItem value="percent">Percent (12.5%)</SelectItem>
+                      <SelectItem value="percent">PercentIcon (12.5%)</SelectItem>
                       <SelectItem value="compact">Compact (1.2K)</SelectItem>
                       <SelectItem value="custom">Custom</SelectItem>
                     </SelectContent>
@@ -1031,8 +1032,6 @@ export function CardPlayground() {
   CardDescription, CardContent, CardFooter,
   Badge, Progress
 } from '@acronis-platform/shadcn-uikit/react'
-import { TrendingUp, DollarSign } from 'lucide-react'
-
 <Card>
   <CardHeader className="flex flex-row items-center
     justify-between space-y-0 pb-2">
@@ -1042,12 +1041,12 @@ import { TrendingUp, DollarSign } from 'lucide-react'
       </CardTitle>
       <CardDescription>Monthly recurring</CardDescription>
     </div>
-    <DollarSign className="h-4 w-4 text-muted-foreground" />
+    <DollarSignIcon className="h-4 w-4 text-muted-foreground" />
   </CardHeader>
   <CardContent>
     <div className="text-3xl font-bold">$45,231.89</div>
     <p className="text-xs text-green-600 flex items-center">
-      <TrendingUp className="h-4 w-4 mr-1" />
+      <TrendingUpIcon className="h-4 w-4 mr-1" />
       +20.1% from last month
     </p>
   </CardContent>
@@ -1066,7 +1065,7 @@ import { TrendingUp, DollarSign } from 'lucide-react'
                 <li><strong>CardContent</strong> - Value + trend indicator</li>
                 <li><strong>CardFooter</strong> - Timestamp, progress bar, or sparkline</li>
                 <li><strong>Badge</strong> - Status indicator (10 variants available)</li>
-                <li><strong>Progress</strong> - Target completion bar</li>
+                <li><strong>Progress</strong> - TargetIcon completion bar</li>
               </ul>
             </div>
           </CardContent>

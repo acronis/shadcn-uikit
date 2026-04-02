@@ -9,16 +9,13 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
+import { CloudIcon, MailIcon, MessagesIcon } from '@acronis-platform/shadcn-uikit'
 import {
-  Mail,
-  MessageSquare,
-  PlusCircle,
-  UserPlus,
-  Cloud,
-  ExternalLink,
-  LifeBuoy,
-} from 'lucide-react'
-
+  ExternalLinkIcon,
+  LifeBuoyIcon,
+  PlusCircleIcon,
+  UserPlusIcon,
+} from '@/components/icons/missing-icons'
 export function DropdownMenuWithSubmenu() {
   return (
     <DropdownMenu>
@@ -27,46 +24,46 @@ export function DropdownMenuWithSubmenu() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuItem>
-          <Mail className="mr-2 h-4 w-4" />
+          <MailIcon className="mr-2 h-4 w-4" />
           <span>Email</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <MessageSquare className="mr-2 h-4 w-4" />
+          <MessagesIcon className="mr-2 h-4 w-4" />
           <span>Message</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
-            <UserPlus className="mr-2 h-4 w-4" />
+            <UserPlusIcon className="mr-2 h-4 w-4" />
             <span>Invite users</span>
           </DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuItem>
-              <Mail className="mr-2 h-4 w-4" />
+              <MailIcon className="mr-2 h-4 w-4" />
               <span>Email</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <MessageSquare className="mr-2 h-4 w-4" />
+              <MessagesIcon className="mr-2 h-4 w-4" />
               <span>Message</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <PlusCircle className="mr-2 h-4 w-4" />
+              <PlusCircleIcon className="mr-2 h-4 w-4" />
               <span>More...</span>
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <ExternalLink className="mr-2 h-4 w-4" />
+          <ExternalLinkIcon className="mr-2 h-4 w-4" />
           <span>GitHub</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <LifeBuoy className="mr-2 h-4 w-4" />
+          <LifeBuoyIcon className="mr-2 h-4 w-4" />
           <span>Support</span>
         </DropdownMenuItem>
         <DropdownMenuItem disabled>
-          <Cloud className="mr-2 h-4 w-4" />
+          <CloudIcon className="mr-2 h-4 w-4" />
           <span>API</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

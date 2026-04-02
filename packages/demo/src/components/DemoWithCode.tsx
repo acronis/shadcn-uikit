@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Check, Copy, ChevronDown } from 'lucide-react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
+import { CheckIcon, ChevronDownIcon, CopyIcon } from '@acronis-platform/shadcn-uikit'
 interface DemoWithCodeProps {
   title: string
   description?: string
@@ -61,7 +61,7 @@ export function DemoWithCode({
             className="flex w-full items-center justify-between px-4 py-2.5 text-sm font-medium hover:bg-muted/50 transition-colors"
           >
             <span className="text-muted-foreground">View Code</span>
-            <ChevronDown 
+            <ChevronDownIcon 
               className={`h-4 w-4 text-muted-foreground transition-transform ${
                 isExpanded ? 'rotate-180' : ''
               }`}
@@ -79,12 +79,12 @@ export function DemoWithCode({
                 >
                   {copied ? (
                     <>
-                      <Check className="h-3.5 w-3.5 mr-1.5" />
+                      <CheckIcon className="h-3.5 w-3.5 mr-1.5" />
                       <span className="text-xs">Copied</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="h-3.5 w-3.5 mr-1.5" />
+                      <CopyIcon className="h-3.5 w-3.5 mr-1.5" />
                       <span className="text-xs">Copy</span>
                     </>
                   )}

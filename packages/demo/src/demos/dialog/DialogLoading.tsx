@@ -9,8 +9,7 @@ import {
   DialogTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { Loader2 } from 'lucide-react'
-
+import { RotateIcon } from '@acronis-platform/shadcn-uikit'
 export function DialogLoading() {
   return (
     <Dialog>
@@ -24,7 +23,7 @@ export function DialogLoading() {
         </DialogHeader>
         <DialogBody>
           <div className="flex flex-col items-center justify-center py-8 space-y-4">
-            <Loader2 className="h-12 w-12 animate-spin text-[#2668C5]" />
+            <RotateIcon className="h-12 w-12 animate-spin text-[#2668C5]" />
             <p className="text-sm text-gray-600">
               Please wait while we process your request...
             </p>

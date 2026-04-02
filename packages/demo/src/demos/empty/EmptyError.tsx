@@ -8,14 +8,13 @@ import {
   EmptyLinks,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
-import { XCircle } from 'lucide-react'
-
+import { TimesCircleIcon } from '@acronis-platform/shadcn-uikit'
 export function EmptyError() {
   return (
     <div className="flex min-h-[300px] items-center justify-center border rounded-lg bg-gray-50">
       <Empty>
         <EmptyIcon className="h-24 w-24">
-          <XCircle className="text-red-500" />
+          <TimesCircleIcon className="text-red-500" />
         </EmptyIcon>
         <EmptyHeader>
           <EmptyTitle>Failed to load content</EmptyTitle>

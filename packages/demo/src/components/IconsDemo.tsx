@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { AutoIcons } from '@acronis-platform/shadcn-uikit/react'
 import { Input } from '@acronis-platform/shadcn-uikit/react'
-import { Search } from 'lucide-react'
-
+import { SearchIcon } from '@acronis-platform/shadcn-uikit'
 export function IconsDemo() {
   const [searchQuery, setSearchQuery] = React.useState('')
 
@@ -22,7 +21,7 @@ export function IconsDemo() {
       <div className="space-y-6">
         <div className="sticky top-0 z-10 bg-background pb-4">
           <div className="relative max-w-md">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               placeholder="Search icons..."
               value={searchQuery}

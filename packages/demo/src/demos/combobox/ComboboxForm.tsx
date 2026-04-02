@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Check, ChevronsUpDown } from 'lucide-react'
 import { cn } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import {
@@ -12,6 +11,7 @@ import {
 } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
 
+import { CheckIcon, ChevronUpdownIcon } from '@acronis-platform/shadcn-uikit'
 const frameworks = [
   { value: 'next.js', label: 'Next.js' },
   { value: 'sveltekit', label: 'SvelteKit' },
@@ -56,7 +56,7 @@ export function ComboboxForm() {
               {frameworkValue
                 ? frameworks.find((framework) => framework.value === frameworkValue)?.label
                 : 'Select framework...'}
-              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-full p-0">
@@ -74,7 +74,7 @@ export function ComboboxForm() {
                         setFrameworkOpen(false)
                       }}
                     >
-                      <Check
+                      <CheckIcon
                         className={cn(
                           'mr-2 h-4 w-4',
                           frameworkValue === framework.value ? 'opacity-100' : 'opacity-0'
@@ -106,7 +106,7 @@ export function ComboboxForm() {
               className="w-full justify-between"
             >
               Select language...
-              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-full p-0">
@@ -117,7 +117,7 @@ export function ComboboxForm() {
                 <CommandGroup>
                   {languages.map((lang) => (
                     <CommandItem key={lang.value} value={lang.value}>
-                      <Check className="mr-2 h-4 w-4 opacity-0" />
+                      <CheckIcon className="mr-2 h-4 w-4 opacity-0" />
                       {lang.label}
                     </CommandItem>
                   ))}

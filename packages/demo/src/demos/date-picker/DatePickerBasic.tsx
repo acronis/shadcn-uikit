@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { format } from 'date-fns'
-import { Calendar as CalendarIcon } from 'lucide-react'
 import { cn } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Calendar } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
 
+import { CalendarIcon } from '@acronis-platform/shadcn-uikit'
 export function DatePickerBasic() {
   const [date, setDate] = React.useState<Date>()
 

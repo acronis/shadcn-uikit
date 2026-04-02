@@ -5,8 +5,8 @@ import {
   SecondaryMenuGroup,
   SecondaryMenuItem,
 } from '@acronis-platform/shadcn-uikit/react'
-import { FileText, Image, Video, Music } from 'lucide-react'
-
+import { FileTextIcon, ImageIcon, VideosIcon } from '@acronis-platform/shadcn-uikit'
+import { MusicIcon } from '@/components/icons/missing-icons'
 export function SecondaryMenuWithDisabled() {
   const [activeItem, setActiveItem] = useState('opt1')
 
@@ -18,21 +18,21 @@ export function SecondaryMenuWithDisabled() {
             <SecondaryMenuItem
               active={activeItem === 'opt1'}
               onClick={() => setActiveItem('opt1')}
-              icon={<FileText className="h-4 w-4" />}
+              icon={<FileTextIcon className="h-4 w-4" />}
             >
               Available Option
             </SecondaryMenuItem>
-            <SecondaryMenuItem disabled icon={<Image className="h-4 w-4" />}>
+            <SecondaryMenuItem disabled icon={<ImageIcon className="h-4 w-4" />}>
               Disabled Option
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'opt3'}
               onClick={() => setActiveItem('opt3')}
-              icon={<Video className="h-4 w-4" />}
+              icon={<VideosIcon className="h-4 w-4" />}
             >
               Another Available
             </SecondaryMenuItem>
-            <SecondaryMenuItem disabled icon={<Music className="h-4 w-4" />}>
+            <SecondaryMenuItem disabled icon={<MusicIcon className="h-4 w-4" />}>
               Coming Soon
             </SecondaryMenuItem>
           </SecondaryMenuGroup>

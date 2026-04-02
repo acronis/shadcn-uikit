@@ -1,17 +1,16 @@
 import { Button, ButtonGroup } from '@acronis-platform/shadcn-uikit/react'
-import { Bold, Italic, Underline } from 'lucide-react'
-
+import { BoldIcon, ItalicIcon, UnderlineIcon } from '@/components/icons/missing-icons'
 export function ButtonGroupWithIcons() {
   return (
     <ButtonGroup>
       <Button variant="outline" size="icon">
-        <Bold className="h-4 w-4" />
+        <BoldIcon className="h-4 w-4" />
       </Button>
       <Button variant="outline" size="icon">
-        <Italic className="h-4 w-4" />
+        <ItalicIcon className="h-4 w-4" />
       </Button>
       <Button variant="outline" size="icon">
-        <Underline className="h-4 w-4" />
+        <UnderlineIcon className="h-4 w-4" />
       </Button>
     </ButtonGroup>
   )

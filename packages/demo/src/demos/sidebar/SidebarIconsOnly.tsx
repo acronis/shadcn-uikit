@@ -8,8 +8,12 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Home, Inbox, Calendar, Settings } from 'lucide-react'
-
+import {
+  CalendarIcon,
+  HomeFolderIcon,
+  MailboxIcon,
+  SettingsIcon,
+} from '@acronis-platform/shadcn-uikit'
 export function SidebarIconsOnly() {
   return (
     <div className="h-[400px] border rounded-lg overflow-hidden flex">
@@ -21,22 +25,22 @@ export function SidebarIconsOnly() {
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton tooltip="Home" className="justify-center">
-                      <Home />
+                      <HomeFolderIcon />
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton tooltip="Inbox" className="justify-center">
-                      <Inbox />
+                      <MailboxIcon />
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton tooltip="Calendar" className="justify-center">
-                      <Calendar />
+                      <CalendarIcon />
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton tooltip="Settings" className="justify-center">
-                      <Settings />
+                      <SettingsIcon />
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 </SidebarMenu>

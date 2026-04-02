@@ -5,8 +5,7 @@ import {
   SecondaryMenuGroup,
   SecondaryMenuItem,
 } from '@acronis-platform/shadcn-uikit/react'
-import { ChevronRight } from 'lucide-react'
-
+import { ChevronRightIcon } from '@acronis-platform/shadcn-uikit'
 export function SecondaryMenuWithRightIcons() {
   const [activeItem, setActiveItem] = useState('nav1')
 
@@ -18,7 +17,7 @@ export function SecondaryMenuWithRightIcons() {
             <SecondaryMenuItem
               active={activeItem === 'nav1'}
               onClick={() => setActiveItem('nav1')}
-              icon={<ChevronRight className="h-4 w-4" />}
+              icon={<ChevronRightIcon className="h-4 w-4" />}
               iconPosition="right"
             >
               General Settings
@@ -26,7 +25,7 @@ export function SecondaryMenuWithRightIcons() {
             <SecondaryMenuItem
               active={activeItem === 'nav2'}
               onClick={() => setActiveItem('nav2')}
-              icon={<ChevronRight className="h-4 w-4" />}
+              icon={<ChevronRightIcon className="h-4 w-4" />}
               iconPosition="right"
             >
               Privacy & Security
@@ -34,7 +33,7 @@ export function SecondaryMenuWithRightIcons() {
             <SecondaryMenuItem
               active={activeItem === 'nav3'}
               onClick={() => setActiveItem('nav3')}
-              icon={<ChevronRight className="h-4 w-4" />}
+              icon={<ChevronRightIcon className="h-4 w-4" />}
               iconPosition="right"
             >
               Notifications
@@ -42,7 +41,7 @@ export function SecondaryMenuWithRightIcons() {
             <SecondaryMenuItem
               active={activeItem === 'nav4'}
               onClick={() => setActiveItem('nav4')}
-              icon={<ChevronRight className="h-4 w-4" />}
+              icon={<ChevronRightIcon className="h-4 w-4" />}
               iconPosition="right"
             >
               Appearance

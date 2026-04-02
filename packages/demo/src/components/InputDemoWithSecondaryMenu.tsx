@@ -7,8 +7,17 @@ import {
   SecondaryMenuGroup,
   SecondaryMenuItem,
 } from '@acronis-platform/shadcn-uikit/react'
-import { Mail, Lock, Search, User, Phone, CreditCard, Calendar, Eye, EyeOff } from 'lucide-react'
-
+import {
+  CalendarIcon,
+  HideIcon,
+  LockIcon,
+  MailIcon,
+  PhoneIcon,
+  SearchIcon,
+  ShowIcon,
+  UserIcon,
+} from '@acronis-platform/shadcn-uikit'
+import { CreditCardIcon } from '@/components/icons/missing-icons'
 type DemoSection =
   | 'basic'
   | 'types'
@@ -52,7 +61,7 @@ export function InputDemoWithSecondaryMenu() {
             <SecondaryMenuItem
               active={activeSection === 'icons'}
               onClick={() => setActiveSection('icons')}
-              icon={<Mail className="h-4 w-4" />}
+              icon={<MailIcon className="h-4 w-4" />}
             >
               With Icons
             </SecondaryMenuItem>
@@ -83,7 +92,7 @@ export function InputDemoWithSecondaryMenu() {
             <SecondaryMenuItem
               active={activeSection === 'password'}
               onClick={() => setActiveSection('password')}
-              icon={<Lock className="h-4 w-4" />}
+              icon={<LockIcon className="h-4 w-4" />}
               tag="NEW"
             >
               Password Input
@@ -181,31 +190,31 @@ export function InputDemoWithSecondaryMenu() {
                   <h3>Icon Inputs</h3>
                   <div className="space-y-4">
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <MailIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                       <Input className="pl-10" type="email" placeholder="Email" />
                     </div>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <LockIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                       <Input className="pl-10" type="password" placeholder="Password" />
                     </div>
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                       <Input className="pl-10" type="search" placeholder="Search..." />
                     </div>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <UserIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                       <Input className="pl-10" type="text" placeholder="Full Name" />
                     </div>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <PhoneIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                       <Input className="pl-10" type="tel" placeholder="+1 (555) 000-0000" />
                     </div>
                     <div className="relative">
-                      <CreditCard className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <CreditCardIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                       <Input className="pl-10" type="text" placeholder="1234 5678 9012 3456" />
                     </div>
                     <div className="relative">
-                      <Calendar className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <CalendarIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                       <Input className="pl-10" type="date" />
                     </div>
                   </div>
@@ -341,7 +350,7 @@ export function InputDemoWithSecondaryMenu() {
                           className="absolute right-3 top-1/2 -translate-y-1/2 text-[#2668C5] hover:text-[#1a4d8f] transition-colors"
                           aria-label={showPassword ? 'Hide password' : 'Show password'}
                         >
-                          {showPassword ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+                          {showPassword ? <ShowIcon className="h-4 w-4" /> : <HideIcon className="h-4 w-4" />}
                         </button>
                       </div>
                     </div>
@@ -362,7 +371,7 @@ export function InputDemoWithSecondaryMenu() {
                         Email <span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                        <MailIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                         <Input
                           id="form-email"
                           className="pl-10"
@@ -379,7 +388,7 @@ export function InputDemoWithSecondaryMenu() {
                         Password <span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
-                        <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                        <LockIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                         <Input
                           id="form-password"
                           className="pl-10"
@@ -401,7 +410,7 @@ export function InputDemoWithSecondaryMenu() {
                   <h3>Search Input</h3>
                   <div className="space-y-4">
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                      <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
                       <Input
                         className="pl-10"
                         type="search"

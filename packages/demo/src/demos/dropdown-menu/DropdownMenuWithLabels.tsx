@@ -8,8 +8,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuShortcut,
 } from '@acronis-platform/shadcn-uikit/react'
-import { User, CreditCard, Settings, Keyboard } from 'lucide-react'
-
+import { SettingsIcon, UserIcon } from '@acronis-platform/shadcn-uikit'
+import { CreditCardIcon, KeyboardIcon } from '@/components/icons/missing-icons'
 export function DropdownMenuWithLabels() {
   return (
     <DropdownMenu>
@@ -20,23 +20,23 @@ export function DropdownMenuWithLabels() {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <User className="mr-2 h-4 w-4" />
+          <UserIcon className="mr-2 h-4 w-4" />
           <span>Profile</span>
           <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <CreditCard className="mr-2 h-4 w-4" />
+          <CreditCardIcon className="mr-2 h-4 w-4" />
           <span>Billing</span>
           <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Settings className="mr-2 h-4 w-4" />
+          <SettingsIcon className="mr-2 h-4 w-4" />
           <span>Settings</span>
           <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Keyboard className="mr-2 h-4 w-4" />
-          <span>Keyboard shortcuts</span>
+          <KeyboardIcon className="mr-2 h-4 w-4" />
+          <span>KeyboardIcon shortcuts</span>
           <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>

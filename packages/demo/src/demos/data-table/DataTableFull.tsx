@@ -7,7 +7,6 @@ import {
   getFilteredRowModel,
   flexRender,
 } from '@tanstack/react-table'
-import { MoreHorizontal } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Checkbox } from '@acronis-platform/shadcn-uikit/react'
@@ -27,6 +26,7 @@ import {
   DataTableToolbar,
 } from '@acronis-platform/shadcn-uikit/react'
 
+import { EllipsisHIcon } from '@acronis-platform/shadcn-uikit'
 export type Payment = {
   id: string
   amount: number
@@ -221,7 +221,7 @@ const columns: ColumnDef<Payment>[] = [
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="h-8 w-8 p-0">
               <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
+              <EllipsisHIcon className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

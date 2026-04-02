@@ -1,6 +1,5 @@
 import { Input } from '@acronis-platform/shadcn-uikit/react'
-import { EyeOff } from 'lucide-react'
-
+import { HideIcon } from '@acronis-platform/shadcn-uikit'
 export function PasswordInputError() {
   return (
     <div className="space-y-4">
@@ -18,7 +17,7 @@ export function PasswordInputError() {
             className="absolute right-3 top-1/2 -translate-y-1/2 text-[#EA3939]"
             aria-label="Show password"
           >
-            <EyeOff className="h-4 w-4" />
+            <HideIcon className="h-4 w-4" />
           </button>
         </div>
         <p id="pwd-error-1" className="text-xs font-medium text-[#EA3939] px-0 py-1">
@@ -43,7 +42,7 @@ export function PasswordInputError() {
             className="absolute right-3 top-1/2 -translate-y-1/2 text-[#EA3939]"
             aria-label="Show password"
           >
-            <EyeOff className="h-4 w-4" />
+            <HideIcon className="h-4 w-4" />
           </button>
         </div>
         <p id="pwd-error-2" className="text-xs font-medium text-[#EA3939] px-0 py-1">

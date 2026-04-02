@@ -6,32 +6,37 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
-import { MoreVertical, Edit, Copy, Download, Trash } from 'lucide-react'
-
+import {
+  CopyIcon,
+  DownloadIcon,
+  EditIcon,
+  TrashOIcon,
+} from '@acronis-platform/shadcn-uikit'
+import { MoreVerticalIcon } from '@/components/icons/missing-icons'
 export function DropdownMenuWithIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <MoreVertical className="h-4 w-4" />
+          <MoreVerticalIcon className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
         <DropdownMenuItem>
-          <Edit className="mr-2 h-4 w-4" />
+          <EditIcon className="mr-2 h-4 w-4" />
           <span>Edit</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Copy className="mr-2 h-4 w-4" />
+          <CopyIcon className="mr-2 h-4 w-4" />
           <span>Duplicate</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Download className="mr-2 h-4 w-4" />
+          <DownloadIcon className="mr-2 h-4 w-4" />
           <span>Download</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-destructive">
-          <Trash className="mr-2 h-4 w-4" />
+          <TrashOIcon className="mr-2 h-4 w-4" />
           <span>Delete</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

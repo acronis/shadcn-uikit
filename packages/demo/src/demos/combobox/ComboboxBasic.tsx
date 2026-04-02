@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Check, ChevronsUpDown } from 'lucide-react'
 import { cn } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import {
@@ -12,6 +11,7 @@ import {
 } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
 
+import { CheckIcon, ChevronUpdownIcon } from '@acronis-platform/shadcn-uikit'
 const frameworks = [
   { value: 'next.js', label: 'Next.js' },
   { value: 'sveltekit', label: 'SvelteKit' },
@@ -39,7 +39,7 @@ export function ComboboxBasic() {
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : 'Select framework...'}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[280px] p-0">
@@ -57,7 +57,7 @@ export function ComboboxBasic() {
                     setOpen(false)
                   }}
                 >
-                  <Check
+                  <CheckIcon
                     className={cn(
                       'mr-2 h-4 w-4',
                       value === framework.value ? 'opacity-100' : 'opacity-0'

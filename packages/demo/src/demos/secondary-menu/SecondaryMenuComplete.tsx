@@ -7,9 +7,14 @@ import {
   SecondaryMenuHeader,
   SecondaryMenuFooter,
 } from '@acronis-platform/shadcn-uikit/react'
-import { FileText, Image, Download, Upload } from 'lucide-react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 
+import {
+  DownloadIcon,
+  FileTextIcon,
+  ImageIcon,
+  UploadIcon,
+} from '@acronis-platform/shadcn-uikit'
 export function SecondaryMenuComplete() {
   const [activeItem, setActiveItem] = useState('recent1')
 
@@ -25,14 +30,14 @@ export function SecondaryMenuComplete() {
             <SecondaryMenuItem
               active={activeItem === 'recent1'}
               onClick={() => setActiveItem('recent1')}
-              icon={<FileText className="h-4 w-4" />}
+              icon={<FileTextIcon className="h-4 w-4" />}
             >
               Project Proposal
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'recent2'}
               onClick={() => setActiveItem('recent2')}
-              icon={<Image className="h-4 w-4" />}
+              icon={<ImageIcon className="h-4 w-4" />}
             >
               Design Mockups
             </SecondaryMenuItem>
@@ -42,7 +47,7 @@ export function SecondaryMenuComplete() {
             <SecondaryMenuItem
               active={activeItem === 'folder1'}
               onClick={() => setActiveItem('folder1')}
-              icon={<FileText className="h-4 w-4" />}
+              icon={<FileTextIcon className="h-4 w-4" />}
               iconPosition="left"
             >
               Documents
@@ -50,14 +55,14 @@ export function SecondaryMenuComplete() {
             <SecondaryMenuItem
               active={activeItem === 'folder2'}
               onClick={() => setActiveItem('folder2')}
-              icon={<Image className="h-4 w-4" />}
+              icon={<ImageIcon className="h-4 w-4" />}
             >
               Media
             </SecondaryMenuItem>
             <SecondaryMenuItem
               active={activeItem === 'folder3'}
               onClick={() => setActiveItem('folder3')}
-              icon={<Download className="h-4 w-4" />}
+              icon={<DownloadIcon className="h-4 w-4" />}
             >
               Downloads
             </SecondaryMenuItem>
@@ -66,7 +71,7 @@ export function SecondaryMenuComplete() {
 
         <SecondaryMenuFooter>
           <Button variant="outline" size="sm" className="w-full">
-            <Upload className="mr-2 h-4 w-4" />
+            <UploadIcon className="mr-2 h-4 w-4" />
             Upload Files
           </Button>
         </SecondaryMenuFooter>
