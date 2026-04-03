@@ -42,3 +42,9 @@ yarn-error.log*
 
 # Storybook
 storybook-static
+
+# Next.js
+.next
+
+# Fumadocs
+.source
