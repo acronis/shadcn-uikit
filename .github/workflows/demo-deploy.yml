@@ -1,6 +1,6 @@
 # Sample workflow for building and deploying a VitePress site to GitHub Pages
 #
-name: Demo - Deploy to Pages
+name: Demo & Storybook - Deploy to Pages
 
 on:
   # TODO: Add more specific event, such as release ui
@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - 'packages/demo/**'
+      - 'packages/ui/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -55,8 +56,8 @@ jobs:
       - name: Build demo
         run: VITE_BASE_PATH=/shadcn-uikit/ pnpm --filter ./packages/demo run build
 
-#      - name: Build storybook
-#        run: pnpm --filter ./packages/ui run storybook:build -o ../documentation/.vitepress/dist/storybook
+      - name: Build storybook
+        run: pnpm --filter ./packages/ui run storybook:build -o ../demo/dist/storybook
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
