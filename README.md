@@ -2,6 +2,8 @@
 
 A monorepo containing 40+ custom UI components built on [shadcn/ui](https://ui.shadcn.com/) principles, with multiple themes, pre-built CSS, and interactive demos.
 
+**Architecture in brief:** Components are built on [Base UI](https://base-ui.com/) (and partially Radix UI) unstyled primitives. Tailwind CSS is used **internally** to compile styles — consumers receive fully pre-built CSS and can use any styling solution in their own project (CSS Modules, SCSS, a design system token layer, plain CSS, etc.). No Tailwind installation required.
+
 ## 📦 Packages
 
 ### [@acronis-platform/shadcn-uikit](./packages/ui) (v0.34.0)
@@ -211,9 +213,20 @@ import { cn } from '@acronis-platform/shadcn-uikit';
 const className = cn('base-class', condition && 'conditional-class', 'another-class');
 ```
 
-## ⚡ Tailwind CSS v4 — Migration Notes
+## ⚡ Tailwind CSS v4 — Notes for Consumers
 
-This package is built with **Tailwind CSS v4** internally, but most consumers are unaffected because the CSS ships pre-built.
+This package uses **Tailwind CSS v4** as a build-time tool to compile component styles. The output is standard CSS — consumers are free to use any styling solution in their own projects.
+
+### Styling philosophy
+
+Tailwind is **not** part of the public API. The package ships pre-built CSS files. In your application you can use:
+
+- CSS Modules or SCSS files with your own design system tokens
+- A dedicated token/theme layer (CSS custom properties)
+- Tailwind CSS (any version), Vanilla Extract, styled-components, or any other solution
+- Plain CSS
+
+The component styles, themes, and design tokens are all available as standalone CSS imports — no Tailwind processing needed at your end.
 
 ### Pre-built CSS consumers (the majority)
 
@@ -429,5 +442,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 🔗 Links
 
 - [shadcn/ui](https://ui.shadcn.com/) — the original inspiration
-- [Tailwind CSS](https://tailwindcss.com/) — CSS framework
-- [Radix UI](https://www.radix-ui.com/) — headless UI components
+- [Base UI](https://base-ui.com/) — unstyled primitives (primary)
+- [Radix UI](https://www.radix-ui.com/) — unstyled primitives (NavigationMenu, Slot)
+- [Tailwind CSS](https://tailwindcss.com/) — internal build tool
