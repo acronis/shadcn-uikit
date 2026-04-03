@@ -1,3 +1,17 @@
+## [0.34.0](https://github.com/acronis/shadcn-uikit/compare/v0.33.0...v0.34.0) (2026-04-03)
+
+
+### Features
+
+* **badge:** add AI badge variants and styles ([bef1ab3](https://github.com/acronis/shadcn-uikit/commit/bef1ab31e08871071108304e9f901dd0b148b19a))
+
+
+### Bug Fixes
+
+* add ai badge snapshot ([4027c4b](https://github.com/acronis/shadcn-uikit/commit/4027c4bde3523d7c1145f2f7da749b5dedcbcc6a))
+* **badge:** update AI badge variant key to use kebab-case ([77f12a0](https://github.com/acronis/shadcn-uikit/commit/77f12a0449354762b88ab26548db4bdcd7c76dc7))
+* **badge:** use CSS variable with fallback for AI gradient stop color ([79a8f96](https://github.com/acronis/shadcn-uikit/commit/79a8f96b51c8ce45e2da790e8c8ddf1ee1471903))
+
 ## [0.33.0](https://github.com/acronis/shadcn-uikit/compare/v0.32.4...v0.33.0) (2026-04-02)
 
 
@@ -39,12 +53,4 @@
 ### Bug Fixes
 
 * **themes, ADP-49599:** fixed dark theme side nav and dropdown ([ac71941](https://github.com/acronis/shadcn-uikit/commit/ac7194178f4467806c2292592a1bdfa17ce89807))
-
-## [0.32.1](https://github.com/acronis/shadcn-uikit/compare/v0.32.0...v0.32.1) (2026-04-01)
-
-
-### Bug Fixes
-
-* dropdowns do not get dark theme – fix popover foreground vars and add visual regression stories ([5756028](https://github.com/acronis/shadcn-uikit/commit/57560284245a7eebb2f50beb6b4661240b1b3184))
-* **visual-regression:** prevent ui-sonner--error size mismatch in CI ([ee40652](https://github.com/acronis/shadcn-uikit/commit/ee40652f1f111f0ab048e97246202cb431dbbf44))
 
