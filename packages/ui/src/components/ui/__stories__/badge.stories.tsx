@@ -38,3 +38,7 @@ export const Neutral: Story = {
 export const AI: Story = {
   args: { variant: 'ai', children: 'Acronis AI' },
 }
+
+export const AISolid: Story = {
+  args: { variant: 'ai-solid', children: 'Acronis AI (solid)' },
+}
