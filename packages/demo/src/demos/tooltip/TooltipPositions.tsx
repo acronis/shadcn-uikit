@@ -12,8 +12,8 @@ export function TooltipPositions() {
     <div className="flex flex-col gap-8 items-center">
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="outline">Top</Button>
+          <TooltipTrigger render={<Button variant="outline" />}>
+            Top
           </TooltipTrigger>
           <TooltipContent side="top">
             <p>Tooltip on top</p>
@@ -25,8 +25,8 @@ export function TooltipPositions() {
       <div className="flex gap-8">
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outline">Left</Button>
+            <TooltipTrigger render={<Button variant="outline" />}>
+              Left
             </TooltipTrigger>
             <TooltipContent side="left">
               <p>Tooltip on left</p>
@@ -37,8 +37,8 @@ export function TooltipPositions() {
 
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outline">Right</Button>
+            <TooltipTrigger render={<Button variant="outline" />}>
+              Right
             </TooltipTrigger>
             <TooltipContent side="right">
               <p>Tooltip on right</p>
@@ -50,8 +50,8 @@ export function TooltipPositions() {
 
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="outline">Bottom</Button>
+          <TooltipTrigger render={<Button variant="outline" />}>
+            Bottom
           </TooltipTrigger>
           <TooltipContent side="bottom">
             <p>Tooltip on bottom</p>

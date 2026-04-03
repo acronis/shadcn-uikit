@@ -14,8 +14,8 @@ export function DialogSizes() {
   return (
     <div className="flex flex-wrap gap-4">
       <Dialog>
-        <DialogTrigger asChild>
-          <Button variant="outline">Small (464px)</Button>
+        <DialogTrigger render={<Button variant="outline" />}>
+          Small (464px)
         </DialogTrigger>
         <DialogContent className="max-w-[464px]">
           <DialogHeader>
@@ -32,8 +32,8 @@ export function DialogSizes() {
       </Dialog>
 
       <Dialog>
-        <DialogTrigger asChild>
-          <Button variant="outline">Medium (672px)</Button>
+        <DialogTrigger render={<Button variant="outline" />}>
+          Medium (672px)
         </DialogTrigger>
         <DialogContent className="max-w-[672px]">
           <DialogHeader>
@@ -50,8 +50,8 @@ export function DialogSizes() {
       </Dialog>
 
       <Dialog>
-        <DialogTrigger asChild>
-          <Button variant="outline">Large (832px)</Button>
+        <DialogTrigger render={<Button variant="outline" />}>
+          Large (832px)
         </DialogTrigger>
         <DialogContent className="max-w-[832px]">
           <DialogHeader>

@@ -11,8 +11,8 @@ import { CreditCardIcon, LogOutIcon } from '@/components/icons/missing-icons'
 export function DropdownMenuBasic() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open Menu</Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        Open Menu
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuItem>

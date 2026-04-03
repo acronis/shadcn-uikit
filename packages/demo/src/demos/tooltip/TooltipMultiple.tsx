@@ -12,8 +12,8 @@ export function TooltipMultiple() {
     <TooltipProvider>
       <div className="flex gap-4">
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="default">Save</Button>
+          <TooltipTrigger render={<Button variant="default" />}>
+            Save
           </TooltipTrigger>
           <TooltipContent>
             <p>Save your changes</p>
@@ -22,8 +22,8 @@ export function TooltipMultiple() {
         </Tooltip>
 
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="secondary">Cancel</Button>
+          <TooltipTrigger render={<Button variant="secondary" />}>
+            Cancel
           </TooltipTrigger>
           <TooltipContent>
             <p>Discard changes</p>
@@ -32,8 +32,8 @@ export function TooltipMultiple() {
         </Tooltip>
 
         <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="destructive">Delete</Button>
+          <TooltipTrigger render={<Button variant="destructive" />}>
+            Delete
           </TooltipTrigger>
           <TooltipContent>
             <p>Delete permanently</p>

@@ -15,18 +15,20 @@ export function DatePickerWithLabel() {
         Date of Birth
       </label>
       <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            id="birth-date"
-            variant="outline"
-            className={cn(
-              'w-[280px] justify-start text-left font-normal',
-              !date && 'text-muted-foreground'
-            )}
-          >
-            <CalendarIcon className="mr-2 h-4 w-4" />
-            {date ? format(date, 'PPP') : <span>Select your birth date</span>}
-          </Button>
+        <PopoverTrigger
+          render={
+            <Button
+              id="birth-date"
+              variant="outline"
+              className={cn(
+                'w-[280px] justify-start text-left font-normal',
+                !date && 'text-muted-foreground'
+              )}
+            />
+          }
+        >
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? format(date, 'PPP') : <span>Select your birth date</span>}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
           <Calendar

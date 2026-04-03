@@ -13,8 +13,8 @@ import { Button, Input, Textarea } from '@acronis-platform/shadcn-uikit/react'
 export function DialogWithTextarea() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Leave Feedback</Button>
+      <DialogTrigger render={<Button />}>
+        Leave Feedback
       </DialogTrigger>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
@@ -42,8 +42,8 @@ export function DialogWithTextarea() {
           </div>
         </DialogBody>
         <DialogFooter>
-          <DialogTrigger asChild>
-            <Button variant="outline">Cancel</Button>
+          <DialogTrigger render={<Button variant="outline" />}>
+            Cancel
           </DialogTrigger>
           <Button>Submit Feedback</Button>
         </DialogFooter>

@@ -49,23 +49,25 @@ export const ColorEditor: React.FC<ColorEditorProps> = ({
       </div>
 
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            className="w-full justify-start text-left font-normal"
-            style={{
-              backgroundColor: color.hex,
-              color: color.l > 50 ? '#000' : '#fff',
-            }}
-          >
-            <div className="flex items-center gap-3 w-full">
-              <div className="h-6 w-6 rounded border border-white/20" style={{ backgroundColor: color.hex }} />
-              <div className="flex flex-1 items-center gap-3">
-                <div className="text-sm font-mono">{color.hex}</div>
-                <div className="text-xs opacity-70">{color.css}</div>
-              </div>
+        <PopoverTrigger
+          render={
+            <Button
+              variant="outline"
+              className="w-full justify-start text-left font-normal"
+              style={{
+                backgroundColor: color.hex,
+                color: color.l > 50 ? '#000' : '#fff',
+              }}
+            />
+          }
+        >
+          <div className="flex items-center gap-3 w-full">
+            <div className="h-6 w-6 rounded border border-white/20" style={{ backgroundColor: color.hex }} />
+            <div className="flex flex-1 items-center gap-3">
+              <div className="text-sm font-mono">{color.hex}</div>
+              <div className="text-xs opacity-70">{color.css}</div>
             </div>
-          </Button>
+          </div>
         </PopoverTrigger>
         <PopoverContent className="w-80" align="start">
           <ColorPicker color={color} onChange={onChange} label={label} />

@@ -13,8 +13,8 @@ import { Button, Input } from '@acronis-platform/shadcn-uikit/react'
 export function DialogForm() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Create Account</Button>
+      <DialogTrigger render={<Button />}>
+        Create Account
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -44,8 +44,8 @@ export function DialogForm() {
           </form>
         </DialogBody>
         <DialogFooter>
-          <DialogTrigger asChild>
-            <Button variant="outline">Cancel</Button>
+          <DialogTrigger render={<Button variant="outline" />}>
+            Cancel
           </DialogTrigger>
           <Button>Create Account</Button>
         </DialogFooter>

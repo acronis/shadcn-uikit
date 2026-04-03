@@ -28,11 +28,9 @@ export function DropdownMenuWithSearch() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">
-          Select Value
-          <ChevronDownIcon className="ml-2 h-4 w-4" />
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        Select Value
+        <ChevronDownIcon className="ml-2 h-4 w-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <div className="px-2 py-2">

@@ -13,8 +13,8 @@ import { InfoIcon } from '@acronis-platform/shadcn-uikit'
 export function DialogInfo() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">View Info</Button>
+      <DialogTrigger render={<Button variant="outline" />}>
+        View Info
       </DialogTrigger>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
@@ -41,8 +41,8 @@ export function DialogInfo() {
           </div>
         </DialogBody>
         <DialogFooter>
-          <DialogTrigger asChild>
-            <Button>Got it</Button>
+          <DialogTrigger render={<Button />}>
+            Got it
           </DialogTrigger>
         </DialogFooter>
       </DialogContent>

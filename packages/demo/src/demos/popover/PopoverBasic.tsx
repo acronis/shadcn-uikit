@@ -5,8 +5,8 @@ export function PopoverBasic() {
   return (
     <div className="flex justify-center rounded-lg border p-8">
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Open Popover</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Open Popover
         </PopoverTrigger>
         <PopoverContent className="w-80">
           <div className="space-y-2">

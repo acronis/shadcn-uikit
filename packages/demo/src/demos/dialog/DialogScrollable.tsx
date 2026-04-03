@@ -13,8 +13,8 @@ import { Button } from '@acronis-platform/shadcn-uikit/react'
 export function DialogScrollable() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>View Terms</Button>
+      <DialogTrigger render={<Button />}>
+        View Terms
       </DialogTrigger>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
@@ -54,8 +54,8 @@ export function DialogScrollable() {
           </div>
         </DialogBody>
         <DialogFooter>
-          <DialogTrigger asChild>
-            <Button variant="outline">Decline</Button>
+          <DialogTrigger render={<Button variant="outline" />}>
+            Decline
           </DialogTrigger>
           <Button>Accept</Button>
         </DialogFooter>

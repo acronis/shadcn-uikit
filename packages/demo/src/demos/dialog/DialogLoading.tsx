@@ -13,8 +13,8 @@ import { RotateIcon } from '@acronis-platform/shadcn-uikit'
 export function DialogLoading() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Process Data</Button>
+      <DialogTrigger render={<Button />}>
+        Process Data
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>

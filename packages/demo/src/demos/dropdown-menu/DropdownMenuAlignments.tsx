@@ -10,8 +10,8 @@ export function DropdownMenuAlignments() {
   return (
     <div className="flex gap-4 flex-wrap">
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">Align Start</Button>
+        <DropdownMenuTrigger render={<Button variant="outline" />}>
+          Align Start
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start">
           <DropdownMenuItem>Profile</DropdownMenuItem>
@@ -21,8 +21,8 @@ export function DropdownMenuAlignments() {
       </DropdownMenu>
 
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">Align Center</Button>
+        <DropdownMenuTrigger render={<Button variant="outline" />}>
+          Align Center
         </DropdownMenuTrigger>
         <DropdownMenuContent align="center">
           <DropdownMenuItem>Profile</DropdownMenuItem>
@@ -32,8 +32,8 @@ export function DropdownMenuAlignments() {
       </DropdownMenu>
 
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">Align End</Button>
+        <DropdownMenuTrigger render={<Button variant="outline" />}>
+          Align End
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem>Profile</DropdownMenuItem>

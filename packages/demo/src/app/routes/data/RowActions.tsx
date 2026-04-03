@@ -21,11 +21,9 @@ interface RowActionsProps {
 export function RowActions({ onEdit, onDelete, onView }: RowActionsProps) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          <EllipsisHIcon className="h-4 w-4" />
-          <span className="sr-only">Open menu</span>
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="ghost" size="icon" />}>
+        <EllipsisHIcon className="h-4 w-4" />
+        <span className="sr-only">Open menu</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>Actions</DropdownMenuLabel>

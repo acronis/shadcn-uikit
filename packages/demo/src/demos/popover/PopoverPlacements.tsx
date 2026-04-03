@@ -5,8 +5,8 @@ export function PopoverPlacements() {
   return (
     <div className="flex flex-wrap justify-center gap-4 rounded-lg border p-8">
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Top</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Top
         </PopoverTrigger>
         <PopoverContent side="top" className="w-64">
           <p className="text-sm">This popover appears on top.</p>
@@ -14,8 +14,8 @@ export function PopoverPlacements() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Bottom</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Bottom
         </PopoverTrigger>
         <PopoverContent side="bottom" className="w-64">
           <p className="text-sm">This popover appears on bottom.</p>
@@ -23,8 +23,8 @@ export function PopoverPlacements() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Left</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Left
         </PopoverTrigger>
         <PopoverContent side="left" className="w-64">
           <p className="text-sm">This popover appears on left.</p>
@@ -32,8 +32,8 @@ export function PopoverPlacements() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Right</Button>
+        <PopoverTrigger render={<Button variant="outline" />}>
+          Right
         </PopoverTrigger>
         <PopoverContent side="right" className="w-64">
           <p className="text-sm">This popover appears on right.</p>

@@ -1232,11 +1232,9 @@ export function TablePlayground() {
         return (
           <TooltipProvider>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="cursor-help inline-flex items-center gap-1">
-                  {content}
-                  <InfoIcon className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100" />
-                </div>
+              <TooltipTrigger render={<div className="cursor-help inline-flex items-center gap-1" />}>
+                {content}
+                <InfoIcon className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100" />
               </TooltipTrigger>
               <TooltipContent>
                 <p className="text-xs max-w-xs">{rowData.tooltip}</p>
@@ -2531,8 +2529,8 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                               {showHeaderTooltips ? (
                                 <TooltipProvider>
                                   <Tooltip>
-                                    <TooltipTrigger asChild>
-                                      <div className="cursor-help">{headerContent}</div>
+                                    <TooltipTrigger render={<div className="cursor-help" />}>
+                                      {headerContent}
                                     </TooltipTrigger>
                                     <TooltipContent>
                                       <p className="text-xs">{columnDescriptions[dataSource]?.[col] || `${col} column`}</p>
@@ -2578,8 +2576,8 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                         {showHeaderTooltips ? (
                           <TooltipProvider>
                             <Tooltip>
-                              <TooltipTrigger asChild>
-                                <div className="cursor-help">Actions</div>
+                              <TooltipTrigger render={<div className="cursor-help" />}>
+                                Actions
                               </TooltipTrigger>
                               <TooltipContent>
                                 <p className="text-xs">Row actions (view, edit, delete)</p>

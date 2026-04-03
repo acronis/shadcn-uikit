@@ -45,19 +45,21 @@ export function ComboboxForm() {
           Framework
         </label>
         <Popover open={frameworkOpen} onOpenChange={setFrameworkOpen}>
-          <PopoverTrigger asChild>
-            <Button
-              id="framework-select"
-              variant="outline"
-              role="combobox"
-              aria-expanded={frameworkOpen}
-              className="w-full justify-between"
-            >
-              {frameworkValue
-                ? frameworks.find((framework) => framework.value === frameworkValue)?.label
-                : 'Select framework...'}
-              <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-            </Button>
+          <PopoverTrigger
+            render={
+              <Button
+                id="framework-select"
+                variant="outline"
+                role="combobox"
+                aria-expanded={frameworkOpen}
+                className="w-full justify-between"
+              />
+            }
+          >
+            {frameworkValue
+              ? frameworks.find((framework) => framework.value === frameworkValue)?.label
+              : 'Select framework...'}
+            <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </PopoverTrigger>
           <PopoverContent className="w-full p-0">
             <Command>
@@ -98,16 +100,18 @@ export function ComboboxForm() {
           Programming Language
         </label>
         <Popover>
-          <PopoverTrigger asChild>
-            <Button
-              id="language-select"
-              variant="outline"
-              role="combobox"
-              className="w-full justify-between"
-            >
-              Select language...
-              <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-            </Button>
+          <PopoverTrigger
+            render={
+              <Button
+                id="language-select"
+                variant="outline"
+                role="combobox"
+                className="w-full justify-between"
+              />
+            }
+          >
+            Select language...
+            <ChevronUpdownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </PopoverTrigger>
           <PopoverContent className="w-full p-0">
             <Command>

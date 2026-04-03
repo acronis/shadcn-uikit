@@ -13,8 +13,8 @@ import { ExclamationCircleIcon } from '@acronis-platform/shadcn-uikit'
 export function DialogConfirmation() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="destructive">Delete Item</Button>
+      <DialogTrigger render={<Button variant="destructive" />}>
+        Delete Item
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -36,8 +36,8 @@ export function DialogConfirmation() {
           </div>
         </DialogBody>
         <DialogFooter>
-          <DialogTrigger asChild>
-            <Button variant="outline">Cancel</Button>
+          <DialogTrigger render={<Button variant="outline" />}>
+            Cancel
           </DialogTrigger>
           <Button variant="destructive">Delete</Button>
         </DialogFooter>

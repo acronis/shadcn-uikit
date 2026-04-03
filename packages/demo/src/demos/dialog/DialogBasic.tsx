@@ -13,8 +13,8 @@ import { Button } from '@acronis-platform/shadcn-uikit/react'
 export function DialogBasic() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Open Dialog</Button>
+      <DialogTrigger render={<Button />}>
+        Open Dialog
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -27,8 +27,8 @@ export function DialogBasic() {
           </p>
         </DialogBody>
         <DialogFooter>
-          <DialogTrigger asChild>
-            <Button variant="outline">Cancel</Button>
+          <DialogTrigger render={<Button variant="outline" />}>
+            Cancel
           </DialogTrigger>
           <Button>Confirm</Button>
         </DialogFooter>
