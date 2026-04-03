@@ -34,3 +34,11 @@ export const Danger: Story = {
 export const Neutral: Story = {
   args: { variant: 'neutral', children: 'Neutral' },
 }
+
+export const AI: Story = {
+  args: { variant: 'ai', children: 'Acronis AI' },
+}
+
+export const AISolid: Story = {
+  args: { variant: 'ai-solid', children: 'Acronis AI (solid)' },
+}
