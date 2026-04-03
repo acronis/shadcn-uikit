@@ -1,0 +1,6 @@
+export { FormBasic } from './FormBasic'
+export { FormLogin } from './FormLogin'
+export { FormProfile } from './FormProfile'
+export { FormRegistration } from './FormRegistration'
+export { FormContact } from './FormContact'
+export { FormSettings } from './FormSettings'

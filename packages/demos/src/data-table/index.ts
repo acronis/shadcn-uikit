@@ -1,0 +1,1 @@
+export { DataTableFull } from './DataTableFull'
