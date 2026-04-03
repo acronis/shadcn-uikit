@@ -1,24 +1,25 @@
 # Shadcn UIKit
 
-A monorepo containing custom shadcn UI components, multiple color schemes, and interactive demos.
+A monorepo containing 40+ custom UI components built on [shadcn/ui](https://ui.shadcn.com/) principles, with multiple themes, pre-built CSS, and interactive demos.
 
 ## 📦 Packages
 
-This monorepo contains the following packages:
+### [@acronis-platform/shadcn-uikit](./packages/ui) (v0.34.0)
 
-### [@acronis-platform/shadcn-uikit](./packages/ui)
-The core UI component library built on top of shadcn/ui principles.
+The core UI component library. Ships pre-built CSS — consumers do **not** need Tailwind CSS installed.
 
-**Components:**
-- Button (with multiple variants and sizes)
-- Card (with Header, Title, Description, Content, Footer)
-- Input (styled form inputs)
+**Peer dependencies:**
+
+- `react` ^18.2.0 || ^19.0.0
+- `react-dom` ^18.2.0 || ^19.0.0
+- `tw-animate-css` ^1.4.0
 
 ### [@acronis-platform/shadcn-uikit-demo](./packages/demo)
-Interactive demo application showcasing all components with multiple color schemes.
+
+Interactive demo application showcasing all components with multiple themes.
 
 **Features:**
-- 6 pre-configured themes
+
 - Component playground
 - Live theme switching
 - Responsive design
@@ -30,7 +31,7 @@ Interactive demo application showcasing all components with multiple color schem
 - Node.js 18+
 - pnpm 10+
 
-### Installation
+### Installation (development)
 
 ```bash
 # Clone the repository
@@ -54,57 +55,34 @@ pnpm run dev
 
 The demo will be available at `http://localhost:3000`.
 
-## 🎨 Themes
-
-The UI kit includes multiple pre-built themes with light and dark mode support:
-
-### Built-in Themes
-
-1. **Acronis Default** - Standard Acronis brand colors (included by default)
-2. **Acronis Ocean** - Alternative blue-focused theme with deeper ocean tones
-
-### Theme Features
-
-- ✅ **Light & Dark modes** - All themes support both modes
-- ✅ **CSS-based** - Zero JavaScript overhead
-- ✅ **Tree-shakeable** - Import only themes you use
-- ✅ **Customizable** - Override CSS variables or create custom themes
-- ✅ **SSR-compatible** - Works with server-side rendering
-
-### Creating Custom Themes
-
-You can create custom themes by copying the template file and customizing colors:
-
-```bash
-# See packages/ui/src/styles/themes/_template.scss for the template
-```
-
-All themes use CSS variables and can be fully customized. See [Theme Documentation](./packages/docs/THEMES.md) for details.
-
 ## 📖 Usage
 
 ### Installation
 
 ```bash
-npm install @acronis-platform/shadcn-uikit
+npm install @acronis-platform/shadcn-uikit tw-animate-css
 # or
-pnpm add @acronis-platform/shadcn-uikit
+pnpm add @acronis-platform/shadcn-uikit tw-animate-css
 # or
-yarn add @acronis-platform/shadcn-uikit
+yarn add @acronis-platform/shadcn-uikit tw-animate-css
 ```
+
+> **Note:** `tw-animate-css` is a required peer dependency. It replaces the older `tailwindcss-animate` package.
 
 ### Import Styles
 
-Import the main styles in your application entry point:
+Import the main stylesheet in your application entry point. This includes the default theme, base styles, components, and utilities — all pre-built:
 
 ```typescript
 // main.tsx or App.tsx
 import '@acronis-platform/shadcn-uikit/styles';
 ```
 
+No Tailwind CSS installation is needed. The package ships fully compiled CSS.
+
 ### Initialize Theme System (Optional)
 
-For theme switching and dark mode support:
+For theme switching, dark mode support, and persistence:
 
 ```typescript
 import { initializeThemeSystem } from '@acronis-platform/shadcn-uikit';
@@ -162,70 +140,54 @@ function MyComponent() {
 
 The library includes 40+ components:
 
-- **Layout**: Card, Separator, Sidebar, ScrollArea
-- **Forms**: Input, Textarea, Select, Checkbox, Radio, Switch, Label, Form
+- **Layout**: Card, Separator, Sidebar, ScrollArea, ResizablePanel
+- **Forms**: Input, Textarea, Select, Checkbox, RadioGroup, Switch, Label, Form, PasswordInput
 - **Buttons**: Button, ButtonGroup
-- **Navigation**: NavigationMenu, Breadcrumb, Tabs, Pagination
+- **Navigation**: NavigationMenu, Breadcrumb, Tabs, Pagination, SecondaryMenu
 - **Overlays**: Dialog, Sheet, Drawer, Popover, Tooltip, AlertDialog
 - **Feedback**: Alert, Badge, Chip, Tag, Progress, Spinner, Toast (Sonner)
 - **Data Display**: Table, DataTable, Tree, Avatar, Calendar, DatePicker
-- **Advanced**: Combobox, Command, Filter, Chart, Empty, Carousel
+- **Advanced**: Combobox, Command, Filter, Chart, Empty, Carousel, Collapsible, Accordion
+- **Icons**: 1500+ internal icons via `BaseIcon` + auto-generated components
 
-### Theme Switching
+### Package Exports
 
-Switch between themes programmatically:
+#### JavaScript
 
 ```typescript
-import { applyTheme, applyColorMode, toggleColorMode } from '@acronis-platform/shadcn-uikit';
+// Main entry — all components + utilities
+import { Button } from '@acronis-platform/shadcn-uikit';
 
-// Switch to ocean theme
-applyTheme('acronis-ocean');
+// React-only entry (same content)
+import { Button } from '@acronis-platform/shadcn-uikit/react';
 
-// Toggle dark mode
-toggleColorMode();
+// Individual components (tree-shakeable)
+import { Button } from '@acronis-platform/shadcn-uikit/components/Button';
 
-// Or set specific mode
-applyColorMode('dark');
-applyColorMode('light');
-applyColorMode('system'); // Follow system preference
+// Tailwind preset (for consumers extending Tailwind — requires Tailwind v4)
+import preset from '@acronis-platform/shadcn-uikit/tailwind-preset';
 ```
 
-#### Shadow DOM / embedded containers
-
-When the app is rendered inside a shadow root (e.g. via module federation), theme classes must also be applied to the inner container element — not just `document.documentElement` — because CSS inside a shadow root uses `:host` selectors that don't inherit from the document.
-
-Pass any number of additional container elements as the `extraRoots` parameter:
+#### CSS
 
 ```typescript
-import { applyTheme, applyNavVariant } from '@acronis-platform/shadcn-uikit';
+// Default theme + base + components + utilities (most consumers use this)
+import '@acronis-platform/shadcn-uikit/styles';
 
-// Apply theme to both document.documentElement and a shadow DOM inner container
-const innerContainer = document.getElementById('app-container');
-applyTheme('acronis-ocean', true, innerContainer ? [innerContainer] : []);
+// Everything including all themes
+import '@acronis-platform/shadcn-uikit/styles/full';
 
-// Same for white-label nav variants
-applyNavVariant('ingram-micro', true, innerContainer ? [innerContainer] : []);
-```
+// Granular imports
+import '@acronis-platform/shadcn-uikit/styles/tokens';      // CSS variables only
+import '@acronis-platform/shadcn-uikit/styles/base';         // Reset + base styles
+import '@acronis-platform/shadcn-uikit/styles/components';   // Component styles only
+import '@acronis-platform/shadcn-uikit/styles/utilities';    // Tailwind utility classes
 
-Both `applyTheme` and `applyNavVariant` accept the same optional third parameter:
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `theme` / `variant` | `ThemeName` / `WhiteLabelNavVariant` | — | The theme or variant to apply |
-| `persist` | `boolean` | `true` | Whether to persist the choice to `localStorage` |
-| `extraRoots` | `HTMLElement[]` | `[]` | Additional elements to receive the same theme classes |
-
-### Using Alternative Themes
-
-Import additional theme CSS files:
-
-```typescript
-// Import ocean theme
+// Individual themes
+import '@acronis-platform/shadcn-uikit/styles/themes/acronis-default';
 import '@acronis-platform/shadcn-uikit/styles/themes/acronis-ocean';
-
-// Then apply it
-import { applyTheme } from '@acronis-platform/shadcn-uikit';
-applyTheme('acronis-ocean');
+import '@acronis-platform/shadcn-uikit/styles/themes/cyber-chat';
+import '@acronis-platform/shadcn-uikit/styles/themes/acronis-white-label';
 ```
 
 ### TypeScript Support
@@ -242,33 +204,158 @@ const MyButton: React.FC<ButtonProps> = (props) => {
 
 ### Utility Functions
 
-Access utility functions for styling:
-
 ```typescript
 import { cn } from '@acronis-platform/shadcn-uikit';
 
-// Merge class names with Tailwind
+// Merge class names
 const className = cn('base-class', condition && 'conditional-class', 'another-class');
 ```
+
+## ⚡ Tailwind CSS v4 — Migration Notes
+
+This package is built with **Tailwind CSS v4** internally, but most consumers are unaffected because the CSS ships pre-built.
+
+### Pre-built CSS consumers (the majority)
+
+**Zero impact.** Import `@acronis-platform/shadcn-uikit/styles` as before. No Tailwind installation needed on your side.
+
+### `tw-animate-css` peer dependency (required)
+
+The `tw-animate-css` package replaces the older `tailwindcss-animate` (from Tailwind v3). Install it alongside the UI kit:
+
+```bash
+npm install tw-animate-css
+```
+
+If you previously had `tailwindcss-animate` as a dependency only for this UI kit, you can remove it.
+
+### Tailwind preset users (`./tailwind-preset` export)
+
+If you use the `@acronis-platform/shadcn-uikit/tailwind-preset` export in your own Tailwind build, you must upgrade to **Tailwind CSS v4**:
+
+- Install `@tailwindcss/postcss` and `tailwindcss ^4.x`
+- Update your PostCSS configuration accordingly
+- See the [Tailwind CSS v4 upgrade guide](https://tailwindcss.com/docs/upgrade-guide) for details
+
+### Existing Tailwind v3 consumers using pre-built CSS
+
+No direct conflict. However, the pre-built CSS uses Tailwind v4's `@layer` cascade layers, which may interact with a v3 Tailwind build if both are present in the same page. **Recommended:** avoid running Tailwind v3 over the pre-built CSS output.
+
+## 🎨 Themes
+
+### Built-in Themes
+
+1. **Acronis Default** — standard Acronis brand colors (included by default)
+2. **Acronis Ocean** — alternative blue-focused theme with deeper ocean tones
+3. **Cyber Chat** — theme for the Cyber Chat product
+4. **Acronis White Label** — white-label theme for partner customization
+
+### Theme Features
+
+- ✅ **Light & Dark modes** — all themes support both modes via CSS variables
+- ✅ **CSS-based** — zero JavaScript overhead
+- ✅ **Tree-shakeable** — import only themes you use
+- ✅ **Customizable** — override CSS variables or create custom themes
+- ✅ **SSR-compatible** — works with server-side rendering
+
+### Theme Switching
+
+Switch themes programmatically:
+
+```typescript
+import { applyTheme, applyColorMode, toggleColorMode } from '@acronis-platform/shadcn-uikit';
+
+// Switch to ocean theme
+applyTheme('acronis-ocean');
+
+// Toggle dark mode
+toggleColorMode();
+
+// Or set specific mode
+applyColorMode('dark');
+applyColorMode('light');
+applyColorMode('system'); // Follow system preference
+```
+
+#### Shadow DOM / Embedded Containers
+
+When the app renders inside a shadow root (e.g. via module federation), theme classes must also be applied to the inner container element — not just `document.documentElement` — because CSS inside a shadow root uses `:host` selectors that don't inherit from the document.
+
+Pass additional container elements via the `extraRoots` parameter:
+
+```typescript
+import { applyTheme, applyNavVariant } from '@acronis-platform/shadcn-uikit';
+
+const innerContainer = document.getElementById('app-container');
+applyTheme('acronis-ocean', true, innerContainer ? [innerContainer] : []);
+
+// Same for white-label nav variants
+applyNavVariant('ingram-micro', true, innerContainer ? [innerContainer] : []);
+```
+
+Both `applyTheme` and `applyNavVariant` accept the same optional parameters:
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `theme` / `variant` | `ThemeName` / `WhiteLabelNavVariant` | — | The theme or variant to apply |
+| `persist` | `boolean` | `true` | Whether to persist the choice to `localStorage` |
+| `extraRoots` | `HTMLElement[]` | `[]` | Additional elements to receive the same theme classes |
+
+### Using Alternative Themes
+
+Import additional theme CSS, then apply:
+
+```typescript
+// Import ocean theme
+import '@acronis-platform/shadcn-uikit/styles/themes/acronis-ocean';
+
+// Then apply it
+import { applyTheme } from '@acronis-platform/shadcn-uikit';
+applyTheme('acronis-ocean');
+```
+
+### Creating Custom Themes
+
+Create custom themes by copying the template file and customizing colors:
+
+```bash
+# See packages/ui/src/styles/themes/_template.scss for the template
+```
+
+See [Theme Documentation](./packages/docs/THEMES.md) for details.
 
 ## 🏗️ Project Structure
 
 ```
 shadcn-uikit/
 ├── packages/
-│   ├── ui/              # Core UI components library
+│   ├── ui/                    # Core UI components library (@acronis-platform/shadcn-uikit)
 │   │   ├── src/
-│   │   │   ├── components/  # React components
-│   │   │   ├── lib/         # Utility functions
-│   │   │   └── index.ts     # Package exports
+│   │   │   ├── components/    # React components
+│   │   │   ├── hooks/         # Custom React hooks
+│   │   │   ├── lib/           # Utility functions
+│   │   │   ├── styles/        # SCSS source — themes, tokens, base
+│   │   │   │   ├── themes/    # Theme SCSS files + template
+│   │   │   │   └── tokens/    # Design tokens (CSS variables)
+│   │   │   ├── types/         # Shared TypeScript types
+│   │   │   ├── utils/         # Additional utilities
+│   │   │   ├── index.ts       # Main entry (all exports)
+│   │   │   └── react.ts       # React-only entry
 │   │   └── package.json
-│   └── demo/            # Demo application
-│       ├── src/
-│       │   ├── App.tsx      # Main demo app
-│       │   ├── themes/      # Theme definitions
-│       │   └── index.css    # Global styles
-│       └── package.json
-├── package.json         # Root workspace config
+│   ├── demo/                  # Demo application
+│   │   ├── src/
+│   │   │   ├── components/    # Demo-specific components
+│   │   │   ├── demos/         # Per-component demo pages
+│   │   │   └── layouts/       # App layouts
+│   │   └── package.json
+│   └── docs/                  # Package-level documentation
+├── docs/                      # Project-level documentation
+│   ├── explorations/          # Research & exploration documents
+│   ├── features/              # Feature specifications
+│   └── team/                  # Team processes & guides
+├── git-hooks/                 # Git hook scripts
+├── package.json               # Root workspace config
+├── pnpm-workspace.yaml        # pnpm workspace definition
 └── README.md
 ```
 
@@ -291,16 +378,6 @@ pnpm run type-check
 ```bash
 pnpm run lint
 ```
-
-## 📝 License
-
-MIT License - Copyright (c) 2026 Acronis International GmbH
-
-See [LICENSE](./LICENSE) for more details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 🚀 Quick Reference
 
@@ -330,62 +407,27 @@ export function App() {
 }
 ```
 
-### Build Output
-
-The package includes:
-- **JavaScript**: `dist/index.js` (65KB) - All components (tree-shakeable)
-- **Components**: `dist/components/ui/*.js` - Individual component files (1-3KB each)
-- **TypeScript**: `dist/index.d.ts` + `dist/components/**/*.d.ts` - Full type definitions
-- **Styles**: `dist/shadcn-uikit.css` (15KB) - Main styles with default theme
-- **Themes**: `dist/themes/*.css` - Separate theme files (7-14KB each)
-
-### Tree-Shaking ✅
-
-The library is **fully tree-shakeable**. Your production bundle only includes components you actually use:
-
-```typescript
-// You import
-import { Button, Card } from '@acronis-platform/shadcn-uikit';
-
-// Production bundle includes: ~5KB (just Button + Card)
-// NOT included: Input, Table, Dialog, or any other unused components
-```
-
-**Performance:** Using 10 components = ~20-30KB minified (~8-10KB gzipped)
-
-### Package Exports
-
-```typescript
-// Main entry - all components
-import { Button } from '@acronis-platform/shadcn-uikit';
-
-// React-only entry
-import { Button } from '@acronis-platform/shadcn-uikit/react';
-
-// Styles
-import '@acronis-platform/shadcn-uikit/styles';
-
-// Themes
-import '@acronis-platform/shadcn-uikit/styles/themes/acronis-ocean';
-
-// Utils
-import { cn } from '@acronis-platform/shadcn-uikit';
-
-// Theme utilities
-import { applyTheme, toggleColorMode } from '@acronis-platform/shadcn-uikit';
-```
-
 ## 📚 Documentation
 
-- [Tree-Shaking & Performance](./packages/docs/TREE_SHAKING.md) - Bundle optimization guide
-- [Theme System Guide](./packages/docs/THEMES.md) - Complete theme usage guide
-- [Theme Build Configuration](./packages/docs/THEME_BUILD.md) - Build setup details
-- [Theme Architecture](./packages/demo/docs/THEME_ARCHITECTURE.md) - Token system architecture
+- [Tree-Shaking & Performance](./packages/docs/TREE_SHAKING.md) — bundle optimization guide
+- [Theme System Guide](./packages/docs/THEMES.md) — complete theme usage guide
+- [Theme Build Configuration](./packages/docs/THEME_BUILD.md) — build setup details
+- [Theme Architecture](./packages/demo/docs/THEME_ARCHITECTURE.md) — token system architecture
 - [UI Package Documentation](./packages/ui/README.md)
 - [Demo Package Documentation](./packages/demo/README.md)
 
+## 📝 License
+
+MIT License — Copyright (c) 2026 Acronis International GmbH
+
+See [LICENSE](./LICENSE) for more details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## 🔗 Links
 
-- [shadcn/ui](https://ui.shadcn.com/) - The original inspiration
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [Radix UI](https://www.radix-ui.com/) - Headless UI components
+- [shadcn/ui](https://ui.shadcn.com/) — the original inspiration
+- [Tailwind CSS](https://tailwindcss.com/) — CSS framework
+- [Radix UI](https://www.radix-ui.com/) — headless UI components
