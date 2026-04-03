@@ -1,3 +1,10 @@
+/* Tailwind v4 utilities — needed for Fumadocs on-root: / md: variant classes */
+@import "tailwindcss/utilities";
+
+/* Scan fumadocs-ui dist so on-root: and responsive variants get generated */
+@source "../../node_modules/fumadocs-ui/dist/**/*.js";
+
+/* UIKit pre-built CSS (themes, tokens, components, base) */
 @import '@acronis-platform/shadcn-uikit/styles';
 
 /* ─── Fumadocs color overrides to match Acronis brand ─────────────────────── */
@@ -41,6 +48,20 @@
   font-family: var(--av-font-mono, ui-monospace, monospace);
   font-size: 0.8125rem;
   line-height: 1.6;
+}
+
+/* ─── Fix Fumadocs layout: mobile nav overrides ────────────────────────────── */
+/*
+ * The md:hidden class on #nd-subnav is compiled in @layer utilities inside
+ * fumadocs-ui/style.css. When the uikit pre-built CSS also produces @layer
+ * utilities rules (e.g. .flex), CSS layer ordering can let a later-declared
+ * .flex rule win over md:hidden at desktop widths. Work around it by hiding
+ * the mobile nav with an unlayered rule (unlayered always beats @layer).
+ */
+@media (width >= 48rem) {
+  #nd-subnav {
+    display: none;
+  }
 }
 
 /* ─── Hide Next.js dev indicator ───────────────────────────────────────────── */
