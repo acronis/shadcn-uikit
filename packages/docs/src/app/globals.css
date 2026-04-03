@@ -1,1 +1,49 @@
 @import '@acronis-platform/shadcn-uikit/styles';
+
+/* ─── Fumadocs color overrides to match Acronis brand ─────────────────────── */
+:root {
+  /* Acronis primary blue (213 94% 51%) */
+  --color-fd-primary: hsl(213, 94%, 51%);
+  --color-fd-primary-foreground: hsl(0, 0%, 100%);
+  --color-fd-ring: hsl(213, 94%, 51%);
+}
+
+.dark {
+  --color-fd-primary: hsl(213, 94%, 65%);
+  --color-fd-primary-foreground: hsl(0, 0%, 9%);
+  --color-fd-ring: hsl(213, 94%, 65%);
+}
+
+/* ─── Demo preview panel ───────────────────────────────────────────────────── */
+.demo-preview {
+  background: var(--av-background-primary, #fff);
+  border-color: var(--av-border-secondary, #e2e8f0);
+}
+
+.demo-preview__canvas {
+  background: var(--av-background-secondary, #f8fafc);
+  /* subtle dot grid */
+  background-image: radial-gradient(circle, var(--av-border-secondary, #e2e8f0) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.demo-preview__footer {
+  background: var(--av-background-primary, #fff);
+  border-color: var(--av-border-secondary, #e2e8f0);
+  color: var(--av-text-secondary, #64748b);
+  font-family: var(--av-font-mono, ui-monospace, monospace);
+}
+
+.demo-preview__source {
+  background: var(--av-background-tertiary, #f1f5f9);
+  border-color: var(--av-border-secondary, #e2e8f0);
+  color: var(--av-text-primary, #0f172a);
+  font-family: var(--av-font-mono, ui-monospace, monospace);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* ─── Hide Next.js dev indicator ───────────────────────────────────────────── */
+nextjs-portal {
+  display: none;
+}
