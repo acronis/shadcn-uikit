@@ -12,7 +12,7 @@ import {
   type ColumnFiltersState,
   type VisibilityState,
 } from '@tanstack/react-table'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const meta = {
   title: 'UI/DataTable',
@@ -85,10 +85,12 @@ const columns: ColumnDef<Payment>[] = [
 ]
 
 export const Default: Story = {
+  args: {} as React.ComponentProps<typeof DataTable>,
   render: () => <DataTable columns={columns} data={payments} />,
 }
 
 export const Empty: Story = {
+  args: {} as React.ComponentProps<typeof DataTable>,
   render: () => <DataTable columns={columns} data={[]} />,
 }
 
@@ -123,5 +125,6 @@ function DataTableWithToolbarAndPagination() {
 }
 
 export const WithToolbarAndPagination: Story = {
+  args: {} as React.ComponentProps<typeof DataTable>,
   render: () => <DataTableWithToolbarAndPagination />,
 }
