@@ -1,17 +1,49 @@
 ---
 title: Switch
-description: A toggle control for switching between on and off states.
+description: A toggle control that switches between on and off states.
 ---
 
-import { SwitchBasic, SwitchWithLabel } from '@/components/demos/switch';
+import { SwitchBasic, SwitchWithLabel, SwitchControlled, SwitchForm } from '@/components/demos/switch';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import { Switch } from '@acronis-platform/shadcn-uikit';
+```
+
+## Basic
+
+A simple on/off switch.
+
+<DemoPreview sourcePath="packages/demos/src/switch/SwitchBasic.tsx">
   <SwitchBasic />
 </DemoPreview>
 
-<DemoPreview>
+## With Label
+
+Switch paired with a descriptive label.
+
+<DemoPreview sourcePath="packages/demos/src/switch/SwitchWithLabel.tsx">
   <SwitchWithLabel />
 </DemoPreview>
+
+## Controlled
+
+Switch with externally managed state.
+
+<DemoPreview sourcePath="packages/demos/src/switch/SwitchControlled.tsx">
+  <SwitchControlled />
+</DemoPreview>
+
+## Form
+
+Switch integrated within a form.
+
+<DemoPreview sourcePath="packages/demos/src/switch/SwitchForm.tsx">
+  <SwitchForm />
+</DemoPreview>
+
+## API Reference
+
+The Switch wraps the Base UI Switch primitive. It accepts `checked`, `defaultChecked`, `onCheckedChange`, and `disabled` props.

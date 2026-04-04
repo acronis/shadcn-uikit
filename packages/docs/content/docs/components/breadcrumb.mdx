@@ -3,15 +3,59 @@ title: Breadcrumb
 description: Displays a navigation trail showing the current page location within a hierarchy.
 ---
 
-import { BreadcrumbBasic, BreadcrumbWithIcons } from '@/components/demos/breadcrumb';
+import {
+  BreadcrumbBasic,
+  BreadcrumbWithIcons,
+  BreadcrumbWithEllipsis,
+  BreadcrumbIconsEllipsis,
+} from '@/components/demos/breadcrumb';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from '@acronis-platform/shadcn-uikit';
+```
+
+## Basic
+
+A simple breadcrumb trail with text links.
+
+<DemoPreview sourcePath="packages/demos/src/breadcrumb/BreadcrumbBasic.tsx">
   <BreadcrumbBasic />
 </DemoPreview>
 
-<DemoPreview>
+## With icons
+
+Breadcrumb items can include icons for better visual recognition.
+
+<DemoPreview sourcePath="packages/demos/src/breadcrumb/BreadcrumbWithIcons.tsx">
   <BreadcrumbWithIcons />
 </DemoPreview>
+
+## With ellipsis
+
+Long breadcrumb trails can be collapsed with an ellipsis.
+
+<DemoPreview sourcePath="packages/demos/src/breadcrumb/BreadcrumbEllipsis.tsx">
+  <BreadcrumbWithEllipsis />
+</DemoPreview>
+
+## With icons and ellipsis
+
+Combining icons and ellipsis for complex navigation hierarchies.
+
+<DemoPreview sourcePath="packages/demos/src/breadcrumb/BreadcrumbIconsEllipsis.tsx">
+  <BreadcrumbIconsEllipsis />
+</DemoPreview>
+
+## API Reference
+
+This component extends the native HTML element props.

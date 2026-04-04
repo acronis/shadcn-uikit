@@ -1,21 +1,84 @@
 ---
 title: Sonner
-description: Displays toast notifications for feedback and alerts.
+description: A toast notification system for displaying brief, non-intrusive messages.
 ---
 
-import { SonnerBasic, SonnerSuccess, SonnerError } from '@/components/demos/sonner';
+import { SonnerBasic, SonnerWithDescription, SonnerSuccess, SonnerError, SonnerWarning, SonnerWithAction, SonnerPromise, SonnerPositions } from '@/components/demos/sonner';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import { Toaster } from '@acronis-platform/shadcn-uikit';
+import { toast } from 'sonner';
+```
+
+Add `<Toaster />` to your root layout, then call `toast()` anywhere in your app.
+
+## Basic
+
+A simple toast notification.
+
+<DemoPreview sourcePath="packages/demos/src/sonner/SonnerBasic.tsx">
   <SonnerBasic />
 </DemoPreview>
 
-<DemoPreview>
+## With Description
+
+Toast with a title and description body.
+
+<DemoPreview sourcePath="packages/demos/src/sonner/SonnerWithDescription.tsx">
+  <SonnerWithDescription />
+</DemoPreview>
+
+## Success
+
+A success-styled toast notification.
+
+<DemoPreview sourcePath="packages/demos/src/sonner/SonnerSuccess.tsx">
   <SonnerSuccess />
 </DemoPreview>
 
-<DemoPreview>
+## Error
+
+An error-styled toast notification.
+
+<DemoPreview sourcePath="packages/demos/src/sonner/SonnerError.tsx">
   <SonnerError />
 </DemoPreview>
+
+## Warning
+
+A warning-styled toast notification.
+
+<DemoPreview sourcePath="packages/demos/src/sonner/SonnerWarning.tsx">
+  <SonnerWarning />
+</DemoPreview>
+
+## With Action
+
+Toast with an action button the user can click.
+
+<DemoPreview sourcePath="packages/demos/src/sonner/SonnerWithAction.tsx">
+  <SonnerWithAction />
+</DemoPreview>
+
+## Promise
+
+Toast that tracks a promise lifecycle (loading, success, error).
+
+<DemoPreview sourcePath="packages/demos/src/sonner/SonnerPromise.tsx">
+  <SonnerPromise />
+</DemoPreview>
+
+## Positions
+
+Toasts displayed at different screen positions.
+
+<DemoPreview sourcePath="packages/demos/src/sonner/SonnerPositions.tsx">
+  <SonnerPositions />
+</DemoPreview>
+
+## API Reference
+
+The `Toaster` component accepts all props from the `sonner` library's `Toaster`. Use the `toast()` function to trigger notifications with types: `toast()`, `toast.success()`, `toast.error()`, `toast.warning()`, `toast.info()`, `toast.loading()`, `toast.promise()`.

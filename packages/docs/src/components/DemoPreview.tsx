@@ -1,17 +1,34 @@
-'use client';
-
-import { type ReactNode, useState } from 'react';
+import { type ReactNode } from 'react';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { highlight } from 'fumadocs-core/highlight';
+import { CodeBlock } from 'fumadocs-ui/components/codeblock';
 
 interface DemoPreviewProps {
   children: ReactNode;
+  /** Path to source file, relative to monorepo root */
+  sourcePath?: string;
   /** Center content horizontally in the preview area */
   center?: boolean;
-  /** Source code string for "View source" toggle */
-  source?: string;
 }
 
-export function DemoPreview({ children, center, source }: DemoPreviewProps) {
-  const [showSource, setShowSource] = useState(false);
+export async function DemoPreview({ children, sourcePath, center }: DemoPreviewProps) {
+  let highlighted: ReactNode | undefined;
+
+  if (sourcePath) {
+    try {
+      const source = readFileSync(
+        resolve(process.cwd(), '..', '..', sourcePath),
+        'utf-8',
+      );
+      highlighted = await highlight(source, {
+        lang: 'tsx',
+        themes: { light: 'github-light', dark: 'github-dark' },
+      });
+    } catch {
+      // Source file not found or highlight failed — render without source toggle
+    }
+  }
 
   return (
     <div className="demo-preview my-6 rounded-xl border overflow-hidden shadow-sm">
@@ -20,21 +37,21 @@ export function DemoPreview({ children, center, source }: DemoPreviewProps) {
       >
         {children}
       </div>
-      <div className="demo-preview__footer border-t px-4 py-2 flex items-center justify-between">
+      <div className="demo-preview__footer border-t px-4 py-2 flex items-center">
         <span className="text-xs opacity-50">Preview</span>
-        {source && (
-          <button
-            onClick={() => setShowSource((v) => !v)}
-            className="text-xs opacity-60 hover:opacity-100 transition-opacity"
-          >
-            {showSource ? 'Hide source' : 'View source'}
-          </button>
-        )}
       </div>
-      {showSource && source && (
-        <pre className="demo-preview__source p-4 text-sm overflow-auto border-t m-0">
-          <code>{source}</code>
-        </pre>
+      {highlighted && (
+        <details className="group">
+          <summary className="demo-preview__footer border-t px-4 py-2 text-xs opacity-60 hover:opacity-100 cursor-pointer list-none select-none">
+            <span className="group-open:hidden">View source</span>
+            <span className="hidden group-open:inline">Hide source</span>
+          </summary>
+          <div className="border-t">
+            <CodeBlock className="rounded-none border-0 shadow-none my-0">
+              {highlighted}
+            </CodeBlock>
+          </div>
+        </details>
       )}
     </div>
   );

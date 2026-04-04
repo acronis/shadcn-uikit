@@ -1,3 +1,10 @@
 'use client';
 
-export { PasswordInputDefault, PasswordInputWithHint } from '@acronis-platform/shadcn-uikit-demos/password-input';
+export {
+  PasswordInputDefault,
+  PasswordInputFilled,
+  PasswordInputWithHint,
+  PasswordInputError,
+  PasswordInputDisabled,
+  PasswordInputSpecs,
+} from '@acronis-platform/shadcn-uikit-demos/password-input';

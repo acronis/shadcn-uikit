@@ -1,4 +1,4 @@
 {
   "title": "UIKit Docs",
-  "pages": ["index", "components"]
+  "pages": ["index", "getting-started", "theming", "components"]
 }

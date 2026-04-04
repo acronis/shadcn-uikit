@@ -1,17 +1,99 @@
 ---
 title: Carousel
-description: Displays a scrollable set of slides with navigation controls.
+description: A slideshow component for cycling through content.
 ---
 
-import { CarouselBasic, CarouselWithDots } from '@/components/demos/carousel';
+import {
+  CarouselBasic,
+  CarouselWithDots,
+  CarouselMultiple,
+  CarouselImageGallery,
+  CarouselTestimonials,
+  CarouselProducts,
+  CarouselVertical,
+  CarouselAutoplay,
+  CarouselFigmaStyle,
+} from '@/components/demos/carousel';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@acronis-platform/shadcn-uikit';
+```
+
+## Basic
+
+A simple carousel with navigation arrows.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselBasic.tsx">
   <CarouselBasic />
 </DemoPreview>
 
-<DemoPreview>
+## With dots
+
+Carousel with dot indicators for pagination.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselWithDots.tsx">
   <CarouselWithDots />
 </DemoPreview>
+
+## Multiple items
+
+Show multiple items per slide.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselMultiple.tsx">
+  <CarouselMultiple />
+</DemoPreview>
+
+## Image gallery
+
+A photo gallery carousel.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselImageGallery.tsx">
+  <CarouselImageGallery />
+</DemoPreview>
+
+## Testimonials
+
+A testimonial slider carousel.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselTestimonials.tsx">
+  <CarouselTestimonials />
+</DemoPreview>
+
+## Products
+
+A product showcase carousel.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselProducts.tsx">
+  <CarouselProducts />
+</DemoPreview>
+
+## Vertical
+
+A vertically scrolling carousel.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselVertical.tsx">
+  <CarouselVertical />
+</DemoPreview>
+
+## Autoplay
+
+Carousel with automatic slide progression.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselAutoplay.tsx">
+  <CarouselAutoplay />
+</DemoPreview>
+
+## Figma style
+
+A carousel styled to match Figma design specifications.
+
+<DemoPreview sourcePath="packages/demos/src/carousel/CarouselFigmaStyle.tsx">
+  <CarouselFigmaStyle />
+</DemoPreview>
+
+## API Reference
+
+This component extends the native HTML element props.

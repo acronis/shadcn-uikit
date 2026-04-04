@@ -1,3 +1,8 @@
 'use client';
 
-export { SwitchBasic, SwitchWithLabel } from '@acronis-platform/shadcn-uikit-demos/switch';
+export {
+  SwitchBasic,
+  SwitchWithLabel,
+  SwitchControlled,
+  SwitchForm,
+} from '@acronis-platform/shadcn-uikit-demos/switch';

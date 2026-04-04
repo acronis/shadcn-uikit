@@ -1,17 +1,81 @@
 ---
 title: Separator
-description: A visual divider between content sections.
+description: A visual divider that separates content horizontally or vertically.
 ---
 
-import { SeparatorHorizontal, SeparatorVertical } from '@/components/demos/separator';
+import { SeparatorHorizontal, SeparatorVertical, SeparatorWithText, SeparatorInNavigation, SeparatorInLists, SeparatorInCards, SeparatorInForms, SeparatorInToolbar } from '@/components/demos/separator';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import { Separator } from '@acronis-platform/shadcn-uikit';
+```
+
+## Horizontal
+
+A horizontal separator dividing content.
+
+<DemoPreview sourcePath="packages/demos/src/separator/SeparatorHorizontal.tsx">
   <SeparatorHorizontal />
 </DemoPreview>
 
-<DemoPreview>
+## Vertical
+
+A vertical separator between inline elements.
+
+<DemoPreview sourcePath="packages/demos/src/separator/SeparatorVertical.tsx">
   <SeparatorVertical />
 </DemoPreview>
+
+## With Text
+
+Separator with a label centered on the line.
+
+<DemoPreview sourcePath="packages/demos/src/separator/SeparatorWithText.tsx">
+  <SeparatorWithText />
+</DemoPreview>
+
+## In Navigation
+
+Separator used between navigation items.
+
+<DemoPreview sourcePath="packages/demos/src/separator/SeparatorInNavigation.tsx">
+  <SeparatorInNavigation />
+</DemoPreview>
+
+## In Lists
+
+Separator dividing list items.
+
+<DemoPreview sourcePath="packages/demos/src/separator/SeparatorInLists.tsx">
+  <SeparatorInLists />
+</DemoPreview>
+
+## In Cards
+
+Separator inside card layouts.
+
+<DemoPreview sourcePath="packages/demos/src/separator/SeparatorInCards.tsx">
+  <SeparatorInCards />
+</DemoPreview>
+
+## In Forms
+
+Separator grouping form sections.
+
+<DemoPreview sourcePath="packages/demos/src/separator/SeparatorInForms.tsx">
+  <SeparatorInForms />
+</DemoPreview>
+
+## In Toolbar
+
+Separator between toolbar action groups.
+
+<DemoPreview sourcePath="packages/demos/src/separator/SeparatorInToolbar.tsx">
+  <SeparatorInToolbar />
+</DemoPreview>
+
+## API Reference
+
+The Separator accepts an `orientation` prop (`"horizontal"` or `"vertical"`) and wraps the Base UI Separator primitive.

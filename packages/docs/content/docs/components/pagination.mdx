@@ -3,15 +3,63 @@ title: Pagination
 description: Controls for navigating between pages of content.
 ---
 
-import { PaginationFirstPage, PaginationCompact } from '@/components/demos/pagination';
+import { PaginationFirstPage, PaginationMiddlePage, PaginationLastPage, PaginationSimple, PaginationCompact } from '@/components/demos/pagination';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from '@acronis-platform/shadcn-uikit';
+```
+
+## Simple
+
+Basic pagination with page numbers.
+
+<DemoPreview sourcePath="packages/demos/src/pagination/PaginationSimple.tsx">
+  <PaginationSimple />
+</DemoPreview>
+
+## First Page
+
+Pagination when the first page is active.
+
+<DemoPreview sourcePath="packages/demos/src/pagination/PaginationFirstPage.tsx">
   <PaginationFirstPage />
 </DemoPreview>
 
-<DemoPreview>
+## Middle Page
+
+Pagination with ellipsis showing a middle page is active.
+
+<DemoPreview sourcePath="packages/demos/src/pagination/PaginationMiddlePage.tsx">
+  <PaginationMiddlePage />
+</DemoPreview>
+
+## Last Page
+
+Pagination when the last page is active.
+
+<DemoPreview sourcePath="packages/demos/src/pagination/PaginationLastPage.tsx">
+  <PaginationLastPage />
+</DemoPreview>
+
+## Compact
+
+A compact pagination variant with fewer controls.
+
+<DemoPreview sourcePath="packages/demos/src/pagination/PaginationCompact.tsx">
   <PaginationCompact />
 </DemoPreview>
+
+## API Reference
+
+Pagination sub-components (`Pagination`, `PaginationContent`, `PaginationItem`, `PaginationLink`, `PaginationPrevious`, `PaginationNext`, `PaginationEllipsis`) extend their underlying HTML element props.

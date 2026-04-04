@@ -1,3 +1,12 @@
 'use client';
 
-export { BasicSelect, GroupedSelect } from '@acronis-platform/shadcn-uikit-demos/select';
+export {
+  BasicSelect,
+  ControlledSelect,
+  GroupedSelect,
+  MultipleSelect,
+  ObjectValuesSelect,
+  DisabledSelect,
+  FormattedValueSelect,
+  ScrollableSelect,
+} from '@acronis-platform/shadcn-uikit-demos/select';

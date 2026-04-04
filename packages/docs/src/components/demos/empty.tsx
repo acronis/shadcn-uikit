@@ -2,18 +2,19 @@
 
 import dynamic from 'next/dynamic';
 
-export const EmptyBasic = dynamic(
-  () =>
-    import('@acronis-platform/shadcn-uikit-demos/empty').then(
-      (mod) => mod.EmptyBasic
-    ),
-  { ssr: false }
-);
+export { EmptyBasic } from '@acronis-platform/shadcn-uikit-demos/empty';
+export { EmptyWithAction } from '@acronis-platform/shadcn-uikit-demos/empty';
+export { EmptyWithButtonAndLink } from '@acronis-platform/shadcn-uikit-demos/empty';
+export { EmptyWithMultipleLinks } from '@acronis-platform/shadcn-uikit-demos/empty';
+export { EmptyOnlyLinks } from '@acronis-platform/shadcn-uikit-demos/empty';
+export { EmptyError } from '@acronis-platform/shadcn-uikit-demos/empty';
+export { EmptyDiscoveryAgent } from '@acronis-platform/shadcn-uikit-demos/empty';
 
-export const EmptyWithAction = dynamic(
+// Dynamic import for demo that references missing-icons
+export const EmptyVariousStates = dynamic(
   () =>
     import('@acronis-platform/shadcn-uikit-demos/empty').then(
-      (mod) => mod.EmptyWithAction
+      (mod) => mod.EmptyVariousStates
     ),
   { ssr: false }
 );

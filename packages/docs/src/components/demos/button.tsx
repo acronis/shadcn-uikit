@@ -1,3 +1,7 @@
 'use client';
-
-export { ButtonVariants, ButtonSizes } from '@acronis-platform/shadcn-uikit-demos/button';
+export {
+  ButtonVariants,
+  ButtonSizes,
+  ButtonDisabled,
+  ButtonTranslucent,
+} from '@acronis-platform/shadcn-uikit-demos/button';

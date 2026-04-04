@@ -17,3 +17,51 @@ export const SecondaryMenuWithIcons = dynamic(
     ),
   { ssr: false }
 );
+
+export const SecondaryMenuWithGroups = dynamic(
+  () =>
+    import('@acronis-platform/shadcn-uikit-demos/secondary-menu').then(
+      (mod) => mod.SecondaryMenuWithGroups
+    ),
+  { ssr: false }
+);
+
+export const SecondaryMenuWithTags = dynamic(
+  () =>
+    import('@acronis-platform/shadcn-uikit-demos/secondary-menu').then(
+      (mod) => mod.SecondaryMenuWithTags
+    ),
+  { ssr: false }
+);
+
+export const SecondaryMenuWithRightIcons = dynamic(
+  () =>
+    import('@acronis-platform/shadcn-uikit-demos/secondary-menu').then(
+      (mod) => mod.SecondaryMenuWithRightIcons
+    ),
+  { ssr: false }
+);
+
+export const SecondaryMenuWithDisabled = dynamic(
+  () =>
+    import('@acronis-platform/shadcn-uikit-demos/secondary-menu').then(
+      (mod) => mod.SecondaryMenuWithDisabled
+    ),
+  { ssr: false }
+);
+
+export const SecondaryMenuComplete = dynamic(
+  () =>
+    import('@acronis-platform/shadcn-uikit-demos/secondary-menu').then(
+      (mod) => mod.SecondaryMenuComplete
+    ),
+  { ssr: false }
+);
+
+export const SecondaryMenuSpecs = dynamic(
+  () =>
+    import('@acronis-platform/shadcn-uikit-demos/secondary-menu').then(
+      (mod) => mod.SecondaryMenuSpecs
+    ),
+  { ssr: false }
+);

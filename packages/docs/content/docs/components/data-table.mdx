@@ -1,13 +1,25 @@
 ---
-title: Data Table
+title: DataTable
 description: A feature-rich table with sorting, filtering, and pagination.
 ---
 
 import { DataTableFull } from '@/components/demos/data-table';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import { DataTable } from '@acronis-platform/shadcn-uikit';
+```
+
+## Full example
+
+A complete data table with column sorting, filtering, pagination, and row selection.
+
+<DemoPreview sourcePath="packages/demos/src/data-table/DataTableFull.tsx">
   <DataTableFull />
 </DemoPreview>
+
+## API Reference
+
+This component extends the `@tanstack/react-table` table options.

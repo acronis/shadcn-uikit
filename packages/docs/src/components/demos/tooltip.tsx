@@ -1,3 +1,10 @@
 'use client';
 
-export { TooltipBasic, TooltipPositions } from '@acronis-platform/shadcn-uikit-demos/tooltip';
+export {
+  TooltipBasic,
+  TooltipWithIcon,
+  TooltipPositions,
+  TooltipLongText,
+  TooltipCustomDelay,
+  TooltipMultiple,
+} from '@acronis-platform/shadcn-uikit-demos/tooltip';

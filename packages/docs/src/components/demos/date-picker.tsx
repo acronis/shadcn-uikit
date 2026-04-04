@@ -1,3 +1,11 @@
 'use client';
-
-export { DatePickerBasic, DatePickerRange } from '@acronis-platform/shadcn-uikit-demos/date-picker';
+export {
+  DatePickerBasic,
+  DatePickerSmall,
+  DatePickerWithLabel,
+  DatePickerRange,
+  DatePickerForm,
+  DatePickerFormats,
+  DatePickerPresets,
+  DatePickerDisabled,
+} from '@acronis-platform/shadcn-uikit-demos/date-picker';

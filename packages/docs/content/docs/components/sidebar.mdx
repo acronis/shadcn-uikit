@@ -1,17 +1,58 @@
 ---
 title: Sidebar
-description: A collapsible side panel for primary application navigation.
+description: An application sidebar layout with collapsible navigation, grouping, and mobile support.
 ---
 
-import { SidebarFull, SidebarWithSections } from '@/components/demos/sidebar';
+import { SidebarFull, SidebarIconsOnly, SidebarWithBadges, SidebarWithSections } from '@/components/demos/sidebar';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import {
+  SidebarProvider,
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+} from '@acronis-platform/shadcn-uikit';
+```
+
+## Full
+
+A complete sidebar with header, grouped menu items, and footer.
+
+<DemoPreview sourcePath="packages/demos/src/sidebar/SidebarFull.tsx">
   <SidebarFull />
 </DemoPreview>
 
-<DemoPreview>
+## Icons Only
+
+Collapsed sidebar showing only icons, expanding on hover.
+
+<DemoPreview sourcePath="packages/demos/src/sidebar/SidebarIconsOnly.tsx">
+  <SidebarIconsOnly />
+</DemoPreview>
+
+## With Badges
+
+Sidebar menu items with notification badges.
+
+<DemoPreview sourcePath="packages/demos/src/sidebar/SidebarWithBadges.tsx">
+  <SidebarWithBadges />
+</DemoPreview>
+
+## With Sections
+
+Sidebar organized into labeled sections with group labels.
+
+<DemoPreview sourcePath="packages/demos/src/sidebar/SidebarWithSections.tsx">
   <SidebarWithSections />
 </DemoPreview>
+
+## API Reference
+
+The Sidebar is a compound component. Wrap your layout with `SidebarProvider` and use the `useSidebar` hook to access collapse state. Key props on `Sidebar`: `side` (`"left"` | `"right"`), `variant` (`"sidebar"` | `"floating"` | `"inset"`), `collapsible` (`"offcanvas"` | `"icon"` | `"none"`).

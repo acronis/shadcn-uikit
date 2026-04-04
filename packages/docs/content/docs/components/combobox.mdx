@@ -3,15 +3,61 @@ title: Combobox
 description: A searchable dropdown for selecting from a list of options.
 ---
 
-import { ComboboxBasic, ComboboxWidths } from '@/components/demos/combobox';
+import {
+  ComboboxBasic,
+  ComboboxWidths,
+  ComboboxSmall,
+  ComboboxForm,
+  ComboboxDisabled,
+} from '@/components/demos/combobox';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import { Combobox } from '@acronis-platform/shadcn-uikit';
+```
+
+## Basic
+
+A basic searchable select dropdown.
+
+<DemoPreview sourcePath="packages/demos/src/combobox/ComboboxBasic.tsx">
   <ComboboxBasic />
 </DemoPreview>
 
-<DemoPreview>
+## Widths
+
+Combobox with different width configurations.
+
+<DemoPreview sourcePath="packages/demos/src/combobox/ComboboxWidths.tsx">
   <ComboboxWidths />
 </DemoPreview>
+
+## Small
+
+A compact combobox variant for tighter layouts.
+
+<DemoPreview sourcePath="packages/demos/src/combobox/ComboboxSmall.tsx">
+  <ComboboxSmall />
+</DemoPreview>
+
+## In a form
+
+Combobox integrated with form validation.
+
+<DemoPreview sourcePath="packages/demos/src/combobox/ComboboxForm.tsx">
+  <ComboboxForm />
+</DemoPreview>
+
+## Disabled state
+
+A disabled combobox that cannot be interacted with.
+
+<DemoPreview sourcePath="packages/demos/src/combobox/ComboboxDisabled.tsx">
+  <ComboboxDisabled />
+</DemoPreview>
+
+## API Reference
+
+This component is a composition of Command and Popover primitives.

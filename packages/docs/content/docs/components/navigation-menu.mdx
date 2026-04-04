@@ -1,13 +1,54 @@
 ---
 title: Navigation Menu
-description: A horizontal or vertical menu for navigating between sections.
+description: A horizontal navigation bar for switching between top-level sections.
 ---
 
-import { NavigationMenuSimple } from '@/components/demos/navigation-menu';
+import { NavigationMenuSimple, NavigationMenuHorizontal, NavigationMenuWithIcons, NavigationMenuSecondaryTab } from '@/components/demos/navigation-menu';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuLink,
+} from '@acronis-platform/shadcn-uikit';
+```
+
+## Simple
+
+A minimal navigation menu with text links.
+
+<DemoPreview sourcePath="packages/demos/src/navigation-menu/NavigationMenuSimple.tsx">
   <NavigationMenuSimple />
 </DemoPreview>
+
+## Horizontal
+
+Navigation menu with dropdown content panels.
+
+<DemoPreview sourcePath="packages/demos/src/navigation-menu/NavigationMenuHorizontal.tsx">
+  <NavigationMenuHorizontal />
+</DemoPreview>
+
+## With Icons
+
+Navigation items enhanced with icons.
+
+<DemoPreview sourcePath="packages/demos/src/navigation-menu/NavigationMenuWithIcons.tsx">
+  <NavigationMenuWithIcons />
+</DemoPreview>
+
+## Secondary Tab
+
+Navigation menu styled as secondary tabs.
+
+<DemoPreview sourcePath="packages/demos/src/navigation-menu/NavigationMenuSecondaryTab.tsx">
+  <NavigationMenuSecondaryTab />
+</DemoPreview>
+
+## API Reference
+
+This component re-exports primitives from Radix UI Navigation Menu. Refer to the [Radix UI docs](https://www.radix-ui.com/primitives/docs/components/navigation-menu) for the full API.

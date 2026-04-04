@@ -1,17 +1,70 @@
 ---
 title: Tooltip
-description: A brief informational popup triggered on hover or focus.
+description: A small overlay that appears on hover to provide additional context.
 ---
 
-import { TooltipBasic, TooltipPositions } from '@/components/demos/tooltip';
+import { TooltipBasic, TooltipWithIcon, TooltipPositions, TooltipLongText, TooltipCustomDelay, TooltipMultiple } from '@/components/demos/tooltip';
 import { DemoPreview } from '@/components/DemoPreview';
 
-## Examples
+## Usage
 
-<DemoPreview>
+```tsx
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from '@acronis-platform/shadcn-uikit';
+```
+
+## Basic
+
+A simple tooltip on hover.
+
+<DemoPreview sourcePath="packages/demos/src/tooltip/TooltipBasic.tsx">
   <TooltipBasic />
 </DemoPreview>
 
-<DemoPreview>
+## With Icon
+
+Tooltip triggered by an icon button.
+
+<DemoPreview sourcePath="packages/demos/src/tooltip/TooltipWithIcon.tsx">
+  <TooltipWithIcon />
+</DemoPreview>
+
+## Positions
+
+Tooltips placed on different sides of the trigger.
+
+<DemoPreview sourcePath="packages/demos/src/tooltip/TooltipPositions.tsx">
   <TooltipPositions />
 </DemoPreview>
+
+## Long Text
+
+Tooltip with longer descriptive text.
+
+<DemoPreview sourcePath="packages/demos/src/tooltip/TooltipLongText.tsx">
+  <TooltipLongText />
+</DemoPreview>
+
+## Custom Delay
+
+Tooltip with a custom open/close delay.
+
+<DemoPreview sourcePath="packages/demos/src/tooltip/TooltipCustomDelay.tsx">
+  <TooltipCustomDelay />
+</DemoPreview>
+
+## Multiple
+
+Several tooltips on different elements.
+
+<DemoPreview sourcePath="packages/demos/src/tooltip/TooltipMultiple.tsx">
+  <TooltipMultiple />
+</DemoPreview>
+
+## API Reference
+
+Tooltip sub-components (`Tooltip`, `TooltipTrigger`, `TooltipContent`, `TooltipProvider`) extend Radix UI Tooltip primitive props.

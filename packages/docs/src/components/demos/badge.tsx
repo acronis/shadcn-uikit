@@ -1,3 +1,9 @@
 'use client';
-
-export { BadgeDefaultVariants } from '@acronis-platform/shadcn-uikit-demos/badge';
+export {
+  BadgeStatusVariants,
+  BadgeDefaultVariants,
+  BadgeSmall,
+  BadgeWithIcons,
+  BadgeStatusIndicators,
+  BadgeNotificationCounts,
+} from '@acronis-platform/shadcn-uikit-demos/badge';
