@@ -37,7 +37,7 @@ export const Vertical: Story = {
           <span className="font-semibold">Top</span>
         </div>
       </ResizablePanel>
-      <ResizableHandle />
+      <ResizableHandle withHandle />
       <ResizablePanel defaultSize={50}>
         <div className="flex h-full items-center justify-center p-6">
           <span className="font-semibold">Bottom</span>
