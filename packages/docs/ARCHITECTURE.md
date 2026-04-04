@@ -2,7 +2,7 @@
 
 ## Overview
 
-Shadcn UIKit is built on top of [shadcn/ui](https://ui.shadcn.com/) for React and [shadcn-vue](https://www.shadcn-vue.com/) for Vue, providing a consistent design system styled with Acronis brand colors and design tokens.
+Acronis UIKit is built on top of [shadcn/ui](https://ui.shadcn.com/) for React and [shadcn-vue](https://www.shadcn-vue.com/) for Vue, providing a consistent design system styled with Acronis brand colors and design tokens.
 
 ## Design Philosophy
 
