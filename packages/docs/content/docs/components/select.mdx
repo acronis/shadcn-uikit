@@ -84,6 +84,8 @@ Select with a long list of options that scrolls.
 
 ## API Reference
 
-{/* No exported Props interface — Select sub-components wrap Base UI Select primitives */}
+### SelectContent
 
-The `Select` root wraps Base UI `Select.Root` and accepts `value`, `defaultValue`, and `onValueChange` for controlled usage. `SelectContent` extends `Select.Popup` props with `alignItemWithTrigger` (boolean), `side` (`"top"` | `"bottom"`), `sideOffset` (number, default `4`), and `portal` (boolean, default `true`). `SelectTrigger`, `SelectItem`, `SelectLabel`, and `SelectSeparator` extend their respective Base UI primitive props.
+<AutoTypeTable path="../ui/src/components/ui/select.docs.ts" name="SelectContentProps" />
+
+`Select` wraps Base UI `Select.Root` and accepts `value`, `defaultValue`, and `onValueChange`. `SelectTrigger`, `SelectItem`, `SelectLabel`, and `SelectSeparator` extend their respective Base UI primitive props.
