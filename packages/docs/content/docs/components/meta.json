@@ -11,16 +11,21 @@
     "date-picker",
     "form",
     "input",
+    "label",
     "password-input",
     "radio-group",
     "select",
+    "slider",
     "switch",
     "textarea",
+    "toggle",
+    "toggle-group",
 
     "---Overlay & Dialogs---",
     "dialog",
     "dropdown-menu",
     "popover",
+    "sheet",
     "tooltip",
 
     "---Data Display---",
@@ -32,6 +37,7 @@
     "empty",
     "filter",
     "progress",
+    "skeleton",
     "spinner",
     "table",
     "tag",
@@ -49,8 +55,11 @@
     "calendar",
     "carousel",
     "container",
+    "resizable",
+    "scroll-area",
     "separator",
     "sonner",
+    "toast",
     "tree"
   ]
 }

@@ -4,6 +4,7 @@ import {
   DocsBody,
   DocsTitle,
   DocsDescription,
+  EditOnGitHub,
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
@@ -20,12 +21,15 @@ export default async function Page({
 
   const MDX = page.data.body;
 
+  const editUrl = `https://github.com/acronis/shadcn-uikit/edit/main/packages/docs/content/${page.path}`;
+
   return (
     <DocsPage toc={page.data.toc}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDX components={{ ...defaultMdxComponents, AutoTypeTable }} />
+        <EditOnGitHub href={editUrl} />
       </DocsBody>
     </DocsPage>
   );
