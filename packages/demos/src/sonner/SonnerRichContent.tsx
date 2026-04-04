@@ -1,4 +1,4 @@
-import { toast } from 'sonner'
+import { toast } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 
 export function SonnerRichContent() {

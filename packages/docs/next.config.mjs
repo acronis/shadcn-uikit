@@ -9,6 +9,10 @@ const withMDX = createMDX();
 // paths that can't resolve @radix-ui/react-dialog. We alias the import so
 // webpack can find it from the docs package's own dependencies.
 const radixDialogDir = dirname(require.resolve('@radix-ui/react-dialog'));
+// Force a single sonner instance across the bundle. packages/demos uses React 18
+// peers so pnpm installs a separate sonner build; without this alias, toast()
+// from demos fires on a different event bus than the <Toaster> in the docs layout.
+const sonnerDir = dirname(require.resolve('sonner'));
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -25,6 +29,7 @@ const config = {
   },
   webpack: (config) => {
     config.resolve.alias['@radix-ui/react-dialog'] = radixDialogDir;
+    config.resolve.alias['sonner'] = sonnerDir;
     return config;
   },
 };

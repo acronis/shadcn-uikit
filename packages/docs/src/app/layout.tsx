@@ -8,8 +8,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <RootProvider>{children}</RootProvider>
-        <Toaster />
+        <RootProvider>
+          {children}
+          <Toaster />
+        </RootProvider>
       </body>
     </html>
   );
