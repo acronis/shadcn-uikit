@@ -1572,6 +1572,7 @@ import ZtcNotarizeO16Svg from './svg/ztc-notarize-o--16.svg?react'
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
   className?: string
+  size?: number
 }
 
 export type IconSize = 16 | 24 | 32 | 48 | 72 | 96
