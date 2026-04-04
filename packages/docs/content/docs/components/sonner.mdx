@@ -81,4 +81,6 @@ Toasts displayed at different screen positions.
 
 ## API Reference
 
-The `Toaster` component accepts all props from the `sonner` library's `Toaster`. Use the `toast()` function to trigger notifications with types: `toast()`, `toast.success()`, `toast.error()`, `toast.warning()`, `toast.info()`, `toast.loading()`, `toast.promise()`.
+{/* No exported Props interface — ToasterProps is defined internally as React.ComponentProps<typeof Sonner> */}
+
+The `Toaster` component accepts all props from the `sonner` library's `Toaster` (`React.ComponentProps<typeof Sonner>`). It pre-configures theme integration, custom icons for each toast type, and Acronis-branded styling. Use the `toast()` function to trigger notifications: `toast()`, `toast.success()`, `toast.error()`, `toast.warning()`, `toast.info()`, `toast.loading()`, `toast.promise()`.

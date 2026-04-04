@@ -94,4 +94,6 @@ Progress bar with user-controlled value.
 
 ## API Reference
 
-The Progress component wraps Base UI Progress primitives. Pass `value` as a number (0-100) or `null` for indeterminate state.
+{/* No exported Props interface — Progress extends Base UI Progress.Root props */}
+
+The `Progress` component wraps Base UI Progress primitives and extends `React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>`. Pass `value` as a number (0-100) or `null` for indeterminate state (displays an animated progress indicator).

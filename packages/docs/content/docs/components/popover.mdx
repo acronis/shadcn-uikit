@@ -78,4 +78,6 @@ Popover used as a filter dropdown.
 
 ## API Reference
 
-This component wraps Base UI Popover primitives. The `PopoverContent` accepts `side`, `align`, and `sideOffset` props for positioning.
+{/* No exported Props interface — PopoverContent uses inline extended props */}
+
+This component wraps Base UI Popover primitives. `PopoverContent` extends `Popover.Popup` props with `align` (`"start"` | `"center"` | `"end"`), `side` (`"top"` | `"bottom"` | `"left"` | `"right"` | `"inline-end"` | `"inline-start"`), `sideOffset` (number, default `4`), and `portal` (boolean, default `true`) for positioning.

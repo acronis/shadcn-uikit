@@ -132,4 +132,6 @@ A full toolbar combining multiple button groups.
 
 ## API Reference
 
-This component extends the native HTML element props.
+{/* No exported Props interface — ButtonGroup uses inline VariantProps<typeof buttonGroupVariants> & React.ComponentProps<'div'> */}
+
+The `ButtonGroup` component accepts an `orientation` prop (`"horizontal"` | `"vertical"`) plus all standard HTML `div` attributes. `ButtonGroupText` accepts an `asChild` prop. `ButtonGroupSeparator` extends the `Separator` component props.

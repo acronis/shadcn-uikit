@@ -96,4 +96,6 @@ A carousel styled to match Figma design specifications.
 
 ## API Reference
 
-This component extends the native HTML element props.
+{/* No exported Props interface — CarouselProps is defined internally and not exported */}
+
+The `Carousel` component accepts `opts` (Embla Carousel options), `plugins` (Embla plugins), `orientation` (`"horizontal"` | `"vertical"`), and `setApi` (callback receiving the Embla API instance), plus all standard HTML `div` attributes. Sub-components `CarouselContent`, `CarouselItem`, `CarouselPrevious`, and `CarouselNext` extend their native element props.

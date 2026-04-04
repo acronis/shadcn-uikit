@@ -85,4 +85,6 @@ Design specification overview.
 
 ## API Reference
 
-SecondaryMenu sub-components (`SecondaryMenu`, `SecondaryMenuGroup`, `SecondaryMenuItem`) are built on native HTML elements with custom styling.
+{/* No exported Props interface — SecondaryMenuProps, SecondaryMenuGroupProps, SecondaryMenuItemProps are defined but not exported */}
+
+`SecondaryMenu` accepts standard HTML `div` attributes. `SecondaryMenuGroup` accepts a `title` string prop for the group label. `SecondaryMenuItem` accepts `active` (boolean), `icon` (ReactNode), `iconPosition` (`"left"` | `"right"`), `tag` (string for badge display), and `asChild` (boolean), plus all native `button` element props. `SecondaryMenuContent`, `SecondaryMenuHeader`, and `SecondaryMenuFooter` accept standard HTML `div` attributes.

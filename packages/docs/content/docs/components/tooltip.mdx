@@ -67,4 +67,6 @@ Several tooltips on different elements.
 
 ## API Reference
 
-Tooltip sub-components (`Tooltip`, `TooltipTrigger`, `TooltipContent`, `TooltipProvider`) extend Radix UI Tooltip primitive props.
+{/* No exported Props interface — TooltipContentProps is defined internally and not exported */}
+
+Tooltip sub-components wrap Base UI Tooltip primitives. `TooltipContent` extends `Tooltip.Popup` props with `sideOffset` (number, default `5`), `side` (`"top"` | `"bottom"` | `"left"` | `"right"`, default `"top"`), and `align` positioning props. `TooltipProvider`, `Tooltip`, and `TooltipTrigger` are direct re-exports of Base UI primitives.

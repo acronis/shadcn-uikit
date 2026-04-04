@@ -69,4 +69,6 @@ A settings form with switches and toggles.
 
 ## API Reference
 
-This component is built on `react-hook-form` and extends its `FormProvider` props.
+{/* No exported Props interface — Form sub-components use react-hook-form and native HTML element props */}
+
+The `Form` component is a re-export of `react-hook-form`'s `FormProvider`. `FormField` accepts `ControllerProps` from `react-hook-form`. Sub-components `FormItem`, `FormLabel`, `FormControl`, `FormDescription`, and `FormMessage` extend their native HTML element props and connect to form context via the `useFormField` hook.

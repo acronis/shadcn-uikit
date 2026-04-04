@@ -22,4 +22,6 @@ Alerts come in different variants to convey different levels of importance.
 
 ## API Reference
 
-This component extends the native HTML element props.
+{/* No exported Props interface — Alert uses inline VariantProps<typeof alertVariants> & React.HTMLAttributes<HTMLDivElement> */}
+
+The `Alert` component accepts a `variant` prop (`"info"` | `"success"` | `"warning"` | `"critical"` | `"destructive"` | `"ai"` | `"neutral"`) plus all standard HTML `div` attributes. Sub-components `AlertIcon`, `AlertContent`, `AlertTitle`, and `AlertDescription` extend native HTML element props.

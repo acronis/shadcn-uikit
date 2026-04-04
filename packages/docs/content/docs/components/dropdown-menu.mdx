@@ -128,4 +128,6 @@ A full-featured dropdown menu combining multiple patterns.
 
 ## API Reference
 
-This component is built on Base UI Menu primitives.
+{/* No exported Props interface — DropdownMenu sub-components use Base UI Menu primitive props inline */}
+
+The DropdownMenu is built on Base UI Menu primitives. `DropdownMenuContent` extends `Menu.Popup` props with `portal` (boolean), `sideOffset` (number), `align`, and `side` positioning props. `DropdownMenuItem` and `DropdownMenuSubTrigger` accept an `inset` boolean for left padding. `DropdownMenuLabel` also accepts `inset`. `DropdownMenuCheckboxItem` and `DropdownMenuRadioItem` extend their respective Base UI primitive props.

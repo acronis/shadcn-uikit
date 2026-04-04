@@ -105,4 +105,6 @@ A dialog with scrollable content for long text.
 
 ## API Reference
 
-This component is built on Base UI Dialog primitives.
+{/* No exported Props interface — Dialog sub-components use Base UI Dialog primitive props inline */}
+
+The Dialog is built on Base UI Dialog primitives. `Dialog` wraps `Dialog.Root`, `DialogTrigger` wraps `Dialog.Trigger`, and `DialogContent` extends `Dialog.Popup` props with an additional `portal` boolean prop (default `true`). `DialogHeader`, `DialogFooter`, and `DialogBody` accept standard HTML `div` attributes. `DialogTitle` and `DialogDescription` extend their respective Base UI primitive props.
