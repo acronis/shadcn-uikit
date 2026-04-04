@@ -5,12 +5,11 @@ import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { Calendar } from '@acronis-platform/shadcn-uikit/react'
 import { Popover, PopoverContent, PopoverTrigger } from '@acronis-platform/shadcn-uikit/react'
 
+type DateRange = { from: Date | undefined; to?: Date | undefined }
+
 import { CalendarIcon } from '@acronis-platform/shadcn-uikit'
 export function DatePickerRange() {
-  const [dateRange, setDateRange] = React.useState<{
-    from: Date | undefined
-    to: Date | undefined
-  }>({
+  const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
     from: undefined,
     to: undefined,
   })

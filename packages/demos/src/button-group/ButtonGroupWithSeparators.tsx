@@ -1,6 +1,6 @@
 import { Button, ButtonGroup, ButtonGroupSeparator } from '@acronis-platform/shadcn-uikit/react'
 import { ClipboardIcon, CopyIcon } from '@acronis-platform/shadcn-uikit'
-import { RedoIcon, ScissorsIcon, UndoIcon } from '@/icons/missing-icons'
+import { RedoIcon, ScissorsIcon, UndoIcon } from '../icons/missing-icons'
 export function ButtonGroupWithSeparators() {
   return (
     <ButtonGroup>

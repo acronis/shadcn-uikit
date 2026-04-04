@@ -9,7 +9,7 @@ import {
   DropdownMenuShortcut,
 } from '@acronis-platform/shadcn-uikit/react'
 import { SettingsIcon, UserIcon } from '@acronis-platform/shadcn-uikit'
-import { CreditCardIcon, KeyboardIcon } from '@/icons/missing-icons'
+import { CreditCardIcon, KeyboardIcon } from '../icons/missing-icons'
 export function DropdownMenuWithLabels() {
   return (
     <DropdownMenu>

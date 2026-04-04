@@ -27,10 +27,10 @@ const formSchema = z.object({
   marketing: z.boolean().default(false),
   security: z.boolean().default(true),
   language: z.string({
-    required_error: 'Please select a language.',
+    message: 'Please select a language.',
   }),
   theme: z.enum(['light', 'dark', 'system'], {
-    required_error: 'Please select a theme.',
+    message: 'Please select a theme.',
   }),
 })
 

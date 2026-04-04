@@ -1,5 +1,5 @@
 import React from 'react';
-import { BotModeSelectorProps, BotMode } from '../../../../lib/chat/types';
+import { BotModeSelectorProps, BotMode } from '@/lib/chat/types';
 import { Button } from '@acronis-platform/shadcn-uikit/react';
 import { cn } from '@acronis-platform/shadcn-uikit/react'
 

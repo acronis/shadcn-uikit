@@ -1,6 +1,6 @@
 import { Input } from '@acronis-platform/shadcn-uikit/react'
 import { CalendarIcon, PhoneIcon, UserIcon } from '@acronis-platform/shadcn-uikit'
-import { CreditCardIcon } from '@/icons/missing-icons'
+import { CreditCardIcon } from '../icons/missing-icons'
 export function InputVariousTypes() {
   return (
     <div className="space-y-4">

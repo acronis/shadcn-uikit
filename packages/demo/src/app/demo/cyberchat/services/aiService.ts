@@ -4,9 +4,11 @@
  * based on keywords and patterns in the user's input
  */
 
+type BadgeVariant = 'default' | 'outline' | 'secondary'
+
 interface AIResponse {
   content: string
-  badges?: Array<{ text: string; variant?: 'default' | 'outline' | 'secondary' }>
+  badges?: Array<{ text: string; variant?: BadgeVariant }>
 }
 
 /**
@@ -20,7 +22,7 @@ export async function generateAIResponse(userMessage: string): Promise<AIRespons
 
   // Contextual responses based on keywords
   if (lowerMessage.includes('feedback') || lowerMessage.includes('triage')) {
-    const responses = [
+    const responses: AIResponse[] = [
       {
         content: `Okay so customer feedback triage - this is actually fascinating because most companies completely mess this up. Let me break down what actually works:
 
@@ -62,7 +64,7 @@ Are you building this from scratch or integrating with existing tools?`,
   }
 
   if (lowerMessage.includes('security') || lowerMessage.includes('cybersecurity')) {
-    const responses = [
+    const responses: AIResponse[] = [
       {
         content: `Cybersecurity in 2025 is wild. Zero Trust isn't just a buzzword anymore - it's basically mandatory if you're handling any sensitive data.
 
@@ -103,7 +105,7 @@ What specific area are you most concerned about?`,
   }
 
   if (lowerMessage.includes('design') || lowerMessage.includes('ui') || lowerMessage.includes('ux')) {
-    const responses = [
+    const responses: AIResponse[] = [
       {
         content: `UI/UX design right now is all about systems thinking. You can't just design screens anymore - you need a whole design system or you'll end up with inconsistent garbage.
 
@@ -151,7 +153,7 @@ Are you designing for web, mobile, or both?`,
   }
 
   if (lowerMessage.includes('code') || lowerMessage.includes('programming') || lowerMessage.includes('development')) {
-    const responses = [
+    const responses: AIResponse[] = [
       {
         content: `Development best practices! Alright, let's talk about what actually matters vs what people argue about on Twitter.
 

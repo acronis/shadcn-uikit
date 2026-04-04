@@ -5,7 +5,7 @@ import {
   StarIcon,
   UserIcon,
 } from '@acronis-platform/shadcn-uikit'
-import { HeartIcon, TagIcon } from '@/icons/missing-icons'
+import { HeartIcon, TagIcon } from '../icons/missing-icons'
 export function ChipWithIcons() {
   return (
     <div className="flex flex-wrap gap-2">

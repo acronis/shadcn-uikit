@@ -8,7 +8,7 @@ import {
 } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 import { CalendarIcon, MailIcon, ShoppingCartIcon } from '@acronis-platform/shadcn-uikit'
-import { DatabaseIcon } from '@/icons/missing-icons'
+import { DatabaseIcon } from '../icons/missing-icons'
 export function EmptyVariousStates() {
   return (
     <div className="grid gap-4 md:grid-cols-2">

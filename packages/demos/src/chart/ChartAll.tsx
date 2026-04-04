@@ -416,7 +416,7 @@ export function ChartAll() {
                       dataKey="value"
                     >
                       {pieData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
+                        <Cell key={`cell-${index}`} fill={(entry as any).color} />
                       ))}
                     </Pie>
                     <ChartTooltip content={<ChartTooltipContent />} />

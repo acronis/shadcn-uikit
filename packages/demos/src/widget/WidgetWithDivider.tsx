@@ -8,7 +8,7 @@ import {
   WidgetValue,
   WidgetLabel,
 } from '@acronis-platform/shadcn-uikit/react'
-import { ActivityIcon } from '@/icons/missing-icons'
+import { ActivityIcon } from '../icons/missing-icons'
 export function WidgetWithDivider() {
   return (
     <Widget className="w-[350px]">

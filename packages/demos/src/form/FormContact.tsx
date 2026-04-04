@@ -35,7 +35,7 @@ const formSchema = z.object({
     message: 'Message must be at least 10 characters.',
   }),
   priority: z.enum(['low', 'medium', 'high'], {
-    required_error: 'Please select a priority level.',
+    message: 'Please select a priority level.',
   }),
 })
 

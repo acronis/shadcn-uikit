@@ -109,7 +109,7 @@ import {
   TimesCircleIcon,
   WarningCircleIcon,
 } from '@acronis-platform/shadcn-uikit'
-import { DatabaseIcon } from '@/icons/missing-icons'
+import { DatabaseIcon } from '../icons/missing-icons'
 // ── Sample Data ──
 
 const barData = [

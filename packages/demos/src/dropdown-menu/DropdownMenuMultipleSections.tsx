@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
 import { MailIcon, MessagesIcon, SettingsIcon } from '@acronis-platform/shadcn-uikit'
-import { KeyboardIcon } from '@/icons/missing-icons'
+import { KeyboardIcon } from '../icons/missing-icons'
 export function DropdownMenuMultipleSections() {
   return (
     <DropdownMenu>

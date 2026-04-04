@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '@acronis-platform/shadcn-uikit/react'
 import { SettingsIcon, UserIcon } from '@acronis-platform/shadcn-uikit'
-import { CreditCardIcon, LogOutIcon } from '@/icons/missing-icons'
+import { CreditCardIcon, LogOutIcon } from '../icons/missing-icons'
 export function DropdownMenuBasic() {
   return (
     <DropdownMenu>

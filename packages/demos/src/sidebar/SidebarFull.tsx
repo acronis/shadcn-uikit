@@ -28,7 +28,7 @@ import {
   UserIcon,
   UsersIcon,
 } from '@acronis-platform/shadcn-uikit'
-import { BarChartIcon } from '@/icons/missing-icons'
+import { BarChartIcon } from '../icons/missing-icons'
 export function SidebarFull() {
   const [activeItem, setActiveItem] = useState('home')
 

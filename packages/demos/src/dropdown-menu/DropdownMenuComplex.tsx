@@ -27,7 +27,7 @@ import {
   LogOutIcon,
   PlusCircleIcon,
   UserPlusIcon,
-} from '@/icons/missing-icons'
+} from '../icons/missing-icons'
 export function DropdownMenuComplex() {
   const [showStatusBar, setShowStatusBar] = useState(true)
   const [showActivityBar, setShowActivityBar] = useState(false)

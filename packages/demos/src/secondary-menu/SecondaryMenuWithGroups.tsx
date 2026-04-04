@@ -14,7 +14,7 @@ import {
   UploadIcon,
   VideosIcon,
 } from '@acronis-platform/shadcn-uikit'
-import { MusicIcon } from '@/icons/missing-icons'
+import { MusicIcon } from '../icons/missing-icons'
 export function SecondaryMenuWithGroups() {
   const [activeItem, setActiveItem] = useState('documents')
 

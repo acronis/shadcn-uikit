@@ -1,6 +1,6 @@
 import { Tree, TreeNode } from '@acronis-platform/shadcn-uikit/react'
 import { FileTextIcon, FolderIcon } from '@acronis-platform/shadcn-uikit'
-import { CodeIcon } from '@/icons/missing-icons'
+import { CodeIcon } from '../icons/missing-icons'
 const projectData: TreeNode[] = [
   {
     id: 'src',

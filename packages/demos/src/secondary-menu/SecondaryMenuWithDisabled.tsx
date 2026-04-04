@@ -6,7 +6,7 @@ import {
   SecondaryMenuItem,
 } from '@acronis-platform/shadcn-uikit/react'
 import { FileTextIcon, ImageIcon, VideosIcon } from '@acronis-platform/shadcn-uikit'
-import { MusicIcon } from '@/icons/missing-icons'
+import { MusicIcon } from '../icons/missing-icons'
 export function SecondaryMenuWithDisabled() {
   const [activeItem, setActiveItem] = useState('opt1')
 

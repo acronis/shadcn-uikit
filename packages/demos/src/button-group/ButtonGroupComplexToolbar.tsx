@@ -11,7 +11,7 @@ import {
   RedoIcon,
   UnderlineIcon,
   UndoIcon,
-} from '@/icons/missing-icons'
+} from '../icons/missing-icons'
 export function ButtonGroupComplexToolbar() {
   const [alignment, setAlignment] = React.useState<string>('left')
   const [textFormat, setTextFormat] = React.useState<string[]>([])

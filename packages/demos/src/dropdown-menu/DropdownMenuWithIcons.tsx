@@ -12,7 +12,7 @@ import {
   EditIcon,
   TrashOIcon,
 } from '@acronis-platform/shadcn-uikit'
-import { MoreVerticalIcon } from '@/icons/missing-icons'
+import { MoreVerticalIcon } from '../icons/missing-icons'
 export function DropdownMenuWithIcons() {
   return (
     <DropdownMenu>

@@ -1,6 +1,6 @@
 import { Tag } from '@acronis-platform/shadcn-uikit/react'
 import { ExclamationCircleIcon, LockIcon, ShieldIcon } from '@acronis-platform/shadcn-uikit'
-import { UnlockIcon } from '@/icons/missing-icons'
+import { UnlockIcon } from '../icons/missing-icons'
 export function TagSecurity() {
   return (
     <div className="flex flex-wrap gap-3">

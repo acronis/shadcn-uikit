@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Chip } from '@acronis-platform/shadcn-uikit/react'
 import { CheckCircleIcon } from '@acronis-platform/shadcn-uikit'
-import { TagIcon, ZapIcon } from '@/icons/missing-icons'
+import { TagIcon, ZapIcon } from '../icons/missing-icons'
 export function ChipWithIconsRemovable() {
   const [selectedChips, setSelectedChips] = useState([
     { id: 1, label: 'Design', icon: <TagIcon className="h-4 w-4" /> },

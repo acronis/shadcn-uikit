@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Button, ButtonGroup } from '@acronis-platform/shadcn-uikit/react'
-import { BoldIcon, ItalicIcon, UnderlineIcon } from '@/icons/missing-icons'
+import { BoldIcon, ItalicIcon, UnderlineIcon } from '../icons/missing-icons'
 export function ButtonGroupTextFormatting() {
   const [textFormat, setTextFormat] = React.useState<string[]>([])
 

@@ -10,8 +10,8 @@ export function EmptyBasic() {
   return (
     <div className="flex min-h-[300px] items-center justify-center border rounded-lg bg-gray-50">
       <Empty>
-        <EmptyIcon className="h-24 w-24 text-primary">
-          <MailboxIcon size={96} />
+        <EmptyIcon className="text-primary">
+          <MailboxIcon className="h-[72px] w-[72px]" />
         </EmptyIcon>
         <EmptyHeader>
           <EmptyTitle>No messages</EmptyTitle>

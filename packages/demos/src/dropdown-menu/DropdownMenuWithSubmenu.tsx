@@ -15,7 +15,7 @@ import {
   LifeBuoyIcon,
   PlusCircleIcon,
   UserPlusIcon,
-} from '@/icons/missing-icons'
+} from '../icons/missing-icons'
 export function DropdownMenuWithSubmenu() {
   return (
     <DropdownMenu>

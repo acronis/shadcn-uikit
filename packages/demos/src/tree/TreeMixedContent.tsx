@@ -1,6 +1,6 @@
 import { Tree, TreeNode } from '@acronis-platform/shadcn-uikit/react'
 import { FolderIcon, ImageIcon, VideosIcon } from '@acronis-platform/shadcn-uikit'
-import { MusicIcon } from '@/icons/missing-icons'
+import { MusicIcon } from '../icons/missing-icons'
 const mixedData: TreeNode[] = [
   {
     id: 'media',

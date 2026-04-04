@@ -1,6 +1,6 @@
 import { Button, ButtonGroup } from '@acronis-platform/shadcn-uikit/react'
 import { PauseIcon, PlayIcon } from '@acronis-platform/shadcn-uikit'
-import { SkipBackIcon, SkipForwardIcon } from '@/icons/missing-icons'
+import { SkipBackIcon, SkipForwardIcon } from '../icons/missing-icons'
 export function ButtonGroupMediaControls() {
   return (
     <ButtonGroup>

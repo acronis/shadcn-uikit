@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { Calendar } from '@acronis-platform/shadcn-uikit/react'
 
+type DateRange = { from: Date | undefined; to?: Date | undefined }
+
 export function CalendarDualMonth() {
-  const [rangeDate, setRangeDate] = React.useState<{
-    from: Date | undefined
-    to: Date | undefined
-  }>({
+  const [rangeDate, setRangeDate] = React.useState<DateRange | undefined>({
     from: undefined,
     to: undefined,
   })

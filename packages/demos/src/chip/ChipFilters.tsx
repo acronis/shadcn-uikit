@@ -1,6 +1,6 @@
 import { Chip } from '@acronis-platform/shadcn-uikit/react'
 import { StarIcon } from '@acronis-platform/shadcn-uikit'
-import { TagIcon } from '@/icons/missing-icons'
+import { TagIcon } from '../icons/missing-icons'
 export function ChipFilters() {
   return (
     <div className="space-y-3">

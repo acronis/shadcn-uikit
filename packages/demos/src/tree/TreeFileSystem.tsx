@@ -5,7 +5,7 @@ import {
   FolderIcon,
   ImageIcon,
 } from '@acronis-platform/shadcn-uikit'
-import { MusicIcon } from '@/icons/missing-icons'
+import { MusicIcon } from '../icons/missing-icons'
 const fileSystemData: TreeNode[] = [
   {
     id: '1',

@@ -1,6 +1,6 @@
 import { Tag } from '@acronis-platform/shadcn-uikit/react'
 import { ExclamationCircleIcon, WarningCircleIcon } from '@acronis-platform/shadcn-uikit'
-import { TrendingDownIcon, TrendingUpIcon } from '@/icons/missing-icons'
+import { TrendingDownIcon, TrendingUpIcon } from '../icons/missing-icons'
 export function TagPriority() {
   return (
     <div className="flex flex-wrap gap-3">
