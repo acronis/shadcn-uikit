@@ -65,6 +65,9 @@ importers:
       '@acronis-platform/shadcn-uikit':
         specifier: workspace:*
         version: link:../ui
+      '@acronis-platform/shadcn-uikit-demos':
+        specifier: workspace:*
+        version: link:../demos
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.10.0(react-hook-form@7.71.0(react@18.3.1))
@@ -177,6 +180,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.10.0(react-hook-form@7.71.0(react@18.3.1))
+      '@tanstack/react-table':
+        specifier: ^8.21.3
+        version: 8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -192,6 +198,9 @@ importers:
       react-router-dom:
         specifier: ^7.11.0
         version: 7.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      recharts:
+        specifier: ^3.6.0
+        version: 3.6.0(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react-is@19.2.3)(react@18.3.1)(redux@5.0.1)
       sonner:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { ContainerResponsive } from '@/demos/container'
+import { ContainerResponsive } from '@acronis-platform/shadcn-uikit-demos/container'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import containerResponsiveCode from '../demos/container/ContainerResponsive.tsx?raw'
+import containerResponsiveCode from '../../../demos/src/container/ContainerResponsive.tsx?raw'
 
 export function ContainerDemo() {
   return (

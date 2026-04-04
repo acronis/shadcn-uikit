@@ -10,20 +10,20 @@ import {
   TabsDocumentation,
   TabsCompact,
   TabsVertical,
-} from '@/demos/tabs'
+} from '@acronis-platform/shadcn-uikit-demos/tabs'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import tabsBasicCode from '../demos/tabs/TabsBasic.tsx?raw'
-import tabsAccountSettingsCode from '../demos/tabs/TabsAccountSettings.tsx?raw'
-import tabsMultipleCode from '../demos/tabs/TabsMultiple.tsx?raw'
-import tabsFullWidthCode from '../demos/tabs/TabsFullWidth.tsx?raw'
-import tabsDisabledCode from '../demos/tabs/TabsDisabled.tsx?raw'
-import tabsProductCode from '../demos/tabs/TabsProduct.tsx?raw'
-import tabsDashboardCode from '../demos/tabs/TabsDashboard.tsx?raw'
-import tabsDocumentationCode from '../demos/tabs/TabsDocumentation.tsx?raw'
-import tabsCompactCode from '../demos/tabs/TabsCompact.tsx?raw'
-import tabsVerticalCode from '../demos/tabs/TabsVertical.tsx?raw'
+import tabsBasicCode from '../../../demos/src/tabs/TabsBasic.tsx?raw'
+import tabsAccountSettingsCode from '../../../demos/src/tabs/TabsAccountSettings.tsx?raw'
+import tabsMultipleCode from '../../../demos/src/tabs/TabsMultiple.tsx?raw'
+import tabsFullWidthCode from '../../../demos/src/tabs/TabsFullWidth.tsx?raw'
+import tabsDisabledCode from '../../../demos/src/tabs/TabsDisabled.tsx?raw'
+import tabsProductCode from '../../../demos/src/tabs/TabsProduct.tsx?raw'
+import tabsDashboardCode from '../../../demos/src/tabs/TabsDashboard.tsx?raw'
+import tabsDocumentationCode from '../../../demos/src/tabs/TabsDocumentation.tsx?raw'
+import tabsCompactCode from '../../../demos/src/tabs/TabsCompact.tsx?raw'
+import tabsVerticalCode from '../../../demos/src/tabs/TabsVertical.tsx?raw'
 
 export function TabsDemo() {
   return (

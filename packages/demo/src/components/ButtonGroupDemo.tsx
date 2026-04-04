@@ -12,22 +12,22 @@ import {
   ButtonGroupZoomControls,
   ButtonGroupSizes,
   ButtonGroupComplexToolbar,
-} from '@/demos/button-group'
+} from '@acronis-platform/shadcn-uikit-demos/button-group'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import buttonGroupBasicCode from '../demos/button-group/ButtonGroupBasic.tsx?raw'
-import buttonGroupDaySelectorCode from '../demos/button-group/ButtonGroupDaySelector.tsx?raw'
-import buttonGroupDaySelectorSmallCode from '../demos/button-group/ButtonGroupDaySelectorSmall.tsx?raw'
-import buttonGroupTextAlignmentCode from '../demos/button-group/ButtonGroupTextAlignment.tsx?raw'
-import buttonGroupTextFormattingCode from '../demos/button-group/ButtonGroupTextFormatting.tsx?raw'
-import buttonGroupWithSeparatorsCode from '../demos/button-group/ButtonGroupWithSeparators.tsx?raw'
-import buttonGroupWithTextLabelsCode from '../demos/button-group/ButtonGroupWithTextLabels.tsx?raw'
-import buttonGroupVerticalCode from '../demos/button-group/ButtonGroupVertical.tsx?raw'
-import buttonGroupMediaControlsCode from '../demos/button-group/ButtonGroupMediaControls.tsx?raw'
-import buttonGroupZoomControlsCode from '../demos/button-group/ButtonGroupZoomControls.tsx?raw'
-import buttonGroupSizesCode from '../demos/button-group/ButtonGroupSizes.tsx?raw'
-import buttonGroupComplexToolbarCode from '../demos/button-group/ButtonGroupComplexToolbar.tsx?raw'
+import buttonGroupBasicCode from '../../../demos/src/button-group/ButtonGroupBasic.tsx?raw'
+import buttonGroupDaySelectorCode from '../../../demos/src/button-group/ButtonGroupDaySelector.tsx?raw'
+import buttonGroupDaySelectorSmallCode from '../../../demos/src/button-group/ButtonGroupDaySelectorSmall.tsx?raw'
+import buttonGroupTextAlignmentCode from '../../../demos/src/button-group/ButtonGroupTextAlignment.tsx?raw'
+import buttonGroupTextFormattingCode from '../../../demos/src/button-group/ButtonGroupTextFormatting.tsx?raw'
+import buttonGroupWithSeparatorsCode from '../../../demos/src/button-group/ButtonGroupWithSeparators.tsx?raw'
+import buttonGroupWithTextLabelsCode from '../../../demos/src/button-group/ButtonGroupWithTextLabels.tsx?raw'
+import buttonGroupVerticalCode from '../../../demos/src/button-group/ButtonGroupVertical.tsx?raw'
+import buttonGroupMediaControlsCode from '../../../demos/src/button-group/ButtonGroupMediaControls.tsx?raw'
+import buttonGroupZoomControlsCode from '../../../demos/src/button-group/ButtonGroupZoomControls.tsx?raw'
+import buttonGroupSizesCode from '../../../demos/src/button-group/ButtonGroupSizes.tsx?raw'
+import buttonGroupComplexToolbarCode from '../../../demos/src/button-group/ButtonGroupComplexToolbar.tsx?raw'
 
 export function ButtonGroupDemo() {
   return (

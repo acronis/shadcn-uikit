@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@acronis-platform/shadcn-uikit": "workspace:*",
+    "@acronis-platform/shadcn-uikit-demos": "workspace:*",
     "@hookform/resolvers": "^3.9.1",
     "@tanstack/react-table": "^8.21.3",
     "culori": "^4.0.2",

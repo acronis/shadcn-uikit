@@ -9,19 +9,19 @@ import {
   CarouselVertical,
   CarouselAutoplay,
   CarouselFigmaStyle,
-} from '@/demos/carousel'
+} from '@acronis-platform/shadcn-uikit-demos/carousel'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import carouselBasicCode from '../demos/carousel/CarouselBasic.tsx?raw'
-import carouselWithDotsCode from '../demos/carousel/CarouselWithDots.tsx?raw'
-import carouselMultipleCode from '../demos/carousel/CarouselMultiple.tsx?raw'
-import carouselImageGalleryCode from '../demos/carousel/CarouselImageGallery.tsx?raw'
-import carouselTestimonialsCode from '../demos/carousel/CarouselTestimonials.tsx?raw'
-import carouselProductsCode from '../demos/carousel/CarouselProducts.tsx?raw'
-import carouselVerticalCode from '../demos/carousel/CarouselVertical.tsx?raw'
-import carouselAutoplayCode from '../demos/carousel/CarouselAutoplay.tsx?raw'
-import carouselFigmaStyleCode from '../demos/carousel/CarouselFigmaStyle.tsx?raw'
+import carouselBasicCode from '../../../demos/src/carousel/CarouselBasic.tsx?raw'
+import carouselWithDotsCode from '../../../demos/src/carousel/CarouselWithDots.tsx?raw'
+import carouselMultipleCode from '../../../demos/src/carousel/CarouselMultiple.tsx?raw'
+import carouselImageGalleryCode from '../../../demos/src/carousel/CarouselImageGallery.tsx?raw'
+import carouselTestimonialsCode from '../../../demos/src/carousel/CarouselTestimonials.tsx?raw'
+import carouselProductsCode from '../../../demos/src/carousel/CarouselProducts.tsx?raw'
+import carouselVerticalCode from '../../../demos/src/carousel/CarouselVertical.tsx?raw'
+import carouselAutoplayCode from '../../../demos/src/carousel/CarouselAutoplay.tsx?raw'
+import carouselFigmaStyleCode from '../../../demos/src/carousel/CarouselFigmaStyle.tsx?raw'
 
 export function CarouselDemo() {
   return (

@@ -17,26 +17,26 @@ import {
   SonnerDismissible,
   SonnerPositions,
   SonnerRealWorld,
-} from '@/demos/sonner'
+} from '@acronis-platform/shadcn-uikit-demos/sonner'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import sonnerBasicCode from '../demos/sonner/SonnerBasic.tsx?raw'
-import sonnerWithDescriptionCode from '../demos/sonner/SonnerWithDescription.tsx?raw'
-import sonnerSuccessCode from '../demos/sonner/SonnerSuccess.tsx?raw'
-import sonnerInfoCode from '../demos/sonner/SonnerInfo.tsx?raw'
-import sonnerWarningCode from '../demos/sonner/SonnerWarning.tsx?raw'
-import sonnerErrorCode from '../demos/sonner/SonnerError.tsx?raw'
-import sonnerLoadingCode from '../demos/sonner/SonnerLoading.tsx?raw'
-import sonnerWithActionCode from '../demos/sonner/SonnerWithAction.tsx?raw'
-import sonnerWithCancelCode from '../demos/sonner/SonnerWithCancel.tsx?raw'
-import sonnerPromiseCode from '../demos/sonner/SonnerPromise.tsx?raw'
-import sonnerCustomDurationCode from '../demos/sonner/SonnerCustomDuration.tsx?raw'
-import sonnerRichContentCode from '../demos/sonner/SonnerRichContent.tsx?raw'
-import sonnerMultipleCode from '../demos/sonner/SonnerMultiple.tsx?raw'
-import sonnerDismissibleCode from '../demos/sonner/SonnerDismissible.tsx?raw'
-import sonnerPositionsCode from '../demos/sonner/SonnerPositions.tsx?raw'
-import sonnerRealWorldCode from '../demos/sonner/SonnerRealWorld.tsx?raw'
+import sonnerBasicCode from '../../../demos/src/sonner/SonnerBasic.tsx?raw'
+import sonnerWithDescriptionCode from '../../../demos/src/sonner/SonnerWithDescription.tsx?raw'
+import sonnerSuccessCode from '../../../demos/src/sonner/SonnerSuccess.tsx?raw'
+import sonnerInfoCode from '../../../demos/src/sonner/SonnerInfo.tsx?raw'
+import sonnerWarningCode from '../../../demos/src/sonner/SonnerWarning.tsx?raw'
+import sonnerErrorCode from '../../../demos/src/sonner/SonnerError.tsx?raw'
+import sonnerLoadingCode from '../../../demos/src/sonner/SonnerLoading.tsx?raw'
+import sonnerWithActionCode from '../../../demos/src/sonner/SonnerWithAction.tsx?raw'
+import sonnerWithCancelCode from '../../../demos/src/sonner/SonnerWithCancel.tsx?raw'
+import sonnerPromiseCode from '../../../demos/src/sonner/SonnerPromise.tsx?raw'
+import sonnerCustomDurationCode from '../../../demos/src/sonner/SonnerCustomDuration.tsx?raw'
+import sonnerRichContentCode from '../../../demos/src/sonner/SonnerRichContent.tsx?raw'
+import sonnerMultipleCode from '../../../demos/src/sonner/SonnerMultiple.tsx?raw'
+import sonnerDismissibleCode from '../../../demos/src/sonner/SonnerDismissible.tsx?raw'
+import sonnerPositionsCode from '../../../demos/src/sonner/SonnerPositions.tsx?raw'
+import sonnerRealWorldCode from '../../../demos/src/sonner/SonnerRealWorld.tsx?raw'
 
 export function SonnerDemo() {
   return (

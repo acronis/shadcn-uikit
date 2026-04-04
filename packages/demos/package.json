@@ -10,6 +10,8 @@
   "dependencies": {
     "@acronis-platform/shadcn-uikit": "workspace:*",
     "@hookform/resolvers": "^3.9.1",
+    "@tanstack/react-table": "^8.21.3",
+    "recharts": "^3.6.0",
     "date-fns": "^4.1.0",
     "react-hook-form": "^7.69.0",
     "react-router-dom": "^7.11.0",

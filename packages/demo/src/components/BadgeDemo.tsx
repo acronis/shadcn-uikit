@@ -6,16 +6,16 @@ import {
   BadgeWithIcons,
   BadgeStatusIndicators,
   BadgeNotificationCounts,
-} from '@/demos/badge'
+} from '@acronis-platform/shadcn-uikit-demos/badge'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import badgeStatusVariantsCode from '../demos/badge/BadgeStatusVariants.tsx?raw'
-import badgeDefaultVariantsCode from '../demos/badge/BadgeDefaultVariants.tsx?raw'
-import badgeSmallCode from '../demos/badge/BadgeSmall.tsx?raw'
-import badgeWithIconsCode from '../demos/badge/BadgeWithIcons.tsx?raw'
-import badgeStatusIndicatorsCode from '../demos/badge/BadgeStatusIndicators.tsx?raw'
-import badgeNotificationCountsCode from '../demos/badge/BadgeNotificationCounts.tsx?raw'
+import badgeStatusVariantsCode from '../../../demos/src/badge/BadgeStatusVariants.tsx?raw'
+import badgeDefaultVariantsCode from '../../../demos/src/badge/BadgeDefaultVariants.tsx?raw'
+import badgeSmallCode from '../../../demos/src/badge/BadgeSmall.tsx?raw'
+import badgeWithIconsCode from '../../../demos/src/badge/BadgeWithIcons.tsx?raw'
+import badgeStatusIndicatorsCode from '../../../demos/src/badge/BadgeStatusIndicators.tsx?raw'
+import badgeNotificationCountsCode from '../../../demos/src/badge/BadgeNotificationCounts.tsx?raw'
 
 export function BadgeDemo() {
   return (

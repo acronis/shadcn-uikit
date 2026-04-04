@@ -6,16 +6,16 @@ import {
   FormRegistration,
   FormContact,
   FormSettings,
-} from '@/demos/form'
+} from '@acronis-platform/shadcn-uikit-demos/form'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import formBasicCode from '../demos/form/FormBasic.tsx?raw'
-import formLoginCode from '../demos/form/FormLogin.tsx?raw'
-import formProfileCode from '../demos/form/FormProfile.tsx?raw'
-import formRegistrationCode from '../demos/form/FormRegistration.tsx?raw'
-import formContactCode from '../demos/form/FormContact.tsx?raw'
-import formSettingsCode from '../demos/form/FormSettings.tsx?raw'
+import formBasicCode from '../../../demos/src/form/FormBasic.tsx?raw'
+import formLoginCode from '../../../demos/src/form/FormLogin.tsx?raw'
+import formProfileCode from '../../../demos/src/form/FormProfile.tsx?raw'
+import formRegistrationCode from '../../../demos/src/form/FormRegistration.tsx?raw'
+import formContactCode from '../../../demos/src/form/FormContact.tsx?raw'
+import formSettingsCode from '../../../demos/src/form/FormSettings.tsx?raw'
 
 export function FormDemo() {
   return (

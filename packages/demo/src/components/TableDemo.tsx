@@ -10,20 +10,20 @@ import {
   TableEmpty,
   TableScrollable,
   TableSortable,
-} from '@/demos/table'
+} from '@acronis-platform/shadcn-uikit-demos/table'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import tableBasicCode from '../demos/table/TableBasic.tsx?raw'
-import tableWithFooterCode from '../demos/table/TableWithFooter.tsx?raw'
-import tableWithSelectionCode from '../demos/table/TableWithSelection.tsx?raw'
-import tableWithActionsCode from '../demos/table/TableWithActions.tsx?raw'
-import tableWithBadgesCode from '../demos/table/TableWithBadges.tsx?raw'
-import tableCompactCode from '../demos/table/TableCompact.tsx?raw'
-import tableStripedCode from '../demos/table/TableStriped.tsx?raw'
-import tableEmptyCode from '../demos/table/TableEmpty.tsx?raw'
-import tableScrollableCode from '../demos/table/TableScrollable.tsx?raw'
-import tableSortableCode from '../demos/table/TableSortable.tsx?raw'
+import tableBasicCode from '../../../demos/src/table/TableBasic.tsx?raw'
+import tableWithFooterCode from '../../../demos/src/table/TableWithFooter.tsx?raw'
+import tableWithSelectionCode from '../../../demos/src/table/TableWithSelection.tsx?raw'
+import tableWithActionsCode from '../../../demos/src/table/TableWithActions.tsx?raw'
+import tableWithBadgesCode from '../../../demos/src/table/TableWithBadges.tsx?raw'
+import tableCompactCode from '../../../demos/src/table/TableCompact.tsx?raw'
+import tableStripedCode from '../../../demos/src/table/TableStriped.tsx?raw'
+import tableEmptyCode from '../../../demos/src/table/TableEmpty.tsx?raw'
+import tableScrollableCode from '../../../demos/src/table/TableScrollable.tsx?raw'
+import tableSortableCode from '../../../demos/src/table/TableSortable.tsx?raw'
 
 export function TableDemo() {
   return (

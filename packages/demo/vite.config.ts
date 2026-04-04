@@ -14,9 +14,12 @@ const resolveAtAlias = (): Plugin => ({
       // Determine base path based on importer location (normalize separators for Windows)
       const normalizedImporter = importer.replace(/\\/g, '/')
       const isFromUikit = normalizedImporter.includes('/ui/src/')
+      const isFromDemos = normalizedImporter.includes('/demos/src/')
       const basePath = isFromUikit
         ? source.replace('@/', '../ui/src/')
-        : source.replace('@/', './src/')
+        : isFromDemos
+          ? source.replace('@/', '../demos/src/')
+          : source.replace('@/', './src/')
       const baseResolved = resolve(__dirname, basePath)
 
       // If source already has an extension, try it directly
@@ -63,6 +66,7 @@ export default defineConfig(({ mode }) => ({
   ],
   resolve: {
     alias: {
+      '@acronis-platform/shadcn-uikit-demos': resolve(__dirname, '../demos/src'),
       '@acronis-platform/shadcn-uikit/react': resolve(__dirname, '../ui/src/react.ts'),
       '@acronis-platform/shadcn-uikit/styles': resolve(__dirname, '../ui/src/styles/index.scss'),
       '@acronis-platform/shadcn-uikit': resolve(__dirname, '../ui/src/react.ts'),

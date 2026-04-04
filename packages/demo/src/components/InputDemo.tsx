@@ -12,22 +12,22 @@ import {
   InputForm,
   InputSearch,
   InputVariousTypes,
-} from '@/demos/input'
+} from '@acronis-platform/shadcn-uikit-demos/input'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import inputBasicCode from '../demos/input/InputBasic.tsx?raw'
-import inputTypesCode from '../demos/input/InputTypes.tsx?raw'
-import inputWithLabelsCode from '../demos/input/InputWithLabels.tsx?raw'
-import inputWithIconsCode from '../demos/input/InputWithIcons.tsx?raw'
-import inputDisabledCode from '../demos/input/InputDisabled.tsx?raw'
-import inputRequiredCode from '../demos/input/InputRequired.tsx?raw'
-import inputWithHelperCode from '../demos/input/InputWithHelper.tsx?raw'
-import inputErrorCode from '../demos/input/InputError.tsx?raw'
-import inputSizesCode from '../demos/input/InputSizes.tsx?raw'
-import inputFormCode from '../demos/input/InputForm.tsx?raw'
-import inputSearchCode from '../demos/input/InputSearch.tsx?raw'
-import inputVariousTypesCode from '../demos/input/InputVariousTypes.tsx?raw'
+import inputBasicCode from '../../../demos/src/input/InputBasic.tsx?raw'
+import inputTypesCode from '../../../demos/src/input/InputTypes.tsx?raw'
+import inputWithLabelsCode from '../../../demos/src/input/InputWithLabels.tsx?raw'
+import inputWithIconsCode from '../../../demos/src/input/InputWithIcons.tsx?raw'
+import inputDisabledCode from '../../../demos/src/input/InputDisabled.tsx?raw'
+import inputRequiredCode from '../../../demos/src/input/InputRequired.tsx?raw'
+import inputWithHelperCode from '../../../demos/src/input/InputWithHelper.tsx?raw'
+import inputErrorCode from '../../../demos/src/input/InputError.tsx?raw'
+import inputSizesCode from '../../../demos/src/input/InputSizes.tsx?raw'
+import inputFormCode from '../../../demos/src/input/InputForm.tsx?raw'
+import inputSearchCode from '../../../demos/src/input/InputSearch.tsx?raw'
+import inputVariousTypesCode from '../../../demos/src/input/InputVariousTypes.tsx?raw'
 
 export function InputDemo() {
   return (
