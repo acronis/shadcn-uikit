@@ -14,6 +14,9 @@ const radixDialogDir = dirname(require.resolve('@radix-ui/react-dialog'));
 // from demos fires on a different event bus than the <Toaster> in the docs layout.
 const sonnerDir = dirname(require.resolve('sonner'));
 
+const isStaticExport = process.env.DOCS_STATIC_EXPORT === 'true';
+const basePath = process.env.DOCS_BASE_PATH ?? '';
+
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
@@ -27,6 +30,12 @@ const config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Static export for GitHub Pages deployment (set DOCS_STATIC_EXPORT=true)
+  ...(isStaticExport && {
+    output: 'export',
+    basePath,
+    images: { unoptimized: true },
+  }),
   webpack: (config) => {
     config.resolve.alias['@radix-ui/react-dialog'] = radixDialogDir;
     config.resolve.alias['sonner'] = sonnerDir;
