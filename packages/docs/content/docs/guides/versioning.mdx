@@ -146,7 +146,7 @@ git push --follow-tags origin main
 ### 4. Publish to npm
 
 ```bash
-cd packages/shadcn-uikit
+cd packages/ui
 npm publish
 ```
 
@@ -268,7 +268,7 @@ jobs:
         run: git push --follow-tags origin main
 
       - name: Publish to npm
-        working-directory: packages/shadcn-uikit
+        working-directory: packages/ui
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

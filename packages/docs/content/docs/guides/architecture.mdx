@@ -7,117 +7,83 @@ description: Architecture overview of the Acronis UIKit — design philosophy, c
 
 ## Overview
 
-Acronis UIKit is built on top of [shadcn/ui](https://ui.shadcn.com/) for React and [shadcn-vue](https://www.shadcn-vue.com/) for Vue, providing a consistent design system styled with Acronis brand colors and design tokens.
+Acronis UIKit is a **React-only** component library built on top of [shadcn/ui](https://ui.shadcn.com/) principles, using [Radix UI](https://www.radix-ui.com/) and [Base UI](https://base-ui.com/) primitives with Tailwind CSS. It provides a consistent design system styled with Acronis brand colors and design tokens.
 
 ## Design Philosophy
 
-### Base Layer: shadcn/ui
+### Base Layer: shadcn/ui principles
 
-- **React**: Uses Radix UI primitives with Tailwind CSS
-- **Vue**: Uses Radix Vue primitives with Tailwind CSS
-- **Unstyled by default**: Components are accessible and unstyled, allowing full customization
+- Uses Radix UI and Base UI primitives for accessibility and unstyled behaviour
+- Tailwind CSS for styling with CVA (class-variance-authority) for variants
+- Components are shipped as compiled ES modules — not a copy-paste library
 
 ### Acronis Theme Layer
 
-- Custom CSS variables with Acronis brand colors
-- Extended Tailwind configuration with Acronis design tokens
-- Additional variant options (success, warning, info)
-- Consistent spacing, typography, and border radius
+- CSS custom properties using the `--av-*` token namespace
+- Four built-in themes: `acronis-default`, `acronis-ocean`, `cyber-chat`, `acronis-white-label`
+- Additional variant options: `success`, `warning`, `info`, `translucent`
+- Consistent spacing, typography, and border radius via Tailwind config
+
+## Monorepo Structure
+
+```text
+packages/
+├── ui/          # @acronis-platform/shadcn-uikit — the published library
+├── demo/        # Vite demo app (component showcase)
+├── demos/       # @acronis-platform/shadcn-uikit-demos — shared demo components
+└── docs/        # @acronis-platform/shadcn-uikit-docs — this docs site (Next.js 15)
+```
+
+## UI Package Structure
+
+```text
+packages/ui/src/
+├── components/
+│   └── ui/                     # All components live here
+│       ├── button.tsx
+│       ├── button.docs.ts      # Optional: companion type file for AutoTypeTable
+│       ├── __stories__/        # Storybook stories
+│       │   └── button.stories.tsx
+│       └── ...                 # 70+ component files
+├── icons/                      # 1500+ auto-generated icon components
+│   ├── base/                   # BaseIcon primitive
+│   └── index.ts
+├── lib/
+│   └── utils.ts                # cn() utility (clsx + tailwind-merge)
+├── styles/
+│   ├── index.css               # Main entry — imports everything
+│   ├── themes/                 # Per-theme SCSS
+│   │   ├── acronis-default.scss
+│   │   ├── acronis-ocean.scss
+│   │   ├── cyber-chat.scss
+│   │   └── acronis-white-label.scss
+│   └── tokens/                 # Semantic token definitions
+└── index.ts                    # Public exports
+```
 
 ## Component Structure
 
-### React Components (`src/components/react/`)
-
-```text
-src/components/react/
-├── components/
-│   └── button/
-│       ├── button.tsx          # Component implementation
-│       ├── __tests__/          # Unit tests
-│       └── __stories__/        # Storybook stories
-├── lib/
-│   └── utils.ts               # Utility functions (cn)
-└── index.ts                   # Public exports
-```
-
-**Key Features:**
-
-- Uses `class-variance-authority` (CVA) for variant management
-- Radix UI Slot for composition
-- Full TypeScript support with VariantProps
-- Forwarded refs for component composition
-
-### Vue Components (`src/vue/`)
-
-```text
-src/vue/
-├── components/
-│   └── button/
-│       ├── button.vue          # Component implementation
-│       ├── button.ts           # Types and variants
-│       ├── __tests__/          # Unit tests
-│       └── __stories__/        # Storybook stories
-├── lib/
-│   └── utils.ts               # Utility functions (cn)
-└── index.ts                   # Public exports
-```
-
-**Key Features:**
-
-- Uses Radix Vue primitives
-- Composition API with `<script setup>`
-- Shared CVA variants with React
-- TypeScript support
-
-## Theming System
-
-### CSS Variables (`src/styles/_variables.scss`)
-
-All colors use HSL format for easy manipulation:
-
-```scss
-:root {
-  --av-primary: 213 94% 51%; /* Acronis Blue */
-  --av-success: 142 76% 36%; /* Success Green */
-  --av-warning: 38 92% 50%; /* Warning Orange */
-  --av-info: 199 89% 48%; /* Info Blue */
-  // ... more variables
-}
-```
-
-### Tailwind Configuration
-
-Extended with Acronis-specific tokens:
-
-```js
-theme: {
-  extend: {
-    colors: {
-      primary: 'hsl(var(--av-primary))',
-      success: 'hsl(var(--av-success))',
-      // ... more colors
-    }
-  }
-}
-```
-
-## Adding New Components
-
-### 1. For React
+Each component follows this pattern:
 
 ```tsx
-// src/components/react/[component]/[component].tsx
-import * as React from 'react';
+// packages/ui/src/components/ui/button.tsx
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '../../../lib/utils';
+import { cn } from '@/lib/utils';
 
-const componentVariants = cva('base-classes', {
+const buttonVariants = cva('base-classes', {
   variants: {
     variant: {
-      default: 'variant-classes',
+      default: '...',
+      secondary: '...',
+      destructive: '...',
+      outline: '...',
+      ghost: '...',
+      link: '...',
     },
     size: {
-      default: 'size-classes',
+      default: '...',
+      sm: '...',
+      lg: '...',
     },
   },
   defaultVariants: {
@@ -126,173 +92,97 @@ const componentVariants = cva('base-classes', {
   },
 });
 
-export interface ComponentProps
-  extends
-    React.HTMLAttributes<HTMLElement>,
-    VariantProps<typeof componentVariants> {}
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
 
-const Component = React.forwardRef<HTMLElement, ComponentProps>(
-  ({ className, variant, size, ...props }, ref) => {
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button';
     return (
-      <element
-        className={cn(componentVariants({ variant, size, className }))}
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
       />
     );
   }
 );
-Component.displayName = 'Component';
-
-export { Component, componentVariants };
 ```
 
-### 2. For Vue
+## Theming System
 
-```vue
-<!-- src/vue/components/[component]/[component].vue -->
-<script setup lang="ts">
-import { computed } from 'vue';
-import { Primitive, type PrimitiveProps } from 'radix-vue';
-import { type ComponentVariants, componentVariants } from './[component]';
-import { cn } from '../../lib/utils';
+Themes are SCSS files that define CSS custom properties on the `:root`. They use an `--av-*` token namespace:
 
-interface ComponentProps extends PrimitiveProps {
-  variant?: ComponentVariants['variant'];
-  size?: ComponentVariants['size'];
-  class?: string;
+```scss
+// packages/ui/src/styles/themes/acronis-default.scss
+:root {
+  --av-background: 0 0% 100%;
+  --av-foreground: 222 84% 5%;
+  --av-primary: 213 94% 51%;    /* Acronis Blue */
+  --av-success: 142 76% 36%;
+  --av-warning: 38 92% 50%;
+  --av-info: 199 89% 48%;
+  /* ... */
 }
-
-const props = withDefaults(defineProps<ComponentProps>(), {
-  as: 'element',
-  variant: 'default',
-  size: 'default',
-});
-
-const componentClass = computed(() =>
-  cn(
-    componentVariants({ variant: props.variant, size: props.size }),
-    props.class
-  )
-);
-</script>
-
-<template>
-  <Primitive :as="as" :as-child="asChild" :class="componentClass">
-    <slot />
-  </Primitive>
-</template>
+.dark {
+  --av-background: 222 84% 5%;
+  /* ... */
+}
 ```
 
-```ts
-// src/vue/components/[component]/[component].ts
-import { cva, type VariantProps } from 'class-variance-authority';
+The Tailwind config maps these tokens to utility classes:
 
-export const componentVariants = cva('base-classes', {
-  variants: {
-    variant: {
-      default: 'variant-classes',
-    },
-    size: {
-      default: 'size-classes',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-    size: 'default',
-  },
-});
-
-export type ComponentVariants = VariantProps<typeof componentVariants>;
+```js
+colors: {
+  background: 'hsl(var(--av-background))',
+  primary: 'hsl(var(--av-primary))',
+  // ...
+}
 ```
 
-## Best Practices
+## Build Output
 
-### 1. Use shadcn/ui CLI
-
-For React components, use the shadcn CLI to scaffold:
-
-```bash
-npx shadcn-ui@latest add button
-```
-
-Then customize with Acronis styling.
-
-### 2. Maintain Variant Consistency
-
-Keep variants consistent between React and Vue:
-
-- `default`, `secondary`, `destructive`, `outline`, `ghost`, `link`
-- Acronis-specific: `success`, `warning`, `info`
-
-### 3. Accessibility First
-
-- Use Radix UI/Radix Vue primitives for built-in accessibility
-- Test with keyboard navigation
-- Ensure proper ARIA attributes
-
-### 4. TypeScript Strict Mode
-
-- All components must have proper TypeScript types
-- Use `VariantProps` for variant typing
-- Export all public types
-
-### 5. Testing
-
-- Write unit tests for all components
-- Test all variants and sizes
-- Test accessibility features
-- Test event handlers
-
-### 6. Documentation
-
-- Create Storybook stories for all components
-- Document all props and variants
-- Provide usage examples
-- Show different states
-
-## Build Process
-
-### React Build
-
-```bash
-npm run build:react
-```
-
-Output: `dist/react/`
-
-### Vue Build
-
-```bash
-npm run build:vue
-```
-
-Output: `dist/vue/`
-
-### Both
-
-```bash
-npm run build
+```text
+packages/ui/dist/
+├── index.js          # Main ES module entry (re-exports everything)
+├── index.d.ts        # TypeScript declarations
+├── components/ui/    # Individual component modules (tree-shakeable)
+├── icons/            # Icon components
+├── lib/              # Utilities
+└── styles/           # Compiled CSS
+    ├── index.css     # Main stylesheet (import this)
+    └── themes/       # Individual theme CSS files
 ```
 
 ## Import Paths
 
-Users import from framework-specific paths:
-
-**React:**
-
-```tsx
-import { Button } from '@acronis-platform/shadcn-uikit/react';
-```
-
-**Vue:**
-
-```vue
-import { AvButton } from '@acronis-platform/shadcn-uikit/vue'
-```
-
-**Styles:**
-
 ```ts
+// Components — named imports from main entry
+import { Button, Card, Input } from '@acronis-platform/shadcn-uikit';
+
+// Styles — required, import once in your app root
 import '@acronis-platform/shadcn-uikit/styles';
+
+// Optional: alternative theme
+import '@acronis-platform/shadcn-uikit/styles/themes/acronis-ocean';
 ```
+
+## Adding a New Component
+
+1. Create `packages/ui/src/components/ui/[component].tsx`
+2. Follow the CVA + forwardRef pattern shown above
+3. Export from `packages/ui/src/index.ts`
+4. Add Storybook stories in `__stories__/[component].stories.tsx`
+5. Add a demo in `packages/demos/src/[component]/`
+6. Create an MDX doc in `packages/docs/content/docs/components/[component].mdx`
+
+## Best Practices
+
+- **Use Radix UI / Base UI primitives** for interactive components — they provide accessibility for free
+- **Variants via CVA** — all visual variants should be defined with `class-variance-authority`
+- **Forwarded refs** — always use `React.forwardRef` so consumers can attach refs
+- **TypeScript strict** — all components must be fully typed; use `VariantProps` for variant types
+- **Test all variants** — Storybook stories serve as both documentation and visual tests
