@@ -4,14 +4,14 @@ import {
   SwitchWithLabel,
   SwitchControlled,
   SwitchForm,
-} from '@/demos/switch'
+} from '@acronis-platform/shadcn-uikit-demos/switch'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import switchBasicCode from '../demos/switch/SwitchBasic.tsx?raw'
-import switchWithLabelCode from '../demos/switch/SwitchWithLabel.tsx?raw'
-import switchControlledCode from '../demos/switch/SwitchControlled.tsx?raw'
-import switchFormCode from '../demos/switch/SwitchForm.tsx?raw'
+import switchBasicCode from '../../../demos/src/switch/SwitchBasic.tsx?raw'
+import switchWithLabelCode from '../../../demos/src/switch/SwitchWithLabel.tsx?raw'
+import switchControlledCode from '../../../demos/src/switch/SwitchControlled.tsx?raw'
+import switchFormCode from '../../../demos/src/switch/SwitchForm.tsx?raw'
 
 export function SwitchDemo() {
   return (

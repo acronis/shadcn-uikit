@@ -12,22 +12,22 @@ import {
   DropdownMenuDisabled,
   DropdownMenuAlignments,
   DropdownMenuComplex,
-} from '@/demos/dropdown-menu'
+} from '@acronis-platform/shadcn-uikit-demos/dropdown-menu'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import dropdownMenuBasicCode from '../demos/dropdown-menu/DropdownMenuBasic.tsx?raw'
-import dropdownMenuWithLabelsCode from '../demos/dropdown-menu/DropdownMenuWithLabels.tsx?raw'
-import dropdownMenuWithCheckboxesCode from '../demos/dropdown-menu/DropdownMenuWithCheckboxes.tsx?raw'
-import dropdownMenuWithRadioCode from '../demos/dropdown-menu/DropdownMenuWithRadio.tsx?raw'
-import dropdownMenuWithSubmenuCode from '../demos/dropdown-menu/DropdownMenuWithSubmenu.tsx?raw'
-import dropdownMenuVariantsCode from '../demos/dropdown-menu/DropdownMenuVariants.tsx?raw'
-import dropdownMenuWithSearchCode from '../demos/dropdown-menu/DropdownMenuWithSearch.tsx?raw'
-import dropdownMenuWithIconsCode from '../demos/dropdown-menu/DropdownMenuWithIcons.tsx?raw'
-import dropdownMenuMultipleSectionsCode from '../demos/dropdown-menu/DropdownMenuMultipleSections.tsx?raw'
-import dropdownMenuDisabledCode from '../demos/dropdown-menu/DropdownMenuDisabled.tsx?raw'
-import dropdownMenuAlignmentsCode from '../demos/dropdown-menu/DropdownMenuAlignments.tsx?raw'
-import dropdownMenuComplexCode from '../demos/dropdown-menu/DropdownMenuComplex.tsx?raw'
+import dropdownMenuBasicCode from '../../../demos/src/dropdown-menu/DropdownMenuBasic.tsx?raw'
+import dropdownMenuWithLabelsCode from '../../../demos/src/dropdown-menu/DropdownMenuWithLabels.tsx?raw'
+import dropdownMenuWithCheckboxesCode from '../../../demos/src/dropdown-menu/DropdownMenuWithCheckboxes.tsx?raw'
+import dropdownMenuWithRadioCode from '../../../demos/src/dropdown-menu/DropdownMenuWithRadio.tsx?raw'
+import dropdownMenuWithSubmenuCode from '../../../demos/src/dropdown-menu/DropdownMenuWithSubmenu.tsx?raw'
+import dropdownMenuVariantsCode from '../../../demos/src/dropdown-menu/DropdownMenuVariants.tsx?raw'
+import dropdownMenuWithSearchCode from '../../../demos/src/dropdown-menu/DropdownMenuWithSearch.tsx?raw'
+import dropdownMenuWithIconsCode from '../../../demos/src/dropdown-menu/DropdownMenuWithIcons.tsx?raw'
+import dropdownMenuMultipleSectionsCode from '../../../demos/src/dropdown-menu/DropdownMenuMultipleSections.tsx?raw'
+import dropdownMenuDisabledCode from '../../../demos/src/dropdown-menu/DropdownMenuDisabled.tsx?raw'
+import dropdownMenuAlignmentsCode from '../../../demos/src/dropdown-menu/DropdownMenuAlignments.tsx?raw'
+import dropdownMenuComplexCode from '../../../demos/src/dropdown-menu/DropdownMenuComplex.tsx?raw'
 
 export function DropdownMenuDemo() {
   return (

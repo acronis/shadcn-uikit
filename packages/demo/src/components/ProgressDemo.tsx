@@ -10,20 +10,20 @@ import {
   ProgressWidths,
   ProgressInCards,
   ProgressInteractive,
-} from '@/demos/progress'
+} from '@acronis-platform/shadcn-uikit-demos/progress'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import progressBasicCode from '../demos/progress/ProgressBasic.tsx?raw'
-import progressValuesCode from '../demos/progress/ProgressValues.tsx?raw'
-import progressWithLabelsCode from '../demos/progress/ProgressWithLabels.tsx?raw'
-import progressWithTimeCode from '../demos/progress/ProgressWithTime.tsx?raw'
-import progressSizesCode from '../demos/progress/ProgressSizes.tsx?raw'
-import progressAnimatedCode from '../demos/progress/ProgressAnimated.tsx?raw'
-import progressMultipleCode from '../demos/progress/ProgressMultiple.tsx?raw'
-import progressWidthsCode from '../demos/progress/ProgressWidths.tsx?raw'
-import progressInCardsCode from '../demos/progress/ProgressInCards.tsx?raw'
-import progressInteractiveCode from '../demos/progress/ProgressInteractive.tsx?raw'
+import progressBasicCode from '../../../demos/src/progress/ProgressBasic.tsx?raw'
+import progressValuesCode from '../../../demos/src/progress/ProgressValues.tsx?raw'
+import progressWithLabelsCode from '../../../demos/src/progress/ProgressWithLabels.tsx?raw'
+import progressWithTimeCode from '../../../demos/src/progress/ProgressWithTime.tsx?raw'
+import progressSizesCode from '../../../demos/src/progress/ProgressSizes.tsx?raw'
+import progressAnimatedCode from '../../../demos/src/progress/ProgressAnimated.tsx?raw'
+import progressMultipleCode from '../../../demos/src/progress/ProgressMultiple.tsx?raw'
+import progressWidthsCode from '../../../demos/src/progress/ProgressWidths.tsx?raw'
+import progressInCardsCode from '../../../demos/src/progress/ProgressInCards.tsx?raw'
+import progressInteractiveCode from '../../../demos/src/progress/ProgressInteractive.tsx?raw'
 
 export function ProgressDemo() {
   return (

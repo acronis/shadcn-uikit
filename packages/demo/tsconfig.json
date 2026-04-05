@@ -18,10 +18,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@acronis-platform/shadcn-uikit": ["../ui/src/index.ts"],
-      "@acronis-platform/shadcn-uikit/react": ["../ui/src/react.ts"],
+      "@acronis-platform/shadcn-uikit": ["../ui/dist/index.d.ts"],
+      "@acronis-platform/shadcn-uikit/react": ["../ui/dist/react.d.ts"],
       "@acronis-platform/shadcn-uikit/styles": ["../ui/src/styles/globals.css"],
-      "@uikit-utils/*": ["../ui/src/utils/*"]
+      "@uikit-utils/*": ["../ui/dist/utils/*"]
     }
   },
   "include": ["src"],

@@ -4,14 +4,14 @@ import {
   ButtonTranslucent,
   ButtonSizes,
   ButtonDisabled,
-} from '@/demos/button'
+} from '@acronis-platform/shadcn-uikit-demos/button'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import buttonVariantsCode from '../demos/button/ButtonVariants.tsx?raw'
-import buttonTranslucentCode from '../demos/button/ButtonTranslucent.tsx?raw'
-import buttonSizesCode from '../demos/button/ButtonSizes.tsx?raw'
-import buttonDisabledCode from '../demos/button/ButtonDisabled.tsx?raw'
+import buttonVariantsCode from '../../../demos/src/button/ButtonVariants.tsx?raw'
+import buttonTranslucentCode from '../../../demos/src/button/ButtonTranslucent.tsx?raw'
+import buttonSizesCode from '../../../demos/src/button/ButtonSizes.tsx?raw'
+import buttonDisabledCode from '../../../demos/src/button/ButtonDisabled.tsx?raw'
 
 export function ButtonDemo() {
   return (

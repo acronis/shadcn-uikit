@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import {
   Bar,
   BarChart,
@@ -46,7 +47,7 @@ const barConfig = {
 } satisfies ChartConfig
 
 export const Bar_: Story = {
-  name: 'Bar',
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={barConfig} className="h-[300px] w-[500px]">
       <BarChart data={barData}>
@@ -62,7 +63,7 @@ export const Bar_: Story = {
 }
 
 export const Line_: Story = {
-  name: 'Line',
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={barConfig} className="h-[300px] w-[500px]">
       <LineChart data={barData}>
@@ -79,7 +80,7 @@ export const Line_: Story = {
 }
 
 export const Area_: Story = {
-  name: 'Area',
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={barConfig} className="h-[300px] w-[500px]">
       <AreaChart data={barData}>
@@ -110,7 +111,7 @@ const pieConfig = {
 } satisfies ChartConfig
 
 export const Pie_: Story = {
-  name: 'Pie',
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={pieConfig} className="h-[300px] w-[400px]">
       <PieChart>
@@ -146,6 +147,7 @@ const stackedConfig = {
 } satisfies ChartConfig
 
 export const StackedBar: Story = {
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={stackedConfig} className="h-[300px] w-[500px]">
       <BarChart data={stackedData}>

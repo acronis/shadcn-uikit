@@ -8,18 +8,18 @@ import {
   SecondaryMenuWithDisabled,
   SecondaryMenuComplete,
   SecondaryMenuSpecs,
-} from '@/demos/secondary-menu'
+} from '@acronis-platform/shadcn-uikit-demos/secondary-menu'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import secondaryMenuBasicCode from '../demos/secondary-menu/SecondaryMenuBasic.tsx?raw'
-import secondaryMenuWithIconsCode from '../demos/secondary-menu/SecondaryMenuWithIcons.tsx?raw'
-import secondaryMenuWithGroupsCode from '../demos/secondary-menu/SecondaryMenuWithGroups.tsx?raw'
-import secondaryMenuWithTagsCode from '../demos/secondary-menu/SecondaryMenuWithTags.tsx?raw'
-import secondaryMenuWithRightIconsCode from '../demos/secondary-menu/SecondaryMenuWithRightIcons.tsx?raw'
-import secondaryMenuWithDisabledCode from '../demos/secondary-menu/SecondaryMenuWithDisabled.tsx?raw'
-import secondaryMenuCompleteCode from '../demos/secondary-menu/SecondaryMenuComplete.tsx?raw'
-import secondaryMenuSpecsCode from '../demos/secondary-menu/SecondaryMenuSpecs.tsx?raw'
+import secondaryMenuBasicCode from '../../../demos/src/secondary-menu/SecondaryMenuBasic.tsx?raw'
+import secondaryMenuWithIconsCode from '../../../demos/src/secondary-menu/SecondaryMenuWithIcons.tsx?raw'
+import secondaryMenuWithGroupsCode from '../../../demos/src/secondary-menu/SecondaryMenuWithGroups.tsx?raw'
+import secondaryMenuWithTagsCode from '../../../demos/src/secondary-menu/SecondaryMenuWithTags.tsx?raw'
+import secondaryMenuWithRightIconsCode from '../../../demos/src/secondary-menu/SecondaryMenuWithRightIcons.tsx?raw'
+import secondaryMenuWithDisabledCode from '../../../demos/src/secondary-menu/SecondaryMenuWithDisabled.tsx?raw'
+import secondaryMenuCompleteCode from '../../../demos/src/secondary-menu/SecondaryMenuComplete.tsx?raw'
+import secondaryMenuSpecsCode from '../../../demos/src/secondary-menu/SecondaryMenuSpecs.tsx?raw'
 
 export function SecondaryMenuDemo() {
   return (

@@ -9,19 +9,19 @@ import {
   FilterMultipleGroups,
   FilterInToolbar,
   FilterDisabled,
-} from '@/demos/filter'
+} from '@acronis-platform/shadcn-uikit-demos/filter'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import filterBasicCode from '../demos/filter/FilterBasic.tsx?raw'
-import filterWithCounterCode from '../demos/filter/FilterWithCounter.tsx?raw'
-import filterActiveStateCode from '../demos/filter/FilterActiveState.tsx?raw'
-import filterVariantsCode from '../demos/filter/FilterVariants.tsx?raw'
-import filterInteractiveCode from '../demos/filter/FilterInteractive.tsx?raw'
-import filterWithDropdownCode from '../demos/filter/FilterWithDropdown.tsx?raw'
-import filterMultipleGroupsCode from '../demos/filter/FilterMultipleGroups.tsx?raw'
-import filterInToolbarCode from '../demos/filter/FilterInToolbar.tsx?raw'
-import filterDisabledCode from '../demos/filter/FilterDisabled.tsx?raw'
+import filterBasicCode from '../../../demos/src/filter/FilterBasic.tsx?raw'
+import filterWithCounterCode from '../../../demos/src/filter/FilterWithCounter.tsx?raw'
+import filterActiveStateCode from '../../../demos/src/filter/FilterActiveState.tsx?raw'
+import filterVariantsCode from '../../../demos/src/filter/FilterVariants.tsx?raw'
+import filterInteractiveCode from '../../../demos/src/filter/FilterInteractive.tsx?raw'
+import filterWithDropdownCode from '../../../demos/src/filter/FilterWithDropdown.tsx?raw'
+import filterMultipleGroupsCode from '../../../demos/src/filter/FilterMultipleGroups.tsx?raw'
+import filterInToolbarCode from '../../../demos/src/filter/FilterInToolbar.tsx?raw'
+import filterDisabledCode from '../../../demos/src/filter/FilterDisabled.tsx?raw'
 
 export function FilterDemo() {
   return (

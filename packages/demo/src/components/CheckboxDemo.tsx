@@ -11,21 +11,21 @@ import {
   CheckboxMultipleSelection,
   CheckboxList,
   CheckboxStates,
-} from '@/demos/checkbox'
+} from '@acronis-platform/shadcn-uikit-demos/checkbox'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import checkboxBasicCode from '../demos/checkbox/CheckboxBasic.tsx?raw'
-import checkboxWithLabelCode from '../demos/checkbox/CheckboxWithLabel.tsx?raw'
-import checkboxWithDescriptionCode from '../demos/checkbox/CheckboxWithDescription.tsx?raw'
-import checkboxControlledCode from '../demos/checkbox/CheckboxControlled.tsx?raw'
-import checkboxIndeterminateCode from '../demos/checkbox/CheckboxIndeterminate.tsx?raw'
-import checkboxDisabledCode from '../demos/checkbox/CheckboxDisabled.tsx?raw'
-import checkboxParentChildCode from '../demos/checkbox/CheckboxParentChild.tsx?raw'
-import checkboxFormCode from '../demos/checkbox/CheckboxForm.tsx?raw'
-import checkboxMultipleSelectionCode from '../demos/checkbox/CheckboxMultipleSelection.tsx?raw'
-import checkboxListCode from '../demos/checkbox/CheckboxList.tsx?raw'
-import checkboxStatesCode from '../demos/checkbox/CheckboxStates.tsx?raw'
+import checkboxBasicCode from '../../../demos/src/checkbox/CheckboxBasic.tsx?raw'
+import checkboxWithLabelCode from '../../../demos/src/checkbox/CheckboxWithLabel.tsx?raw'
+import checkboxWithDescriptionCode from '../../../demos/src/checkbox/CheckboxWithDescription.tsx?raw'
+import checkboxControlledCode from '../../../demos/src/checkbox/CheckboxControlled.tsx?raw'
+import checkboxIndeterminateCode from '../../../demos/src/checkbox/CheckboxIndeterminate.tsx?raw'
+import checkboxDisabledCode from '../../../demos/src/checkbox/CheckboxDisabled.tsx?raw'
+import checkboxParentChildCode from '../../../demos/src/checkbox/CheckboxParentChild.tsx?raw'
+import checkboxFormCode from '../../../demos/src/checkbox/CheckboxForm.tsx?raw'
+import checkboxMultipleSelectionCode from '../../../demos/src/checkbox/CheckboxMultipleSelection.tsx?raw'
+import checkboxListCode from '../../../demos/src/checkbox/CheckboxList.tsx?raw'
+import checkboxStatesCode from '../../../demos/src/checkbox/CheckboxStates.tsx?raw'
 
 export function CheckboxDemo() {
   return (

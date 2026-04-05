@@ -10,20 +10,20 @@ import {
   TreeControlled,
   TreeDeepNesting,
   TreeMixedContent,
-} from '@/demos/tree'
+} from '@acronis-platform/shadcn-uikit-demos/tree'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import treeBasicCode from '../demos/tree/TreeBasic.tsx?raw'
-import treeWithIconsCode from '../demos/tree/TreeWithIcons.tsx?raw'
-import treeWithCheckboxesCode from '../demos/tree/TreeWithCheckboxes.tsx?raw'
-import treeWithIconsAndCheckboxesCode from '../demos/tree/TreeWithIconsAndCheckboxes.tsx?raw'
-import treeFileSystemCode from '../demos/tree/TreeFileSystem.tsx?raw'
-import treeProjectStructureCode from '../demos/tree/TreeProjectStructure.tsx?raw'
-import treeOrganizationCode from '../demos/tree/TreeOrganization.tsx?raw'
-import treeControlledCode from '../demos/tree/TreeControlled.tsx?raw'
-import treeDeepNestingCode from '../demos/tree/TreeDeepNesting.tsx?raw'
-import treeMixedContentCode from '../demos/tree/TreeMixedContent.tsx?raw'
+import treeBasicCode from '../../../demos/src/tree/TreeBasic.tsx?raw'
+import treeWithIconsCode from '../../../demos/src/tree/TreeWithIcons.tsx?raw'
+import treeWithCheckboxesCode from '../../../demos/src/tree/TreeWithCheckboxes.tsx?raw'
+import treeWithIconsAndCheckboxesCode from '../../../demos/src/tree/TreeWithIconsAndCheckboxes.tsx?raw'
+import treeFileSystemCode from '../../../demos/src/tree/TreeFileSystem.tsx?raw'
+import treeProjectStructureCode from '../../../demos/src/tree/TreeProjectStructure.tsx?raw'
+import treeOrganizationCode from '../../../demos/src/tree/TreeOrganization.tsx?raw'
+import treeControlledCode from '../../../demos/src/tree/TreeControlled.tsx?raw'
+import treeDeepNestingCode from '../../../demos/src/tree/TreeDeepNesting.tsx?raw'
+import treeMixedContentCode from '../../../demos/src/tree/TreeMixedContent.tsx?raw'
 
 export function TreeDemo() {
   return (

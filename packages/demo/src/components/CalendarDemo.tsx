@@ -12,22 +12,22 @@ import {
   CalendarFixedWeeks,
   CalendarWeekStart,
   CalendarMinMax,
-} from '@/demos/calendar'
+} from '@acronis-platform/shadcn-uikit-demos/calendar'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import calendarSingleCode from '../demos/calendar/CalendarSingle.tsx?raw'
-import calendarMultipleCode from '../demos/calendar/CalendarMultiple.tsx?raw'
-import calendarRangeCode from '../demos/calendar/CalendarRange.tsx?raw'
-import calendarDualMonthCode from '../demos/calendar/CalendarDualMonth.tsx?raw'
-import calendarDropdownCode from '../demos/calendar/CalendarDropdown.tsx?raw'
-import calendarDisabledCode from '../demos/calendar/CalendarDisabled.tsx?raw'
-import calendarWeekNumbersCode from '../demos/calendar/CalendarWeekNumbers.tsx?raw'
-import calendarCustomStartCode from '../demos/calendar/CalendarCustomStart.tsx?raw'
-import calendarNoOutsideCode from '../demos/calendar/CalendarNoOutside.tsx?raw'
-import calendarFixedWeeksCode from '../demos/calendar/CalendarFixedWeeks.tsx?raw'
-import calendarWeekStartCode from '../demos/calendar/CalendarWeekStart.tsx?raw'
-import calendarMinMaxCode from '../demos/calendar/CalendarMinMax.tsx?raw'
+import calendarSingleCode from '../../../demos/src/calendar/CalendarSingle.tsx?raw'
+import calendarMultipleCode from '../../../demos/src/calendar/CalendarMultiple.tsx?raw'
+import calendarRangeCode from '../../../demos/src/calendar/CalendarRange.tsx?raw'
+import calendarDualMonthCode from '../../../demos/src/calendar/CalendarDualMonth.tsx?raw'
+import calendarDropdownCode from '../../../demos/src/calendar/CalendarDropdown.tsx?raw'
+import calendarDisabledCode from '../../../demos/src/calendar/CalendarDisabled.tsx?raw'
+import calendarWeekNumbersCode from '../../../demos/src/calendar/CalendarWeekNumbers.tsx?raw'
+import calendarCustomStartCode from '../../../demos/src/calendar/CalendarCustomStart.tsx?raw'
+import calendarNoOutsideCode from '../../../demos/src/calendar/CalendarNoOutside.tsx?raw'
+import calendarFixedWeeksCode from '../../../demos/src/calendar/CalendarFixedWeeks.tsx?raw'
+import calendarWeekStartCode from '../../../demos/src/calendar/CalendarWeekStart.tsx?raw'
+import calendarMinMaxCode from '../../../demos/src/calendar/CalendarMinMax.tsx?raw'
 
 export function CalendarDemo() {
   return (

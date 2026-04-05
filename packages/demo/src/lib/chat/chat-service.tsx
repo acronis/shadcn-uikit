@@ -42,7 +42,7 @@ interface ChatProviderProps {
 
 export function ChatProvider({ children }: ChatProviderProps) {
   const [state, dispatch] = useReducer(chatReducer, createInitialState());
-  const [botInstance, setBotInstance] = React.useState(() => hal9000Bot);
+  const [botInstance, setBotInstance] = React.useState<ElizaBot | Hal9000Bot>(() => hal9000Bot);
 
   // Use refs to always have access to current values
   const stateRef = React.useRef(state);

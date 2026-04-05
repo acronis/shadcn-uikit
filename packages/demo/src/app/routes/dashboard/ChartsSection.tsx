@@ -129,7 +129,7 @@ export function ChartsSection({ timeSeriesData, categoryData, distributionData, 
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
-                  data={distributionData}
+                  data={distributionData as any}
                   cx="50%"
                   cy="50%"
                   labelLine={false}

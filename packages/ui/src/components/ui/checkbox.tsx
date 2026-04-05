@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
  * backwards-compatibility with the Radix UI API. Base UI uses a separate boolean
  * `indeterminate` prop, so we override `checked` here and normalize it internally.
  */
-type CheckboxProps = Omit<React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>, 'checked'> & {
+export type CheckboxProps = Omit<React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>, 'checked'> & {
   checked?: boolean | 'indeterminate'
 }
 

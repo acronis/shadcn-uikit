@@ -86,7 +86,7 @@ const PlaygroundPage: React.FC = () => {
       </header>
 
       <main className="flex-1 w-full overflow-hidden">
-        <ResizablePanelGroup direction="horizontal" className="h-full">
+        <ResizablePanelGroup orientation="horizontal" className="h-full">
           <ResizablePanel
             id="token-editor"
             defaultSize={40}

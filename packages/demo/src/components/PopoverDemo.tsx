@@ -8,18 +8,18 @@ import {
   PopoverAlignments,
   PopoverIconTriggers,
   PopoverFilter,
-} from '@/demos/popover'
+} from '@acronis-platform/shadcn-uikit-demos/popover'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import popoverBasicCode from '../demos/popover/PopoverBasic.tsx?raw'
-import popoverWithFormCode from '../demos/popover/PopoverWithForm.tsx?raw'
-import popoverWithCalendarCode from '../demos/popover/PopoverWithCalendar.tsx?raw'
-import popoverWithActionsCode from '../demos/popover/PopoverWithActions.tsx?raw'
-import popoverPlacementsCode from '../demos/popover/PopoverPlacements.tsx?raw'
-import popoverAlignmentsCode from '../demos/popover/PopoverAlignments.tsx?raw'
-import popoverIconTriggersCode from '../demos/popover/PopoverIconTriggers.tsx?raw'
-import popoverFilterCode from '../demos/popover/PopoverFilter.tsx?raw'
+import popoverBasicCode from '../../../demos/src/popover/PopoverBasic.tsx?raw'
+import popoverWithFormCode from '../../../demos/src/popover/PopoverWithForm.tsx?raw'
+import popoverWithCalendarCode from '../../../demos/src/popover/PopoverWithCalendar.tsx?raw'
+import popoverWithActionsCode from '../../../demos/src/popover/PopoverWithActions.tsx?raw'
+import popoverPlacementsCode from '../../../demos/src/popover/PopoverPlacements.tsx?raw'
+import popoverAlignmentsCode from '../../../demos/src/popover/PopoverAlignments.tsx?raw'
+import popoverIconTriggersCode from '../../../demos/src/popover/PopoverIconTriggers.tsx?raw'
+import popoverFilterCode from '../../../demos/src/popover/PopoverFilter.tsx?raw'
 
 export function PopoverDemo() {
   return (

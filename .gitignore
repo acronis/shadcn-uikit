@@ -15,6 +15,8 @@ dist
 .DS_Store
 *.pem
 .claude/settings.local.json
+.claude/settings.json
+.playwright-mcp
 
 # Debug
 npm-debug.log*
@@ -42,3 +44,9 @@ yarn-error.log*
 
 # Storybook
 storybook-static
+
+# Next.js
+.next
+
+# Fumadocs
+.source

@@ -1,11 +1,13 @@
 import * as React from 'react'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@acronis-platform/shadcn-uikit/react'
-import { DashboardPattern } from '@/demos/patterns/DashboardPattern'
-import { SettingsPattern } from '@/demos/patterns/SettingsPattern'
-import { DataManagementPattern } from '@/demos/patterns/DataManagementPattern'
-import { LoginPattern } from '@/demos/patterns/LoginPattern'
-import { SignupPattern } from '@/demos/patterns/SignupPattern'
-import { ErrorPagesPattern } from '@/demos/patterns/ErrorPagesPattern'
+import {
+  DashboardPattern,
+  SettingsPattern,
+  DataManagementPattern,
+  LoginPattern,
+  SignupPattern,
+  ErrorPagesPattern,
+} from '@acronis-platform/shadcn-uikit-demos/patterns'
 
 export function PatternsDemo() {
   return (

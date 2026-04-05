@@ -12,22 +12,22 @@ import {
   TagVersion,
   TagCategory,
   TagMixedSizes,
-} from '@/demos/tag'
+} from '@acronis-platform/shadcn-uikit-demos/tag'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import tagDefaultCode from '../demos/tag/TagDefault.tsx?raw'
-import tagSmallCode from '../demos/tag/TagSmall.tsx?raw'
-import tagWithIconsCode from '../demos/tag/TagWithIcons.tsx?raw'
-import tagSmallWithIconsCode from '../demos/tag/TagSmallWithIcons.tsx?raw'
-import tagStatusCode from '../demos/tag/TagStatus.tsx?raw'
-import tagPriorityCode from '../demos/tag/TagPriority.tsx?raw'
-import tagSecurityCode from '../demos/tag/TagSecurity.tsx?raw'
-import tagFeatureCode from '../demos/tag/TagFeature.tsx?raw'
-import tagEnvironmentCode from '../demos/tag/TagEnvironment.tsx?raw'
-import tagVersionCode from '../demos/tag/TagVersion.tsx?raw'
-import tagCategoryCode from '../demos/tag/TagCategory.tsx?raw'
-import tagMixedSizesCode from '../demos/tag/TagMixedSizes.tsx?raw'
+import tagDefaultCode from '../../../demos/src/tag/TagDefault.tsx?raw'
+import tagSmallCode from '../../../demos/src/tag/TagSmall.tsx?raw'
+import tagWithIconsCode from '../../../demos/src/tag/TagWithIcons.tsx?raw'
+import tagSmallWithIconsCode from '../../../demos/src/tag/TagSmallWithIcons.tsx?raw'
+import tagStatusCode from '../../../demos/src/tag/TagStatus.tsx?raw'
+import tagPriorityCode from '../../../demos/src/tag/TagPriority.tsx?raw'
+import tagSecurityCode from '../../../demos/src/tag/TagSecurity.tsx?raw'
+import tagFeatureCode from '../../../demos/src/tag/TagFeature.tsx?raw'
+import tagEnvironmentCode from '../../../demos/src/tag/TagEnvironment.tsx?raw'
+import tagVersionCode from '../../../demos/src/tag/TagVersion.tsx?raw'
+import tagCategoryCode from '../../../demos/src/tag/TagCategory.tsx?raw'
+import tagMixedSizesCode from '../../../demos/src/tag/TagMixedSizes.tsx?raw'
 
 export function TagDemo() {
   return (

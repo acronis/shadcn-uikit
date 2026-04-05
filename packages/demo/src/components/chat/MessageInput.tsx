@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import EmojiPicker from 'emoji-picker-react';
+import EmojiPicker, { Theme } from 'emoji-picker-react';
 import { cn } from '@acronis-platform/shadcn-uikit/react'
-import { MessageInputProps } from '../../../../lib/chat/types';
+import { MessageInputProps } from '@/lib/chat/types';
 import { Button } from '@acronis-platform/shadcn-uikit/react';
 import { Textarea } from '@acronis-platform/shadcn-uikit/react';
 import {
@@ -99,7 +99,7 @@ export function MessageInput({
               <PopoverContent className="w-auto p-0" align="end">
                 <EmojiPicker
                   onEmojiClick={handleEmojiSelect}
-                  theme="light"
+                  theme={Theme.LIGHT}
                   width={320}
                   height={400}
                 />

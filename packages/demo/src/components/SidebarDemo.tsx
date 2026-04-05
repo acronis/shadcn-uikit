@@ -4,14 +4,14 @@ import {
   SidebarIconsOnly,
   SidebarWithBadges,
   SidebarWithSections,
-} from '@/demos/sidebar'
+} from '@acronis-platform/shadcn-uikit-demos/sidebar'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import sidebarFullCode from '../demos/sidebar/SidebarFull.tsx?raw'
-import sidebarIconsOnlyCode from '../demos/sidebar/SidebarIconsOnly.tsx?raw'
-import sidebarWithBadgesCode from '../demos/sidebar/SidebarWithBadges.tsx?raw'
-import sidebarWithSectionsCode from '../demos/sidebar/SidebarWithSections.tsx?raw'
+import sidebarFullCode from '../../../demos/src/sidebar/SidebarFull.tsx?raw'
+import sidebarIconsOnlyCode from '../../../demos/src/sidebar/SidebarIconsOnly.tsx?raw'
+import sidebarWithBadgesCode from '../../../demos/src/sidebar/SidebarWithBadges.tsx?raw'
+import sidebarWithSectionsCode from '../../../demos/src/sidebar/SidebarWithSections.tsx?raw'
 
 export function SidebarDemo() {
   return (

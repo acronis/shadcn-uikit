@@ -1,0 +1,51 @@
+---
+title: Theming
+description: Customize the look and feel of Acronis UIKit using CSS custom properties and theme switching.
+---
+
+## How themes work
+
+Acronis UIKit uses CSS custom properties (variables) for all design tokens. Importing the styles gives you the default light theme:
+
+```tsx
+import '@acronis-platform/shadcn-uikit/styles';
+```
+
+## Dark mode
+
+Add the `dark` class to your `<html>` element to activate dark mode:
+
+```html
+<html class="dark">
+```
+
+## Theme switching
+
+Switch themes using the `data-theme` attribute:
+
+```html
+<html data-theme="acronis-dark">
+```
+
+## Design tokens
+
+Key CSS variables you can override:
+
+| Variable | Purpose |
+|---|---|
+| `--av-background-primary` | Main page background |
+| `--av-background-secondary` | Secondary surfaces |
+| `--av-text-primary` | Primary text color |
+| `--av-text-secondary` | Secondary / muted text |
+| `--av-border-secondary` | Dividers and borders |
+| `--av-accent-primary` | Brand accent color |
+
+## Custom theme
+
+Override any variable in your CSS:
+
+```css
+:root {
+  --av-accent-primary: hsl(270 60% 55%);
+}
+```

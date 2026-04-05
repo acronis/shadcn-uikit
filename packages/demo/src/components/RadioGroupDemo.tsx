@@ -10,20 +10,20 @@ import {
   RadioGroupCards,
   RadioGroupSizes,
   RadioGroupPriority,
-} from '@/demos/radio-group'
+} from '@acronis-platform/shadcn-uikit-demos/radio-group'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import radioGroupBasicCode from '../demos/radio-group/RadioGroupBasic.tsx?raw'
-import radioGroupControlledCode from '../demos/radio-group/RadioGroupControlled.tsx?raw'
-import radioGroupWithDescriptionsCode from '../demos/radio-group/RadioGroupWithDescriptions.tsx?raw'
-import radioGroupDisabledCode from '../demos/radio-group/RadioGroupDisabled.tsx?raw'
-import radioGroupHorizontalCode from '../demos/radio-group/RadioGroupHorizontal.tsx?raw'
-import radioGroupFormCode from '../demos/radio-group/RadioGroupForm.tsx?raw'
-import radioGroupPaymentCode from '../demos/radio-group/RadioGroupPayment.tsx?raw'
-import radioGroupCardsCode from '../demos/radio-group/RadioGroupCards.tsx?raw'
-import radioGroupSizesCode from '../demos/radio-group/RadioGroupSizes.tsx?raw'
-import radioGroupPriorityCode from '../demos/radio-group/RadioGroupPriority.tsx?raw'
+import radioGroupBasicCode from '../../../demos/src/radio-group/RadioGroupBasic.tsx?raw'
+import radioGroupControlledCode from '../../../demos/src/radio-group/RadioGroupControlled.tsx?raw'
+import radioGroupWithDescriptionsCode from '../../../demos/src/radio-group/RadioGroupWithDescriptions.tsx?raw'
+import radioGroupDisabledCode from '../../../demos/src/radio-group/RadioGroupDisabled.tsx?raw'
+import radioGroupHorizontalCode from '../../../demos/src/radio-group/RadioGroupHorizontal.tsx?raw'
+import radioGroupFormCode from '../../../demos/src/radio-group/RadioGroupForm.tsx?raw'
+import radioGroupPaymentCode from '../../../demos/src/radio-group/RadioGroupPayment.tsx?raw'
+import radioGroupCardsCode from '../../../demos/src/radio-group/RadioGroupCards.tsx?raw'
+import radioGroupSizesCode from '../../../demos/src/radio-group/RadioGroupSizes.tsx?raw'
+import radioGroupPriorityCode from '../../../demos/src/radio-group/RadioGroupPriority.tsx?raw'
 
 export function RadioGroupDemo() {
   return (

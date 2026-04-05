@@ -11,7 +11,7 @@ const TooltipTrigger = Tooltip.Trigger
 
 type PositionerProps = React.ComponentPropsWithoutRef<typeof Tooltip.Positioner>
 
-interface TooltipContentProps extends React.ComponentPropsWithoutRef<typeof Tooltip.Popup> {
+export interface TooltipContentProps extends React.ComponentPropsWithoutRef<typeof Tooltip.Popup> {
   sideOffset?: number
   side?: PositionerProps['side']
   align?: PositionerProps['align']

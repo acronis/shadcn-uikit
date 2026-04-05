@@ -68,6 +68,7 @@ export default defineConfig({
         'react',
         'react-dom',
         'react/jsx-runtime',
+        'sonner',
         '@radix-ui/react-accordion',
         '@radix-ui/react-checkbox',
         '@radix-ui/react-dialog',
