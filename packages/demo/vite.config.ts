@@ -65,6 +65,7 @@ export default defineConfig(({ mode }) => ({
     }),
   ],
   resolve: {
+    dedupe: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
     alias: {
       '@acronis-platform/shadcn-uikit-demos': resolve(__dirname, '../demos/src'),
       '@acronis-platform/shadcn-uikit/react': resolve(__dirname, '../ui/src/react.ts'),
