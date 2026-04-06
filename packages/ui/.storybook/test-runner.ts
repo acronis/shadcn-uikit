@@ -58,7 +58,7 @@ const config: TestRunnerConfig = {
         expect(image).toMatchImageSnapshot({
             customSnapshotsDir: `${process.cwd()}/test/__snapshots__`,
             customSnapshotIdentifier: context.id,
-            failureThreshold: 0.03,
+            failureThreshold: 0.005,
             failureThresholdType: 'percent',
         });
     },
