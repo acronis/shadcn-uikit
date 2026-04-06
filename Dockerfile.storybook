@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 # Dockerfile.storybook
 FROM mcr.microsoft.com/playwright:v1.57.0-jammy
 
@@ -6,21 +7,25 @@ WORKDIR /app
 # Install pnpm
 RUN npm install -g pnpm@10.27.0
 
-# Copy workspace files
+# Copy workspace manifests — changes here invalidate the install layer
 COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
 COPY packages/ui/package.json ./packages/ui/
 COPY packages/demo/package.json ./packages/demo/
 
-# Install dependencies
-RUN pnpm install --frozen-lockfile
+# Install dependencies — cache the pnpm content-addressable store between builds
+RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store \
+    pnpm install --frozen-lockfile
 
-# Copy source
+# Copy source — invalidated on any change, but the Vite/SB caches below survive
 COPY packages/ui ./packages/ui
 
 WORKDIR /app/packages/ui
 
-# Build storybook during image build so it's cached across runs
-RUN pnpm storybook:build
+# Build storybook — Vite module cache and Storybook's builder cache are
+# mounted from the host so only changed files are recompiled on subsequent runs
+RUN --mount=type=cache,id=sb-vite-cache,target=/app/packages/ui/node_modules/.vite \
+    --mount=type=cache,id=sb-builder-cache,target=/app/packages/ui/node_modules/.cache \
+    pnpm storybook:build
 
 # Default command — override in docker-compose
 CMD ["pnpm", "exec", "http-server", "storybook-static", "-p", "6006", "--silent"]
