@@ -25,7 +25,7 @@ import {
 const meta = {
   title: 'UI/Chart',
   component: ChartContainer,
-  parameters: { layout: 'centered', snapshot: { animationDelay: 400 } },
+  parameters: { layout: 'centered' },
   tags: ['autodocs'],
 } satisfies Meta<typeof ChartContainer>
 
@@ -55,8 +55,8 @@ export const Bar_: Story = {
         <XAxis dataKey="month" tickLine={false} axisLine={false} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
-        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} isAnimationActive={false} />
+        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} isAnimationActive={false} />
       </BarChart>
     </ChartContainer>
   ),
@@ -72,8 +72,8 @@ export const Line_: Story = {
         <YAxis tickLine={false} axisLine={false} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
-        <Line type="monotone" dataKey="desktop" stroke="var(--color-desktop)" strokeWidth={2} dot={false} />
-        <Line type="monotone" dataKey="mobile" stroke="var(--color-mobile)" strokeWidth={2} dot={false} />
+        <Line type="monotone" dataKey="desktop" stroke="var(--color-desktop)" strokeWidth={2} dot={false} isAnimationActive={false} />
+        <Line type="monotone" dataKey="mobile" stroke="var(--color-mobile)" strokeWidth={2} dot={false} isAnimationActive={false} />
       </LineChart>
     </ChartContainer>
   ),
@@ -89,8 +89,8 @@ export const Area_: Story = {
         <YAxis tickLine={false} axisLine={false} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
-        <Area type="monotone" dataKey="desktop" stroke="var(--color-desktop)" fill="var(--color-desktop)" fillOpacity={0.2} strokeWidth={2} />
-        <Area type="monotone" dataKey="mobile" stroke="var(--color-mobile)" fill="var(--color-mobile)" fillOpacity={0.2} strokeWidth={2} />
+        <Area type="monotone" dataKey="desktop" stroke="var(--color-desktop)" fill="var(--color-desktop)" fillOpacity={0.2} strokeWidth={2} isAnimationActive={false} />
+        <Area type="monotone" dataKey="mobile" stroke="var(--color-mobile)" fill="var(--color-mobile)" fillOpacity={0.2} strokeWidth={2} isAnimationActive={false} />
       </AreaChart>
     </ChartContainer>
   ),
@@ -125,6 +125,7 @@ export const Pie_: Story = {
           cy="50%"
           outerRadius={100}
           fill="hsl(var(--chart-1))"
+          isAnimationActive={false}
         />
       </PieChart>
     </ChartContainer>
@@ -155,9 +156,9 @@ export const StackedBar: Story = {
         <XAxis dataKey="month" tickLine={false} axisLine={false} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
-        <Bar dataKey="desktop" stackId="a" fill="var(--color-desktop)" />
-        <Bar dataKey="mobile" stackId="a" fill="var(--color-mobile)" />
-        <Bar dataKey="tablet" stackId="a" fill="var(--color-tablet)" radius={[4, 4, 0, 0]} />
+        <Bar dataKey="desktop" stackId="a" fill="var(--color-desktop)" isAnimationActive={false} />
+        <Bar dataKey="mobile" stackId="a" fill="var(--color-mobile)" isAnimationActive={false} />
+        <Bar dataKey="tablet" stackId="a" fill="var(--color-tablet)" radius={[4, 4, 0, 0]} isAnimationActive={false} />
       </BarChart>
     </ChartContainer>
   ),
