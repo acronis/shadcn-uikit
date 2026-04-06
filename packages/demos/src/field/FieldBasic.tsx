@@ -8,7 +8,7 @@ import { Input } from '@acronis-platform/shadcn-uikit/react'
 
 export function FieldBasic() {
   return (
-    <div className="max-w-sm">
+    <div className="w-full max-w-sm">
       <Field>
         <FieldLabel htmlFor="username">Username</FieldLabel>
         <Input id="username" placeholder="johndoe" />

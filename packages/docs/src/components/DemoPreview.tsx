@@ -33,7 +33,7 @@ export async function DemoPreview({ children, sourcePath, center }: DemoPreviewP
   return (
     <div className="demo-preview my-6 rounded-xl border overflow-hidden shadow-sm">
       <div
-        className={`demo-preview__canvas p-8 min-h-[120px] flex flex-wrap items-start gap-3${center ? ' justify-center' : ''}`}
+        className={`demo-preview__canvas p-8 min-h-[120px] flex flex-wrap items-start gap-4 [&>*]:min-w-0${center ? ' justify-center' : ''}`}
       >
         {children}
       </div>

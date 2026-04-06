@@ -9,7 +9,7 @@ import { Input } from '@acronis-platform/shadcn-uikit/react'
 
 export function FieldWithError() {
   return (
-    <div className="max-w-sm space-y-6">
+    <div className="w-full max-w-sm space-y-6">
       {/* Single error */}
       <Field data-invalid="true">
         <FieldLabel htmlFor="email-error">Email</FieldLabel>

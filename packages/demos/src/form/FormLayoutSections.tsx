@@ -46,7 +46,7 @@ export function FormLayoutSections() {
   }
 
   return (
-    <div className="max-w-lg">
+    <div className="w-full max-w-lg">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
 

@@ -51,7 +51,7 @@ export function FormProfile() {
   }
 
   return (
-    <div className="max-w-md">
+    <div className="w-full max-w-md">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField

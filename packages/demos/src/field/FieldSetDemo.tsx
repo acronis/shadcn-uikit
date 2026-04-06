@@ -13,7 +13,7 @@ import { RadioGroup, RadioGroupItem } from '@acronis-platform/shadcn-uikit/react
 
 export function FieldSetDemo() {
   return (
-    <div className="max-w-md space-y-8">
+    <div className="w-full max-w-md space-y-8">
       {/* Switch group */}
       <FieldSet>
         <FieldLegend>Notifications</FieldLegend>

@@ -51,7 +51,7 @@ export function FormSettings() {
   }
 
   return (
-    <div className="max-w-md rounded-lg border p-6">
+    <div className="w-full max-w-md rounded-lg border p-6">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-4">

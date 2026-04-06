@@ -18,7 +18,7 @@ import { Button } from '@acronis-platform/shadcn-uikit/react'
 
 export function FieldGroupDemo() {
   return (
-    <div className="max-w-md">
+    <div className="w-full max-w-md">
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="fg-name">Full name</FieldLabel>

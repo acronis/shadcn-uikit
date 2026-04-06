@@ -11,7 +11,7 @@ import { Checkbox } from '@acronis-platform/shadcn-uikit/react'
 
 export function FieldHorizontal() {
   return (
-    <div className="max-w-lg space-y-4">
+    <div className="w-full max-w-lg space-y-4">
       {/* Label left, control right */}
       <Field orientation="horizontal">
         <FieldLabel htmlFor="h-name">Display name</FieldLabel>

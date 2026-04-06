@@ -41,7 +41,7 @@ export function FormTanstackProfile() {
 
   if (submitted) {
     return (
-      <div className="max-w-md rounded-lg border p-6 space-y-3">
+      <div className="w-full max-w-md rounded-lg border p-6 space-y-3">
         <p className="text-sm font-medium text-green-600">Profile saved!</p>
         <pre className="text-xs bg-muted rounded p-3 overflow-auto">
           {JSON.stringify(submitted, null, 2)}
@@ -54,7 +54,7 @@ export function FormTanstackProfile() {
   }
 
   return (
-    <div className="max-w-md">
+    <div className="w-full max-w-md">
       <form
         onSubmit={(e) => {
           e.preventDefault()

@@ -57,7 +57,7 @@ export function FormRegistration() {
   }
 
   return (
-    <div className="max-w-md rounded-lg border p-6">
+    <div className="w-full max-w-md rounded-lg border p-6">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
