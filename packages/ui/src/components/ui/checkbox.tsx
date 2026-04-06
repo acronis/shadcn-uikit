@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Checkbox as CheckboxPrimitive } from '@base-ui/react'
-import { CheckIcon, MinusIcon } from '@/components/icons'
 
 import { cn } from '@/lib/utils'
 
@@ -42,11 +41,15 @@ const Checkbox = React.forwardRef<HTMLElement, CheckboxProps>(
         {...props}
       >
         {/* keepMounted ensures the indicator stays in the DOM so we can always render the correct icon */}
-        <CheckboxPrimitive.Indicator keepMounted className={cn('flex items-center justify-center text-current data-[unchecked]:hidden')}>
+        <CheckboxPrimitive.Indicator keepMounted className={cn('flex items-center justify-center text-current data-[unchecked]:opacity-0')}>
           {isIndeterminate ? (
-            <MinusIcon className="h-2.5 w-2.5" />
+            <svg className="h-2.5 w-2.5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M2 7h12v2H2z" />
+            </svg>
           ) : (
-            <CheckIcon className="h-2.5 w-2.5" />
+            <svg className="h-2.5 w-2.5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M1.7071 8.2929c-.3905-.3905-1.0237-.3905-1.4142 0-.3905.3905-.3905 1.0237 0 1.4142l4 4c.3905.3905 1.0237.3905 1.4142 0l10-10c.3905-.3905.3905-1.0237 0-1.4142-.3905-.3905-1.0237-.3905-1.4142 0L5 11.5858l-3.2929-3.293Z" />
+            </svg>
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>

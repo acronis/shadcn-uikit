@@ -70,6 +70,8 @@ export default defineConfig({
         'react/jsx-runtime',
         'next-themes',
         'sonner',
+        '@base-ui/react',
+        /^@base-ui\/react\//,
         '@radix-ui/react-accordion',
         '@radix-ui/react-checkbox',
         '@radix-ui/react-dialog',

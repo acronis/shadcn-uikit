@@ -10,6 +10,7 @@
   "dependencies": {
     "@acronis-platform/shadcn-uikit": "workspace:*",
     "@acronis-platform/shadcn-uikit-demos": "workspace:*",
+    "@base-ui/react": "^1.0.0",
     "@radix-ui/react-dialog": "^1.1.6",
     "fumadocs-core": "15.7.13",
     "fumadocs-ui": "15.7.13",
