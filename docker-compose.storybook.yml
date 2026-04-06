@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.storybook
-    command: sh -c "pnpm storybook:build && pnpm exec http-server storybook-static -p 6006 --silent"
+    image: shadcn-uikit-storybook
     ports:
       - "6006:6006"
     healthcheck:
@@ -18,7 +18,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.storybook
-    command: pnpm exec test-storybook --url http://storybook:6006
+    image: shadcn-uikit-storybook
+    command: pnpm exec test-storybook --url http://storybook:6006 --maxWorkers=4
     depends_on:
       storybook:
         condition: service_healthy

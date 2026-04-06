@@ -19,5 +19,8 @@ COPY packages/ui ./packages/ui
 
 WORKDIR /app/packages/ui
 
+# Build storybook during image build so it's cached across runs
+RUN pnpm storybook:build
+
 # Default command — override in docker-compose
-CMD ["pnpm", "storybook:build"]
+CMD ["pnpm", "exec", "http-server", "storybook-static", "-p", "6006", "--silent"]
