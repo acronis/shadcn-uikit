@@ -89,6 +89,7 @@ export default function HomePage() {
         { type: 'main', text: 'Documentation', url: '/docs' },
         { type: 'main', text: 'Components', url: '/docs/components' },
         { type: 'main', text: 'Storybook', url: '/storybook' },
+        { type: 'main', text: 'Demo', url: '/demo' },
       ]}
     >
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
