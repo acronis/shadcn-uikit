@@ -28,10 +28,10 @@ const Checkbox = React.forwardRef<HTMLElement, CheckboxProps>(
         checked={normalizedChecked}
         indeterminate={isIndeterminate}
         className={cn(
-          'peer inline-flex items-center justify-center h-4 w-4 shrink-0 rounded-sm border bg-background border-input/30 transition-colors',
-          'hover:border-input/50',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-          'disabled:cursor-not-allowed disabled:bg-muted/10 disabled:border-muted/10',
+          'peer inline-flex items-center justify-center h-4 w-4 shrink-0 rounded-md border bg-background border-primary/30 transition-colors',
+          'hover:border-primary/50',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--checkbox-focus))] focus-visible:ring-offset-1',
+          'disabled:cursor-not-allowed disabled:bg-primary/10 disabled:border-primary/10',
           'data-[checked]:bg-primary data-[checked]:border-primary data-[checked]:text-primary-foreground',
           'data-[indeterminate]:bg-primary data-[indeterminate]:border-primary data-[indeterminate]:text-primary-foreground',
           className
@@ -41,9 +41,9 @@ const Checkbox = React.forwardRef<HTMLElement, CheckboxProps>(
         {/* keepMounted ensures the indicator stays in the DOM so we can always render the correct icon */}
         <CheckboxPrimitive.Indicator keepMounted className={cn('flex items-center justify-center text-current data-[unchecked]:hidden')}>
           {isIndeterminate ? (
-            <MinusIcon className="h-3 w-3" />
+            <MinusIcon className="h-2.5 w-2.5" />
           ) : (
-            <CheckIcon className="h-3 w-3" />
+            <CheckIcon className="h-2.5 w-2.5" />
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
