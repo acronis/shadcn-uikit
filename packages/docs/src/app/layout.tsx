@@ -8,7 +8,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <RootProvider>
+        <RootProvider search={{ options: { type: 'static' } }}>
           {children}
           <Toaster />
         </RootProvider>

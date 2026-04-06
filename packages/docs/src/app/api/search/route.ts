@@ -1,8 +1,7 @@
 import { source } from '@/lib/source';
 import { createFromSource } from 'fumadocs-core/search/server';
 
-// Required for Next.js static export (output: "export") — route handlers
-// must explicitly declare static rendering.
+// Use staticGET so the route can be pre-rendered for static export.
+// The search dialog is configured with type: 'static' to match.
 export const dynamic = 'force-static';
-
-export const { GET } = createFromSource(source);
+export const { staticGET: GET } = createFromSource(source);
