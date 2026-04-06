@@ -3,24 +3,19 @@ import { useForm } from '@tanstack/react-form'
 import { zodValidator } from '@tanstack/zod-form-adapter'
 import * as z from 'zod'
 import {
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
+  Field,
+  FieldLabel,
+  FieldDescription,
+  FieldError,
 } from '@acronis-platform/shadcn-uikit/react'
 import { Input } from '@acronis-platform/shadcn-uikit/react'
 import { Button } from '@acronis-platform/shadcn-uikit/react'
 
-const usernameSchema = z.string().min(2, {
-  message: 'Username must be at least 2 characters.',
-})
+const usernameSchema = z.string().min(2, 'Username must be at least 2 characters.')
 
 export function FormTanstackBasic() {
   const form = useForm({
-    defaultValues: {
-      username: '',
-    },
+    defaultValues: { username: '' },
     validatorAdapter: zodValidator(),
     onSubmit: async ({ value }) => {
       alert(JSON.stringify(value, null, 2))
@@ -37,26 +32,23 @@ export function FormTanstackBasic() {
         }}
         className="space-y-4"
       >
-        <form.Field
-          name="username"
-          validators={{ onChange: usernameSchema }}
-        >
+        <form.Field name="username" validators={{ onChange: usernameSchema }}>
           {(field) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Enter username"
-                  value={field.state.value}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  onBlur={field.handleBlur}
-                />
-              </FormControl>
-              <FormDescription>This is your public display name.</FormDescription>
-              {field.state.meta.errors.length > 0 && (
-                <FormMessage>{field.state.meta.errors[0]?.toString()}</FormMessage>
+            <Field data-invalid={field.state.meta.isTouched && field.state.meta.errors.length > 0 ? 'true' : undefined}>
+              <FieldLabel htmlFor={field.name}>Username</FieldLabel>
+              <Input
+                id={field.name}
+                placeholder="Enter username"
+                value={field.state.value}
+                onChange={(e) => field.handleChange(e.target.value)}
+                onBlur={field.handleBlur}
+                aria-invalid={field.state.meta.isTouched && field.state.meta.errors.length > 0}
+              />
+              <FieldDescription>This is your public display name.</FieldDescription>
+              {field.state.meta.isTouched && (
+                <FieldError errors={field.state.meta.errors.map((e) => ({ message: e?.toString() }))} />
               )}
-            </FormItem>
+            </Field>
           )}
         </form.Field>
 

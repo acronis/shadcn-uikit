@@ -20,29 +20,29 @@ import {
   SelectValue,
 } from '@acronis-platform/shadcn-uikit/react'
 
-const profileSchema = z.object({
+const schema = z.object({
   username: z.string().min(2, 'At least 2 characters.').max(30, 'Max 30 characters.'),
   email: z.string().email('Enter a valid email address.'),
   role: z.string().min(1, 'Please select a role.'),
   bio: z.string().max(160, 'Max 160 characters.').optional(),
 })
 
-type ProfileValues = z.infer<typeof profileSchema>
+type FormValues = z.infer<typeof schema>
 
-export function FormTanstackProfile() {
-  const [submitted, setSubmitted] = React.useState<ProfileValues | null>(null)
+export function FieldTanstackForm() {
+  const [submitted, setSubmitted] = React.useState<FormValues | null>(null)
 
   const form = useForm({
     defaultValues: { username: '', email: '', role: '', bio: '' },
     validatorAdapter: zodValidator(),
-    validators: { onChange: profileSchema },
-    onSubmit: async ({ value }) => setSubmitted(value as ProfileValues),
+    validators: { onChange: schema },
+    onSubmit: async ({ value }) => setSubmitted(value as FormValues),
   })
 
   if (submitted) {
     return (
       <div className="max-w-md rounded-lg border p-6 space-y-3">
-        <p className="text-sm font-medium text-green-600">Profile saved!</p>
+        <p className="text-sm font-medium text-green-600">Saved!</p>
         <pre className="text-xs bg-muted rounded p-3 overflow-auto">
           {JSON.stringify(submitted, null, 2)}
         </pre>
@@ -63,7 +63,7 @@ export function FormTanstackProfile() {
         }}
       >
         <FieldGroup>
-          <form.Field name="username" validators={{ onChange: profileSchema.shape.username }}>
+          <form.Field name="username" validators={{ onChange: schema.shape.username }}>
             {(field) => (
               <Field data-invalid={field.state.meta.isTouched && field.state.meta.errors.length > 0 ? 'true' : undefined}>
                 <FieldLabel htmlFor={field.name}>Username</FieldLabel>
@@ -83,7 +83,7 @@ export function FormTanstackProfile() {
             )}
           </form.Field>
 
-          <form.Field name="email" validators={{ onChange: profileSchema.shape.email }}>
+          <form.Field name="email" validators={{ onChange: schema.shape.email }}>
             {(field) => (
               <Field data-invalid={field.state.meta.isTouched && field.state.meta.errors.length > 0 ? 'true' : undefined}>
                 <FieldLabel htmlFor={field.name}>Email</FieldLabel>
@@ -103,7 +103,7 @@ export function FormTanstackProfile() {
             )}
           </form.Field>
 
-          <form.Field name="role" validators={{ onChange: profileSchema.shape.role }}>
+          <form.Field name="role" validators={{ onChange: schema.shape.role }}>
             {(field) => (
               <Field data-invalid={field.state.meta.isTouched && field.state.meta.errors.length > 0 ? 'true' : undefined}>
                 <FieldLabel htmlFor={field.name}>Role</FieldLabel>
@@ -127,7 +127,7 @@ export function FormTanstackProfile() {
             )}
           </form.Field>
 
-          <form.Field name="bio" validators={{ onChange: profileSchema.shape.bio }}>
+          <form.Field name="bio" validators={{ onChange: schema.shape.bio }}>
             {(field) => (
               <Field>
                 <FieldLabel htmlFor={field.name}>Bio</FieldLabel>
