@@ -25,7 +25,7 @@ import {
 const meta = {
   title: 'UI/Chart',
   component: ChartContainer,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', snapshot: { animationDelay: 400 } },
   tags: ['autodocs'],
 } satisfies Meta<typeof ChartContainer>
 
