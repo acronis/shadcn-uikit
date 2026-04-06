@@ -6,16 +6,16 @@ import {
   PasswordInputError,
   PasswordInputDisabled,
   PasswordInputSpecs,
-} from '@/demos/password-input'
+} from '@acronis-platform/shadcn-uikit-demos/password-input'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import passwordInputDefaultCode from '../demos/password-input/PasswordInputDefault.tsx?raw'
-import passwordInputFilledCode from '../demos/password-input/PasswordInputFilled.tsx?raw'
-import passwordInputWithHintCode from '../demos/password-input/PasswordInputWithHint.tsx?raw'
-import passwordInputErrorCode from '../demos/password-input/PasswordInputError.tsx?raw'
-import passwordInputDisabledCode from '../demos/password-input/PasswordInputDisabled.tsx?raw'
-import passwordInputSpecsCode from '../demos/password-input/PasswordInputSpecs.tsx?raw'
+import passwordInputDefaultCode from '../../../demos/src/password-input/PasswordInputDefault.tsx?raw'
+import passwordInputFilledCode from '../../../demos/src/password-input/PasswordInputFilled.tsx?raw'
+import passwordInputWithHintCode from '../../../demos/src/password-input/PasswordInputWithHint.tsx?raw'
+import passwordInputErrorCode from '../../../demos/src/password-input/PasswordInputError.tsx?raw'
+import passwordInputDisabledCode from '../../../demos/src/password-input/PasswordInputDisabled.tsx?raw'
+import passwordInputSpecsCode from '../../../demos/src/password-input/PasswordInputSpecs.tsx?raw'
 
 export function PasswordInputDemo() {
   return (

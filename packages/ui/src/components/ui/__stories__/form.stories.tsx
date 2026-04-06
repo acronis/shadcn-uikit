@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import {
   Form,
@@ -23,6 +24,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  args: {} as React.ComponentProps<typeof Form>,
   render: () => {
     const form = useForm()
     return (

@@ -4,14 +4,14 @@ import {
   NavigationMenuSecondaryTab,
   NavigationMenuSimple,
   NavigationMenuWithIcons,
-} from '@/demos/navigation-menu'
+} from '@acronis-platform/shadcn-uikit-demos/navigation-menu'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import navigationMenuHorizontalCode from '../demos/navigation-menu/NavigationMenuHorizontal.tsx?raw'
-import navigationMenuSecondaryTabCode from '../demos/navigation-menu/NavigationMenuSecondaryTab.tsx?raw'
-import navigationMenuSimpleCode from '../demos/navigation-menu/NavigationMenuSimple.tsx?raw'
-import navigationMenuWithIconsCode from '../demos/navigation-menu/NavigationMenuWithIcons.tsx?raw'
+import navigationMenuHorizontalCode from '../../../demos/src/navigation-menu/NavigationMenuHorizontal.tsx?raw'
+import navigationMenuSecondaryTabCode from '../../../demos/src/navigation-menu/NavigationMenuSecondaryTab.tsx?raw'
+import navigationMenuSimpleCode from '../../../demos/src/navigation-menu/NavigationMenuSimple.tsx?raw'
+import navigationMenuWithIconsCode from '../../../demos/src/navigation-menu/NavigationMenuWithIcons.tsx?raw'
 
 export function NavigationMenuDemo() {
   return (

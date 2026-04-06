@@ -20,6 +20,7 @@ export interface ColorToken {
  * Complete color palette for a theme
  */
 export interface ColorPalette {
+  [key: string]: ColorToken | undefined;
   background: ColorToken;
   foreground: ColorToken;
   card: ColorToken;

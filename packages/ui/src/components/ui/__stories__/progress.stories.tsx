@@ -34,7 +34,7 @@ export const Full: Story = {
 
 export const Indeterminate: Story = {
   args: {
-    value: undefined,
+    value: null,
     className: 'w-[300px]',
   },
 }

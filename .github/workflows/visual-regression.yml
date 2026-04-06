@@ -9,8 +9,47 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Vite module cache + Storybook builder cache — key on source so only
+      # changed files are recompiled when the cache is restored.
+      - name: Cache Storybook build
+        uses: actions/cache@v4
+        with:
+          path: |
+            packages/ui/node_modules/.vite
+            packages/ui/node_modules/.cache/storybook
+          key: storybook-${{ runner.os }}-${{ hashFiles('packages/ui/src/**', 'packages/ui/.storybook/**', 'packages/ui/package.json') }}
+          restore-keys: storybook-${{ runner.os }}-
+
+      - name: Build Storybook
+        run: pnpm --filter @acronis-platform/shadcn-uikit storybook:build
+
+      # Docker only serves the pre-built static output and runs Playwright.
+      # --build rebuilds the image when Dockerfile or .storybook config changes.
       - name: Run visual regression tests
-        run: docker compose -f docker-compose.storybook.yml up --abort-on-container-exit --exit-code-from test-runner
+        run: docker compose -f docker-compose.storybook.yml up --build --abort-on-container-exit --exit-code-from test-runner
 
       - name: Upload diff artifacts on failure
         if: failure()

@@ -1,0 +1,33 @@
+{
+  "name": "@acronis-platform/shadcn-uikit-docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@acronis-platform/shadcn-uikit": "workspace:*",
+    "@acronis-platform/shadcn-uikit-demos": "workspace:*",
+    "@base-ui/react": "^1.0.0",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "fumadocs-core": "15.7.13",
+    "fumadocs-ui": "15.7.13",
+    "fumadocs-mdx": "^11.0.0",
+    "fumadocs-typescript": "^3.1.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next-themes": "^0.4.6",
+    "sonner": "^2.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.3.3"
+  }
+}

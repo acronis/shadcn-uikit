@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { AlertVariants } from '@/demos/alert'
+import { AlertVariants } from '@acronis-platform/shadcn-uikit-demos/alert'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import alertVariantsCode from '../demos/alert/AlertVariants.tsx?raw'
+import alertVariantsCode from '../../../demos/src/alert/AlertVariants.tsx?raw'
 
 export function AlertDemo() {
   return (

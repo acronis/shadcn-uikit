@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import {
   Bar,
   BarChart,
@@ -7,6 +8,7 @@ import {
   LineChart,
   Area,
   AreaChart,
+  Cell,
   Pie,
   PieChart,
   XAxis,
@@ -46,7 +48,7 @@ const barConfig = {
 } satisfies ChartConfig
 
 export const Bar_: Story = {
-  name: 'Bar',
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={barConfig} className="h-[300px] w-[500px]">
       <BarChart data={barData}>
@@ -54,15 +56,15 @@ export const Bar_: Story = {
         <XAxis dataKey="month" tickLine={false} axisLine={false} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
-        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} isAnimationActive={false} />
+        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} isAnimationActive={false} />
       </BarChart>
     </ChartContainer>
   ),
 }
 
 export const Line_: Story = {
-  name: 'Line',
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={barConfig} className="h-[300px] w-[500px]">
       <LineChart data={barData}>
@@ -71,15 +73,15 @@ export const Line_: Story = {
         <YAxis tickLine={false} axisLine={false} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
-        <Line type="monotone" dataKey="desktop" stroke="var(--color-desktop)" strokeWidth={2} dot={false} />
-        <Line type="monotone" dataKey="mobile" stroke="var(--color-mobile)" strokeWidth={2} dot={false} />
+        <Line type="monotone" dataKey="desktop" stroke="var(--color-desktop)" strokeWidth={2} dot={false} isAnimationActive={false} />
+        <Line type="monotone" dataKey="mobile" stroke="var(--color-mobile)" strokeWidth={2} dot={false} isAnimationActive={false} />
       </LineChart>
     </ChartContainer>
   ),
 }
 
 export const Area_: Story = {
-  name: 'Area',
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={barConfig} className="h-[300px] w-[500px]">
       <AreaChart data={barData}>
@@ -88,8 +90,8 @@ export const Area_: Story = {
         <YAxis tickLine={false} axisLine={false} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
-        <Area type="monotone" dataKey="desktop" stroke="var(--color-desktop)" fill="var(--color-desktop)" fillOpacity={0.2} strokeWidth={2} />
-        <Area type="monotone" dataKey="mobile" stroke="var(--color-mobile)" fill="var(--color-mobile)" fillOpacity={0.2} strokeWidth={2} />
+        <Area type="monotone" dataKey="desktop" stroke="var(--color-desktop)" fill="var(--color-desktop)" fillOpacity={0.2} strokeWidth={2} isAnimationActive={false} />
+        <Area type="monotone" dataKey="mobile" stroke="var(--color-mobile)" fill="var(--color-mobile)" fillOpacity={0.2} strokeWidth={2} isAnimationActive={false} />
       </AreaChart>
     </ChartContainer>
   ),
@@ -103,14 +105,14 @@ const pieData = [
 ]
 
 const pieConfig = {
-  Chrome: { label: 'Chrome', color: 'hsl(var(--chart-1))' },
-  Firefox: { label: 'Firefox', color: 'hsl(var(--chart-2))' },
-  Safari: { label: 'Safari', color: 'hsl(var(--chart-3))' },
-  Edge: { label: 'Edge', color: 'hsl(var(--chart-4))' },
-} satisfies ChartConfig
+  Chrome: { label: 'Chrome', color: 'var(--av-chart-blue)' },
+  Firefox: { label: 'Firefox', color: 'var(--av-chart-red)' },
+  Safari: { label: 'Safari', color: 'var(--av-chart-yellow)' },
+  Edge: { label: 'Edge', color: 'var(--av-chart-green)' },
+} satisfies ChartConfig;
 
 export const Pie_: Story = {
-  name: 'Pie',
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={pieConfig} className="h-[300px] w-[400px]">
       <PieChart>
@@ -123,12 +125,16 @@ export const Pie_: Story = {
           cx="50%"
           cy="50%"
           outerRadius={100}
-          fill="hsl(var(--chart-1))"
-        />
+          isAnimationActive={false}
+        >
+          {pieData.map((entry) => (
+            <Cell key={entry.name} fill={`var(--color-${entry.name})`} />
+          ))}
+        </Pie>
       </PieChart>
     </ChartContainer>
   ),
-}
+};
 
 const stackedData = [
   { month: 'Jan', desktop: 186, mobile: 80, tablet: 40 },
@@ -146,6 +152,7 @@ const stackedConfig = {
 } satisfies ChartConfig
 
 export const StackedBar: Story = {
+  args: {} as React.ComponentProps<typeof ChartContainer>,
   render: () => (
     <ChartContainer config={stackedConfig} className="h-[300px] w-[500px]">
       <BarChart data={stackedData}>
@@ -153,9 +160,9 @@ export const StackedBar: Story = {
         <XAxis dataKey="month" tickLine={false} axisLine={false} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
-        <Bar dataKey="desktop" stackId="a" fill="var(--color-desktop)" />
-        <Bar dataKey="mobile" stackId="a" fill="var(--color-mobile)" />
-        <Bar dataKey="tablet" stackId="a" fill="var(--color-tablet)" radius={[4, 4, 0, 0]} />
+        <Bar dataKey="desktop" stackId="a" fill="var(--color-desktop)" isAnimationActive={false} />
+        <Bar dataKey="mobile" stackId="a" fill="var(--color-mobile)" isAnimationActive={false} />
+        <Bar dataKey="tablet" stackId="a" fill="var(--color-tablet)" radius={[4, 4, 0, 0]} isAnimationActive={false} />
       </BarChart>
     </ChartContainer>
   ),

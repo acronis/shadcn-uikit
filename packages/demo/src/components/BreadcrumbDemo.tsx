@@ -4,14 +4,14 @@ import {
   BreadcrumbWithIcons,
   BreadcrumbWithEllipsis,
   BreadcrumbIconsEllipsis,
-} from '@/demos/breadcrumb'
+} from '@acronis-platform/shadcn-uikit-demos/breadcrumb'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import breadcrumbBasicCode from '../demos/breadcrumb/BreadcrumbBasic.tsx?raw'
-import breadcrumbWithIconsCode from '../demos/breadcrumb/BreadcrumbWithIcons.tsx?raw'
-import breadcrumbWithEllipsisCode from '../demos/breadcrumb/BreadcrumbEllipsis.tsx?raw'
-import breadcrumbIconsEllipsisCode from '../demos/breadcrumb/BreadcrumbIconsEllipsis.tsx?raw'
+import breadcrumbBasicCode from '../../../demos/src/breadcrumb/BreadcrumbBasic.tsx?raw'
+import breadcrumbWithIconsCode from '../../../demos/src/breadcrumb/BreadcrumbWithIcons.tsx?raw'
+import breadcrumbWithEllipsisCode from '../../../demos/src/breadcrumb/BreadcrumbEllipsis.tsx?raw'
+import breadcrumbIconsEllipsisCode from '../../../demos/src/breadcrumb/BreadcrumbIconsEllipsis.tsx?raw'
 
 export function BreadcrumbDemo() {
   return (

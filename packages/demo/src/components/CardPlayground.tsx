@@ -483,7 +483,7 @@ export function CardPlayground() {
         className={`flex items-center justify-center p-2 ${iconStyle === 'circle' ? 'rounded-full' : iconStyle === 'square' ? 'rounded-md' : ''}`}
         style={iconStyle !== 'plain' ? { backgroundColor: `${iconColor}${Math.round(iconBgOpacity * 255).toString(16).padStart(2, '0')}` } : undefined}
       >
-        <IconComponent className="h-4 w-4" style={{ color: iconColor }} />
+        {React.createElement(IconComponent as React.ComponentType<any>, { className: "h-4 w-4", style: { color: iconColor } })}
       </div>
     )
 

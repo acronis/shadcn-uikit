@@ -119,6 +119,10 @@
   --av-ring: var(--color-brand-primary);
   --av-focus: var(--color-brand-primary);
 
+  /* Component-specific tokens */
+  --checkbox-focus: 214 62% 82%; /* #B3D1F7 - Figma: Technical/fixed-focus */
+  --toast-shadow: 0px 10px 20px rgb(36 49 67 / 20%); /* Figma: shadow-regular */
+
   /* Status Colors */
   --av-status-success: var(--color-status-success);
   --av-status-success-bg: var(--color-status-success-light);
@@ -213,6 +217,10 @@
   --av-interactive-active: var(--color-brand-primary);
   --av-interactive-disabled: 215 26% 40%;
   --av-focus: var(--color-brand-primary);
+
+  /* Component-specific tokens */
+  --checkbox-focus: 213 65% 56%; /* Lighter focus for dark mode */
+  --toast-shadow: 0px 10px 20px rgb(0 0 0 / 30%);
 
   /* Status backgrounds adjusted for better contrast */
   --av-status-success-bg: 73 68% 20%;

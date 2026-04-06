@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Checkbox as CheckboxPrimitive } from '@base-ui/react'
-import { CheckIcon, MinusIcon } from '@/components/icons'
 
 import { cn } from '@/lib/utils'
 
@@ -9,7 +8,7 @@ import { cn } from '@/lib/utils'
  * backwards-compatibility with the Radix UI API. Base UI uses a separate boolean
  * `indeterminate` prop, so we override `checked` here and normalize it internally.
  */
-type CheckboxProps = Omit<React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>, 'checked'> & {
+export type CheckboxProps = Omit<React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>, 'checked'> & {
   checked?: boolean | 'indeterminate'
 }
 
@@ -28,22 +27,29 @@ const Checkbox = React.forwardRef<HTMLElement, CheckboxProps>(
         checked={normalizedChecked}
         indeterminate={isIndeterminate}
         className={cn(
-          'peer inline-flex items-center justify-center h-4 w-4 shrink-0 rounded-sm border bg-background border-input/30 transition-colors',
-          'hover:border-input/50',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-          'disabled:cursor-not-allowed disabled:bg-muted/10 disabled:border-muted/10',
+          'peer inline-flex items-center justify-center h-4 w-4 shrink-0 rounded-[2px] border bg-background border-primary/30 transition-colors',
+          'hover:border-primary/50',
+          'active:border-primary',
+          'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[hsl(var(--checkbox-focus))]',
           'data-[checked]:bg-primary data-[checked]:border-primary data-[checked]:text-primary-foreground',
           'data-[indeterminate]:bg-primary data-[indeterminate]:border-primary data-[indeterminate]:text-primary-foreground',
+          'data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:bg-[hsl(var(--av-primary)/0.1)] data-[disabled]:border-[hsl(var(--av-primary)/0.1)]',
+          'data-[disabled]:data-[checked]:bg-[hsl(var(--av-primary)/0.1)] data-[disabled]:data-[checked]:border-[hsl(var(--av-primary)/0.1)] data-[disabled]:data-[checked]:text-[hsl(var(--av-primary)/0.5)]',
+          'data-[disabled]:data-[indeterminate]:bg-[hsl(var(--av-primary)/0.1)] data-[disabled]:data-[indeterminate]:border-[hsl(var(--av-primary)/0.1)] data-[disabled]:data-[indeterminate]:text-[hsl(var(--av-primary)/0.5)]',
           className
         )}
         {...props}
       >
         {/* keepMounted ensures the indicator stays in the DOM so we can always render the correct icon */}
-        <CheckboxPrimitive.Indicator keepMounted className={cn('flex items-center justify-center text-current data-[unchecked]:hidden')}>
+        <CheckboxPrimitive.Indicator keepMounted className={cn('flex items-center justify-center text-current data-[unchecked]:opacity-0')}>
           {isIndeterminate ? (
-            <MinusIcon className="h-3 w-3" />
+            <svg className="h-2.5 w-2.5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M2 7h12v2H2z" />
+            </svg>
           ) : (
-            <CheckIcon className="h-3 w-3" />
+            <svg className="h-2.5 w-2.5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M1.7071 8.2929c-.3905-.3905-1.0237-.3905-1.4142 0-.3905.3905-.3905 1.0237 0 1.4142l4 4c.3905.3905 1.0237.3905 1.4142 0l10-10c.3905-.3905.3905-1.0237 0-1.4142-.3905-.3905-1.0237-.3905-1.4142 0L5 11.5858l-3.2929-3.293Z" />
+            </svg>
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>

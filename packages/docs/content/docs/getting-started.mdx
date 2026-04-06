@@ -1,0 +1,45 @@
+---
+title: Getting Started
+description: Install and use Acronis UIKit in your React application.
+---
+
+## Installation
+
+Install the package and its required CSS animation dependency:
+
+```bash
+npm install @acronis-platform/shadcn-uikit tw-animate-css
+# or
+pnpm add @acronis-platform/shadcn-uikit tw-animate-css
+```
+
+## Setup
+
+Import the UIKit styles in your root layout or entry point:
+
+```tsx
+import '@acronis-platform/shadcn-uikit/styles';
+```
+
+## Basic usage
+
+```tsx
+import { Button } from '@acronis-platform/shadcn-uikit';
+
+export default function App() {
+  return <Button variant="default">Click me</Button>;
+}
+```
+
+## TypeScript
+
+All components are fully typed. Import component prop types directly:
+
+```tsx
+import type { ButtonProps } from '@acronis-platform/shadcn-uikit';
+```
+
+## Next steps
+
+- Browse the [Components](/docs/components) reference
+- Learn about [Theming](/docs/theming)

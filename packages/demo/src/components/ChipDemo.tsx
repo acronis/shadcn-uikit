@@ -5,15 +5,15 @@ import {
   ChipRemovable,
   ChipWithIconsRemovable,
   ChipFilters,
-} from '@/demos/chip'
+} from '@acronis-platform/shadcn-uikit-demos/chip'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import chipBasicCode from '../demos/chip/ChipBasic.tsx?raw'
-import chipWithIconsCode from '../demos/chip/ChipWithIcons.tsx?raw'
-import chipRemovableCode from '../demos/chip/ChipRemovable.tsx?raw'
-import chipWithIconsRemovableCode from '../demos/chip/ChipWithIconsRemovable.tsx?raw'
-import chipFiltersCode from '../demos/chip/ChipFilters.tsx?raw'
+import chipBasicCode from '../../../demos/src/chip/ChipBasic.tsx?raw'
+import chipWithIconsCode from '../../../demos/src/chip/ChipWithIcons.tsx?raw'
+import chipRemovableCode from '../../../demos/src/chip/ChipRemovable.tsx?raw'
+import chipWithIconsRemovableCode from '../../../demos/src/chip/ChipWithIconsRemovable.tsx?raw'
+import chipFiltersCode from '../../../demos/src/chip/ChipFilters.tsx?raw'
 
 export function ChipDemo() {
   return (

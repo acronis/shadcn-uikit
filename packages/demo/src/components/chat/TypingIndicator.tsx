@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@acronis-platform/shadcn-uikit/react'
-import { TypingIndicatorProps } from '../../../../lib/chat/types';
+import { TypingIndicatorProps } from '@/lib/chat/types';
 
 export function TypingIndicator({ className, botMode }: TypingIndicatorProps) {
   return (

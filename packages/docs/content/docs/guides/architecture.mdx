@@ -1,0 +1,188 @@
+---
+title: Architecture
+description: Architecture overview of the Acronis UIKit — design philosophy, component structure, theming, and best practices.
+---
+
+# Architecture Guide
+
+## Overview
+
+Acronis UIKit is a **React-only** component library built on top of [shadcn/ui](https://ui.shadcn.com/) principles, using [Radix UI](https://www.radix-ui.com/) and [Base UI](https://base-ui.com/) primitives with Tailwind CSS. It provides a consistent design system styled with Acronis brand colors and design tokens.
+
+## Design Philosophy
+
+### Base Layer: shadcn/ui principles
+
+- Uses Radix UI and Base UI primitives for accessibility and unstyled behaviour
+- Tailwind CSS for styling with CVA (class-variance-authority) for variants
+- Components are shipped as compiled ES modules — not a copy-paste library
+
+### Acronis Theme Layer
+
+- CSS custom properties using the `--av-*` token namespace
+- Four built-in themes: `acronis-default`, `acronis-ocean`, `cyber-chat`, `acronis-white-label`
+- Additional variant options: `success`, `warning`, `info`, `translucent`
+- Consistent spacing, typography, and border radius via Tailwind config
+
+## Monorepo Structure
+
+```text
+packages/
+├── ui/          # @acronis-platform/shadcn-uikit — the published library
+├── demo/        # Vite demo app (component showcase)
+├── demos/       # @acronis-platform/shadcn-uikit-demos — shared demo components
+└── docs/        # @acronis-platform/shadcn-uikit-docs — this docs site (Next.js 15)
+```
+
+## UI Package Structure
+
+```text
+packages/ui/src/
+├── components/
+│   └── ui/                     # All components live here
+│       ├── button.tsx
+│       ├── button.docs.ts      # Optional: companion type file for AutoTypeTable
+│       ├── __stories__/        # Storybook stories
+│       │   └── button.stories.tsx
+│       └── ...                 # 70+ component files
+├── icons/                      # 1500+ auto-generated icon components
+│   ├── base/                   # BaseIcon primitive
+│   └── index.ts
+├── lib/
+│   └── utils.ts                # cn() utility (clsx + tailwind-merge)
+├── styles/
+│   ├── index.css               # Main entry — imports everything
+│   ├── themes/                 # Per-theme SCSS
+│   │   ├── acronis-default.scss
+│   │   ├── acronis-ocean.scss
+│   │   ├── cyber-chat.scss
+│   │   └── acronis-white-label.scss
+│   └── tokens/                 # Semantic token definitions
+└── index.ts                    # Public exports
+```
+
+## Component Structure
+
+Each component follows this pattern:
+
+```tsx
+// packages/ui/src/components/ui/button.tsx
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
+
+const buttonVariants = cva('base-classes', {
+  variants: {
+    variant: {
+      default: '...',
+      secondary: '...',
+      destructive: '...',
+      outline: '...',
+      ghost: '...',
+      link: '...',
+    },
+    size: {
+      default: '...',
+      sm: '...',
+      lg: '...',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'default',
+  },
+});
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button';
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+```
+
+## Theming System
+
+Themes are SCSS files that define CSS custom properties on the `:root`. They use an `--av-*` token namespace:
+
+```scss
+// packages/ui/src/styles/themes/acronis-default.scss
+:root {
+  --av-background: 0 0% 100%;
+  --av-foreground: 222 84% 5%;
+  --av-primary: 213 94% 51%;    /* Acronis Blue */
+  --av-success: 142 76% 36%;
+  --av-warning: 38 92% 50%;
+  --av-info: 199 89% 48%;
+  /* ... */
+}
+.dark {
+  --av-background: 222 84% 5%;
+  /* ... */
+}
+```
+
+The Tailwind config maps these tokens to utility classes:
+
+```js
+colors: {
+  background: 'hsl(var(--av-background))',
+  primary: 'hsl(var(--av-primary))',
+  // ...
+}
+```
+
+## Build Output
+
+```text
+packages/ui/dist/
+├── index.js          # Main ES module entry (re-exports everything)
+├── index.d.ts        # TypeScript declarations
+├── components/ui/    # Individual component modules (tree-shakeable)
+├── icons/            # Icon components
+├── lib/              # Utilities
+└── styles/           # Compiled CSS
+    ├── index.css     # Main stylesheet (import this)
+    └── themes/       # Individual theme CSS files
+```
+
+## Import Paths
+
+```ts
+// Components — named imports from main entry
+import { Button, Card, Input } from '@acronis-platform/shadcn-uikit';
+
+// Styles — required, import once in your app root
+import '@acronis-platform/shadcn-uikit/styles';
+
+// Optional: alternative theme
+import '@acronis-platform/shadcn-uikit/styles/themes/acronis-ocean';
+```
+
+## Adding a New Component
+
+1. Create `packages/ui/src/components/ui/[component].tsx`
+2. Follow the CVA + forwardRef pattern shown above
+3. Export from `packages/ui/src/index.ts`
+4. Add Storybook stories in `__stories__/[component].stories.tsx`
+5. Add a demo in `packages/demos/src/[component]/`
+6. Create an MDX doc in `packages/docs/content/docs/components/[component].mdx`
+
+## Best Practices
+
+- **Use Radix UI / Base UI primitives** for interactive components — they provide accessibility for free
+- **Variants via CVA** — all visual variants should be defined with `class-variance-authority`
+- **Forwarded refs** — always use `React.forwardRef` so consumers can attach refs
+- **TypeScript strict** — all components must be fully typed; use `VariantProps` for variant types
+- **Test all variants** — Storybook stories serve as both documentation and visual tests

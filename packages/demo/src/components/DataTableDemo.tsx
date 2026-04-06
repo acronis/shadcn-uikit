@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { DataTableFull } from '@/demos/data-table'
+import { DataTableFull } from '@acronis-platform/shadcn-uikit-demos/data-table'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import dataTableFullCode from '../demos/data-table/DataTableFull.tsx?raw'
+import dataTableFullCode from '../../../demos/src/data-table/DataTableFull.tsx?raw'
 
 export function DataTableDemo() {
   return (

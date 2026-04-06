@@ -8,18 +8,18 @@ import {
   DisabledSelect,
   FormattedValueSelect,
   ScrollableSelect,
-} from '@/demos/select'
+} from '@acronis-platform/shadcn-uikit-demos/select'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import basicSelectCode from '../demos/select/BasicSelect.tsx?raw'
-import controlledSelectCode from '../demos/select/ControlledSelect.tsx?raw'
-import groupedSelectCode from '../demos/select/GroupedSelect.tsx?raw'
-import multipleSelectCode from '../demos/select/MultipleSelect.tsx?raw'
-import objectValuesSelectCode from '../demos/select/ObjectValuesSelect.tsx?raw'
-import disabledSelectCode from '../demos/select/DisabledSelect.tsx?raw'
-import formattedValueSelectCode from '../demos/select/FormattedValueSelect.tsx?raw'
-import scrollableSelectCode from '../demos/select/ScrollableSelect.tsx?raw'
+import basicSelectCode from '../../../demos/src/select/BasicSelect.tsx?raw'
+import controlledSelectCode from '../../../demos/src/select/ControlledSelect.tsx?raw'
+import groupedSelectCode from '../../../demos/src/select/GroupedSelect.tsx?raw'
+import multipleSelectCode from '../../../demos/src/select/MultipleSelect.tsx?raw'
+import objectValuesSelectCode from '../../../demos/src/select/ObjectValuesSelect.tsx?raw'
+import disabledSelectCode from '../../../demos/src/select/DisabledSelect.tsx?raw'
+import formattedValueSelectCode from '../../../demos/src/select/FormattedValueSelect.tsx?raw'
+import scrollableSelectCode from '../../../demos/src/select/ScrollableSelect.tsx?raw'
 
 export function SelectDemo() {
   return (

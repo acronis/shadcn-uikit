@@ -21,6 +21,7 @@ js.configs.recommended, // TypeScript ESLint recommended rules
     '**/*.config.js',
     '**/*.config.ts',
     'vite.config.*.ts',
+    '**/next-env.d.ts',
   ],
 }, // General configuration for all files
 {

@@ -5,15 +5,15 @@ import {
   PaginationLastPage,
   PaginationSimple,
   PaginationCompact,
-} from '@/demos/pagination'
+} from '@acronis-platform/shadcn-uikit-demos/pagination'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import paginationFirstPageCode from '../demos/pagination/PaginationFirstPage.tsx?raw'
-import paginationMiddlePageCode from '../demos/pagination/PaginationMiddlePage.tsx?raw'
-import paginationLastPageCode from '../demos/pagination/PaginationLastPage.tsx?raw'
-import paginationSimpleCode from '../demos/pagination/PaginationSimple.tsx?raw'
-import paginationCompactCode from '../demos/pagination/PaginationCompact.tsx?raw'
+import paginationFirstPageCode from '../../../demos/src/pagination/PaginationFirstPage.tsx?raw'
+import paginationMiddlePageCode from '../../../demos/src/pagination/PaginationMiddlePage.tsx?raw'
+import paginationLastPageCode from '../../../demos/src/pagination/PaginationLastPage.tsx?raw'
+import paginationSimpleCode from '../../../demos/src/pagination/PaginationSimple.tsx?raw'
+import paginationCompactCode from '../../../demos/src/pagination/PaginationCompact.tsx?raw'
 
 export function PaginationDemo() {
   return (

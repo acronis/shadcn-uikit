@@ -15,6 +15,7 @@ import {
   MailIcon,
   MinusIcon,
   ShieldIcon,
+  ShoppingCartIcon,
   ShowIcon,
   StarIcon,
   TimesCircleIcon,
@@ -27,6 +28,7 @@ import {
   AwardIcon,
   ChevronsLeftIcon,
   ChevronsRightIcon,
+  DollarSignIcon,
   GripVerticalIcon,
   HeartIcon,
   MoveLeftIcon,
@@ -1233,7 +1235,7 @@ export function TablePlayground() {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger render={<div className="cursor-help inline-flex items-center gap-1" />}>
-                {content}
+                {content as any}
                 <InfoIcon className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100" />
               </TooltipTrigger>
               <TooltipContent>
@@ -2738,7 +2740,7 @@ ${features.length > 0 ? `// - Enabled features: ${features.join(', ')}` : ''}`
                                 {colIndex === 0 ? (
                                   <span className="text-xs text-muted-foreground">Subtotal:</span>
                                 ) : row[col] !== undefined ? (
-                                  formatCellValue(col, row[col], row)
+                                  formatCellValue(col, row[col], row) as React.ReactElement
                                 ) : (
                                   ''
                                 )}

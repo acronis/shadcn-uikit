@@ -183,12 +183,14 @@ export function Layout() {
                       {section.items.map((item) => (
                         <SidebarMenuItem key={item.id}>
                           <SidebarMenuButton
-                            render={<Link to={item.path} />}
+                            asChild
                             isActive={location.pathname === item.path}
                             tooltip={item.title}
                           >
-                            <item.icon />
-                            <span>{item.title}</span>
+                            <Link to={item.path}>
+                              <item.icon />
+                              <span>{item.title}</span>
+                            </Link>
                           </SidebarMenuButton>
                         </SidebarMenuItem>
                       ))}

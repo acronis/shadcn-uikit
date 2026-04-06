@@ -9,19 +9,19 @@ import {
   DialogInfo,
   DialogWithTextarea,
   DialogScrollable,
-} from '@/demos/dialog'
+} from '@acronis-platform/shadcn-uikit-demos/dialog'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import dialogBasicCode from '../demos/dialog/DialogBasic.tsx?raw'
-import dialogSizesCode from '../demos/dialog/DialogSizes.tsx?raw'
-import dialogFormCode from '../demos/dialog/DialogForm.tsx?raw'
-import dialogConfirmationCode from '../demos/dialog/DialogConfirmation.tsx?raw'
-import dialogLoadingCode from '../demos/dialog/DialogLoading.tsx?raw'
-import dialogSuccessCode from '../demos/dialog/DialogSuccess.tsx?raw'
-import dialogInfoCode from '../demos/dialog/DialogInfo.tsx?raw'
-import dialogWithTextareaCode from '../demos/dialog/DialogWithTextarea.tsx?raw'
-import dialogScrollableCode from '../demos/dialog/DialogScrollable.tsx?raw'
+import dialogBasicCode from '../../../demos/src/dialog/DialogBasic.tsx?raw'
+import dialogSizesCode from '../../../demos/src/dialog/DialogSizes.tsx?raw'
+import dialogFormCode from '../../../demos/src/dialog/DialogForm.tsx?raw'
+import dialogConfirmationCode from '../../../demos/src/dialog/DialogConfirmation.tsx?raw'
+import dialogLoadingCode from '../../../demos/src/dialog/DialogLoading.tsx?raw'
+import dialogSuccessCode from '../../../demos/src/dialog/DialogSuccess.tsx?raw'
+import dialogInfoCode from '../../../demos/src/dialog/DialogInfo.tsx?raw'
+import dialogWithTextareaCode from '../../../demos/src/dialog/DialogWithTextarea.tsx?raw'
+import dialogScrollableCode from '../../../demos/src/dialog/DialogScrollable.tsx?raw'
 
 export function DialogDemo() {
   return (

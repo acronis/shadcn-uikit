@@ -2,4 +2,4 @@
 # Usage: docker compose -f docker-compose.storybook.yml -f docker-compose.storybook.update.yml up --abort-on-container-exit --exit-code-from test-runner
 services:
   test-runner:
-    command: pnpm exec test-storybook --url http://storybook:6006 --updateSnapshot
+    command: pnpm exec test-storybook --url http://storybook:6006 --updateSnapshot --maxWorkers=4

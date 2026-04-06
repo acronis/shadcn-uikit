@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import { SettingsIcon, ShieldIcon, DbIcon, FileTextIcon, BellIcon, UsersIcon, HelpCircleIcon } from '@/components/icons'
 import {
   SecondaryMenu,
@@ -20,6 +21,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  args: {} as React.ComponentProps<typeof SecondaryMenu>,
   render: () => (
     <SecondaryMenu className="h-[480px]">
       <SecondaryMenuContent>
@@ -45,6 +47,7 @@ export const Default: Story = {
 }
 
 export const WithHeader: Story = {
+  args: {} as React.ComponentProps<typeof SecondaryMenu>,
   render: () => (
     <SecondaryMenu className="h-[480px]">
       <SecondaryMenuHeader>
@@ -79,6 +82,7 @@ export const WithHeader: Story = {
 }
 
 export const WithFooter: Story = {
+  args: {} as React.ComponentProps<typeof SecondaryMenu>,
   render: () => (
     <SecondaryMenu className="h-[480px]">
       <SecondaryMenuContent>
@@ -107,6 +111,7 @@ export const WithFooter: Story = {
 }
 
 export const WithTags: Story = {
+  args: {} as React.ComponentProps<typeof SecondaryMenu>,
   render: () => (
     <SecondaryMenu className="h-[480px]">
       <SecondaryMenuContent>

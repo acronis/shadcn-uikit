@@ -11,24 +11,24 @@ const config: TestRunnerConfig = {
         // Wait for fonts and images to load
         await page.waitForLoadState('networkidle');
 
-        // For portal-based overlays (dialog, sheet, etc.) the content renders outside
-        // #storybook-root, so screenshot the overlay element directly. Otherwise
-        // screenshot the story root element with padding.
-        // Give Sonner's enter animation time to settle (animations: 'disabled' only
-        // affects Playwright's screenshot, not Sonner's CSS transitions in the page)
-        await page.waitForTimeout(400);
-
         const storyContext = await getStoryContext(page, context);
         const snapshotFullPage = storyContext.parameters?.snapshot?.fullPage === true;
 
-        // If a Sonner <Toaster> is mounted, give the toast up to 1.5 s to appear.
-        // The play function's DOM click is not awaited, so React state updates may
-        // not have settled yet by the time postVisit runs.
+        // Only wait for animations when the story opts in via parameters.snapshot.animationDelay
+        // or when Sonner toasts are present (they use CSS transitions not caught by Playwright's
+        // animations: 'disabled'). This avoids a blanket 400ms wait on every story.
+        const animationDelay = storyContext.parameters?.snapshot?.animationDelay;
         const sonnerContainer = page.locator('[data-sonner-toaster]');
-        if ((await sonnerContainer.count()) > 0) {
+        const hasSonner = (await sonnerContainer.count()) > 0;
+
+        if (hasSonner) {
             await page.locator('[data-sonner-toaster]:has([data-sonner-toast])')
                 .waitFor({ state: 'attached', timeout: 1500 })
                 .catch(() => {}); // silence timeout — no toast is a valid state
+        }
+
+        if (animationDelay) {
+            await page.waitForTimeout(typeof animationDelay === 'number' ? animationDelay : 400);
         }
 
         const toaster = page.locator('[data-sonner-toaster]:has([data-sonner-toast])');
@@ -58,7 +58,7 @@ const config: TestRunnerConfig = {
         expect(image).toMatchImageSnapshot({
             customSnapshotsDir: `${process.cwd()}/test/__snapshots__`,
             customSnapshotIdentifier: context.id,
-            failureThreshold: 0.03,
+            failureThreshold: 0.005,
             failureThresholdType: 'percent',
         });
     },

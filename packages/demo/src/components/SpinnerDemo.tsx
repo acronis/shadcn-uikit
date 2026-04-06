@@ -11,21 +11,21 @@ import {
   SpinnerColors,
   SpinnerGrid,
   SpinnerSkeleton,
-} from '@/demos/spinner'
+} from '@acronis-platform/shadcn-uikit-demos/spinner'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import spinnerBasicCode from '../demos/spinner/SpinnerBasic.tsx?raw'
-import spinnerSizesCode from '../demos/spinner/SpinnerSizes.tsx?raw'
-import spinnerWithTextCode from '../demos/spinner/SpinnerWithText.tsx?raw'
-import spinnerButtonCode from '../demos/spinner/SpinnerButton.tsx?raw'
-import spinnerCenteredCode from '../demos/spinner/SpinnerCentered.tsx?raw'
-import spinnerCardCode from '../demos/spinner/SpinnerCard.tsx?raw'
-import spinnerInlineCode from '../demos/spinner/SpinnerInline.tsx?raw'
-import spinnerOverlayCode from '../demos/spinner/SpinnerOverlay.tsx?raw'
-import spinnerColorsCode from '../demos/spinner/SpinnerColors.tsx?raw'
-import spinnerGridCode from '../demos/spinner/SpinnerGrid.tsx?raw'
-import spinnerSkeletonCode from '../demos/spinner/SpinnerSkeleton.tsx?raw'
+import spinnerBasicCode from '../../../demos/src/spinner/SpinnerBasic.tsx?raw'
+import spinnerSizesCode from '../../../demos/src/spinner/SpinnerSizes.tsx?raw'
+import spinnerWithTextCode from '../../../demos/src/spinner/SpinnerWithText.tsx?raw'
+import spinnerButtonCode from '../../../demos/src/spinner/SpinnerButton.tsx?raw'
+import spinnerCenteredCode from '../../../demos/src/spinner/SpinnerCentered.tsx?raw'
+import spinnerCardCode from '../../../demos/src/spinner/SpinnerCard.tsx?raw'
+import spinnerInlineCode from '../../../demos/src/spinner/SpinnerInline.tsx?raw'
+import spinnerOverlayCode from '../../../demos/src/spinner/SpinnerOverlay.tsx?raw'
+import spinnerColorsCode from '../../../demos/src/spinner/SpinnerColors.tsx?raw'
+import spinnerGridCode from '../../../demos/src/spinner/SpinnerGrid.tsx?raw'
+import spinnerSkeletonCode from '../../../demos/src/spinner/SpinnerSkeleton.tsx?raw'
 
 export function SpinnerDemo() {
   return (

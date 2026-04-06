@@ -2,16 +2,16 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 
-interface SecondaryMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SecondaryMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
 }
 
-interface SecondaryMenuGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SecondaryMenuGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string
   children: React.ReactNode
 }
 
-interface SecondaryMenuItemProps extends React.ComponentPropsWithoutRef<'button'> {
+export interface SecondaryMenuItemProps extends React.ComponentPropsWithoutRef<'button'> {
   active?: boolean
   icon?: React.ReactNode
   iconPosition?: 'left' | 'right'

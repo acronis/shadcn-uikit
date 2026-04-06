@@ -6,16 +6,16 @@ import {
   TooltipLongText,
   TooltipCustomDelay,
   TooltipMultiple,
-} from '@/demos/tooltip'
+} from '@acronis-platform/shadcn-uikit-demos/tooltip'
 import { DemoWithCode } from './DemoWithCode'
 
 // Import actual source code files as raw strings
-import tooltipBasicCode from '../demos/tooltip/TooltipBasic.tsx?raw'
-import tooltipWithIconCode from '../demos/tooltip/TooltipWithIcon.tsx?raw'
-import tooltipPositionsCode from '../demos/tooltip/TooltipPositions.tsx?raw'
-import tooltipLongTextCode from '../demos/tooltip/TooltipLongText.tsx?raw'
-import tooltipCustomDelayCode from '../demos/tooltip/TooltipCustomDelay.tsx?raw'
-import tooltipMultipleCode from '../demos/tooltip/TooltipMultiple.tsx?raw'
+import tooltipBasicCode from '../../../demos/src/tooltip/TooltipBasic.tsx?raw'
+import tooltipWithIconCode from '../../../demos/src/tooltip/TooltipWithIcon.tsx?raw'
+import tooltipPositionsCode from '../../../demos/src/tooltip/TooltipPositions.tsx?raw'
+import tooltipLongTextCode from '../../../demos/src/tooltip/TooltipLongText.tsx?raw'
+import tooltipCustomDelayCode from '../../../demos/src/tooltip/TooltipCustomDelay.tsx?raw'
+import tooltipMultipleCode from '../../../demos/src/tooltip/TooltipMultiple.tsx?raw'
 
 export function TooltipDemo() {
   return (
