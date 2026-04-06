@@ -43,10 +43,9 @@ export function FormTanstackBasic() {
         >
           {(field) => (
             <FormItem>
-              <FormLabel htmlFor={field.name}>Username</FormLabel>
+              <FormLabel>Username</FormLabel>
               <FormControl>
                 <Input
-                  id={field.name}
                   placeholder="Enter username"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}

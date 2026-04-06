@@ -21,9 +21,12 @@ import {
 } from '@acronis-platform/shadcn-uikit/react'
 
 const profileSchema = z.object({
-  username: z.string().min(2, 'Username must be at least 2 characters.').max(30, 'Username must not exceed 30 characters.'),
+  username: z
+    .string()
+    .min(2, 'Username must be at least 2 characters.')
+    .max(30, 'Username must not exceed 30 characters.'),
   email: z.string().email('Please enter a valid email address.'),
-  role: z.string({ message: 'Please select a role.' }).min(1, 'Please select a role.'),
+  role: z.string().min(1, 'Please select a role.'),
   bio: z.string().max(160, 'Bio must not exceed 160 characters.').optional(),
 })
 
@@ -75,10 +78,9 @@ export function FormTanstackProfile() {
         <form.Field name="username" validators={{ onChange: profileSchema.shape.username }}>
           {(field) => (
             <FormItem>
-              <FormLabel htmlFor={field.name}>Username</FormLabel>
+              <FormLabel>Username</FormLabel>
               <FormControl>
                 <Input
-                  id={field.name}
                   placeholder="johndoe"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
@@ -96,10 +98,9 @@ export function FormTanstackProfile() {
         <form.Field name="email" validators={{ onChange: profileSchema.shape.email }}>
           {(field) => (
             <FormItem>
-              <FormLabel htmlFor={field.name}>Email</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
-                  id={field.name}
                   type="email"
                   placeholder="john@example.com"
                   value={field.state.value}
@@ -117,13 +118,13 @@ export function FormTanstackProfile() {
         <form.Field name="role" validators={{ onChange: profileSchema.shape.role }}>
           {(field) => (
             <FormItem>
-              <FormLabel htmlFor={field.name}>Role</FormLabel>
+              <FormLabel>Role</FormLabel>
               <Select
                 value={field.state.value}
                 onValueChange={(val) => field.handleChange(val ?? '')}
               >
                 <FormControl>
-                  <SelectTrigger id={field.name} onBlur={field.handleBlur}>
+                  <SelectTrigger onBlur={field.handleBlur}>
                     <SelectValue placeholder="Select a role" />
                   </SelectTrigger>
                 </FormControl>
@@ -143,10 +144,9 @@ export function FormTanstackProfile() {
         <form.Field name="bio" validators={{ onChange: profileSchema.shape.bio }}>
           {(field) => (
             <FormItem>
-              <FormLabel htmlFor={field.name}>Bio</FormLabel>
+              <FormLabel>Bio</FormLabel>
               <FormControl>
                 <Textarea
-                  id={field.name}
                   placeholder="Tell us a little about yourself"
                   className="resize-none"
                   value={field.state.value}

@@ -39,26 +39,39 @@ const FormField = <
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext)
   const itemContext = React.useContext(FormItemContext)
-  const { getFieldState, formState } = useFormContext()
-
-  if (!fieldContext) {
-    throw new Error('useFormField should be used within <FormField>')
-  }
+  // useFormContext returns null when used outside <Form> (FormProvider)
+  const rhfContext = useFormContext()
 
   if (!itemContext) {
     throw new Error('useFormField should be used within <FormItem>')
   }
 
-  const fieldState = getFieldState(fieldContext.name, formState)
-
   const { id } = itemContext
-
-  return {
+  const base = {
     id,
-    name: fieldContext.name,
+    name: fieldContext?.name ?? '',
     formItemId: `${id}-form-item`,
     formDescriptionId: `${id}-form-item-description`,
     formMessageId: `${id}-form-item-message`,
+  }
+
+  // Standalone mode: no RHF context (e.g. TanStack Form, native forms)
+  if (!rhfContext || !fieldContext) {
+    return {
+      ...base,
+      invalid: false,
+      isDirty: false,
+      isTouched: false,
+      isValidating: false,
+      error: undefined,
+    }
+  }
+
+  const { getFieldState, formState } = rhfContext
+  const fieldState = getFieldState(fieldContext.name, formState)
+
+  return {
+    ...base,
     ...fieldState,
   }
 }
