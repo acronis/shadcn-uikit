@@ -10,6 +10,10 @@ import {
   FormRegistration,
   FormContact,
   FormSettings,
+  FormTanstackBasic,
+  FormTanstackProfile,
+  FormLayoutTwoColumn,
+  FormLayoutSections,
 } from '@/components/demos/form';
 import { DemoPreview } from '@/components/DemoPreview';
 
@@ -66,6 +70,40 @@ A settings form with switches and toggles.
 <DemoPreview sourcePath="packages/demos/src/form/FormSettings.tsx">
   <FormSettings />
 </DemoPreview>
+
+## Layout: Two-column grid
+
+Side-by-side pairs for related fields.
+
+<DemoPreview sourcePath="packages/demos/src/form/FormLayoutTwoColumn.tsx">
+  <FormLayoutTwoColumn />
+</DemoPreview>
+
+## Layout: Sectioned form
+
+Long forms split into labelled sections with dividers.
+
+<DemoPreview sourcePath="packages/demos/src/form/FormLayoutSections.tsx">
+  <FormLayoutSections />
+</DemoPreview>
+
+## TanStack Form — Basic
+
+The lower-level `FormItem` primitives work with any form library. This example uses [`@tanstack/react-form`](https://tanstack.com/form) with Zod validation.
+
+<DemoPreview sourcePath="packages/demos/src/form/FormTanstackBasic.tsx">
+  <FormTanstackBasic />
+</DemoPreview>
+
+## TanStack Form — Profile
+
+Multiple field types (input, select, textarea) wired with TanStack Form.
+
+<DemoPreview sourcePath="packages/demos/src/form/FormTanstackProfile.tsx">
+  <FormTanstackProfile />
+</DemoPreview>
+
+For a full guide covering layout patterns, component reference, validation strategies, and accessibility, see the [Forms Guide](/docs/guides/forms).
 
 ## API Reference
 

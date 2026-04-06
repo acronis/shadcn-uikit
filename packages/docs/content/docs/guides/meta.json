@@ -2,6 +2,7 @@
   "title": "Guides",
   "pages": [
     "architecture",
+    "forms",
     "migration",
     "tree-shaking",
     "publishing",
