@@ -61,8 +61,8 @@
     "storybook:build": "storybook build",
     "storybook:test:visual": "test-storybook",
     "storybook:test:visual:update": "test-storybook --updateSnapshot",
-    "storybook:test:visual:docker": "docker compose -f ../../docker-compose.storybook.yml up --build --abort-on-container-exit --exit-code-from test-runner",
-    "storybook:test:visual:docker:update": "docker compose -f ../../docker-compose.storybook.yml -f ../../docker-compose.storybook.update.yml up --build --abort-on-container-exit --exit-code-from test-runner"
+    "storybook:test:visual:docker": "pnpm storybook:build && docker compose -f ../../docker-compose.storybook.yml up --build --abort-on-container-exit --exit-code-from test-runner",
+    "storybook:test:visual:docker:update": "pnpm storybook:build && docker compose -f ../../docker-compose.storybook.yml -f ../../docker-compose.storybook.update.yml up --build --abort-on-container-exit --exit-code-from test-runner"
   },
   "peerDependencies": {
     "react": "^18.2.0 || ^19.0.0",
@@ -110,6 +110,8 @@
     "zod": "^4.2.1"
   },
   "devDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "@playwright/test": "1.56.1",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
