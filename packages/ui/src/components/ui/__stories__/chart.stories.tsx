@@ -8,6 +8,7 @@ import {
   LineChart,
   Area,
   AreaChart,
+  Cell,
   Pie,
   PieChart,
   XAxis,
@@ -104,11 +105,11 @@ const pieData = [
 ]
 
 const pieConfig = {
-  Chrome: { label: 'Chrome', color: 'hsl(var(--chart-1))' },
-  Firefox: { label: 'Firefox', color: 'hsl(var(--chart-2))' },
-  Safari: { label: 'Safari', color: 'hsl(var(--chart-3))' },
-  Edge: { label: 'Edge', color: 'hsl(var(--chart-4))' },
-} satisfies ChartConfig
+  Chrome: { label: 'Chrome', color: 'var(--av-chart-blue)' },
+  Firefox: { label: 'Firefox', color: 'var(--av-chart-red)' },
+  Safari: { label: 'Safari', color: 'var(--av-chart-yellow)' },
+  Edge: { label: 'Edge', color: 'var(--av-chart-green)' },
+} satisfies ChartConfig;
 
 export const Pie_: Story = {
   args: {} as React.ComponentProps<typeof ChartContainer>,
@@ -124,13 +125,16 @@ export const Pie_: Story = {
           cx="50%"
           cy="50%"
           outerRadius={100}
-          fill="hsl(var(--chart-1))"
           isAnimationActive={false}
-        />
+        >
+          {pieData.map((entry) => (
+            <Cell key={entry.name} fill={`var(--color-${entry.name})`} />
+          ))}
+        </Pie>
       </PieChart>
     </ChartContainer>
   ),
-}
+};
 
 const stackedData = [
   { month: 'Jan', desktop: 186, mobile: 80, tablet: 40 },
