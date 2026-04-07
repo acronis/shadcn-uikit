@@ -200,7 +200,7 @@ export default function HomePage() {
           {stats.map(({ value, label }, i) => (
             <div
               key={label}
-              className={i < stats.length - 1 ? 'border-r' : ''}
+              className={i < stats.length - 1 ? 'sm:border-r' : ''}
               style={{ flex: '1 1 140px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', padding: '3.5rem 2rem' }}
             >
               <span
@@ -239,22 +239,19 @@ export default function HomePage() {
             {features.map(({ icon, title, description }, index) => (
               <div
                 key={title}
+                className="feature-row"
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: '2rem auto 1fr',
-                  gap: '0 1.5rem',
-                  alignItems: 'center',
                   padding: '1.75rem 0',
                   borderBottom: '1px solid var(--color-fd-border, #e2e8f0)',
                 }}
               >
                 {/* Index */}
-                <span style={{ ...mono, fontSize: '0.6875rem', color: muted, opacity: 0.5, paddingTop: '0.1rem', alignSelf: 'start' }}>
+                <span className="feature-row__index" style={{ ...mono, fontSize: '0.6875rem', color: muted, opacity: 0.5, paddingTop: '0.1rem', alignSelf: 'start' }}>
                   {String(index + 1).padStart(2, '0')}
                 </span>
 
                 {/* Icon + title */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', minWidth: '12rem' }}>
+                <div className="feature-row__title" style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
                   <div
                     style={{
                       width: '2.25rem', height: '2.25rem', borderRadius: '0.5rem', flexShrink: 0,
@@ -268,7 +265,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Description */}
-                <p style={{ fontSize: '0.875rem', lineHeight: 1.7, color: muted }}>
+                <p className="feature-row__desc" style={{ fontSize: '0.875rem', lineHeight: 1.7, color: muted }}>
                   {description}
                 </p>
               </div>

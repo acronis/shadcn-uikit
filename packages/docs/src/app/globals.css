@@ -67,6 +67,28 @@
   }
 }
 
+/* ─── Landing page — responsive features grid ─────────────────────────────── */
+.feature-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.feature-row__index {
+  display: none;
+}
+
+@media (width >= 40rem) {
+  .feature-row {
+    display: grid;
+    grid-template-columns: 2rem auto 1fr;
+    gap: 0 1.5rem;
+    align-items: center;
+  }
+  .feature-row__index {
+    display: block;
+  }
+}
+
 /* ─── Landing page ──────────────────────────────────────────────────────────── */
 .cta-primary {
   transition: box-shadow 0.2s ease, opacity 0.2s ease;
